@@ -1,9 +1,29 @@
 //Collors
 $color-1: #000; //Change to your wish
 
+//Breakpoints
+$breakpoints: (
+  "sm": 0, //Phone
+  "md": 768px, //Tablet
+  "lg": 1280px, //Laptop
+);
+
+@mixin screen-is($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
 //Global style
 body {
   margin: 1rem;
+}
+h1 {
+  font-size: 25px;
+
+  @include screen-is(lg) {
+    font-size: 45px;
+  }
 }
 
 //Style for the home page
@@ -17,19 +37,76 @@ body {
   }
   h1 {
     width: 25%;
-    font-size: 25px;
     //font-family: "smth";
+  }
+  @include screen-is(lg) { //Corresponds to the class .event_logo
+    justify-content: center;
+
+    img {
+      width: 15%;
+    }
+  }
+}
+.event_information {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2.5rem 0rem;
+
+  @include screen-is(lg) {
+    width: 35%;
+    margin: 0rem auto;
+  }
+
+  .information_date {
+    display: flex;
+    flex-flow: row nowrap;
+
+    h2 {
+      font-weight: bolder;
+    }
   }
 }
 .event_home-form {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include screen-is(lg) {
+    width: 35%;
+    margin: 0rem auto;
+  }
+
   .form_elements {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    align-items: center;
     padding: 0.5rem 0rem;
 
-    input {
-      border: 1px solid black;
+    label {
+      width: 30%;
+      
+      small {
+        font-weight: bolder;
+      }
     }
+
+    input {
+      width: 100%;
+      padding: 0.8rem 0.5rem;
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+  }
+  small {
+    padding: 0.8rem 0rem;
+    font-size: 12px;
+    color: orange;
+  }
+  .form_submit {
+    width: 30%;
+    margin: 1rem auto;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: orange;
   }
 }

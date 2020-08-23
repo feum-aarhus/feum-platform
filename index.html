@@ -18,16 +18,31 @@
       event
     </h1>
   </div>
+  <!--date of the event - price per ticket - other usefull info-->
+  <div class="event_information">
+    <div class="information_date">
+      <h2>05.September 2020</h2>
+    </div>
+  </div>
   <div class="event_home-form">
     <div class="form_elements">
-      <label for="form_first-name">First Name</label>
-      <input class="form_first-name" type="text" placeholder="Your first name">  
+      <label for="form_name">Name<small> *</small></label>
+      <input class="form_name" type="text" placeholder="Your name" required>
     </div>
     <div class="form_elements">
-      <label for="form_last-name">Last Name</label>
-      <input class="form_last-name" type="text" placeholder="Your last name">  
-
+      <label for="form_email">E-mail<small> *</small></label>
+      <input class="form_email" type="email" placeholder="Your e-mail" required> <!--with pattern-->
     </div>
+    <div class="form_elements">
+      <label for="form_phone-number">Phone Number<small> *</small></label>
+      <input type="tel" placeholder="+45" pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}" required>
+    </div>
+    <small>* Required</small>
+    <!-- <div class="form_elements">
+      <label for="form_number-of-people">How many of you?</label>
+      <input class="form_number-of-people" type="number" placeholder="1" min="1" required>
+    </div> -->
+    <input class="form_submit" type="submit" value="Sign up!">
   </div>
 </body>
 </html>
