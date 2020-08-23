@@ -1,0 +1,17 @@
+{
+  "name": "feum-event",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch css -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnybrykner/feum-event.git"
+  },
+  "author": "Elma & Vítek",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

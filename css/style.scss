@@ -1,0 +1,35 @@
+//Collors
+$color-1: #000; //Change to your wish
+
+//Global style
+body {
+  margin: 1rem;
+}
+
+//Style for the home page
+.event_logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  img {
+    width: 50%;
+  }
+  h1 {
+    width: 25%;
+    font-size: 25px;
+    //font-family: "smth";
+  }
+}
+.event_home-form {
+  .form_elements {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0.5rem 0rem;
+
+    input {
+      border: 1px solid black;
+    }
+  }
+}
