@@ -18,6 +18,9 @@ $breakpoints: (
 body {
   margin: 1rem;
 }
+h1, h2, h3, label, input, small {
+  font-family: "SourceCode-Reg", "sans-serif";
+}
 h1 {
   font-size: 25px;
 
@@ -27,6 +30,34 @@ h1 {
 }
 
 //Style for the home page
+header {
+  .event_process-header {
+    cursor: pointer;
+  }
+
+  .event_the-steps {
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+
+    .event_process-steps {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 1rem 0rem;
+
+      h3 {
+        padding: 0rem 0.5rem;
+      }
+    }
+
+    &.event_process-displaying {
+      display: flex;
+    }
+    &.event_process-hidden {
+      display: none;
+    }
+  }
+}
 .event_logo {
   display: flex;
   flex-flow: row nowrap;
@@ -37,41 +68,47 @@ h1 {
   }
   h1 {
     width: 25%;
-    //font-family: "smth";
   }
   @include screen-is(lg) { //Corresponds to the class .event_logo
     justify-content: center;
+    padding: 1rem 0rem;
 
     img {
       width: 15%;
+    }
+    h1 {
+      width: 20%;
     }
   }
 }
 .event_information {
   display: flex;
   flex-flow: column nowrap;
-  padding: 2.5rem 0rem;
+  padding: 1rem 0rem;
 
   @include screen-is(lg) {
-    width: 35%;
+    width: 30%;
     margin: 0rem auto;
   }
+  h2 {
+    line-height: 1.5;
+  }
+}
+.event_welcome-message {
+  padding: 1rem 0rem;
 
-  .information_date {
-    display: flex;
-    flex-flow: row nowrap;
-
-    h2 {
-      font-weight: bolder;
-    }
+  @include screen-is(lg) {
+    width: 30%;
+    margin: 0rem auto;
   }
 }
 .event_home-form {
   display: flex;
   flex-flow: column nowrap;
+  padding: 1rem 0rem;
 
   @include screen-is(lg) {
-    width: 35%;
+    width: 30%;
     margin: 0rem auto;
   }
 
@@ -83,6 +120,10 @@ h1 {
 
     label {
       width: 30%;
+
+      @include screen-is(lg) {
+        width: 25%;
+      }
       
       small {
         font-weight: bolder;
@@ -91,9 +132,8 @@ h1 {
 
     input {
       width: 100%;
-      padding: 0.8rem 0.5rem;
-      border: 1px solid black;
-      border-radius: 4px;
+      padding: 0.5rem;
+      border: 2px solid black;
     }
   }
   small {
@@ -105,8 +145,8 @@ h1 {
     width: 30%;
     margin: 1rem auto;
     padding: 0.8rem 1.5rem;
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 2px solid black;
     background-color: orange;
+    font-family: "SourceCode-Bold", "sans-serif";
   }
 }
