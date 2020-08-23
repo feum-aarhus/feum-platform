@@ -7,22 +7,32 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed', headers: { 'Allow': 'POST' } }
   }
 
-  // const data = JSON.parse(event.body);
-  // if (!data.message || !data.contactName || !data.contactEmail) {
-  //   return { statusCode: 422, body: 'Name, email, and message are required.' }
-  // }
+  const data = JSON.parse(event.body);
+  if (!data.contactName || !data.contactEmail || !data.phoneNumber) {
+    return { statusCode: 422, body: "Name, email, and phone number are required." }
+  }
 
   const mailgunData = {
     from: FROM_EMAIL_ADDRESS,
-    to: CONTACT_TO_EMAIL_ADDRESS,
-    // 'h:Reply-To': data.contactEmail,
-    subject: "Ce pula mea",
-    text: "Salut Feum event"
+    to: data.contactEmail,
+    cc: CONTACT_TO_EMAIL_ADDRESS,
+    subject: "Ce pula mea HTML",
+    html:
+`
+<div style="display: flex; flex-flow: column nowrap; align-items: center; justify-content: center;">
+    <h1 style="font-size: 3rem;">This is the header</h1>
+    <img style="width: 100px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Florin_Salam.png" alt="Image of Florin Salam" />
+    <a style="font-weight: bold;" href="https://mobilepay.dk">Link to MobilePay</a>
+</div>
+      
+`
   }
 
-
-    return mailgun.messages().send(mailgunData).then(() => ({
-      statusCode: 200,
-      body: "Your message was sent successfully! We'll be in touch."
-    })).catch(error => console.log(error));
+  return mailgun.messages().send(mailgunData).then(() => ({
+    statusCode: 200,
+    body: "Thank you for signing up, you will soon receive a confirmation email with futher instructions."
+  })).catch(error => ({
+    statusCode: 422,
+    body: error
+  }));
 }
