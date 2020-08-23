@@ -1,12 +1,37 @@
 body {
   margin: 1rem; }
 
+h1, h2, h3, label, input, small {
+  font-family: "SourceCode-Reg", "sans-serif"; }
+
 h1 {
   font-size: 25px; }
 
 @media (min-width: 1280px) {
   h1 {
     font-size: 45px; } }
+
+header .event_process-header {
+  cursor: pointer; }
+
+header .event_the-steps {
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 1rem 0rem; }
+
+header .event_the-steps .event_process-steps {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem 0rem; }
+
+header .event_the-steps .event_process-steps h3 {
+  padding: 0rem 0.5rem; }
+
+header .event_the-steps.event_process-displaying {
+  display: flex; }
+
+header .event_the-steps.event_process-hidden {
+  display: none; }
 
 .event_logo {
   display: flex;
@@ -21,34 +46,42 @@ h1 {
 
 @media (min-width: 1280px) {
   .event_logo {
-    justify-content: center; }
+    justify-content: center;
+    padding: 1rem 0rem; }
   .event_logo img {
-    width: 15%; } }
+    width: 15%; }
+  .event_logo h1 {
+    width: 20%; } }
 
 .event_information {
   display: flex;
   flex-flow: column nowrap;
-  padding: 2.5rem 0rem; }
+  padding: 1rem 0rem; }
 
 @media (min-width: 1280px) {
   .event_information {
-    width: 35%;
+    width: 30%;
     margin: 0rem auto; } }
 
-.event_information .information_date {
-  display: flex;
-  flex-flow: row nowrap; }
+.event_information h2 {
+  line-height: 1.5; }
 
-.event_information .information_date h2 {
-  font-weight: bolder; }
+.event_welcome-message {
+  padding: 1rem 0rem; }
+
+@media (min-width: 1280px) {
+  .event_welcome-message {
+    width: 30%;
+    margin: 0rem auto; } }
 
 .event_home-form {
   display: flex;
-  flex-flow: column nowrap; }
+  flex-flow: column nowrap;
+  padding: 1rem 0rem; }
 
 @media (min-width: 1280px) {
   .event_home-form {
-    width: 35%;
+    width: 30%;
     margin: 0rem auto; } }
 
 .event_home-form .form_elements {
@@ -60,14 +93,17 @@ h1 {
 .event_home-form .form_elements label {
   width: 30%; }
 
+@media (min-width: 1280px) {
+  .event_home-form .form_elements label {
+    width: 25%; } }
+
 .event_home-form .form_elements label small {
   font-weight: bolder; }
 
 .event_home-form .form_elements input {
   width: 100%;
-  padding: 0.8rem 0.5rem;
-  border: 1px solid black;
-  border-radius: 4px; }
+  padding: 0.5rem;
+  border: 2px solid black; }
 
 .event_home-form small {
   padding: 0.8rem 0rem;
@@ -78,6 +114,6 @@ h1 {
   width: 30%;
   margin: 1rem auto;
   padding: 0.8rem 1.5rem;
-  border: 1px solid black;
-  border-radius: 4px;
-  background-color: orange; }
+  border: 2px solid black;
+  background-color: orange;
+  font-family: "SourceCode-Bold", "sans-serif"; }

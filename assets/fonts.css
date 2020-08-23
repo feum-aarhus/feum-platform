@@ -1,5 +1,11 @@
 @font-face {
-  font-family: "smth";
-  src: url('assets/smth.ttf');
+  font-family: "SourceCode-Reg";
+  src: url('SourceCodePro-Regular.ttf');
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SourceCode-Bold";
+  src: url('SourceCodePro-Bold.ttf');
   font-display: swap;
 }
