@@ -11,27 +11,37 @@ h1 {
   h1 {
     font-size: 45px; } }
 
-header .event_process-header {
+h4 {
+  font-family: "SourceCode-Bold", "sans-serif"; }
+
+.event_information, .event_process-container, .event_home-form {
+  padding: 0.8rem 0rem; }
+
+.event_process-container .event_process-header {
   cursor: pointer; }
 
-header .event_the-steps {
+.event_process-container .event_the-steps {
   flex-flow: column nowrap;
-  justify-content: space-between;
-  padding: 1rem 0rem; }
+  justify-content: space-between; }
 
-header .event_the-steps .event_process-steps {
+.event_process-container .event_the-steps .event_process-steps {
   display: flex;
   flex-flow: row nowrap;
   padding: 1rem 0rem; }
 
-header .event_the-steps .event_process-steps h3 {
+.event_process-container .event_the-steps .event_process-steps h3 {
   padding: 0rem 0.5rem; }
 
-header .event_the-steps.event_process-displaying {
+.event_process-container .event_the-steps.event_process-displaying {
   display: flex; }
 
-header .event_the-steps.event_process-hidden {
+.event_process-container .event_the-steps.event_process-hidden {
   display: none; }
+
+@media (min-width: 1280px) {
+  .event_process-container {
+    width: 30%;
+    margin: 0rem auto; } }
 
 .event_logo {
   display: flex;
@@ -55,19 +65,15 @@ header .event_the-steps.event_process-hidden {
 
 .event_information {
   display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 0rem; }
+  flex-flow: column nowrap; }
+
+.event_information h4 {
+  padding: 0.5rem 0rem; }
 
 @media (min-width: 1280px) {
   .event_information {
     width: 30%;
     margin: 0rem auto; } }
-
-.event_information h2 {
-  line-height: 1.5; }
-
-.event_welcome-message {
-  padding: 1rem 0rem; }
 
 @media (min-width: 1280px) {
   .event_welcome-message {
@@ -76,8 +82,7 @@ header .event_the-steps.event_process-hidden {
 
 .event_home-form {
   display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 0rem; }
+  flex-flow: column nowrap; }
 
 @media (min-width: 1280px) {
   .event_home-form {
@@ -91,11 +96,7 @@ header .event_the-steps.event_process-hidden {
   padding: 0.5rem 0rem; }
 
 .event_home-form .form_elements label {
-  width: 30%; }
-
-@media (min-width: 1280px) {
-  .event_home-form .form_elements label {
-    width: 25%; } }
+  width: 50%; }
 
 .event_home-form .form_elements label small {
   font-weight: bolder; }
@@ -105,6 +106,30 @@ header .event_the-steps.event_process-hidden {
   padding: 0.5rem;
   border: 2px solid black; }
 
+@media (min-width: 1280px) {
+  .event_home-form .form_elements input {
+    width: 50%; } }
+
+.event_home-form .form_elements .form_payment-type-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap; }
+
+@media (min-width: 1280px) {
+  .event_home-form .form_elements .form_payment-type-container {
+    width: 50%; } }
+
+.event_home-form .form_elements .form_payment-type-container .form_payment-type {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0rem 1rem 0rem -0.5rem; }
+
+.event_home-form .form_elements .form_payment-type-container .form_payment-type:checked {
+  background-color: black; }
+
 .event_home-form small {
   padding: 0.8rem 0rem;
   font-size: 12px;
@@ -113,7 +138,7 @@ header .event_the-steps.event_process-hidden {
 .event_home-form .form_submit {
   width: 30%;
   margin: 1rem auto;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem;
   border: 2px solid black;
   background-color: orange;
   font-family: "SourceCode-Bold", "sans-serif"; }
