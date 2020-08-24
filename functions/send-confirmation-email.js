@@ -1,10 +1,10 @@
-require('dotenv').config();
-const { MAILGUN_API_KEY, MAILGUN_DOMAIN, MAILGUN_URL, FROM_EMAIL_ADDRESS, CONTACT_TO_EMAIL_ADDRESS } = process.env;
-const mailgun = require('mailgun-js')({ apiKey: MAILGUN_API_KEY, domain: MAILGUN_DOMAIN, url: MAILGUN_URL });
+require("dotenv").config();
+const { MAILGUN_API_KEY, MAILGUN_DOMAIN, FROM_EMAIL_ADDRESS } = process.env;
+const mailgun = require("mailgun-js")({ apiKey: MAILGUN_API_KEY, domain: MAILGUN_DOMAIN, host: "api.eu.mailgun.net" });
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed', headers: { 'Allow': 'POST' } }
+    return { statusCode: 405, body: "Method Not Allowed", headers: { "Allow": "POST" } }
   }
 
   const data = JSON.parse(event.body);
@@ -15,14 +15,18 @@ exports.handler = async (event) => {
   const mailgunData = {
     from: FROM_EMAIL_ADDRESS,
     to: data.contactEmail,
-    cc: CONTACT_TO_EMAIL_ADDRESS,
-    subject: "Ce pula mea HTML",
+    cc: FROM_EMAIL_ADDRESS,
+    subject: "FEUM Days Confirmation Email",
     html:
 `
 <div style="display: flex; flex-flow: column nowrap; align-items: center; justify-content: center;">
-    <h1 style="font-size: 3rem;">This is the header</h1>
-    <img style="width: 100px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Florin_Salam.png" alt="Image of Florin Salam" />
-    <a style="font-weight: bold;" href="https://mobilepay.dk">Link to MobilePay</a>
+    <h1 style="font-size: 3rem;">Hey there ${data.contactName}! Thank you again for joining us :)</h1>
+    <p>Please, in order to reserve your e-ticket, transfer 100kr. to FEUM using MobilePay. FEUM’s MobilePay number: 29750 (you can use the button below)</p>
+    <p>You will receive your e-ticket within 24 hours. If not, you are welcome to email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.<p>
+    <b>THANK YOU FOR YOUR SUPPORT!</b>
+    <a style="width=169px; height=48px;" href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=100&comment=Your guestlist name:">
+      <img src="https://developer.mobilepay.dk/sites/developer.mobilepay.dk/files/siteImages/large1x.png" alt="MobilePay logo" />
+    </a>
 </div>
       
 `
@@ -33,6 +37,6 @@ exports.handler = async (event) => {
     body: "Thank you for signing up, you will soon receive a confirmation email with futher instructions."
   })).catch(error => ({
     statusCode: 422,
-    body: JSON.stringify({error})
+    body: JSON.stringify(error)
   }));
 }
