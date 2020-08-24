@@ -31,4 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
     steps.classList.remove("event_process-hidden");
     steps.classList.add("event_process-displaying");
   });
+
+  const submitButton = document.querySelector(".form_submit");
+  const submitMessage = document.querySelector(".event_submit-message");
+  const bottomPage = 0;
+  submitButton.addEventListener("click", () => {
+    submitButton.classList.add("event_submit-message-hidden");
+    window.scrollTo({
+      top: bottomPage,
+      behavior: "smooth"
+    })
+    submitMessage.classList.remove("event_submit-message-hidden");
+    submitMessage.classList.add("event_submit-message-displaying");
+  });
 });
