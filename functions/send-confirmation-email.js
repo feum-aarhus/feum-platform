@@ -33,6 +33,6 @@ exports.handler = async (event) => {
     body: "Thank you for signing up, you will soon receive a confirmation email with futher instructions."
   })).catch(error => ({
     statusCode: 422,
-    body: error
+    body: JSON.stringify({error})
   }));
 }
