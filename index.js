@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  (async function getParticipantAmount() {
+    const rawData = await fetch("https://feum-days.netlify.app/.netlify/functions/get-current-user-amount");
+    if (rawData.status !== 200) {
+      console.log(await rawData.text());
+      document.querySelector(".event_home-form").innerHTML = "<h1>There has been an error, please try again later.</h1>"
+      return;
+    }
+    const response = await rawData.json();
+    if (Number(response) > 99) {
+      document.querySelector(".event_home-form").innerHTML = "<h1>The maximum attendance capacity has unfortunately been reached.</h1>"
+    }
+    document.querySelector(".form_tickets-left").innerText = response;
+  })();
+
   document.querySelector("#submit_button").addEventListener("click", () => saveParticipant());
 
   async function sendConfirmationEmail() {
