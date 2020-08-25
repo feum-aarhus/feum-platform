@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#submit_button").addEventListener("click", () => submitForm());
+  document.querySelector("#submit_button").addEventListener("click", () => saveParticipant());
 
-  async function submitForm() {
+  async function sendConfirmationEmail() {
     const contactName = document.querySelector("#form_name").value;
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(response);
   }
 
+  //To save what is in the form into the database, and to create a participant.
   async function saveParticipant() {
     const contactName = document.querySelector("#form_name").value;
     const contactEmail = document.querySelector("#form_email").value;
@@ -42,12 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: phoneNumber
       })
     });
-    if (rawData.status === 500 || rawData.status === 401) {
+    if (rawData.status !== 200) {
       console.log(await rawData.text());
       return;
     }
     const response = await rawData.json();
     console.log(response);
+    // if (respose) {
+    //   sendConfirmationEmail()
+    // }
   }
 
   const processHeader = document.querySelector(".event_process-header");
