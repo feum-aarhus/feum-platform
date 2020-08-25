@@ -10,6 +10,15 @@ exports.handler = async (event) => {
   if (databaseConnected) {
     try {
       const data = JSON.parse(event.body);
+      const participantVerification = await models.Participant.find({ email: data.email }).exec();
+      if (participantVerification) {
+        return {
+          statusCode: 401,
+          body: "This email is already registered."
+        }
+      }
+
+      //else
       const newParticipant = new models.Participant({
         ...data,
       });

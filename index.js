@@ -25,6 +25,31 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(response);
   }
 
+  async function saveParticipant() {
+    const contactName = document.querySelector("#form_name").value;
+    const contactEmail = document.querySelector("#form_email").value;
+    const phoneNumber = document.querySelector("#form_phone-number").value;
+
+    const rawData = await fetch("https://feum-days.netlify.app/.netlify/functions/save-user-db", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        participantId: 0,
+        name: contactName,
+        email: contactEmail,
+        phone: phoneNumber
+      })
+    });
+    if (rawData.status === 500 || rawData.status === 401) {
+      console.log(await rawData.text());
+      return;
+    }
+    const response = await rawData.json();
+    console.log(response);
+  }
+
   const processHeader = document.querySelector(".event_process-header");
   const steps = document.querySelector(".event_the-steps");
   processHeader.addEventListener("click", () => {
