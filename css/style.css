@@ -14,8 +14,12 @@ h1 {
 h2, h3 {
   line-height: 1.3; }
 
-h4 {
-  font-family: "SourceCode-Bold", "sans-serif"; }
+h4, b, a {
+  font-family: "SourceCode-Bold", "sans-serif";
+  color: #000; }
+
+small.black {
+  color: #000 !important; }
 
 .event_information, .event_process-container, .event_home-form, .event_submit-message {
   padding: 0.8rem 0rem; }
@@ -26,24 +30,13 @@ h4 {
     margin: 0rem auto; } }
 
 .event_logo {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center; }
-
-.event_logo img {
-  width: 50%; }
-
-.event_logo h1 {
-  width: 25%; }
+  width: 100%;
+  margin: 0rem auto;
+  display: block; }
 
 @media (min-width: 1280px) {
   .event_logo {
-    justify-content: center;
-    padding: 1rem 0rem; }
-  .event_logo img {
-    width: 15%; }
-  .event_logo h1 {
-    width: 20%; } }
+    width: 30%; } }
 
 .event_information {
   display: flex;
@@ -99,6 +92,14 @@ h4 {
   .event_home-form {
     width: 30%;
     margin: 0rem auto; } }
+
+.event_home-form .form_tickets-left-container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0.8rem 0rem; }
+
+.event_home-form .form_tickets-left-container .form_tickets-left {
+  padding: 0rem 0.5rem; }
 
 .event_home-form .form_elements {
   display: flex;

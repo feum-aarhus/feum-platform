@@ -31,8 +31,12 @@ h1 {
 h2, h3 {
   line-height: 1.3;
 }
-h4 {
+h4, b, a {
   font-family: "SourceCode-Bold", "sans-serif";
+  color: #000;
+}
+small.black {
+  color:  #000 !important;
 }
 
 //Common styles
@@ -47,26 +51,12 @@ h4 {
 
 //Style for the home page
 .event_logo {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  width: 100%;
+  margin: 0rem auto;
+  display: block;
 
-  img {
-    width: 50%;
-  }
-  h1 {
-    width: 25%;
-  }
-  @include screen-is(lg) { //Corresponds to the class .event_logo
-    justify-content: center;
-    padding: 1rem 0rem;
-
-    img {
-      width: 15%;
-    }
-    h1 {
-      width: 20%;
-    }
+  @include screen-is(lg) {
+    width: 30%;
   }
 }
 .event_information {
@@ -131,6 +121,16 @@ h4 {
   @include screen-is(lg) {
     width: 30%;
     margin: 0rem auto;
+  }
+
+  .form_tickets-left-container {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0.8rem 0rem;
+
+    .form_tickets-left {
+      padding: 0rem 0.5rem;
+    }
   }
 
   .form_elements {
