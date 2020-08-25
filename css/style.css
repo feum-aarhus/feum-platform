@@ -36,7 +36,7 @@ small.black {
 
 @media (min-width: 1280px) {
   .event_logo {
-    width: 30%; } }
+    width: 30.5%; } }
 
 .event_information {
   display: flex;
@@ -163,7 +163,6 @@ small.black {
   display: flex; }
 
 .event_submit-message {
-  display: none;
   background-color: orange;
   border: 2px solid black;
   padding: 0;

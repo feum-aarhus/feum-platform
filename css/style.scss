@@ -56,7 +56,7 @@ small.black {
   display: block;
 
   @include screen-is(lg) {
-    width: 30%;
+    width: 30.5%;
   }
 }
 .event_information {
@@ -201,7 +201,7 @@ small.black {
   }
 }
 .event_submit-message {
-  display: none;
+  // display: none;
   background-color: orange;
   border: 2px solid black;
   padding: 0;
