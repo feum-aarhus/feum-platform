@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // when the form is successfully displayed, this becomes a query selector
   let submitButton = null;
+  const loaderSubmitting = document.querySelector(".loader_submitting");
 
   // immediately invoked expression to check how many people have signed up - display the form when <100
   (async function getParticipantAmount() {
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     submitButton.classList.add("form_submit-hidden");
+    loaderSubmitting.classList.add("shown");
 
     const rawUserAmount = await fetch("https://feum-ticketing.dk/.netlify/functions/get-current-user-amount");
 
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     let newUserAmount = Number(await rawUserAmount.json());
+    newUserAmount = newUserAmount + 1;
 
     const rawDatabaseResponse = await fetch("https://feum-ticketing.dk/.netlify/functions/save-user-db", {
       method: "POST",
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        participantId: newUserAmount++,
+        participantId: newUserAmount,
         name: contactName,
         email: contactEmail,
         phone: phoneNumber
@@ -94,25 +97,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rawDatabaseResponse.status !== 200) {
       showMessage(await rawDatabaseResponse.text());
       submitButton.classList.remove("form_submit-hidden");
+      loaderSubmitting.classList.remove("shown");
       return;
     }
     const response = await rawDatabaseResponse.json();
-    sendConfirmationEmail(response.participantId, response.email);
+    sendConfirmationEmail(response);
   }
 
-  async function sendConfirmationEmail(participantId, contactEmail) {
+  async function sendConfirmationEmail(participantInfo) {
     const rawData = await fetch("https://feum-ticketing.dk/.netlify/functions/send-confirmation-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        participantId,
-        contactEmail
+        participantId: participantInfo.participantId,
+        contactEmail: participantInfo.email,
+        contactName: participantInfo.name
       })
     });
     showMessage(await rawData.text());
     submitButton.classList.remove("form_submit-hidden");
+    loaderSubmitting.classList.remove("shown");
   }
 
   // showing the steps upon click

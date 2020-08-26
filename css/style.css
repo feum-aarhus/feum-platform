@@ -85,13 +85,17 @@ small.black {
     margin: 0rem auto; } }
 
 .loader {
-  width: 30%;
+  width: 100px;
   margin: 0rem auto;
   display: block; }
 
-@media (min-width: 1280px) {
-  .loader {
-    width: 30%; } }
+.loader_submitting {
+  display: none; }
+
+.loader_submitting.shown {
+  width: 100px;
+  margin: 0rem auto;
+  display: block; }
 
 .event_home-form {
   display: flex;
@@ -171,7 +175,7 @@ small.black {
 
 .event_submit-message {
   display: none;
-  background-color: orange;
+  background-color: #ff5555;
   border: 2px solid black;
   padding: 0; }
 

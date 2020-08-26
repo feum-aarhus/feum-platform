@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   }
 
   const data = JSON.parse(event.body);
-  if (!data.participantId || !data.contactEmail) {
+  if (!data.participantId || !data.contactEmail || !data.contactName) {
     return { statusCode: 422, body: "Incomplete data provided for the email to be submitted." }
   }
 

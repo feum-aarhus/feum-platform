@@ -115,12 +115,18 @@ small.black {
   }
 }
 .loader {
-  width: 30%;
+  width: 100px;
   margin: 0rem auto;
   display: block;
 
-  @include screen-is(lg) {
-    width: 30%;
+  &_submitting {
+    display: none;
+
+    &.shown {
+      width: 100px;
+      margin: 0rem auto;
+      display: block;
+    }
   }
 }
 .event_home-form {
