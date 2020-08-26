@@ -91,7 +91,7 @@ small.black {
   }
 
   .event_the-steps {
-    //No display
+    display: none;
     flex-flow: column nowrap;
     justify-content: space-between;
 
@@ -107,9 +107,6 @@ small.black {
 
     &.event_process-displaying {
       display: flex;
-    }
-    &.event_process-hidden {
-      display: none;
     }
   }
   @include screen-is(lg) {

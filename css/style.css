@@ -65,6 +65,7 @@ small.black {
   font-family: "SourceCode-Bold", "sans-serif"; }
 
 .event_process-container .event_the-steps {
+  display: none;
   flex-flow: column nowrap;
   justify-content: space-between; }
 
@@ -78,9 +79,6 @@ small.black {
 
 .event_process-container .event_the-steps.event_process-displaying {
   display: flex; }
-
-.event_process-container .event_the-steps.event_process-hidden {
-  display: none; }
 
 @media (min-width: 1280px) {
   .event_process-container {
