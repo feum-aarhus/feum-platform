@@ -17,10 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     document.querySelector(".event_home-form").innerHTML = `
 <h4>Order your ticket **</h4>
-<div class="form_tickets-left-container">
-  <h2>Tickets left:</h2>
-  <h2 class="form_tickets-left"></h2>
-</div>
 <div class="form_elements">
   <label for="form_name">Name<small> *</small></label>
   <input class="form_name" type="text" placeholder="Your full name" required id="form_name">
@@ -66,9 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactName = document.querySelector("#form_name").value;
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
-    const payment = document.querySelector("#form_payment").value;
-
-    console.log(document.querySelector("#form_payment").value)
+    const payment = document.querySelector("#form_payment").checked;
 
     if (!payment || !contactName.trim() || !contactEmail.trim() || !contactEmail.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g) || !phoneNumber.trim() || !phoneNumber.match(/(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g)) {
       showMessage("Name, email, Danish phone number and payment method are required.");
@@ -133,11 +127,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const newUserAmount = await rawUserAmount.json();
     document.querySelector(".form_tickets-left").innerText = 100 - Number(newUserAmount);
   }
-
-  // showing the steps upon click
-  const processHeader = document.querySelector(".event_process-header");
-  const steps = document.querySelector(".event_the-steps");
-  processHeader.addEventListener("click", () => {
-    steps.classList.toggle("event_process-displaying");
-  });
 });

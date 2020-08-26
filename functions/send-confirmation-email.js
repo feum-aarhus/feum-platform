@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   }
 
   const data = JSON.parse(event.body);
-  if (!data.participantId || !data.contactEmail || !data.contactName || !data.payment) {
+  if (!data.participantId || !data.contactEmail || !data.contactName) {
     return { statusCode: 422, body: "Incomplete data provided for the email to be submitted." }
   }
 
@@ -19,7 +19,15 @@ exports.handler = async (event) => {
     subject: "FEUM Days Confirmation Email",
     html:
 `
-<div style="text-align:center;font-family:"SourceCode-Reg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+<body style="font-family: 'Source Code Pro', monospace;">
+<div style="text-align:center;">
     <h1 style="font-size:1.25rem;">Hey you! Thank you again for joining us :)</h1>
     <p>Please, in order to reserve your e-ticket, <b>transfer 100kr.</b> to FEUM using MobilePay. <b>FEUM’s MobilePay number: 29750</b></p>
     <b>You can use the MobilePay button below.</b>
@@ -29,7 +37,9 @@ exports.handler = async (event) => {
     <a style="width:150px;" href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=100">
       <img src="https://developer.mobilepay.dk/sites/developer.mobilepay.dk/files/siteImages/large1x.png" alt="MobilePay logo" />
     </a>
-</div>   
+</div>  
+</body>
+</html> 
 `
   }
 
