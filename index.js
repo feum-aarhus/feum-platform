@@ -61,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // save what is in the form into the database, and create a participant
   async function saveParticipant() {
+    document.querySelector(".event_submit-message").classList.remove("event_submit-message-displaying");
+
     const contactName = document.querySelector("#form_name").value;
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
@@ -119,6 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
     showMessage(await rawData.text());
     submitButton.classList.remove("form_submit-hidden");
     loaderSubmitting.classList.remove("shown");
+
+    const rawUserAmount = await fetch("https://feum-ticketing.dk/.netlify/functions/get-current-user-amount");
+
+    if (rawUserAmount.status !== 200) {
+      return;
+    }
+    const newUserAmount = await rawUserAmount.json();
+    document.querySelector(".form_tickets-left").innerText = newUserAmount;
   }
 
   // showing the steps upon click
