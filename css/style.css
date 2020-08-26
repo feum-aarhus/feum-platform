@@ -21,6 +21,9 @@ h4, b, a {
 small.black {
   color: #000 !important; }
 
+.text_red {
+  color: #ff5555; }
+
 .event_information, .event_process-container, .event_home-form, .event_submit-message {
   padding: 0.8rem 0rem; }
 

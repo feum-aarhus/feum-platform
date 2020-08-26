@@ -22,13 +22,13 @@ exports.handler = async (event) => {
 <div style="text-align:center;">
     <h1 style="font-size:1.5rem;">Hey ${data.contactName}! Thank you again for joining us :)</h1>
     <p>Please, in order to reserve your e-ticket, <b>transfer 100kr.</b> to FEUM using MobilePay. <b>FEUM’s MobilePay number: 29750</b></p>
-    <b>You can use the button below</b>
+    <b>You can use the MobilePay button below.</b>
     <p>You will receive your e-ticket <b>within 24 hours</b>. If not, you are welcome to email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.<p>
-    <p>The location will be announced 24 hours before the event by email.</p>
+    <b>Yours Truly, FEUM!</b>
+    <p>(The location will be announced 24 hours before the event by email.)</p>
     <a style="width:169px;" href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=100&comment=Your guestlist name:">
       <img src="https://developer.mobilepay.dk/sites/developer.mobilepay.dk/files/siteImages/large1x.png" alt="MobilePay logo" />
     </a>
-    <b>Yours Truly, FEUM!</b>
 </div>   
 `
   }
