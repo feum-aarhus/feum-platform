@@ -27,7 +27,7 @@ exports.handler = async (event) => {
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body style="font-family: 'Source Code Pro', monospace;">
-<div style="text-align:center;">
+<div>
     <h1 style="font-size:1.25rem;">Hey you! Thank you again for joining us :)</h1>
     <p>Please, in order to reserve your e-ticket, <b>transfer 100kr.</b> to FEUM using MobilePay. <b>FEUM’s MobilePay number: 29750</b></p>
     <b>You can use the MobilePay button below.</b>

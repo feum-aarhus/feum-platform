@@ -40,7 +40,7 @@ small.black {
 
 @media (min-width: 1280px) {
   .event_logo {
-    width: 30.5%; } }
+    width: 44%; } }
 
 .event_information {
   display: flex;
@@ -79,14 +79,17 @@ small.black {
   flex-flow: row nowrap;
   justify-content: center; }
 
-.event_process-container .event_process-header u {
+.event_process-container .event_process-header h4 {
   font-family: "SourceCode-Bold", "sans-serif";
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding-bottom: 1.6rem; }
 
 .event_process-container .event_the-steps {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 1rem; }
 
 .event_process-container .event_the-steps .event_process-steps {
   display: flex;
@@ -95,9 +98,6 @@ small.black {
 
 .event_process-container .event_the-steps .event_process-steps h3 {
   padding: 0rem 0.5rem; }
-
-.event_process-container .event_the-steps.event_process-displaying {
-  display: flex; }
 
 @media (min-width: 1280px) {
   .event_process-container {
@@ -120,6 +120,9 @@ small.black {
 .event_home-form {
   display: flex;
   flex-flow: column nowrap; }
+
+.event_home-form h4 {
+  padding: 0.8rem 0rem; }
 
 @media (min-width: 1280px) {
   .event_home-form {
