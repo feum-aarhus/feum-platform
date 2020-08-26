@@ -5,7 +5,7 @@ const participantsSchema = new mongoose.Schema ({
   participantId: Number, //Between 1 and 100
   name: String,
   email: String,
-  phone: Number,
+  phone: String,
   // payment: Boolean
 }, {collection: "Participants"});
 

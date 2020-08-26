@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 <div class="form_elements">
   <label for="form_phone-number">Phone Number<small> *</small></label>
-  <input type="tel" placeholder="+45" pattern="[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}" required id="form_phone-number">
+  <input type="tel" placeholder="+45" required id="form_phone-number">
 </div>
 <div class="form_elements">
   <label for="form_payment-type">Payment<small> *</small></label>
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
 
-    if (!contactName.trim() || !contactEmail.trim() || !phoneNumber.trim()) {
-      showMessage("Name, email, and phone number are required.");
+    if (!contactName.trim() || !contactEmail.trim() || !phoneNumber.trim() || !phoneNumber.match(/(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g)) {
+      showMessage("Name, email, and Danish phone number are required.");
       return;
     }
 
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     const newUserAmount = await rawUserAmount.json();
-    document.querySelector(".form_tickets-left").innerText = newUserAmount;
+    document.querySelector(".form_tickets-left").innerText = 100 - Number(newUserAmount);
   }
 
   // showing the steps upon click
