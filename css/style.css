@@ -84,6 +84,15 @@ small.black {
     width: 30%;
     margin: 0rem auto; } }
 
+.loader {
+  width: 30%;
+  margin: 0rem auto;
+  display: block; }
+
+@media (min-width: 1280px) {
+  .loader {
+    width: 30%; } }
+
 .event_home-form {
   display: flex;
   flex-flow: column nowrap; }
@@ -146,14 +155,14 @@ small.black {
 .event_home-form small {
   padding: 0.8rem 0rem;
   font-size: 12px;
-  color: orange; }
+  color: #ff5555; }
 
 .event_home-form .form_submit {
   width: 30%;
   margin: 1rem auto;
   padding: 0.5rem;
   border: 2px solid black;
-  background-color: orange;
+  background-color: #ff5555;
   font-family: "SourceCode-Bold", "sans-serif";
   display: block; }
 
@@ -164,8 +173,7 @@ small.black {
   display: none;
   background-color: orange;
   border: 2px solid black;
-  padding: 0;
-  margin: 0rem auto 3rem auto; }
+  padding: 0; }
 
 .event_submit-message h2 {
   padding: 0.5rem; }

@@ -8,8 +8,8 @@ exports.handler = async (event) => {
   }
 
   const data = JSON.parse(event.body);
-  if (!data.contactName || !data.contactEmail || !data.phoneNumber) {
-    return { statusCode: 422, body: "Name, email, and phone number are required." }
+  if (!data.participantId || !data.contactEmail) {
+    return { statusCode: 422, body: "Incomplete data provided for the email to be submitted." }
   }
 
   const mailgunData = {
@@ -20,7 +20,7 @@ exports.handler = async (event) => {
     html:
 `
 <div style="text-align:center;">
-    <h1 style="font-size:3rem;">Hey there ${data.contactName}! Thank you again for joining us :)</h1>
+    <h1 style="font-size:2rem;">Hey there ${data.contactName}! Thank you again for joining us :)</h1>
     <p>Please, in order to reserve your e-ticket, transfer 100kr. to FEUM using MobilePay. FEUM’s MobilePay number: 29750 (you can use the button below)</p>
     <p>You will receive your e-ticket within 24 hours. If not, you are welcome to email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.<p>
     <a style="width:169px;" href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=100&comment=Your guestlist name:">
@@ -28,14 +28,13 @@ exports.handler = async (event) => {
     </a>
     <p>The location will be announced 24 hours before the event by email.</p>
     <b>Your Truly, FEUM!</b>
-</div>
-      
+</div>   
 `
   }
 
   return mailgun.messages().send(mailgunData).then(() => ({
     statusCode: 200,
-    body: "Thank you for signing up, you will soon receive a confirmation email with futher instructions."
+    body: "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey."
   })).catch(error => ({
     statusCode: 422,
     body: JSON.stringify(error)
