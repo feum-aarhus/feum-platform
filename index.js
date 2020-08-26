@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   (async function getParticipantAmount() {
-    const rawData = await fetch("https://feum-days.netlify.app/.netlify/functions/get-current-user-amount");
+    const rawData = await fetch("https://feum-ticketing.dk/.netlify/functions/get-current-user-amount");
     if (rawData.status !== 200) {
       document.querySelector(".event_home-form").innerHTML = "<h1>There has been an error, please try again later.</h1>"
       return;
@@ -13,28 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   // hiding the form and scrolling to the top once submit is pressed
-  const submitButton = document.querySelector(".form_submit");
   const submitMessage = document.querySelector(".event_submit-message");
   const messageText = document.querySelector(".event_submit-message-text");
-  submitButton.addEventListener("click", () => {
-    submitButton.classList.add("event_submit-message-hidden");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-    submitMessage.classList.remove("event_submit-message-hidden");
-    submitMessage.classList.add("event_submit-message-displaying");
-  });
+  const submitButton = document.querySelector("#submit_button");
 
   // submitting the info upon clicking the submit button
-  document.querySelector("#submit_button").addEventListener("click", () => saveParticipant());
+  submitButton.addEventListener("click", () => saveParticipant());
 
   async function sendConfirmationEmail() {
     const contactName = document.querySelector("#form_name").value;
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
 
-    const rawData = await fetch("https://feum-days.netlify.app/.netlify/functions/send-confirmation-email", {
+    const rawData = await fetch("https://feum-ticketing.dk/.netlify/functions/send-confirmation-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,11 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneNumber
       })
     });
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
     messageText.innerText = await rawData.text();
+
+    submitButton.classList.add("form_submit-hidden");
+    submitMessage.classList.add("event_submit-message-displaying");
   }
 
   //To save what is in the form into the database, and to create a participant.
@@ -58,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactEmail = document.querySelector("#form_email").value;
     const phoneNumber = document.querySelector("#form_phone-number").value;
 
-    const rawData = await fetch("https://feum-days.netlify.app/.netlify/functions/save-user-db", {
+    const rawData = await fetch("https://feum-ticketing.dk/.netlify/functions/save-user-db", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,17 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: phoneNumber
       })
     });
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
     if (rawData.status !== 200) {
-      submitMessage.classList.remove("event_submit-message-hidden");
+      submitMessage.classList.add("event_submit-message-displaying");
       messageText.innerText = await rawData.text();
       return;
     }
     const response = await rawData.json();
-    if (response && respose.email) {
+    if (response && response.email) {
       sendConfirmationEmail();
     }
   }
