@@ -10,6 +10,10 @@ exports.handler = async (event) => {
   const databaseConnected = await dbConnect();
   if (databaseConnected) {
     try {
+      return {
+        statusCode: 401,
+        body: "Maximum event capacity reached."
+      }
       const data = JSON.parse(event.body);
       const participantVerification = await models.Participant.find({ email: data.email }).exec();
       if (participantVerification.length) {
