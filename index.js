@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     const response = await rawData.json();
+    document.querySelector(".form_tickets-left").innerText = 100 - Number(response);
     if (Number(response) > 99) {
       document.querySelector(".event_home-form").innerHTML = "<b class='text_red'>The maximum attendance capacity has unfortunately been reached.</b>";
       return;
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 <small class="black">** Tickets are not refundable. In case you resell the ticket to someone else, it is your responsibility to inform us by email (<a href="mailto:feumticketing@gmail.com">feumticketing@gmail.com</a>) the full name of the new owner followed by the ticket number.</small>
 <input class="form_submit" type="submit" value="Order" id="submit_button">
 `;
-    document.querySelector(".form_tickets-left").innerText = 100 - Number(response);
     submitButton = document.querySelector("#submit_button");
     submitButton.addEventListener("click", () => saveParticipant());
   })();
