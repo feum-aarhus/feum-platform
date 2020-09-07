@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "GetTicketForm"
+  name: "TheTicketForm"
 };
 </script>
 

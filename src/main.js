@@ -1,10 +1,12 @@
 import Vue from "vue";
-import App from "./App.vue";
+import PartyHome from "./PartyHome.vue";
 import store from "./store";
+import "@/assets/reset.css";
+import "@/assets/fonts.css";
 
 Vue.config.productionTip = false;
 
 new Vue({
   store,
-  render: h => h(App)
+  render: h => h(PartyHome)
 }).$mount("#app");
