@@ -36,6 +36,9 @@ h4, b, a {
   font-family: "SourceCode-Bold", "sans-serif";
   color: #000;
 }
+u {
+  text-decoration: underline #ff5555 4px;
+}
 small.black {
   color:  #000 !important;
 }
@@ -44,7 +47,7 @@ small.black {
 }
 
 //Common styles
-.event_information, .form_tickets-left-container, .event_process-container, .event_home-form, .event_submit-message {
+.event_information, .form_tickets-left-container, .event_submit-message {
   padding: 0.8rem 0rem;
 
   @include screen-is(lg) {
@@ -54,144 +57,4 @@ small.black {
 }
 
 //Style for the home page
-.event_process-container {
-  .event_process-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
 
-    h4 {
-      font-family: "SourceCode-Bold", "sans-serif";
-      text-transform: uppercase;
-      padding-bottom: 1.6rem;
-    }
-  }
-
-  .event_the-steps {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 1rem;
-
-    .event_process-steps {
-      display: flex;
-      flex-flow: row nowrap;
-      padding: 1rem 0rem;
-
-      h3 {
-        padding: 0rem 0.5rem;
-      }
-    }
-  }
-  @include screen-is(lg) {
-    width: 30%;
-    margin: 0rem auto;
-  }
-}
-.loader {
-  width: 100px;
-  margin: 0rem auto;
-  display: block;
-
-  &_submitting {
-    display: none;
-
-    &.shown {
-      width: 100px;
-      margin: 0rem auto;
-      display: block;
-    }
-  }
-}
-.event_home-form {
-  display: flex;
-  flex-flow: column nowrap;
-
-  h4 {
-    padding: 0.8rem 0rem;
-  }
-
-  @include screen-is(lg) {
-    width: 30%;
-    margin: 0rem auto;
-  }
-
-  .form_elements {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    padding: 0.5rem 0rem;
-
-    label {
-      width: 50%;
-      
-      small {
-        font-weight: bolder;
-      }
-    }
-
-    input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 2px solid black;
-
-      @include screen-is(lg) {
-        width: 50%;
-      }
-    }
-    .form_payment-type-container {
-      width: 100%;
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-
-      @include screen-is(lg) {
-        width: 50%;
-      }
-
-      .form_payment-type {
-        -webkit-appearance: none;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 2px solid black;
-        margin: 0rem 1rem 0rem -0.5rem;
-      }
-      .form_payment-type:checked {
-        background-color: black;
-      }
-    }
-  }
-  small {
-    padding: 0.8rem 0rem;
-    font-size: 12px;
-    color: #ff5555;
-  }
-  .form_submit {
-    width: 30%;
-    margin: 1rem auto;
-    padding: 0.5rem;
-    border: 2px solid black;
-    background-color: #ff5555;
-    font-family: "SourceCode-Bold", "sans-serif";
-    display: block;
-
-    &.form_submit-hidden {
-      display: none;
-    }
-  }
-}
-.event_submit-message {
-  display: none;
-  background-color: #ff5555;
-  border: 2px solid black;
-  padding: 0;
-
-  h2 {
-    padding: 0.5rem;
-  }
-  &.event_submit-message-displaying {
-    display: block;
-  }
-}
