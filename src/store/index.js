@@ -5,16 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    errorMessage: "",
+    message: "",
     participantAmount: 0,
     loading: false
   },
   mutations: {
-    setError(state, message) {
-      state.errorMessage = message;
+    setMessageText(state, message) {
+      state.message = message;
     },
-    resetError(state) {
-      state.errorMessage = "";
+    resetMessageText(state) {
+      state.message = "";
     },
     setCurrentParticipantAmount(state, amount) {
       state.participantAmount = amount;
@@ -29,11 +29,54 @@ export default new Vuex.Store({
         Number(process.env.VUE_APP_EVENT_CAPACITY) - state.participantAmount
       );
     },
-    getErrorMessage(state) {
-      return state.errorMessage;
+    getMessage(state) {
+      return state.message;
     },
     isLoading(state) {
       return state.loading;
+    }
+  },
+  actions: {
+    async checkParticipantAmount({ commit, dispatch }) {
+      commit("setLoading", true);
+      const rawData = await fetch(
+        "https://feum-ticketing.dk/.netlify/functions/get-current-user-amount"
+      );
+      if (rawData.status !== 200) {
+        dispatch(
+          "displayMessage",
+          "There has been an error, please try again later."
+        );
+        return;
+      }
+      const response = await rawData.json();
+      commit("setCurrentParticipantAmount", Number(response));
+      commit("setLoading", false);
+    },
+    async sendConfirmationEmail({ commit, dispatch }, participantInfo) {
+      commit("setLoading", true);
+      const rawData = await fetch(
+        "https://feum-ticketing.dk/.netlify/functions/send-confirmation-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            participantId: participantInfo.participantId,
+            contactEmail: participantInfo.email,
+            contactName: participantInfo.name
+          })
+        }
+      );
+      await dispatch("checkParticipantAmount");
+      dispatch("displayMessage", await rawData.text());
+    },
+    displayMessage({ commit }, messageText) {
+      commit("setMessageText", messageText);
+      commit("setLoading", false);
+
+      setTimeout(() => commit("resetMessageText"), 4000);
     }
   }
 });

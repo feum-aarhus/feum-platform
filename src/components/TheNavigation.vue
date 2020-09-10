@@ -18,10 +18,6 @@ export default {
     width: 100%;
     margin: 0rem auto;
     display: block;
-
-    @include screen-is(lg) {
-      width: 44%;
-    }
   }
 }
 </style>

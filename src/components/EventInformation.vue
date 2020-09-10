@@ -7,8 +7,13 @@
     <h2>Event is limited to 100 people.</h2>
     <h2>Ticket 100.00 kr.</h2>
     <div class="event_tickets-container">
-      <h4>Tickets left:</h4>
-      <h4 class="event_tickets-left"></h4>
+      <img
+        v-if="isLoading"
+        class="loader__small"
+        src="@/assets/loading.gif"
+        alt=""
+      />
+      <h4 v-else>Tickets left: {{ getTicketsLeft }}</h4>
     </div>
     <div class="event_welcome-message">
       <h2>
@@ -27,10 +32,10 @@
       </h2>
     </div>
     <div class="event_process-container">
-      <div class="event_process-header">
-        <h4>Get your ticket <u>here</u></h4>
+      <div class="event_process-header" @click="toggleSteps">
+        <h4><u>Get your ticket here</u></h4>
       </div>
-      <div class="event_the-steps event_process-hidden">
+      <div v-if="stepsVisible" class="event_the-steps">
         <div class="event_process-steps">
           <h2>01.</h2>
           <h3>
@@ -69,19 +74,33 @@
             everything out at the entrance.
           </h3>
         </div>
+        <TheTicketForm />
       </div>
     </div>
-    <TheTicketForm />
   </section>
 </template>
 
 <script>
 import TheTicketForm from "@/components/TheTicketForm";
+import { mapGetters } from "vuex";
 
 export default {
   name: "EventInformation",
   components: {
     TheTicketForm
+  },
+  data: function() {
+    return {
+      stepsVisible: false
+    };
+  },
+  computed: {
+    ...mapGetters(["getTicketsLeft", "isLoading"])
+  },
+  methods: {
+    toggleSteps() {
+      this.stepsVisible = !this.stepsVisible;
+    }
   }
 };
 </script>
@@ -145,7 +164,7 @@ export default {
 
         h2 {
           font-family: "SourceCode-Bold", "sans-serif";
-          text-decoration: underline #ff5555 4px;
+          text-decoration: underline #ff5555 2px;
         }
 
         h3 {

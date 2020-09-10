@@ -1,5 +1,7 @@
 //Collors
-$color-1: #000; //Change to your wish
+$black: #000; //Change to your wish
+$red: #ff5555;
+$background: #f4f4f4;
 
 //Breakpoints
 $breakpoints: (
@@ -15,10 +17,6 @@ $breakpoints: (
 }
 
 //Global style
-body {
-  margin: 1rem;
-  background-color: #f4f4f4;
-}
 h1, h2, h3, label, input, small {
   font-family: "SourceCode-Reg", "sans-serif";
 }
@@ -34,26 +32,31 @@ h2, h3 {
 }
 h4, b, a {
   font-family: "SourceCode-Bold", "sans-serif";
-  color: #000;
+  color: $black;
 }
 u {
-  text-decoration: underline #ff5555 4px;
+  text-decoration: underline $red 2px;
 }
 small.black {
-  color:  #000 !important;
+  color: $black !important;
 }
 .text_red {
-  color: #ff5555;
+  color: $red;
+}
+
+.loader {
+  width: 200px;
+  margin: 0rem auto;
+  display: block;
+
+  &__small {
+    width: 100px;
+  }
 }
 
 //Common styles
-.event_information, .form_tickets-left-container, .event_submit-message {
+.event_information, .form_tickets-left-container {
   padding: 0.8rem 0rem;
-
-  @include screen-is(lg) {
-    width: 30%;
-    margin: 0rem auto;
-  }
 }
 
 //Style for the home page

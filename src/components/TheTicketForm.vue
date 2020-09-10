@@ -1,16 +1,15 @@
 <template>
-  <section class="getticketform">
+  <section class="event_the-form-container">
     <!-- Here will be the steps of the progress, and the form where
     you fill in the data, possibly with the connection to the payment thingy -->
-    <div class="event_submit-message">
-      <h2 class="event_submit-message-text">{{ getErrorMessage }}</h2>
+    <div v-if="!isLoading" class="event_submit-message-container">
+      <transition name="fade">
+        <div v-if="getMessage" class="event_submit-message">
+          <h2 class="event_submit-message-text">{{ getMessage }}</h2>
+        </div>
+      </transition>
     </div>
-    <img
-      v-if="isLoading"
-      class="loader_submitting"
-      src="assets/loading.gif"
-      alt=""
-    />
+    <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
     <div v-else class="event_home-form">
       <h4>Order your ticket **</h4>
       <div class="form_elements">
@@ -71,6 +70,7 @@
         type="submit"
         value="Order"
         id="submit_button"
+        @click="saveParticipant"
       />
     </div>
   </section>
@@ -90,11 +90,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "getErrorMessage", "isLoading"])
+    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"])
   },
   methods: {
     async saveParticipant() {
-      this.$store.commit("resetError");
+      this.$store.commit("resetMessageText");
 
       if (
         !this.inputPayment ||
@@ -107,28 +107,24 @@ export default {
           /(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g
         )
       ) {
-        this.$store.commit(
-          "setError",
+        this.$store.dispatch(
+          "displayMessage",
           "Name, email, Danish phone number and payment method are required."
         );
         return;
       }
 
-      this.$store.commit("setLoading", true);
+      await this.$store.dispatch("checkParticipantAmount");
 
-      const rawUserAmount = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/get-current-user-amount"
-      );
-
-      if (rawUserAmount.status !== 200) {
-        this.$store.commit(
-          "setError",
-          "There has been an error, please try again later."
+      const ticketsLeft = this.$store.getters.getTicketsLeft;
+      if (!ticketsLeft) {
+        this.$store.dispatch(
+          "displayMessage",
+          "The maximum attendance capacity has unfortunately been reached."
         );
         return;
       }
-      let newUserAmount = Number(await rawUserAmount.json());
-      newUserAmount = newUserAmount + 1;
+      const newUserAmount = ticketsLeft + 1;
 
       const rawDatabaseResponse = await fetch(
         "https://feum-ticketing.dk/.netlify/functions/save-user-db",
@@ -146,34 +142,20 @@ export default {
         }
       );
       if (rawDatabaseResponse.status !== 200) {
-        this.$store.commit("setError", await rawDatabaseResponse.text());
-        this.$store.commit("setLoading", false);
+        this.$store.dispatch(
+          "displayMessage",
+          await rawDatabaseResponse.text()
+        );
         return;
       }
       const response = await rawDatabaseResponse.json();
-      // sendConfirmationEmail(response);
-      console.log(response);
+      this.$store.dispatch("sendConfirmationEmail", response);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.loader {
-  width: 100px;
-  margin: 0rem auto;
-  display: block;
-
-  &_submitting {
-    display: none;
-
-    &.shown {
-      width: 100px;
-      margin: 0rem auto;
-      display: block;
-    }
-  }
-}
 .event_home-form {
   display: flex;
   flex-flow: column nowrap;
@@ -203,7 +185,7 @@ export default {
     input {
       width: 100%;
       padding: 0.5rem;
-      border: 2px solid black;
+      border: 2px solid $black;
 
       @include screen-is(lg) {
         width: 50%;
@@ -224,44 +206,49 @@ export default {
         height: 15px;
         width: 15px;
         border-radius: 50%;
-        border: 2px solid black;
+        border: 2px solid $black;
         margin: 0rem 1rem 0rem -0.5rem;
       }
       .form_payment-type:checked {
-        background-color: black;
+        background-color: $black;
       }
     }
   }
   small {
     padding: 0.8rem 0rem;
     font-size: 12px;
-    color: #ff5555;
+    color: $red;
   }
   .form_submit {
     width: 30%;
     margin: 1rem auto;
     padding: 0.5rem;
-    border: 2px solid black;
-    background-color: #ff5555;
+    border: 2px solid $black;
+    background-color: $red;
     font-family: "SourceCode-Bold", "sans-serif";
     display: block;
-
-    &.form_submit-hidden {
-      display: none;
-    }
   }
 }
-.event_submit-message {
-  display: none;
-  background-color: #ff5555;
-  border: 2px solid black;
-  padding: 0;
+.event_submit-message-container {
+  height: 60px;
 
-  h2 {
-    padding: 0.5rem;
-  }
-  &.event_submit-message-displaying {
-    display: block;
+  .event_submit-message {
+    &.fade-enter-active,
+    &.fade-leave-active {
+      transition: all 0.5s;
+    }
+    &.fade-enter,
+    &.fade-leave-to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    background-color: $red;
+    border: 2px solid $black;
+    padding: 0rem;
+
+    h2 {
+      padding: 0.5rem;
+    }
   }
 }
 </style>
