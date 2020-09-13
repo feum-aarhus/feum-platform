@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 
 //Serverless function
 exports.handler = async event => {
+  return {
+    statusCode: 401,
+    body: "Participant registration is disabled at the moment."
+  };
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

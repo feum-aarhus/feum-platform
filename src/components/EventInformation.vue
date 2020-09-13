@@ -1,18 +1,18 @@
 <template>
-  <section class="event_information">
+  <section>
     <!-- Here there will be the event information, like date, price artists, etc.
     This is where the changes to the content will happen -->
-    <h4>FEUM Days Event</h4>
-    <h2>Fri. 18.September 2020, 12:00-00:00.</h2>
-    <h2>Event is limited to 100 people.</h2>
-    <h2>Ticket 100.00 kr.</h2>
+    <div class="event_information">
+      <h4>FEUM Days Event</h4>
+      <h2>Fri. 18.September 2020, 12:00-00:00.</h2>
+      <h2>Event is limited to 100 people.</h2>
+      <h2>Ticket 100.00 kr.</h2>
+    </div>
     <div class="event_tickets-container">
-      <img
-        v-if="isLoading"
-        class="loader__small"
-        src="@/assets/loading.gif"
-        alt=""
-      />
+      <div class="event_go-to-ticket" v-on:click="scrollToBottom()">
+        <h2>Get your ticket</h2>
+      </div>
+      <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
       <h4 v-else>Tickets left: {{ getTicketsLeft }}</h4>
     </div>
     <div class="event_welcome-message">
@@ -32,10 +32,10 @@
       </h2>
     </div>
     <div class="event_process-container">
-      <div class="event_process-header" @click="toggleSteps">
-        <h4><u>Get your ticket here</u></h4>
-      </div>
       <div v-if="stepsVisible" class="event_the-steps">
+        <div class="event_process-header">
+          <h4><u>Important to know</u></h4>
+        </div>
         <div class="event_process-steps">
           <h2>01.</h2>
           <h3>
@@ -74,8 +74,11 @@
             everything out at the entrance.
           </h3>
         </div>
-        <TheTicketForm />
+        <div class="event_process-header">
+          <h4><u>Important to know</u></h4>
+        </div>
       </div>
+      <TheTicketForm />
     </div>
   </section>
 </template>
@@ -91,15 +94,20 @@ export default {
   },
   data: function() {
     return {
-      stepsVisible: false
+      stepsVisible: true
     };
   },
   computed: {
     ...mapGetters(["getTicketsLeft", "isLoading"])
   },
   methods: {
-    toggleSteps() {
-      this.stepsVisible = !this.stepsVisible;
+    scrollToBottom() {
+      // this.stepsVisible = !this.stepsVisible;
+
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+      });
     }
   }
 };
@@ -109,71 +117,95 @@ export default {
 .event_information {
   display: flex;
   flex-flow: column nowrap;
+  border: 2px solid $black;
 
   h4 {
     padding: 0.5rem 0rem;
+    text-align: center;
   }
 
   @include screen-is(lg) {
     margin: 0rem auto;
   }
+}
+.event_information > * {
+  width: 90%;
+  margin: 0rem auto;
 
-  .event_tickets-container {
+  @include screen-is(lg) {
+    width: 40%;
+  }
+}
+.event_tickets-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0.8rem 0rem;
+  border: 2px solid $black;
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  .event_go-to-ticket {
+    padding: 0.5rem;
+    background-color: $red;
+    border: 2px solid $black;
+    cursor: pointer;
+
+    h2 {
+      font-family: "SourceCode-Bold", "sans-serif";
+    }
+  }
+
+  .event_tickets-left {
+    padding: 0rem 0.5rem;
+  }
+}
+.event_tickets-container > * {
+  width: 80%;
+  margin: 0.5rem auto;
+  text-align: center;
+
+  @include screen-is(lg) {
+    width: 30%;
+  }
+}
+
+.event_welcome-message {
+  padding: 4.8rem 0rem 1.6rem 0;
+}
+
+.event_process-container {
+  padding-top: 0;
+
+  .event_process-header {
     display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
-    padding: 0.8rem 0rem;
+    padding: 0.4rem 0;
 
     h4 {
+      font-family: "SourceCode-Bold", "sans-serif";
       text-transform: uppercase;
     }
-
-    .event_tickets-left {
-      padding: 0rem 0.5rem;
-    }
   }
 
-  .event_welcome-message {
-    padding: 0.8rem 0rem;
-  }
+  .event_the-steps {
+    border: 2px solid $black;
+    padding: 1.2rem 1.6rem;
+    margin-bottom: 1.6rem;
 
-  .event_process-container {
-    .event_process-header {
+    .event_process-steps {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
+      padding: 0.8rem 0rem;
 
-      h4 {
+      h2 {
         font-family: "SourceCode-Bold", "sans-serif";
-        text-transform: uppercase;
-        padding-bottom: 1.6rem;
       }
-    }
-
-    .event_the-steps {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-between;
-      // border-top: 2px solid black;
-      // padding: 1rem;
-
-      .event_process-steps {
-        display: flex;
-        flex-flow: row nowrap;
-        padding: 1rem 0rem;
-
-        h2 {
-          font-family: "SourceCode-Bold", "sans-serif";
-          text-decoration: underline #ff5555 2px;
-        }
-
-        h3 {
-          padding: 0rem 0.5rem;
-        }
+      h3 {
+        padding-left: 0.8rem;
       }
-    }
-    @include screen-is(lg) {
-      margin: 0rem auto;
     }
   }
 }

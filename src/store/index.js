@@ -38,7 +38,6 @@ export default new Vuex.Store({
   },
   actions: {
     async checkParticipantAmount({ commit, dispatch }) {
-      commit("setLoading", true);
       const rawData = await fetch(
         "https://feum-ticketing.dk/.netlify/functions/get-current-user-amount"
       );
@@ -51,10 +50,8 @@ export default new Vuex.Store({
       }
       const response = await rawData.json();
       commit("setCurrentParticipantAmount", Number(response));
-      commit("setLoading", false);
     },
-    async sendConfirmationEmail({ commit, dispatch }, participantInfo) {
-      commit("setLoading", true);
+    async sendConfirmationEmail({ dispatch }, participantInfo) {
       const rawData = await fetch(
         "https://feum-ticketing.dk/.netlify/functions/send-confirmation-email",
         {
@@ -76,7 +73,7 @@ export default new Vuex.Store({
       commit("setMessageText", messageText);
       commit("setLoading", false);
 
-      setTimeout(() => commit("resetMessageText"), 4000);
+      setTimeout(() => commit("resetMessageText"), 5000);
     }
   }
 });

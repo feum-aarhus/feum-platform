@@ -35,7 +35,7 @@ h4, b, a {
   color: $black;
 }
 u {
-  text-decoration: underline $red 2px;
+  text-decoration: none;
 }
 small.black {
   color: $black !important;
@@ -45,18 +45,15 @@ small.black {
 }
 
 .loader {
-  width: 200px;
+  width: 100px !important;
   margin: 0rem auto;
   display: block;
-
-  &__small {
-    width: 100px;
-  }
 }
 
 //Common styles
-.event_information, .form_tickets-left-container {
+.event_information, .event_tickets-container, .event_welcome-message, .event_process-container, .form_tickets-left-container {
   padding: 0.8rem 0rem;
+  margin: 1.5rem auto;
 }
 
 //Style for the home page

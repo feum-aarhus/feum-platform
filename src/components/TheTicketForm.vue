@@ -2,18 +2,15 @@
   <section class="event_the-form-container">
     <!-- Here will be the steps of the progress, and the form where
     you fill in the data, possibly with the connection to the payment thingy -->
-    <div v-if="!isLoading" class="event_submit-message-container">
-      <transition name="fade">
-        <div v-if="getMessage" class="event_submit-message">
-          <h2 class="event_submit-message-text">{{ getMessage }}</h2>
-        </div>
-      </transition>
-    </div>
-    <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
-    <div v-else class="event_home-form">
+    <transition name="fade">
+      <div v-if="getMessage" class="event_submit-message">
+        <h2 class="event_submit-message-text">{{ getMessage }}</h2>
+      </div>
+    </transition>
+    <div class="event_the-form">
       <h4>Order your ticket **</h4>
       <div class="form_elements">
-        <label for="form_name">Name<small> *</small></label>
+        <label for="form_name"><span>Name</span><small> *</small></label>
         <input
           v-model="inputName"
           class="form_name"
@@ -24,7 +21,7 @@
         />
       </div>
       <div class="form_elements">
-        <label for="form_email">E-mail<small> *</small></label>
+        <label for="form_email"><span>E-mail</span><small> *</small></label>
         <input
           v-model="inputEmail"
           class="form_email"
@@ -35,7 +32,10 @@
         />
       </div>
       <div class="form_elements">
-        <label for="form_phone-number">Phone Number<small> *</small></label>
+        <label for="form_phone-number">
+          <span>Phone Number</span>
+          <small> *</small>
+        </label>
         <input
           v-model="inputPhoneNumber"
           type="tel"
@@ -45,7 +45,9 @@
         />
       </div>
       <div class="form_elements">
-        <label for="form_payment-type">Payment<small> *</small></label>
+        <label for="form_payment-type">
+          <span>Payment</span><small> *</small>
+        </label>
         <div class="form_payment-type-container">
           <input
             v-model="inputPayment"
@@ -65,7 +67,9 @@
           >feumticketing@gmail.com</a
         >) the full name of the new owner followed by the ticket number.</small
       >
+      <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
       <input
+        v-else
         class="form_submit"
         type="submit"
         value="Order"
@@ -114,6 +118,8 @@ export default {
         return;
       }
 
+      this.$store.commit("setLoading", true);
+
       await this.$store.dispatch("checkParticipantAmount");
 
       const ticketsLeft = this.$store.getters.getTicketsLeft;
@@ -149,14 +155,15 @@ export default {
         return;
       }
       const response = await rawDatabaseResponse.json();
-      this.$store.dispatch("sendConfirmationEmail", response);
+      await this.$store.dispatch("sendConfirmationEmail", response);
+      this.$store.commit("setLoading", false);
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.event_home-form {
+.event_the-form {
   display: flex;
   flex-flow: column nowrap;
 
@@ -164,42 +171,44 @@ export default {
     padding: 0.8rem 0rem;
   }
 
-  @include screen-is(lg) {
-    margin: 0rem auto;
-  }
-
   .form_elements {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 0.5rem 0rem;
+    padding: 0.8rem 0rem;
+
+    @include screen-is(md) {
+      width: 75%;
+    }
 
     label {
-      width: 50%;
+      width: calc(100% / 3);
+      display: flex;
+      align-items: center;
 
+      span {
+        width: min-content;
+
+        @include screen-is(md) {
+          width: max-content;
+        }
+      }
       small {
         font-weight: bolder;
+        margin-left: 0.4rem;
       }
     }
 
     input {
-      width: 100%;
+      width: calc(200% / 3);
       padding: 0.5rem;
       border: 2px solid $black;
-
-      @include screen-is(lg) {
-        width: 50%;
-      }
     }
     .form_payment-type-container {
-      width: 100%;
+      width: 50%;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-
-      @include screen-is(lg) {
-        width: 50%;
-      }
 
       .form_payment-type {
         -webkit-appearance: none;
@@ -207,7 +216,8 @@ export default {
         width: 15px;
         border-radius: 50%;
         border: 2px solid $black;
-        margin: 0rem 1rem 0rem -0.5rem;
+        margin: 0rem 0.8rem 0rem -0.5rem;
+        background-color: #fff;
       }
       .form_payment-type:checked {
         background-color: $black;
@@ -229,26 +239,23 @@ export default {
     display: block;
   }
 }
-.event_submit-message-container {
-  height: 60px;
 
-  .event_submit-message {
-    &.fade-enter-active,
-    &.fade-leave-active {
-      transition: all 0.5s;
-    }
-    &.fade-enter,
-    &.fade-leave-to {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-    background-color: $red;
-    border: 2px solid $black;
-    padding: 0rem;
+.event_submit-message {
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: all 0.5s;
+  }
+  &.fade-enter,
+  &.fade-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  background-color: $red;
+  border: 2px solid $black;
+  padding: 0rem;
 
-    h2 {
-      padding: 0.5rem;
-    }
+  h2 {
+    padding: 0.5rem;
   }
 }
 </style>
