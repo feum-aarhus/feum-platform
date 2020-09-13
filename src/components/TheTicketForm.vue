@@ -133,7 +133,7 @@ export default {
       const newUserAmount = ticketsLeft + 1;
 
       const rawDatabaseResponse = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/save-user-db",
+        "http://localhost:8888/.netlify/functions/save-user-db",
         {
           method: "POST",
           headers: {
@@ -234,7 +234,7 @@ export default {
     margin: 1rem auto;
     padding: 0.5rem;
     border: 2px solid $black;
-    background-color: $red;
+    background-color: $highlight;
     font-family: "SourceCode-Bold", "sans-serif";
     display: block;
   }

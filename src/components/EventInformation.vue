@@ -149,7 +149,7 @@ export default {
 
   .event_go-to-ticket {
     padding: 0.5rem;
-    background-color: $red;
+    background-color: $highlight;
     border: 2px solid $black;
     cursor: pointer;
 

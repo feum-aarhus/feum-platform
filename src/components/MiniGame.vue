@@ -8,8 +8,8 @@
       class="game_play-button"
       href="https://feum-game.netlify.app/"
       target="blank"
-      >Play the FEUM snake!</a
-    >
+      ><img src="@/assets/snake.png" alt=""
+    /></a>
   </section>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     @include screen-is(lg) {
       display: block;
       font-family: "SourceCode-Bold", "sans-serif";
-      background-color: #be03fd;
+      // background-color: $red;
       width: 8%;
       height: auto;
       padding: 1.5rem 1rem;
@@ -39,7 +39,7 @@ export default {
       text-decoration: none;
       position: fixed;
       top: 50%;
-      right: 0.5rem;
+      right: 3rem;
     }
   }
 }
@@ -62,19 +62,19 @@ export default {
 }
 @keyframes playGame {
   0% {
-    right: 0.5rem;
+    right: 3rem;
   }
   25% {
-    right: 1.25rem;
+    right: 3.5rem;
   }
   50% {
-    right: 0.5rem;
+    right: 3rem;
   }
   75% {
-    right: 1.25rem;
+    right: 3.5rem;
   }
   100% {
-    right: 0.5rem;
+    right: 3rem;
   }
 }
 </style>
