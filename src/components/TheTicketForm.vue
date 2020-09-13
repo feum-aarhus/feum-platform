@@ -7,8 +7,8 @@
         <h2 class="event_submit-message-text">{{ getMessage }}</h2>
       </div>
     </transition>
-    <div class="event_the-form">
-      <h4>Order your ticket **</h4>
+    <div v-if="getTicketsLeft" class="event_the-form">
+      <h4 class="red">Order your ticket <span class="black">**</span></h4>
       <div class="form_elements">
         <label for="form_name"><span>Name</span><small> *</small></label>
         <input
@@ -77,6 +77,11 @@
         @click="saveParticipant"
       />
     </div>
+    <h4 v-else class="red sold_out-text">
+      Unfortunately, it seems you arrived here too late: all the tickets have
+      been sold... Fear not! We will have many other opportunities to meet again
+      ;).
+    </h4>
   </section>
 </template>
 
@@ -122,7 +127,7 @@ export default {
 
       await this.$store.dispatch("checkParticipantAmount");
 
-      const ticketsLeft = this.$store.getters.getTicketsLeft;
+      const ticketsLeft = this.getTicketsLeft;
       if (!ticketsLeft) {
         this.$store.dispatch(
           "displayMessage",
@@ -133,7 +138,7 @@ export default {
       const newUserAmount = ticketsLeft + 1;
 
       const rawDatabaseResponse = await fetch(
-        "http://localhost:8888/.netlify/functions/save-user-db",
+        "https://feum-ticketing.dk/.netlify/functions/save-user-db",
         {
           method: "POST",
           headers: {
@@ -228,6 +233,7 @@ export default {
     padding: 0.8rem 0rem;
     font-size: 12px;
     color: $red;
+    line-height: 1.5;
   }
   .form_submit {
     width: 30%;
@@ -257,5 +263,9 @@ export default {
   h2 {
     padding: 0.5rem;
   }
+}
+
+.sold_out-text {
+  line-height: 1.3rem;
 }
 </style>

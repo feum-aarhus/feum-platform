@@ -3,56 +3,89 @@
     <!-- Here there will be the event information, like date, price artists, etc.
     This is where the changes to the content will happen -->
     <div class="event_information">
-      <h4>FEUM Days Event</h4>
-      <h2>Fri. 18.September 2020, 12:00-00:00.</h2>
-      <h2>Event is limited to 100 people.</h2>
-      <h2>Ticket 100.00 kr.</h2>
+      <h4 class="red">FEUM Daze Event</h4>
+      <h2>Fri. 18 September 2020</h2>
+      <h2>From 16:00 to 00:00</h2>
+      <h2>Ticket 120.00 kr.</h2>
+      <h2>Venue limited to 100 people.</h2>
+    </div>
+    <div class="event_important-info">
+      <h4 class="red">Please, read carefully.</h4>
+      <b>FEUM is a community. </b>
+      <span
+        >And what creates this singular alchemy during our events is therefore a
+      </span>
+      <b>collective work. </b>
+      <span>An </span>
+      <b>authentic cooperation </b>
+      <span
+        >in which every single person is equally participating in setting the
+        mood. A contribution provided by the staff, artists and you, the crowd.
+      </span>
+      <b
+        >You, as a single human being, have an important influence regarding the
+        outcome of this event.
+      </b>
+      <span
+        >After spending hours to sharply select tracks, talented artists are
+        crossing Denmark to share their passion for music. On the other side,
+        you expect to be taken through a truly journey. This very specific and
+        mutually beneficial relation between artists and the crowd is hardly
+        describable. However, in any case, it must be preserved:
+      </span>
+      <u
+        >if you have the possibility, please, be present at the event before
+        18:00.</u
+      >
     </div>
     <div class="event_tickets-container">
-      <div class="event_go-to-ticket" v-on:click="scrollToBottom()">
+      <div
+        v-if="getTicketsLeft && !isLoading"
+        class="event_go-to-ticket"
+        v-on:click="scrollToBottom()"
+      >
         <h2>Get your ticket</h2>
       </div>
       <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
       <h4 v-else>Tickets left: {{ getTicketsLeft }}</h4>
     </div>
     <div class="event_welcome-message">
+      <h4 class="red">Hejsa!</h4>
+      <br />
       <h2>
-        Hejsa! It has been a long time since we have seen each other, right?
-        What about breaking this very boring habit? The 5th September 2020, from
-        12PM to 12AM, an intimate meeting is organised. Forgive us for keeping
-        the location secret though but we would like to surprise you :). For
-        this great occasion, we will welcome Karsten Pflum, a talented Dane
-        called as a sonic architect, producing very particular sounds. Around
-        him, most of the FEUM crew will make sure to satisfy your ears.
+        For those who were present at our last event, we hope that you had a
+        great time :). For those who were too late to get a ticket, it is your
+        chance to not make this mistake again! Our next event will be the 18th
+        September 2020, from 16:00 to 00:00. It will take place under the bridge
+        not far from Institut for X. It might be a bit chilly over there, so
+        bring warm clothes. Do not worry however, we will make sure to prepare
+        some bonfires around :). For this lovely day, we will welcome Markovela,
+        Ida Daugaard, S.A.M. and Anastasia Kristensen. All of them will ensure
+        to make you move and satisfy your ears.
       </h2>
+      <br />
       <h2>
-        As you know, we are evolving in a very particular situation at the
-        moment. Therefore, we need to make sure that current rules related to
-        health policy are strictly followed and applied.
+        As you know, we are evolving in a very particular situation. Therefore,
+        we need to make sure that current rules related to health policy are
+        strictly followed and applied. Thus, the event will
+        <b>only be accessible for 100 people.</b> No ticket will be delivered at
+        the entrance.
       </h2>
     </div>
     <div class="event_process-container">
       <div v-if="stepsVisible" class="event_the-steps">
         <div class="event_process-header">
-          <h4><u>Important to know</u></h4>
+          <h4 class="red">How to get your ticket</h4>
         </div>
         <div class="event_process-steps">
           <h2>01.</h2>
           <h3>
-            The event will only be accessible for 100 people. No ticket will be
-            delivered at the entrance. If you ended up here too late, fear not!
-            We will have many other opportunities to meet again :).
+            You will have to provide your full name, email and phone number in
+            the following form to book a ticket.
           </h3>
         </div>
         <div class="event_process-steps">
           <h2>02.</h2>
-          <h3>
-            For those who are on time, you will have to provide your full name,
-            email and phone number in order to book a ticket.
-          </h3>
-        </div>
-        <div class="event_process-steps">
-          <h2>03.</h2>
           <h3>
             Then, a confirmation email will be sent with details about the
             payment method. You will have a ticket reserved only when you are
@@ -60,22 +93,19 @@
           </h3>
         </div>
         <div class="event_process-steps">
-          <h2>04.</h2>
+          <h2>03.</h2>
           <h3>
             We would like to notice that you will not receive your e-tickets
-            automatically after you pay. However, we will make sure that you
-            receive it within 24 hours.
+            automatically after you pay. Yet, we will make sure that you receive
+            it within 24 hours. Take it as a trust test between us ;).
           </h3>
         </div>
         <div class="event_process-steps">
-          <h2>05.</h2>
+          <h2>04.</h2>
           <h3>
             Finally, <b>bring your ticket and your ID. </b>We will check
             everything out at the entrance.
           </h3>
-        </div>
-        <div class="event_process-header">
-          <h4><u>Important to know</u></h4>
         </div>
       </div>
       <TheTicketForm />
@@ -121,7 +151,6 @@ export default {
 
   h4 {
     padding: 0.5rem 0rem;
-    text-align: center;
   }
 
   @include screen-is(lg) {
@@ -129,11 +158,20 @@ export default {
   }
 }
 .event_information > * {
-  width: 90%;
-  margin: 0rem auto;
+  margin-left: 1.6rem;
 
   @include screen-is(lg) {
-    width: 40%;
+  }
+}
+.event_important-info {
+  margin-top: 1.5rem;
+  line-height: 1.3rem;
+  hyphens: auto;
+
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
   }
 }
 .event_tickets-container {

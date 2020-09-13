@@ -32,7 +32,7 @@ body {
   background-color: $background;
 
   @include screen-is(lg) {
-    width: 50%;
+    width: 45%;
     margin: 0rem auto !important;
   }
 }

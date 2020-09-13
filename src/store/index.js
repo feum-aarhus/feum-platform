@@ -39,7 +39,7 @@ export default new Vuex.Store({
   actions: {
     async checkParticipantAmount({ commit, dispatch }) {
       const rawData = await fetch(
-        "http://localhost:8888/.netlify/functions/get-current-user-amount"
+        "https://feum-ticketing.dk/.netlify/functions/get-current-user-amount"
       );
       if (rawData.status !== 200) {
         dispatch(
@@ -53,7 +53,7 @@ export default new Vuex.Store({
     },
     async sendConfirmationEmail({ dispatch }, participantInfo) {
       const rawData = await fetch(
-        "http://localhost:8888/.netlify/functions/send-confirmation-email",
+        "https://feum-ticketing.dk/.netlify/functions/send-confirmation-email",
         {
           method: "POST",
           headers: {

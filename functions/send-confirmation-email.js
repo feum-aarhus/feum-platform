@@ -27,10 +27,10 @@ exports.handler = async event => {
     from: FROM_EMAIL_ADDRESS,
     to: data.contactEmail,
     cc: FROM_EMAIL_ADDRESS,
-    subject: "FEUM Days Confirmation Email",
+    subject: "FEUM Daze Confirmation Email",
     html: `
 <!DOCTYPE html>
-<html lang="en" style="margin: 0 25%;">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,14 +39,15 @@ exports.handler = async event => {
 <body style="font-family: 'Source Code Pro', monospace;">
 <div>
     <h1 style="font-size: 1.25rem;">Hey you! Thank you again for joining us :)</h1>
-    <p>Please, in order to reserve your e-ticket, <b>transfer 100kr.</b> to FEUM using MobilePay. <b>FEUM’s MobilePay number: 29750</b></p>
+    <p>Please, in order to reserve your e-ticket, <b>transfer 120kr.</b> to FEUM using MobilePay. <b>FEUM’s MobilePay number: 29750</b></p>
     <b>You can use the MobilePay button below.</b>
-    <p>You will receive your e-ticket <b>within 24 hours</b>. If not, you are welcome to email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.<p>
-    <b>Yours Truly, FEUM!</b>
-    <p>(The location will be announced 24 hours before the event by email.)</p>
-    <a style="text-align: center;" href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=100">
-      <img style="width: 150px;" src="https://developer.mobilepay.dk/sites/developer.mobilepay.dk/files/siteImages/large1x.png" alt="MobilePay logo" />
-    </a>
+    <p>You will receive your e-ticket <b>within 24 hours</b>. If not, you are welcome to email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.</p>
+    <p style="font-weight: bold;">Yours Truly, FEUM!</p>
+    <div style="text-align: center;">
+      <a href="https://mobilepay.dk/erhverv/betalingslink/betalingslink-svar?phone=29750&amount=120">
+        <img style="width: 150px;" src="https://developer.mobilepay.dk/sites/developer.mobilepay.dk/files/siteImages/large1x.png" alt="MobilePay logo" />
+      </a>
+    </div>
 </div>  
 </body>
 </html> 
