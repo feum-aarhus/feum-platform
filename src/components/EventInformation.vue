@@ -11,6 +11,12 @@
     </div>
     <div class="event_important-info">
       <h4 class="red">Please, read carefully.</h4>
+      <div>
+        <u
+          >If you have the possibility, please, be present at the event before
+          18:00.</u
+        >
+      </div>
       <b>FEUM is a community. </b>
       <span
         >And what creates this singular alchemy during our events is therefore a
@@ -31,12 +37,8 @@
         crossing Denmark to share their passion for music. On the other side,
         you expect to be taken through a truly journey. This very specific and
         mutually beneficial relation between artists and the crowd is hardly
-        describable. However, in any case, it must be preserved:
+        describable. However, in any case, it must be preserved.
       </span>
-      <u
-        >if you have the possibility, please, be present at the event before
-        18:00.</u
-      >
     </div>
     <div class="event_tickets-container">
       <div
@@ -170,7 +172,6 @@ export default {
 
   h4 {
     text-align: center;
-    text-transform: uppercase;
     margin-bottom: 0.8rem;
   }
 }
