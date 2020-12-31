@@ -4,4 +4,4 @@
   publish = "dist"
 
 [dev]
-  command = "vue-cli-service serve"
+  command = "npm start"
