@@ -122,15 +122,15 @@ import { mapGetters } from "vuex";
 export default {
   name: "EventInformation",
   components: {
-    TheTicketForm
+    TheTicketForm,
   },
-  data: function() {
+  data: function () {
     return {
-      stepsVisible: true
+      stepsVisible: true,
     };
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "isLoading"])
+    ...mapGetters(["getTicketsLeft", "isLoading"]),
   },
   methods: {
     scrollToBottom() {
@@ -138,10 +138,10 @@ export default {
 
       window.scrollTo({
         top: document.body.scrollHeight,
-        behavior: "smooth"
+        behavior: "smooth",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

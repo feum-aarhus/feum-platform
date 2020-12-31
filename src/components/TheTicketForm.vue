@@ -90,16 +90,16 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "TheTicketForm",
-  data: function() {
+  data: function () {
     return {
       inputName: "",
       inputEmail: "",
       inputPhoneNumber: "",
-      inputPayment: ""
+      inputPayment: "",
     };
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"])
+    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"]),
   },
   methods: {
     async saveParticipant() {
@@ -138,18 +138,18 @@ export default {
       const newUserAmount = ticketsLeft + 1;
 
       const rawDatabaseResponse = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/save-user-db",
+        `${process.env.VUE_APP_API_URL}.netlify/functions/save-user-db`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             participantId: newUserAmount,
             name: this.inputName,
             email: this.inputEmail,
-            phone: this.inputPhoneNumber
-          })
+            phone: this.inputPhoneNumber,
+          }),
         }
       );
       if (rawDatabaseResponse.status !== 200) {
@@ -162,8 +162,8 @@ export default {
       const response = await rawDatabaseResponse.json();
       await this.$store.dispatch("sendConfirmationEmail", response);
       this.$store.commit("setLoading", false);
-    }
-  }
+    },
+  },
 };
 </script>
 

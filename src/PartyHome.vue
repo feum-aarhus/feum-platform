@@ -16,13 +16,13 @@ export default {
   components: {
     TheNavigation,
     MiniGame,
-    EventInformation
+    EventInformation,
   },
-  created: async function() {
+  created: async function () {
     this.$store.commit("setLoading", true);
     await this.$store.dispatch("checkParticipantAmount");
     this.$store.commit("setLoading", false);
-  }
+  },
 };
 </script>
 

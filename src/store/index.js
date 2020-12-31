@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     message: "",
     participantAmount: 0,
-    loading: false
+    loading: false,
   },
   mutations: {
     setMessageText(state, message) {
@@ -21,7 +21,7 @@ export default new Vuex.Store({
     },
     setLoading(state, setTo) {
       state.loading = setTo;
-    }
+    },
   },
   getters: {
     getTicketsLeft(state) {
@@ -34,12 +34,12 @@ export default new Vuex.Store({
     },
     isLoading(state) {
       return state.loading;
-    }
+    },
   },
   actions: {
     async checkParticipantAmount({ commit, dispatch }) {
       const rawData = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/get-current-user-amount"
+        `${process.env.VUE_APP_API_URL}.netlify/functions/get-current-user-amount`
       );
       if (rawData.status !== 200) {
         dispatch(
@@ -53,17 +53,17 @@ export default new Vuex.Store({
     },
     async sendConfirmationEmail({ dispatch }, participantInfo) {
       const rawData = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/send-confirmation-email",
+        `${process.env.VUE_APP_API_URL}.netlify/functions/send-confirmation-email`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             participantId: participantInfo.participantId,
             contactEmail: participantInfo.email,
-            contactName: participantInfo.name
-          })
+            contactName: participantInfo.name,
+          }),
         }
       );
       await dispatch("checkParticipantAmount");
@@ -74,6 +74,6 @@ export default new Vuex.Store({
       commit("setLoading", false);
 
       setTimeout(() => commit("resetMessageText"), 5000);
-    }
-  }
+    },
+  },
 });
