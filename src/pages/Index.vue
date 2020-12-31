@@ -1,27 +1,31 @@
 <template>
-  <div id="partyhome">
-    <TheNavigation />
-    <MiniGame />
-    <EventInformation />
+  <div>
+    <div class="partyhome">
+      <img src="../assets/logo-banner.png" alt="FEUM logo" />
+      <h1>
+        The site is being worked on, stay tuned for more exciting events in the
+        near future!
+      </h1>
+    </div>
   </div>
 </template>
 
 <script>
-import TheNavigation from "@/components/TheNavigation.vue";
-import MiniGame from "@/components/MiniGame.vue";
-import EventInformation from "@/components/EventInformation";
+// import TheNavigation from "@/components/TheNavigation.vue";
+// import MiniGame from "@/components/MiniGame.vue";
+// import EventInformation from "@/components/EventInformation";
 
 export default {
   name: "PartyHome",
-  components: {
-    TheNavigation,
-    MiniGame,
-    EventInformation,
-  },
+  // components: {
+  //   TheNavigation,
+  //   MiniGame,
+  //   EventInformation,
+  // },
   created: async function () {
-    this.$store.commit("setLoading", true);
-    await this.$store.dispatch("checkParticipantAmount");
-    this.$store.commit("setLoading", false);
+    // this.$store.commit("setLoading", true);
+    // await this.$store.dispatch("checkParticipantAmount");
+    // this.$store.commit("setLoading", false);
   },
 };
 </script>
@@ -34,6 +38,19 @@ body {
   @include screen-is(lg) {
     width: 45%;
     margin: 0rem auto !important;
+  }
+}
+.partyhome {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+
+  * {
+    padding: 2rem 0;
   }
 }
 </style>
