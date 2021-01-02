@@ -18,4 +18,18 @@ module.exports = {
       addStyleResource(config.module.rule("scss").oneOf(type));
     });
   },
+  plugins: [
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "_pages/**/*.md",
+        typeName: "page",
+      },
+    },
+  ],
+  transformers: {
+    remark: {
+      // global remark options
+    },
+  },
 };

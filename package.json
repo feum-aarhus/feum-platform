@@ -13,6 +13,8 @@
   },
   "author": "Elma & Vítek",
   "dependencies": {
+    "@gridsome/source-filesystem": "0.6.2",
+    "@gridsome/transformer-remark": "0.6.4",
     "dotenv": "8.2.0",
     "gridsome": "0.7.23",
     "mailgun-js": "0.22.0",
@@ -20,12 +22,6 @@
     "vuex": "3.6.0"
   },
   "devDependencies": {
-    "@vue/eslint-config-prettier": "6.0.0",
-    "babel-eslint": "10.1.0",
-    "cache-loader": "4.1.0",
-    "eslint": "6.8.0",
-    "eslint-plugin-prettier": "3.3.0",
-    "eslint-plugin-vue": "7.4.0",
     "husky": "4.3.6",
     "lint-staged": "10.5.3",
     "netlify-cli": "2.69.11",
@@ -40,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{scss,js,vue,yml,html}": [
+    "*.{scss,js,vue,yml}": [
       "prettier --write"
     ]
   }

@@ -17,6 +17,9 @@
 
 export default {
   name: "PartyHome",
+  metaInfo: {
+    title: "Hello, world!",
+  },
   // components: {
   //   TheNavigation,
   //   MiniGame,
@@ -29,6 +32,10 @@ export default {
   },
 };
 </script>
+
+<page-query>
+
+</page-query>
 
 <style lang="scss">
 body {
