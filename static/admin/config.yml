@@ -3,15 +3,39 @@ backend:
   branch: netlify-cms
 media_folder: "static/uploads"
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "_posts/blog" # The path to the folder where the documents are stored
+  - name: "home" # Used in routes, e.g., /admin/collections/blog
+    label: "Home Page" # Used in the UI
+    folder: "_pages/home" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: name
+    slug: "home" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - label: "Featured Music"
+        name: "music"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Length",
+              name: "length",
+              widget: "datetime",
+              date_format: false,
+              time_format: mm:ss,
+            }
+          - {
+              label: "Type of content",
+              name: "type",
+              widget: "select",
+              options: ["Set", "Playlist"],
+            }
+          - {
+              label: "Created/Streamed at",
+              name: "date",
+              widget: "datetime",
+              date_format: "DD.MM.YYYY",
+              time_format: "HH:mm",
+              format: "LLL",
+            }
+          - { label: "Played/Curated by", name: "person", widget: "string" }
