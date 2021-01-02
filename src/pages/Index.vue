@@ -34,7 +34,19 @@ export default {
 </script>
 
 <page-query>
-
+  query allPages($path: String! = "/pages/home-page") {
+    data: allPages(path: $path) {
+      title
+      image
+      music {
+        date
+        title
+        length
+        type
+        person
+      }
+    }
+  }
 </page-query>
 
 <style lang="scss">

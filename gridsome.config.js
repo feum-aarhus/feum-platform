@@ -22,8 +22,8 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "_pages/**/*.md",
-        typeName: "page",
+        path: "_pages/*.md",
+        typeName: "allPages",
       },
     },
   ],
