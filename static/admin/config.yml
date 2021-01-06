@@ -85,10 +85,14 @@ collections:
           - { label: "Country Abbreviation", name: "country", widget: "string" }
           - { label: "Artist's Label(s)", name: "label", widget: "string" }
       - { label: "Event Text", name: "body", widget: "markdown" }
-      - label: "Linked Music"
-        name: "music"
-        widget: "relatedMusic"
-        collection: "music"
-        display_fields: ["title", "date"]
-        search_fields: ["title", "person"]
-        value_field: "title"
+      - label: "Featured Music"
+        name: "music_list"
+        widget: "list"
+        fields:
+          - label: "Linked Music Piece"
+            name: "music"
+            widget: "relatedMusic"
+            collection: "music"
+            display_fields: ["title", "person"]
+            search_fields: ["title", "person"]
+            value_field: "title"

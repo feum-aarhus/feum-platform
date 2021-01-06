@@ -36,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{scss,js,vue,yml}": [
+    "*.{scss,js,vue,yml,html}": [
       "prettier --write"
     ]
   }
