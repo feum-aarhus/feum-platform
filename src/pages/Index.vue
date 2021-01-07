@@ -18,7 +18,7 @@
 export default {
   name: "PartyHome",
   metaInfo: {
-    title: "Hello, world!",
+    title: "Home",
   },
   // components: {
   //   TheNavigation,
@@ -40,7 +40,6 @@ person // } // } // }
 <style lang="scss">
 body {
   margin: 1rem !important;
-  background-color: $background;
 
   @include screen-is(lg) {
     width: 45%;

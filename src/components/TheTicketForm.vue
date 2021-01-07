@@ -8,7 +8,7 @@
       </div>
     </transition>
     <div v-if="getTicketsLeft" class="event_the-form">
-      <h4 class="red">Order your ticket <span class="black">**</span></h4>
+      <h4 class="red">Order your ticket <span class="content">**</span></h4>
       <div class="form_elements">
         <label for="form_name"><span>Name</span><small> *</small></label>
         <input
@@ -60,7 +60,7 @@
         </div>
       </div>
       <small>* Required</small>
-      <small class="black"
+      <small class="content"
         >** Tickets are not refundable. In case you resell the ticket to someone
         else, it is your responsibility to inform us by email (<a
           href="mailto:feumticketing@gmail.com"
@@ -209,7 +209,7 @@ export default {
     input {
       width: calc(200% / 3);
       padding: 0.5rem;
-      border: 2px solid $black;
+      border: 2px solid $content;
     }
     .form_payment-type-container {
       width: 50%;
@@ -222,12 +222,12 @@ export default {
         height: 15px;
         width: 15px;
         border-radius: 50%;
-        border: 2px solid $black;
+        border: 2px solid $content;
         margin: 0rem 0.8rem 0rem -0.5rem;
         background-color: #fff;
       }
       .form_payment-type:checked {
-        background-color: $black;
+        background-color: $content;
       }
     }
   }
@@ -241,7 +241,7 @@ export default {
     width: 30%;
     margin: 1rem auto;
     padding: 0.5rem;
-    border: 2px solid $black;
+    border: 2px solid $content;
     background-color: $highlight;
     font-family: "SourceCode-Bold", "sans-serif";
     display: block;
@@ -259,7 +259,7 @@ export default {
     opacity: 0;
   }
   background-color: $red;
-  border: 2px solid $black;
+  border: 2px solid $content;
   padding: 0rem;
 
   h2 {

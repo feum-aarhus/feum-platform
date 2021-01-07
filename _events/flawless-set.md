@@ -1,6 +1,6 @@
 ---
 layout: page
-logo: /static/uploads/leo2.jpeg
+logo: /uploads/leo.jpg
 title: Flawless Set
 start: January 8, 2021 11:00 PM
 end: January 9, 2021 3:00 AM
@@ -13,8 +13,7 @@ lineup:
     label: B1 Recs
 music: Awesome
 ---
+
 Come, it's going to be sweet!
-
-
 
 Really!

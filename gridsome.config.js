@@ -10,7 +10,13 @@ function addStyleResource(rule) {
 }
 
 module.exports = {
+  siteName: "FEUM",
+  siteUrl: "https://feum-ticketing.dk",
+  siteDescription: "We love electronic music!",
+  titleTemplate: "%s | FEUM",
+  favicon: "./src/favicon.jpg",
   chainWebpack(config) {
+    // config.resolve.alias.set('@images', '@/assets/uploads');
     // Load variables for all vue-files
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
 
@@ -23,7 +29,21 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         path: "_pages/*.md",
-        typeName: "allPages",
+        typeName: "pages",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "_events/*.md",
+        typeName: "events",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "_music/*.md",
+        typeName: "music",
       },
     },
   ],

@@ -3,15 +3,15 @@ const { MAILGUN_API_KEY, MAILGUN_DOMAIN, FROM_EMAIL_ADDRESS } = process.env;
 const mailgun = require("mailgun-js")({
   apiKey: MAILGUN_API_KEY,
   domain: MAILGUN_DOMAIN,
-  host: "api.eu.mailgun.net"
+  host: "api.eu.mailgun.net",
 });
 
-exports.handler = async event => {
+exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
       body: "Method Not Allowed",
-      headers: { Allow: "POST" }
+      headers: { Allow: "POST" },
     };
   }
 
@@ -19,7 +19,7 @@ exports.handler = async event => {
   if (!data.participantId || !data.contactEmail || !data.contactName) {
     return {
       statusCode: 422,
-      body: "Incomplete data provided for the email to be submitted."
+      body: "Incomplete data provided for the email to be submitted.",
     };
   }
 
@@ -51,7 +51,7 @@ exports.handler = async event => {
 </div>  
 </body>
 </html> 
-`
+`,
   };
 
   return mailgun
@@ -60,10 +60,10 @@ exports.handler = async event => {
     .then(() => ({
       statusCode: 200,
       body:
-        "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey."
+        "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey.",
     }))
-    .catch(error => ({
+    .catch((error) => ({
       statusCode: 422,
-      body: JSON.stringify(error)
+      body: JSON.stringify(error),
     }));
 };

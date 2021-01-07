@@ -1,14 +1,17 @@
 //Collors
-$black: #000; //Change to your wish
+$background: #000; //Change to your wish
 $red: #ff5555;
-$background: #f4f4f4;
+$content: #f4f4f4;
 $highlight: #af71ff; //#7008ba //#784eb2
 
 //Breakpoints
 $breakpoints: (
-  "sm": 0, //Phone
-  "md": 768px, //Tablet
-  "lg": 1280px, //Laptop
+  "sm": 0,
+  //Phone
+  "md": 768px,
+  //Tablet
+  "lg": 1280px,
+  //Laptop
 );
 
 @mixin screen-is($breakpoint) {
@@ -18,7 +21,10 @@ $breakpoints: (
 }
 
 //Global style
-h1, h2, h3, label, input, small, span {
+label,
+input,
+small,
+span {
   font-family: "SourceCode-Reg", "sans-serif";
 }
 h1 {
@@ -28,21 +34,39 @@ h1 {
     font-size: 45px;
   }
 }
-h2, h3 {
+h2,
+h3 {
+  font-size: 20px;
+}
+h2,
+h3 {
   line-height: 1.3;
 }
-h4, b, a, u {
+h1,
+h2,
+h3,
+h4,
+b,
+a,
+u,
+p {
   font-family: "SourceCode-Bold", "sans-serif";
-  color: $black;
+  color: $content;
+}
+body {
+  background-color: $background;
 }
 .red {
   color: $red;
 }
-.black {
-  color: $black;
+.underline {
+  text-decoration: underline;
 }
-small.black {
-  color: $black !important;
+.content {
+  color: $content;
+}
+small.content {
+  color: $content !important;
 }
 .loader {
   width: 100px !important;
@@ -51,10 +75,13 @@ small.black {
 }
 
 //Common styles
-.event_information, .event_tickets-container, .event_welcome-message, .event_process-container, .form_tickets-left-container {
+.event_information,
+.event_tickets-container,
+.event_welcome-message,
+.event_process-container,
+.form_tickets-left-container {
   padding: 0.8rem 0rem;
   margin: 1.5rem auto;
 }
 
 //Style for the home page
-
