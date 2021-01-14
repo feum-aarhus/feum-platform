@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <Layout>
     <div class="partyhome">
-      <img src="../assets/logo-banner.png" alt="FEUM logo" />
-      <h1>
-        The site is being worked on, stay tuned for more exciting events in the
-        near future!
-      </h1>
+      <g-image
+        class="home__image"
+        src="~/assets/home.png"
+        alt="FEUM logo, styled"
+      />
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script>
@@ -33,26 +33,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
-body {
-  margin: 1rem !important;
-
-  @include screen-is(lg) {
-    width: 45%;
-    margin: 0rem auto !important;
-  }
-}
+<style lang="scss" scoped>
 .partyhome {
+  min-height: calc(100vh - #{$spacer} * 3);
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  max-width: 500px;
-  margin: 0 auto;
+  justify-content: center;
 
-  * {
-    padding: 2rem 0;
+  .home__image {
+    width: 100%;
+    max-width: 724px;
   }
 }
 </style>

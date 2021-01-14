@@ -1,10 +1,11 @@
 import Vuex from "vuex";
-import DefaultLayout from "~/layouts/Default.vue";
+import DefaultLayout from "@/layouts/Default.vue";
 import "@/assets/reset.css";
 import "@/assets/fonts.css";
 import "@/assets/style.scss";
 
 export default function (Vue, { appOptions }) {
+  Vue.component("Layout", DefaultLayout);
   Vue.use(Vuex);
 
   appOptions.store = new Vuex.Store({
