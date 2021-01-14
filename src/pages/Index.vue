@@ -33,10 +33,6 @@ export default {
 };
 </script>
 
-// query allPages($path: String! = "/pages/home-page") { // data: allPages(path:
-$path) { // title // image // music { // date // title // length // type //
-person // } // } // }
-
 <style lang="scss">
 body {
   margin: 1rem !important;

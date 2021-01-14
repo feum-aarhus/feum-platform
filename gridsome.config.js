@@ -28,13 +28,6 @@ module.exports = {
     {
       use: "@gridsome/source-filesystem",
       options: {
-        path: "_pages/*.md",
-        typeName: "pages",
-      },
-    },
-    {
-      use: "@gridsome/source-filesystem",
-      options: {
         path: "_events/*.md",
         typeName: "events",
       },
