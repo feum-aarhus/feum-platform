@@ -1,41 +1,48 @@
 <template>
   <Layout>
     <div class="event__container">
-      <figure
-        class="event__card"
-        v-for="event in $page.events.edges"
-        :key="event.node.title"
-      >
-        <div class="event__timeframe">
-          <h3>
-            {{
-              new Date(event.node.start).getTime() > Date.now()
-                ? "Future event"
-                : "Past event"
-            }}
-          </h3>
-        </div>
-        <g-image
-          class="event__logo"
-          :src="event.node.logo"
-          alt="Event poster"
+      <div class="events--future" v-if="futureEvents && futureEvents.length">
+        <h2>Future events</h2>
+        <EventCard
+          v-for="future in futureEvents"
+          :key="future.node.title"
+          :eventInfo="future.node"
         />
-        <h2 class="underline">{{ event.node.title }}</h2>
-        <p>
-          <span v-for="artist in event.node.lineup" :key="artist.name">{{
-            `${artist.name}(${artist.country}) [${artist.label}] `
-          }}</span>
-        </p>
-      </figure>
+      </div>
+      <div class="events--past" v-if="pastEvents && pastEvents.length">
+        <h2>Past events</h2>
+        <EventCard
+          v-for="past in pastEvents"
+          :key="past.node.title"
+          :eventInfo="past.node"
+        />
+      </div>
     </div>
   </Layout>
 </template>
 
 <script>
+import EventCard from "@/components/EventCard.vue";
+
 export default {
   name: "Events",
   metaInfo: {
     title: "Events",
+  },
+  components: {
+    EventCard,
+  },
+  computed: {
+    futureEvents() {
+      return this.$page.events.edges.filter(
+        (event) => new Date(event.node.start).getTime() > Date.now()
+      );
+    },
+    pastEvents() {
+      return this.$page.events.edges.filter(
+        (event) => !this.futureEvents.includes(event)
+      );
+    },
   },
 };
 </script>
@@ -67,28 +74,12 @@ query events {
 <style lang="scss">
 .event__container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  margin-top: 68px;
 
-  .event__card {
-    display: flex;
-    flex-flow: column nowrap;
-    border: 2px solid $content;
-    margin: 4rem;
-
-    & > * {
-      padding: 1rem;
-    }
-
-    .event__timeframe {
-      border-bottom: 2px solid $content;
-    }
-    .event__logo {
-      max-width: 100%;
-      height: 500px;
-      border-bottom: 2px solid $content;
-      object-fit: contain;
-    }
+  & > div:not(:first-child) {
+    margin-top: 44px;
   }
 }
 </style>

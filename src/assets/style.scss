@@ -4,7 +4,7 @@ $grey: #1a1a1a;
 $grey-light: rgba(255, 255, 255, 0.87);
 $red: #ff5555;
 $heading: #e1e1e1;
-$content: rgba(255, 255, 255, 0.6);
+$content: rgba(255, 255, 255, 0.4);
 $highlight: #af71ff; //#7008ba //#784eb2
 
 //Variables
@@ -29,6 +29,9 @@ body {
   padding: $spacer;
   overflow-x: hidden;
   color: $content;
+  font-family: "Roboto-Regular";
+  font-size: 12px;
+  line-height: 14px;
 }
 
 //Headings
@@ -56,6 +59,13 @@ h3 {
   letter-spacing: 0.1em;
   font-size: 18px;
   line-height: 25px;
+}
+
+h4 {
+  font-family: "Benzin-Regular";
+  font-size: 12px;
+  line-height: 17px;
+  color: $heading;
 }
 
 //Elements

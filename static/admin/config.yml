@@ -47,6 +47,7 @@ collections:
           widget: "datetime",
           date_format: "DD.MM.YYYY",
           time_format: "HH:mm",
+          format: "LLLL",
         }
       - {
           label: "Event End",
@@ -54,6 +55,7 @@ collections:
           widget: "datetime",
           date_format: "DD.MM.YYYY",
           time_format: "HH:mm",
+          format: "LLLL",
         }
       - { label: "Event Address", name: "address", widget: "string" }
       - { label: "Ticket Price", name: "price", widget: "string" }

@@ -33,3 +33,10 @@
   src: url('./Benzin-Extrabold/extrabold.woff2') format('woff2'),
        url('./Benzin-Extrabold/extrabold.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-display: swap;
+  font-weight: 400;
+  src: url('./Roboto-Regular/Roboto-Regular.ttf') format('truetype');
+}
