@@ -14,7 +14,7 @@ module.exports = {
   siteUrl: "https://feum-ticketing.dk",
   siteDescription: "We love electronic music!",
   titleTemplate: "%s | FEUM",
-  favicon: "./src/favicon.jpg",
+  favicon: "@/favicon.jpg",
   chainWebpack(config) {
     // config.resolve.alias.set('@images', '@/assets/uploads');
     // Load variables for all vue-files

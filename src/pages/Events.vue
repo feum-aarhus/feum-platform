@@ -1,28 +1,34 @@
 <template>
-  <div class="event__container">
-    <figure
-      class="event__card"
-      v-for="event in $page.events.edges"
-      :key="event.node.title"
-    >
-      <div class="event__timeframe">
-        <h3>
-          {{
-            new Date(event.node.start).getTime() > Date.now()
-              ? "Future event"
-              : "Past event"
-          }}
-        </h3>
-      </div>
-      <g-image class="event__logo" :src="event.node.logo" alt="Event poster" />
-      <h2 class="underline">{{ event.node.title }}</h2>
-      <p>
-        <span v-for="artist in event.node.lineup" :key="artist.name">{{
-          `${artist.name}(${artist.country}) [${artist.label}] `
-        }}</span>
-      </p>
-    </figure>
-  </div>
+  <Layout>
+    <div class="event__container">
+      <figure
+        class="event__card"
+        v-for="event in $page.events.edges"
+        :key="event.node.title"
+      >
+        <div class="event__timeframe">
+          <h3>
+            {{
+              new Date(event.node.start).getTime() > Date.now()
+                ? "Future event"
+                : "Past event"
+            }}
+          </h3>
+        </div>
+        <g-image
+          class="event__logo"
+          :src="event.node.logo"
+          alt="Event poster"
+        />
+        <h2 class="underline">{{ event.node.title }}</h2>
+        <p>
+          <span v-for="artist in event.node.lineup" :key="artist.name">{{
+            `${artist.name}(${artist.country}) [${artist.label}] `
+          }}</span>
+        </p>
+      </figure>
+    </div>
+  </Layout>
 </template>
 
 <script>

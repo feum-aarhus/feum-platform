@@ -7,10 +7,52 @@
           <div></div>
           <div></div>
         </div>
-        <g-link to="/events" class="button">Events</g-link>
+        <g-link
+          class="navigation__events button"
+          v-if="$route.fullPath === '/'"
+          to="/events"
+          >Events</g-link
+        >
+        <g-image
+          class="navigation__logo"
+          v-else
+          src="~/assets/logo.svg"
+          alt="FEUM logo"
+        />
       </div>
       <div key="drawer" class="navigation__drawer" v-else>
         <div class="drawer__close" @click="toggleNav"></div>
+        <ol @click="toggleNav" class="drawer__links">
+          <li>
+            <g-link to="/" class="link">Home</g-link>
+          </li>
+          <li>
+            <g-link to="/about" class="link">About</g-link>
+          </li>
+          <li>
+            <g-link to="/support" class="link">Support</g-link>
+          </li>
+          <li>
+            <g-link to="/contact" class="link">Contact</g-link>
+          </li>
+          <li class="drawer__some">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <g-image src="~/assets/instagram.svg" alt="Instagram logo" />
+            </a>
+          </li>
+        </ol>
+        <g-image class="drawer__logo" src="~/assets/logo.svg" alt="FEUM logo" />
       </div>
     </transition>
   </nav>
@@ -36,10 +78,13 @@ export default {
 .navigation {
   .navigation__head {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: $spacer;
 
     .navigation__toggle {
+      position: absolute;
+
       div {
         height: 3px;
         width: 20px;
@@ -50,11 +95,21 @@ export default {
         }
       }
     }
+    .navigation__events {
+      align-self: flex-end;
+      height: 100%;
+    }
+    .navigation__logo {
+      align-self: center;
+    }
   }
 
   .navigation__drawer {
     height: calc(100vh - #{$spacer} * 2);
     position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     z-index: 1;
     top: 0;
     left: 0;
@@ -81,6 +136,28 @@ export default {
       &::after {
         transform: rotate(-45deg);
       }
+    }
+    .drawer__links {
+      text-align: center;
+
+      li {
+        .link {
+          display: block;
+          padding: 26px 0;
+        }
+
+        &.drawer__some {
+          margin-top: 26px;
+          text-align: center;
+
+          a {
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+    .drawer__logo {
+      align-self: center;
     }
   }
 

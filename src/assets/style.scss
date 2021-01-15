@@ -41,6 +41,23 @@ h1 {
   color: $heading;
 }
 
+h2 {
+  font-size: 18px;
+  line-height: 25px;
+  font-family: "Benzin-Regular";
+  color: $heading;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Benzin-Bold";
+  text-transform: uppercase;
+  color: $heading;
+  letter-spacing: 0.1em;
+  font-size: 18px;
+  line-height: 25px;
+}
+
 //Elements
 .button {
   font-family: "Benzin-Medium";
@@ -49,11 +66,19 @@ h1 {
   background-color: $grey-light;
   text-transform: uppercase;
   color: $background;
-  height: $spacer;
   text-decoration: none;
   display: flex;
   align-items: center;
   padding: 0 8px;
+}
+
+.link {
+  font-family: "Benzin-Semibold";
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $heading;
 }
 
 .red {
