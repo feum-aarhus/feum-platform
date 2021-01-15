@@ -1,17 +1,19 @@
 ---
+start: Friday, February 5, 2021 10:00 PM
+presale_only: true
+music: Awesome
 layout: page
-logo: /uploads/leo.jpg
+logo: /uploads/feum-daze-final-2.png
 title: Flawless Set
-start: January 8, 2021 11:00 PM
-end: January 9, 2021 3:00 AM
+end: Saturday, February 6, 2021 4:00 AM
 address: Aarhus
 price: 120Kr.
-presale_only: true
 lineup:
   - name: Paul Kalkbrenner
     country: DE
     label: B1 Recs
-music: Awesome
+music_list:
+  - music: Awesome
 ---
 
 Come, it's going to be sweet!
