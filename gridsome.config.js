@@ -10,19 +10,28 @@ function addStyleResource(rule) {
 }
 
 module.exports = {
-  siteName: "FEUM",
-  siteUrl: "https://feum-ticketing.dk",
-  siteDescription: "We love electronic music!",
-  titleTemplate: "%s | FEUM",
-  favicon: "@/favicon.jpg",
   chainWebpack(config) {
-    // config.resolve.alias.set('@images', '@/assets/uploads');
     // Load variables for all vue-files
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
 
     types.forEach((type) => {
       addStyleResource(config.module.rule("scss").oneOf(type));
     });
+  },
+  siteName: "FEUM",
+  siteUrl: "https://feum-ticketing.dk",
+  siteDescription: "We love electronic music!",
+  titleTemplate: "%s | FEUM",
+  favicon: "./src/favicon.jpg",
+  templates: {
+    events: [
+      {
+        path: (node) => {
+          return `/event/${encodeURIComponent(node.title)}`;
+        },
+        component: "./src/templates/Event.vue",
+      },
+    ],
   },
   plugins: [
     {

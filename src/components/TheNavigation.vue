@@ -13,15 +13,10 @@
           to="/events"
           >Events</g-link
         >
-        <g-image
-          class="navigation__logo"
-          v-else
-          src="~/assets/logo.svg"
-          alt="FEUM logo"
-        />
       </div>
       <div key="drawer" class="navigation__drawer" v-else>
         <div class="drawer__close" @click="toggleNav"></div>
+        <g-image class="drawer__logo" src="~/assets/logo.svg" alt="FEUM logo" />
         <ol @click="toggleNav" class="drawer__links">
           <li>
             <g-link to="/" class="link">Home</g-link>
@@ -52,7 +47,6 @@
             </a>
           </li>
         </ol>
-        <g-image class="drawer__logo" src="~/assets/logo.svg" alt="FEUM logo" />
       </div>
     </transition>
   </nav>
@@ -78,38 +72,27 @@ export default {
 .navigation {
   .navigation__head {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: $spacer;
+    justify-content: space-between;
 
     .navigation__toggle {
-      position: absolute;
-
       div {
-        height: 3px;
+        height: 4px;
         width: 20px;
         background-color: $grey-light;
 
         &:not(:last-child) {
-          margin-bottom: 3px;
+          margin-bottom: 4px;
         }
       }
     }
     .navigation__events {
-      align-self: flex-end;
-      height: 100%;
-    }
-    .navigation__logo {
-      align-self: center;
+      height: $spacer;
     }
   }
 
   .navigation__drawer {
     height: calc(100vh - #{$spacer} * 2);
     position: absolute;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
     z-index: 1;
     top: 0;
     left: 0;
@@ -117,17 +100,21 @@ export default {
     bottom: 0;
     background-color: $background;
     padding: $spacer;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 20px 1fr;
 
     .drawer__close {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       text-align: center;
+      grid-column: 1/2;
       &::before,
       &::after {
         position: absolute;
         content: "";
-        height: 18px;
-        width: 3px;
+        height: 20px;
+        width: 4px;
         background-color: $grey-light;
       }
       &::before {
@@ -137,8 +124,16 @@ export default {
         transform: rotate(-45deg);
       }
     }
+    .drawer__logo {
+      grid-column: 2/3;
+      justify-self: center;
+    }
+
     .drawer__links {
       text-align: center;
+      align-self: center;
+      grid-row: 2/3;
+      grid-column: 2/3;
 
       li {
         .link {
@@ -155,9 +150,6 @@ export default {
           }
         }
       }
-    }
-    .drawer__logo {
-      align-self: center;
     }
   }
 

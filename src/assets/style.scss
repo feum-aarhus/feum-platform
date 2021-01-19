@@ -28,10 +28,15 @@ body {
   background-color: $background;
   padding: $spacer;
   overflow-x: hidden;
-  color: $content;
-  font-family: "Roboto-Regular";
+  font-family: "Benzin-Regular";
   font-size: 12px;
-  line-height: 14px;
+  line-height: 17px;
+  color: $heading;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 //Headings
@@ -45,14 +50,6 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
-  line-height: 25px;
-  font-family: "Benzin-Regular";
-  color: $heading;
-  text-transform: uppercase;
-}
-
-h3 {
   font-family: "Benzin-Bold";
   text-transform: uppercase;
   color: $heading;
@@ -61,11 +58,12 @@ h3 {
   line-height: 25px;
 }
 
-h4 {
+h3 {
+  font-size: 18px;
+  line-height: 25px;
   font-family: "Benzin-Regular";
-  font-size: 12px;
-  line-height: 17px;
   color: $heading;
+  text-transform: uppercase;
 }
 
 //Elements
@@ -91,15 +89,21 @@ h4 {
   color: $heading;
 }
 
-.red {
-  color: $red;
+.bold {
+  font-family: "Benzin-Bold";
+  color: $heading;
 }
-.underline {
+
+.dimmed {
+  color: $content;
+  font-family: "Roboto-Regular";
+  line-height: 14px;
+}
+
+.underlined {
   text-decoration: underline;
 }
-.content {
-  color: $content;
-}
+
 .loader {
   width: 100px !important;
   margin: 0rem auto;
@@ -115,5 +119,3 @@ h4 {
   padding: 0.8rem 0rem;
   margin: 1.5rem auto;
 }
-
-//Style for the home page
