@@ -56,15 +56,11 @@ query events {
         title
         start
         end
-        address
-        price
-        presale_only
         lineup {
           name
           country
           label
         }
-        music
       }
     }
   }

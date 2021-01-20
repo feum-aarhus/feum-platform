@@ -2,12 +2,20 @@
   <div>
     <div class="dropdown__trigger" @click="toggleDropdown">
       <h4>{{ this.title }}</h4>
-      <span>Click me</span>
+      <g-image
+        class="trigger__icon"
+        :class="{ flipped: expanded }"
+        src="~/assets/chevron.svg"
+        alt="Chevron icon"
+      />
     </div>
     <transition name="expand">
-      <div v-if="expanded" class="dropdown__content">
-        {{ this.content }}
-      </div>
+      <div
+        ref="dropdownContent"
+        v-if="expanded"
+        class="dropdown__content"
+        v-html="content"
+      ></div>
     </transition>
   </div>
 </template>
@@ -33,6 +41,11 @@ export default {
   methods: {
     toggleDropdown() {
       this.expanded = !this.expanded;
+      if (this.expanded) {
+        this.$nextTick(() => {
+          this.$refs.dropdownContent.scrollIntoView({ behavior: "smooth" });
+        });
+      }
     },
   },
 };
@@ -44,6 +57,15 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 12px;
+
+  .trigger__icon {
+    transform: none;
+    transition: 0.2s ease transform;
+
+    &.flipped {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .dropdown__content {
@@ -55,7 +77,7 @@ export default {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: all 0.1s;
+  transition: all 0.2s;
 }
 .expand-enter,
 .expand-leave-to {
