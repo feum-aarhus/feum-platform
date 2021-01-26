@@ -29,8 +29,8 @@ body {
   padding: $spacer;
   overflow-x: hidden;
   font-family: "Benzin-Regular";
-  font-size: 12px;
-  line-height: 17px;
+  font-size: 14px;
+  line-height: 20px;
   color: $heading;
 }
 
@@ -69,8 +69,6 @@ h3 {
 //Elements
 .button {
   font-family: "Benzin-Medium";
-  font-size: 12px;
-  line-height: 17px;
   background-color: $heading;
   text-transform: uppercase;
   color: $background;
@@ -82,8 +80,6 @@ h3 {
 
 .link {
   font-family: "Benzin-Semibold";
-  font-size: 14px;
-  line-height: 20px;
   text-transform: uppercase;
   text-decoration: none;
   color: $heading;
@@ -94,10 +90,15 @@ h3 {
   color: $heading;
 }
 
+.semi-bold {
+  font-family: "Benzin-Semibold";
+  color: $heading;
+}
+
 .dimmed {
   color: $content;
   font-family: "Roboto-Regular";
-  line-height: 14px;
+  line-height: 16px;
 }
 
 .underlined {

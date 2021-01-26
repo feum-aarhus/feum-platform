@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="dropdown__trigger" @click="toggleDropdown">
+    <div
+      class="dropdown__trigger"
+      :class="{ 'dropdown__trigger--hide-bottom-border': isFirst && !expanded }"
+      @click="toggleDropdown"
+    >
       <h4>{{ this.title }}</h4>
       <g-image
         class="trigger__icon"
@@ -37,6 +41,11 @@ export default {
       required: true,
       type: String,
     },
+    isFirst: {
+      required: false,
+      default: false,
+      type: Boolean,
+    },
   },
   methods: {
     toggleDropdown() {
@@ -57,6 +66,11 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 12px;
+  background-color: $background;
+
+  &--hide-bottom-border {
+    border-bottom: none;
+  }
 
   .trigger__icon {
     transform: none;
@@ -77,7 +91,7 @@ export default {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 .expand-enter,
 .expand-leave-to {

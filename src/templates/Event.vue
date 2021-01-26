@@ -3,26 +3,30 @@
     <div class="event__static">
       <g-image class="event__logo" :src="$page.event.logo" alt="Event logo" />
       <div class="event__info">
-        <h4 class="bold">{{ $page.event.title }}</h4>
-        <h5 class="bold">Start</h5>
+        <h4 class="semi-bold">{{ $page.event.title }}</h4>
+        <h5 class="semi-bold">Start</h5>
         <p>{{ $page.event.start }}</p>
-        <h5 class="bold">Location</h5>
+        <h5 class="semi-bold">Location</h5>
         <p>{{ $page.event.address }}</p>
-        <h5 class="bold">Price</h5>
+        <h5 class="semi-bold">Price</h5>
         <div class="event__sale">
           <p>{{ $page.event.price }}</p>
           <span class="sale__online" v-if="$page.event.presale_only"
             >(Online presale only)</span
           >
         </div>
-        <h5 class="bold">Event performed by</h5>
+        <h5 class="semi-bold">Event performed by</h5>
         <div class="event__lineup">
           <p v-for="artist in $page.event.lineup" :key="artist.name">
             {{ `${artist.name} (${artist.country}) (${artist.label})` }}
           </p>
         </div>
       </div>
-      <ContentDropdown title="About the event" :content="$page.event.content" />
+      <ContentDropdown
+        title="About the event"
+        :content="$page.event.content"
+        isFirst
+      />
       <ContentDropdown
         title="Listen to the artists"
         content="...when this feature is developed"
@@ -102,7 +106,7 @@ export default {
   position: fixed;
   bottom: $spacer;
   width: calc(100% - #{$spacer} * 2);
-  height: 36px;
+  height: 48px;
   justify-content: center;
   padding: 0;
 
