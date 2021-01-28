@@ -1,20 +1,22 @@
 <template>
   <Layout>
     <div class="event__container">
-      <div class="events--future" v-if="futureEvents && futureEvents.length">
+      <div v-if="futureEvents && futureEvents.length">
         <h3>Future events</h3>
         <EventCard
           v-for="future in futureEvents"
           :key="future.node.title"
           :eventInfo="future.node"
+          class="event__card"
         />
       </div>
-      <div class="events--past" v-if="pastEvents && pastEvents.length">
+      <div v-if="pastEvents && pastEvents.length">
         <h3>Past events</h3>
         <EventCard
           v-for="past in pastEvents"
           :key="past.node.title"
           :eventInfo="past.node"
+          class="event__card"
         />
       </div>
     </div>
@@ -72,14 +74,19 @@ query events {
   display: flex;
   flex-flow: column nowrap;
   justify-content: stretch;
-  margin-top: $spacer;
+  margin-top: 32px;
 
   & > div:not(:first-child) {
-    margin-top: 44px;
+    margin-top: $spacer;
   }
 
   h3 {
     text-align: center;
+    margin-bottom: $spacer;
+  }
+
+  .event__card:not(:last-child) {
+    margin-bottom: 18px;
   }
 }
 </style>

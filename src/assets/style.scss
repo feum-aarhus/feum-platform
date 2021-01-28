@@ -26,7 +26,7 @@ $breakpoints: (
 //Global style
 body {
   background-color: $background;
-  padding: $spacer;
+  padding: 0px 16px $spacer 16px;
   overflow-x: hidden;
   font-family: "Benzin-Regular";
   font-size: 14px;

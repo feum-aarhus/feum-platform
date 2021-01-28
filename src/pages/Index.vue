@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .partyhome {
-  min-height: calc(100vh - #{$spacer} * 3);
+  min-height: calc(100vh - #{$spacer} - 72px);
   display: flex;
   align-items: center;
   justify-content: center;

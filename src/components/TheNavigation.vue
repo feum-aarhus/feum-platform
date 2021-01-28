@@ -13,6 +13,12 @@
           to="/events"
           >Events</g-link
         >
+        <g-image
+          v-else
+          class="head__logo"
+          src="~/assets/logo.svg"
+          alt="FEUM logo"
+        />
       </div>
       <div key="drawer" class="navigation__drawer" v-else>
         <div class="drawer__close" @click="toggleNav"></div>
@@ -20,6 +26,9 @@
         <ol @click="toggleNav" class="drawer__links">
           <li>
             <g-link to="/" class="link">Home</g-link>
+          </li>
+          <li>
+            <g-link to="/events" class="link">Events</g-link>
           </li>
           <li>
             <g-link to="/about" class="link">About</g-link>
@@ -72,21 +81,30 @@ export default {
 .navigation {
   .navigation__head {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    height: 72px;
+    justify-content: center;
 
     .navigation__toggle {
+      position: absolute;
+
       div {
-        height: 4px;
-        width: 20px;
+        height: 1px;
+        width: 26px;
         background-color: $grey-light;
 
         &:not(:last-child) {
-          margin-bottom: 4px;
+          margin-bottom: 6px;
         }
       }
     }
     .navigation__events {
       height: $spacer;
+      font-size: 12px;
+      align-self: flex-end;
+    }
+    .head__logo {
+      align-self: center;
     }
   }
 
@@ -99,7 +117,7 @@ export default {
     right: 0;
     bottom: 0;
     background-color: $background;
-    padding: $spacer;
+    padding: $spacer 16px;
     display: grid;
     grid-template-columns: 20px 1fr 20px;
     grid-template-rows: 20px 1fr;
@@ -114,7 +132,7 @@ export default {
         position: absolute;
         content: "";
         height: 20px;
-        width: 4px;
+        width: 1px;
         background-color: $grey-light;
       }
       &::before {

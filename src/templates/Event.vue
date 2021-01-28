@@ -3,19 +3,18 @@
     <div class="event__static">
       <g-image class="event__logo" :src="$page.event.logo" alt="Event logo" />
       <div class="event__info">
-        <h4 class="semi-bold">{{ $page.event.title }}</h4>
-        <h5 class="semi-bold">Start</h5>
+        <h4 class="semi-bold">Start</h4>
         <p>{{ $page.event.start }}</p>
-        <h5 class="semi-bold">Location</h5>
+        <h4 class="semi-bold">Location</h4>
         <p>{{ $page.event.address }}</p>
-        <h5 class="semi-bold">Price</h5>
+        <h4 class="semi-bold">Price</h4>
         <div class="event__sale">
           <p>{{ $page.event.price }}</p>
           <span class="sale__online" v-if="$page.event.presale_only"
             >(Online presale only)</span
           >
         </div>
-        <h5 class="semi-bold">Event performed by</h5>
+        <h4 class="semi-bold">Event performed by</h4>
         <div class="event__lineup">
           <p v-for="artist in $page.event.lineup" :key="artist.name">
             {{ `${artist.name} (${artist.country}) (${artist.label})` }}
@@ -25,7 +24,7 @@
       <ContentDropdown
         title="About the event"
         :content="$page.event.content"
-        isFirst
+        hideBorderOnClose
       />
       <ContentDropdown
         title="Listen to the artists"
@@ -74,22 +73,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$buttonHeight: 60px;
+
 .event__static {
-  margin-bottom: $spacer + 36px;
+  margin-bottom: 72px + $buttonHeight;
 
   .event__logo {
     max-width: 100%;
     object-fit: contain;
-    margin-top: $spacer;
-    margin-bottom: $spacer * 2;
+    margin-bottom: 12px;
   }
 
   .event__info {
     margin-bottom: $spacer;
 
-    h4,
     p:not(:last-child) {
-      margin-bottom: 8px;
+      margin-bottom: 18px;
     }
 
     .event__sale {
@@ -105,8 +104,9 @@ export default {
 .event__purchase {
   position: fixed;
   bottom: $spacer;
-  width: calc(100% - #{$spacer} * 2);
-  height: 48px;
+  width: 100%;
+  left: 0;
+  height: $buttonHeight;
   justify-content: center;
   padding: 0;
 

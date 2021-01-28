@@ -27,12 +27,11 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   background-color: $grey;
-  margin-top: $spacer;
 
   .event__logo {
     max-width: 100%;
     height: 180px;
-    object-fit: contain;
+    object-fit: cover;
   }
   .event__info {
     padding: 10px;
