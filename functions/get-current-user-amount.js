@@ -3,8 +3,12 @@ const models = require("./db/models");
 const mongoose = require("mongoose");
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== 'GET') {
-    return { statusCode: 405, body: "Method Not Allowed", headers: { "Allow": "GET" } }
+  if (event.httpMethod !== "GET") {
+    return {
+      statusCode: 405,
+      body: "Method Not Allowed",
+      headers: { Allow: "GET" },
+    };
   }
   const databaseConnected = await dbConnect();
   if (databaseConnected) {

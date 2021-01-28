@@ -1,11 +1,42 @@
 @font-face {
-  font-family: "SourceCode-Reg";
-  src: url('SourceCodePro-Regular.ttf');
+  font-family: 'Benzin-Regular';
   font-display: swap;
   font-weight: 400;
+  src: url('./Benzin-Regular/regular.woff2') format('woff2'),
+       url('./Benzin-Regular/regular.woff') format('woff');
 }
 @font-face {
-  font-family: "SourceCode-Bold";
-  src: url('SourceCodePro-Bold.ttf');
+  font-family: 'Benzin-Medium';
   font-display: swap;
+  font-weight: 500;
+  src: url('./Benzin-Medium/medium.woff2') format('woff2'),
+       url('./Benzin-Medium/medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Benzin-Semibold';
+  font-display: swap;
+  font-weight: 600;
+  src: url('./Benzin-Semibold/semibold.woff2') format('woff2'),
+       url('./Benzin-Semibold/semibold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Benzin-Bold';
+  font-display: swap;
+  font-weight: 700;
+  src: url('./Benzin-Bold/bold.woff2') format('woff2'),
+       url('./Benzin-Bold/bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Benzin-Extrabold';
+  font-display: swap;
+  font-weight: 800;
+  src: url('./Benzin-Extrabold/extrabold.woff2') format('woff2'),
+       url('./Benzin-Extrabold/extrabold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  font-display: swap;
+  font-weight: 400;
+  src: url('./Roboto-Regular/Roboto-Regular.ttf') format('truetype');
 }

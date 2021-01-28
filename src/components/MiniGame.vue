@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "MiniGame"
+  name: "MiniGame",
 };
 </script>
 

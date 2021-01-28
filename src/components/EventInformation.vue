@@ -122,15 +122,15 @@ import { mapGetters } from "vuex";
 export default {
   name: "EventInformation",
   components: {
-    TheTicketForm
+    TheTicketForm,
   },
-  data: function() {
+  data: function () {
     return {
-      stepsVisible: true
+      stepsVisible: true,
     };
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "isLoading"])
+    ...mapGetters(["getTicketsLeft", "isLoading"]),
   },
   methods: {
     scrollToBottom() {
@@ -138,10 +138,10 @@ export default {
 
       window.scrollTo({
         top: document.body.scrollHeight,
-        behavior: "smooth"
+        behavior: "smooth",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -149,7 +149,7 @@ export default {
 .event_information {
   display: flex;
   flex-flow: column nowrap;
-  border: 2px solid $black;
+  border: 2px solid $content;
 
   h4 {
     padding: 0.5rem 0rem;
@@ -180,7 +180,7 @@ export default {
   flex-flow: column nowrap;
   justify-content: center;
   padding: 0.8rem 0rem;
-  border: 2px solid $black;
+  border: 2px solid $content;
 
   h4 {
     text-transform: uppercase;
@@ -189,7 +189,7 @@ export default {
   .event_go-to-ticket {
     padding: 0.5rem;
     background-color: $highlight;
-    border: 2px solid $black;
+    border: 2px solid $content;
     cursor: pointer;
 
     h2 {
@@ -230,7 +230,7 @@ export default {
   }
 
   .event_the-steps {
-    border: 2px solid $black;
+    border: 2px solid $content;
     padding: 1.2rem 1.6rem;
     margin-bottom: 1.6rem;
 

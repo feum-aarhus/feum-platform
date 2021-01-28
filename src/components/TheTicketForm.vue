@@ -8,7 +8,7 @@
       </div>
     </transition>
     <div v-if="getTicketsLeft" class="event_the-form">
-      <h4 class="red">Order your ticket <span class="black">**</span></h4>
+      <h4 class="red">Order your ticket <span class="content">**</span></h4>
       <div class="form_elements">
         <label for="form_name"><span>Name</span><small> *</small></label>
         <input
@@ -60,7 +60,7 @@
         </div>
       </div>
       <small>* Required</small>
-      <small class="black"
+      <small class="content"
         >** Tickets are not refundable. In case you resell the ticket to someone
         else, it is your responsibility to inform us by email (<a
           href="mailto:feumticketing@gmail.com"
@@ -90,16 +90,16 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "TheTicketForm",
-  data: function() {
+  data: function () {
     return {
       inputName: "",
       inputEmail: "",
       inputPhoneNumber: "",
-      inputPayment: ""
+      inputPayment: "",
     };
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"])
+    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"]),
   },
   methods: {
     async saveParticipant() {
@@ -110,7 +110,9 @@ export default {
         !this.inputName.trim() ||
         !this.inputEmail.trim() ||
         // eslint-disable-next-line
-        !this.inputEmail.match(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g) ||
+        !this.inputEmail.match(
+          /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
+        ) ||
         !this.inputPhoneNumber.trim() ||
         !this.inputPhoneNumber.match(
           /(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g
@@ -138,18 +140,18 @@ export default {
       const newUserAmount = ticketsLeft + 1;
 
       const rawDatabaseResponse = await fetch(
-        "https://feum-ticketing.dk/.netlify/functions/save-user-db",
+        `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             participantId: newUserAmount,
             name: this.inputName,
             email: this.inputEmail,
-            phone: this.inputPhoneNumber
-          })
+            phone: this.inputPhoneNumber,
+          }),
         }
       );
       if (rawDatabaseResponse.status !== 200) {
@@ -162,8 +164,8 @@ export default {
       const response = await rawDatabaseResponse.json();
       await this.$store.dispatch("sendConfirmationEmail", response);
       this.$store.commit("setLoading", false);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -207,7 +209,7 @@ export default {
     input {
       width: calc(200% / 3);
       padding: 0.5rem;
-      border: 2px solid $black;
+      border: 2px solid $content;
     }
     .form_payment-type-container {
       width: 50%;
@@ -220,12 +222,12 @@ export default {
         height: 15px;
         width: 15px;
         border-radius: 50%;
-        border: 2px solid $black;
+        border: 2px solid $content;
         margin: 0rem 0.8rem 0rem -0.5rem;
         background-color: #fff;
       }
       .form_payment-type:checked {
-        background-color: $black;
+        background-color: $content;
       }
     }
   }
@@ -239,7 +241,7 @@ export default {
     width: 30%;
     margin: 1rem auto;
     padding: 0.5rem;
-    border: 2px solid $black;
+    border: 2px solid $content;
     background-color: $highlight;
     font-family: "SourceCode-Bold", "sans-serif";
     display: block;
@@ -257,7 +259,7 @@ export default {
     opacity: 0;
   }
   background-color: $red;
-  border: 2px solid $black;
+  border: 2px solid $content;
   padding: 0rem;
 
   h2 {
