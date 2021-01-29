@@ -40,5 +40,18 @@ export default {
       margin-bottom: 4px;
     }
   }
+
+  @include screen-is(md) {
+    .event__logo {
+      height: 220px;
+    }
+    .event__info {
+      padding: 16px;
+
+      p {
+        margin-bottom: 8px;
+      }
+    }
+  }
 }
 </style>

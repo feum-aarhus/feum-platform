@@ -1,23 +1,27 @@
 <template>
   <Layout>
-    <div class="event__container">
+    <div class="events__container">
       <div v-if="futureEvents && futureEvents.length">
-        <h3>Future events</h3>
-        <EventCard
-          v-for="future in futureEvents"
-          :key="future.node.title"
-          :eventInfo="future.node"
-          class="event__card"
-        />
+        <h2>Future events</h2>
+        <div class="events--future">
+          <EventCard
+            v-for="future in futureEvents"
+            :key="future.node.title"
+            :eventInfo="future.node"
+            class="event__wrapper"
+          />
+        </div>
       </div>
       <div v-if="pastEvents && pastEvents.length">
-        <h3>Past events</h3>
-        <EventCard
-          v-for="past in pastEvents"
-          :key="past.node.title"
-          :eventInfo="past.node"
-          class="event__card"
-        />
+        <h2>Past events</h2>
+        <div class="events--past">
+          <EventCard
+            v-for="past in pastEvents"
+            :key="past.node.title"
+            :eventInfo="past.node"
+            class="event__wrapper"
+          />
+        </div>
       </div>
     </div>
   </Layout>
@@ -70,7 +74,7 @@ query events {
 </page-query>
 
 <style lang="scss">
-.event__container {
+.events__container {
   display: flex;
   flex-flow: column nowrap;
   justify-content: stretch;
@@ -80,13 +84,52 @@ query events {
     margin-top: $spacer;
   }
 
-  h3 {
+  h2 {
     text-align: center;
     margin-bottom: $spacer;
   }
 
-  .event__card:not(:last-child) {
+  .event__wrapper:not(:last-child) {
     margin-bottom: 18px;
+  }
+
+  @include screen-is(md) {
+    .event__wrapper {
+      flex: 0 1 calc(100% / 3 - 24px);
+      max-width: 420px;
+      margin-right: 24px;
+      margin-bottom: 24px !important;
+
+      &:nth-of-type(3n + 3) {
+        margin-right: 0;
+
+        @include screen-is(lg) {
+          margin-right: 24px;
+        }
+      }
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .events--future,
+    .events--past {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include screen-is(lg) {
+    .event__wrapper {
+      flex: 0 1 25%;
+
+      &:nth-of-type(4n + 4) {
+        margin-right: 0;
+      }
+    }
   }
 }
 </style>

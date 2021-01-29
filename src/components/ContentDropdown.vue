@@ -1,7 +1,7 @@
 <template>
   <div
     class="dropdown__container"
-    :style="{ height: contentHeight + 60 + 'px' }"
+    :style="{ height: contentHeight + 56 + 'px' }"
   >
     <div
       class="dropdown__trigger"
@@ -82,8 +82,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
-    height: 58px;
+    height: $spacer * 2 - 2px;
     background-color: $background;
+    cursor: pointer;
 
     &--borderless {
       padding-top: 1px;
@@ -105,7 +106,7 @@ export default {
 
   .dropdown__content {
     background-color: $grey;
-    padding: 12px;
+    padding: 16px;
     position: relative;
     z-index: -1;
   }

@@ -42,7 +42,7 @@ body {
   color: $heading;
 
   @include screen-is(md) {
-    padding: 38px 80px;
+    padding: 38px 80px $spacer * 2 80px;
   }
 }
 
@@ -62,7 +62,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Benzin-Bold";
+  font-family: "Benzin-Semibold";
   text-transform: uppercase;
   color: $heading;
   letter-spacing: 0.1em;

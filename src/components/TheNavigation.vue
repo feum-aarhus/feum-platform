@@ -244,6 +244,7 @@ export default {
     grid-template-columns: 1fr 685px 1fr 148px 70px;
     gap: 68px;
     grid-template-rows: 36px;
+    margin-bottom: $spacer * 2;
 
     .desktop__links {
       grid-column: 2/3;
