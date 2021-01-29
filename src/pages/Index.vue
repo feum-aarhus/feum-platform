@@ -44,5 +44,9 @@ export default {
     width: 100%;
     max-width: 724px;
   }
+
+  @include screen-is(md) {
+    min-height: calc(100vh - 38px * 3);
+  }
 }
 </style>

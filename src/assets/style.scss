@@ -11,14 +11,22 @@ $highlight: #af71ff; //#7008ba //#784eb2
 $spacer: 28px;
 
 //Breakpoints
-$breakpoints: (
+$widths: (
   "sm": 0,
-  "md": 768px,
-  "lg": 1280px,
+  "md": 1440px,
+  "lg": 1920px,
+  "xl": 2560px,
+);
+$heights: (
+  "sm": 0,
+  "md": 900px,
+  "lg": 1080px,
+  "xl": 1440px,
 );
 
 @mixin screen-is($breakpoint) {
-  @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @media (min-width: map-get($widths, $breakpoint)),
+    (min-height: map-get($heights, $breakpoint)) and (orientation: landscape) {
     @content;
   }
 }
@@ -32,6 +40,10 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: $heading;
+
+  @include screen-is(md) {
+    padding: 38px 80px;
+  }
 }
 
 a {
@@ -75,7 +87,13 @@ h3 {
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 8px;
+
+  @include screen-is(md) {
+    padding: 0 12px;
+    font-family: "Benzin-Semibold";
+  }
 }
 
 .link {

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   use_large_media_transforms_in_media_library: false
-  branch: netlify-cms
+  branch: master
 
 media_folder: "static/uploads"
 public_folder: "/uploads"

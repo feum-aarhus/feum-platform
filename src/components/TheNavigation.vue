@@ -1,63 +1,110 @@
 <template>
   <nav class="navigation">
-    <transition name="slide" mode="in-out">
-      <div key="head" class="navigation__head" v-if="collapsed">
-        <div class="navigation__toggle" @click="toggleNav">
-          <div></div>
-          <div></div>
-          <div></div>
+    <!-- Phone -->
+    <div class="navigation--phone">
+      <transition name="slide" mode="in-out">
+        <div key="head" class="navigation__head" v-if="collapsed">
+          <div class="navigation__toggle" @click="toggleNav">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <g-link
+            class="navigation__events button"
+            v-if="$route.fullPath === '/'"
+            to="/events"
+            >Events</g-link
+          >
+          <g-image
+            v-else
+            class="head__logo"
+            src="~/assets/logo.svg"
+            alt="FEUM logo"
+          />
         </div>
-        <g-link
-          class="navigation__events button"
-          v-if="$route.fullPath === '/'"
-          to="/events"
-          >Events</g-link
-        >
+        <div key="drawer" class="navigation__drawer" v-else>
+          <div class="drawer__close" @click="toggleNav"></div>
+          <g-image
+            class="drawer__logo"
+            src="~/assets/logo.svg"
+            alt="FEUM logo"
+          />
+          <ol @click="toggleNav" class="drawer__links">
+            <li>
+              <g-link to="/" class="link">Home</g-link>
+            </li>
+            <li>
+              <g-link to="/events" class="link">Events</g-link>
+            </li>
+            <li>
+              <g-link to="/about" class="link">About</g-link>
+            </li>
+            <li>
+              <g-link to="/support" class="link">Support</g-link>
+            </li>
+            <li>
+              <g-link to="/contact" class="link">Contact</g-link>
+            </li>
+            <li class="drawer__some">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <g-image src="~/assets/instagram.svg" alt="Instagram logo" />
+              </a>
+            </li>
+          </ol>
+        </div>
+      </transition>
+    </div>
+    <!-- Desktop -->
+    <div class="navigation--desktop">
+      <ol class="desktop__links">
+        <li>
+          <g-link to="/" class="link">Home</g-link>
+        </li>
+        <li>
+          <g-link to="/about" class="link">About</g-link>
+        </li>
         <g-image
-          v-else
-          class="head__logo"
+          v-if="$route.fullPath !== '/'"
+          class="desktop__logo"
           src="~/assets/logo.svg"
           alt="FEUM logo"
         />
+        <li>
+          <g-link to="/support" class="link">Support</g-link>
+        </li>
+        <li>
+          <g-link to="/contact" class="link">Contact</g-link>
+        </li>
+      </ol>
+      <g-link class="button desktop__events" to="/events"> Our events </g-link>
+      <div class="desktop__some">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <g-image src="~/assets/instagram.svg" alt="Instagram logo" />
+        </a>
       </div>
-      <div key="drawer" class="navigation__drawer" v-else>
-        <div class="drawer__close" @click="toggleNav"></div>
-        <g-image class="drawer__logo" src="~/assets/logo.svg" alt="FEUM logo" />
-        <ol @click="toggleNav" class="drawer__links">
-          <li>
-            <g-link to="/" class="link">Home</g-link>
-          </li>
-          <li>
-            <g-link to="/events" class="link">Events</g-link>
-          </li>
-          <li>
-            <g-link to="/about" class="link">About</g-link>
-          </li>
-          <li>
-            <g-link to="/support" class="link">Support</g-link>
-          </li>
-          <li>
-            <g-link to="/contact" class="link">Contact</g-link>
-          </li>
-          <li class="drawer__some">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <g-image src="~/assets/instagram.svg" alt="Instagram logo" />
-            </a>
-          </li>
-        </ol>
-      </div>
-    </transition>
+    </div>
   </nav>
 </template>
 
@@ -78,7 +125,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navigation {
+.navigation--phone {
+  display: block;
+
+  @include screen-is(md) {
+    display: none;
+  }
+
   .navigation__head {
     display: flex;
     flex-direction: column;
@@ -170,15 +223,60 @@ export default {
       }
     }
   }
+}
 
-  .slide-enter-active,
-  .slide-leave-active {
-    transition: all 0.2s;
+.navigation--desktop {
+  display: none;
+
+  .desktop__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .slide-enter,
-  .slide-leave-to {
-    opacity: 0;
-    transform: translateX(-100%);
+  .desktop__some {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  @include screen-is(md) {
+    display: grid;
+    grid-template-columns: 1fr 685px 1fr 148px 70px;
+    gap: 68px;
+    grid-template-rows: 36px;
+
+    .desktop__links {
+      grid-column: 2/3;
+    }
+    .desktop__events {
+      grid-column: 4/5;
+    }
+    .desktop__some {
+      grid-column: 5/6;
+    }
+  }
+  @include screen-is(lg) {
+    grid-template-columns: 70px 148px 1fr 685px 1fr 148px 70px;
+
+    .desktop__links {
+      grid-column: 4/5;
+    }
+    .desktop__events {
+      grid-column: 6/7;
+    }
+    .desktop__some {
+      grid-column: 7/8;
+    }
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s;
+}
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 </style>
