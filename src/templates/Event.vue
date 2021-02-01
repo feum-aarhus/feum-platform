@@ -85,15 +85,17 @@ $contentWidth: 685px;
   .semi-bold {
     font-size: 12px;
     line-height: 17px;
+    text-transform: uppercase;
   }
 
   .event__static {
     margin-bottom: $spacer * 2 + $buttonHeight;
+    margin-top: 44px;
 
     .event__logo {
       max-width: 100%;
       object-fit: contain;
-      margin-bottom: 12px;
+      margin-bottom: 72px;
     }
 
     .event__info {
@@ -101,6 +103,10 @@ $contentWidth: 685px;
 
       p:not(:last-child) {
         margin-bottom: 18px;
+      }
+
+      p:last-child {
+        margin-bottom: $spacer * 2;
       }
 
       .event__sale {
@@ -113,6 +119,8 @@ $contentWidth: 685px;
     }
 
     @include screen-is(md) {
+      margin-top: $spacer * 2;
+
       .event__logo {
         margin-bottom: $spacer * 2;
       }
@@ -129,7 +137,7 @@ $contentWidth: 685px;
 
   .event__purchase {
     position: fixed;
-    bottom: $spacer;
+    bottom: 0;
     width: 100%;
     left: 0;
     height: $buttonHeight;
@@ -138,26 +146,8 @@ $contentWidth: 685px;
     max-width: $contentWidth;
     cursor: pointer;
 
-    &::after {
-      position: absolute;
-      content: "";
-      height: $spacer;
-      width: 100%;
-      background-color: $background;
-      bottom: -$spacer;
-    }
-
     @media (min-width: $contentWidth + 32px) {
       left: unset;
-    }
-
-    @include screen-is(md) {
-      bottom: $spacer * 2;
-
-      &::after {
-        height: $spacer * 2;
-        bottom: -$spacer * 2;
-      }
     }
   }
 }

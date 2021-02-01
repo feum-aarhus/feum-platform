@@ -94,6 +94,8 @@ query events {
   }
 
   @include screen-is(md) {
+    margin-top: $spacer * 2;
+
     .event__wrapper {
       flex: 0 1 calc(100% / 3 - 24px);
       max-width: 420px;

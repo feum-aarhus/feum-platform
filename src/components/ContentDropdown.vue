@@ -12,12 +12,7 @@
       @click="toggleDropdown"
     >
       <h4>{{ this.title }}</h4>
-      <g-image
-        class="trigger__icon"
-        :class="{ flipped: expanded }"
-        src="~/assets/chevron.svg"
-        alt="Chevron icon"
-      />
+      <div class="trigger__icon" :class="{ minus: expanded }"></div>
     </div>
     <transition
       name="expand"
@@ -85,6 +80,9 @@ export default {
     height: $spacer * 2 - 2px;
     background-color: $background;
     cursor: pointer;
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: uppercase;
 
     &--borderless {
       padding-top: 1px;
@@ -95,11 +93,29 @@ export default {
     }
 
     .trigger__icon {
-      transform: none;
-      transition: 0.2s ease transform;
+      width: 13px;
+      height: 13px;
+      position: relative;
 
-      &.flipped {
-        transform: rotate(180deg);
+      &::after,
+      &::before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        display: block;
+        background: $heading;
+        position: absolute;
+        bottom: 50%;
+      }
+
+      &::after {
+        transform: rotate(-90deg);
+        transition: 0.1s ease transform;
+        left: 0%;
+      }
+
+      &.minus::after {
+        transform: rotate(0);
       }
     }
   }
@@ -112,13 +128,8 @@ export default {
   }
 }
 
-.expand-enter-active,
-.expand-leave-active {
-  transition: all 0.1s;
-}
 .expand-enter,
 .expand-leave-to {
   opacity: 0;
-  transform: translateY(-100%);
 }
 </style>
