@@ -46,7 +46,7 @@ export default {
   }
 
   @include screen-is(md) {
-    min-height: calc(100vh - 38px * 3);
+    min-height: calc(100vh - 36px - 60px - 42px);
   }
 }
 </style>

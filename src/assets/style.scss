@@ -42,7 +42,7 @@ body {
   color: $heading;
 
   @include screen-is(md) {
-    padding: 38px 80px $spacer * 2 80px;
+    padding: 60px 80px 42px 80px;
   }
 }
 
