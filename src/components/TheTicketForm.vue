@@ -1,254 +1,225 @@
 <template>
-  <section class="event_the-form-container">
-    <!-- Here will be the steps of the progress, and the form where
-    you fill in the data, possibly with the connection to the payment thingy -->
+  <section>
     <transition name="fade">
-      <div v-if="getMessage" class="event_submit-message">
-        <h2 class="event_submit-message-text">{{ getMessage }}</h2>
+      <div v-if="getMessage" class="form__message">
+        <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
-    <div v-if="getTicketsLeft" class="event_the-form">
-      <h4 class="red">Order your ticket <span class="content">**</span></h4>
-      <div class="form_elements">
-        <label for="form_name"><span>Name</span><small> *</small></label>
+    <transition name="swipe" mode="out-in" @after-enter="handleStepChange">
+      <div key="input" v-if="!hasPersistedData" class="form__container">
+        <h2>Ticket info</h2>
         <input
-          v-model="inputName"
-          class="form_name"
+          v-model="userName"
           type="text"
-          placeholder="Your full name"
-          required
-          id="form_name"
+          placeholder="Full name"
+          class="form__field form__field--name"
         />
-      </div>
-      <div class="form_elements">
-        <label for="form_email"><span>E-mail</span><small> *</small></label>
         <input
-          v-model="inputEmail"
-          class="form_email"
+          v-model="userEmail"
           type="email"
-          placeholder="Your e-mail"
-          required
-          id="form_email"
+          placeholder="Email"
+          class="form__field form__field--email"
         />
-      </div>
-      <div class="form_elements">
-        <label for="form_phone-number">
-          <span>Phone Number</span>
-          <small> *</small>
-        </label>
         <input
-          v-model="inputPhoneNumber"
+          v-model="userPhone"
           type="tel"
           placeholder="+45"
-          required
-          id="form_phone-number"
+          class="form__field form__field--phone"
+        />
+        <input
+          class="form__submit button"
+          type="button"
+          value="Next"
+          @click="verifyUserInput"
         />
       </div>
-      <div class="form_elements">
-        <label for="form_payment-type">
-          <span>Payment</span><small> *</small>
-        </label>
-        <div class="form_payment-type-container">
-          <input
-            v-model="inputPayment"
-            class="form_payment-type"
-            type="radio"
-            value="MobilePay"
-            id="form_payment"
-          />
-          <label for="form_payment-type">MobilePay</label>
-        </div>
-      </div>
-      <small>* Required</small>
-      <small class="content"
-        >** Tickets are not refundable. In case you resell the ticket to someone
-        else, it is your responsibility to inform us by email (<a
-          href="mailto:feumticketing@gmail.com"
-          >feumticketing@gmail.com</a
-        >) the full name of the new owner followed by the ticket number.</small
-      >
-      <img v-if="isLoading" class="loader" src="@/assets/loading.gif" alt="" />
-      <input
-        v-else
-        class="form_submit"
-        type="submit"
-        value="Order"
-        id="submit_button"
-        @click="saveParticipant"
-      />
-    </div>
-    <h4 v-else class="red sold_out-text">
-      Unfortunately, it seems you arrived here too late: all the tickets have
-      been sold... Fear not! We will have many other opportunities to meet again
-      ;).
-    </h4>
+      <div key="adyen" v-else ref="adyenContainer"></div>
+    </transition>
   </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+let AdyenCheckout = null;
+try {
+  AdyenCheckout = require("@adyen/adyen-web");
+} catch (error) {
+  console.log(error);
+}
+import "@adyen/adyen-web/dist/adyen.css";
 
 export default {
   name: "TheTicketForm",
   data: function () {
     return {
-      inputName: "",
-      inputEmail: "",
-      inputPhoneNumber: "",
-      inputPayment: "",
+      userName: "",
+      userEmail: "",
+      userPhone: "",
     };
   },
+  props: {
+    eventPrice: {
+      type: Number,
+      required: true,
+    },
+  },
   computed: {
-    ...mapGetters(["getTicketsLeft", "getMessage", "isLoading"]),
+    ...mapGetters(["getTicketsLeft", "getMessage", "hasPersistedData"]),
   },
   methods: {
-    async saveParticipant() {
+    async verifyUserInput() {
       this.$store.commit("resetMessageText");
 
       if (
-        !this.inputPayment ||
-        !this.inputName.trim() ||
-        !this.inputEmail.trim() ||
-        // eslint-disable-next-line
-        !this.inputEmail.match(
+        !this.userName.trim() ||
+        !this.userEmail.trim() ||
+        !this.userEmail.match(
           /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
         ) ||
-        !this.inputPhoneNumber.trim() ||
-        !this.inputPhoneNumber.match(
+        !this.userPhone.trim() ||
+        !this.userPhone.match(
           /(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g
         )
       ) {
         this.$store.dispatch(
           "displayMessage",
-          "Name, email, Danish phone number and payment method are required."
+          "Name, email, and a Danish phone number are required."
         );
         return;
       }
 
-      this.$store.commit("setLoading", true);
+      await this.$store.dispatch("persistUserData", {
+        userName: this.userName,
+        userEmail: this.userEmail,
+        userPhone: this.userPhone,
+      });
 
-      await this.$store.dispatch("checkParticipantAmount");
+      // this.$store.commit("setLoading", true);
 
-      const ticketsLeft = this.getTicketsLeft;
-      if (!ticketsLeft) {
-        this.$store.dispatch(
-          "displayMessage",
-          "The maximum attendance capacity has unfortunately been reached."
-        );
-        return;
-      }
-      const newUserAmount = ticketsLeft + 1;
+      // await this.$store.dispatch("checkParticipantAmount");
 
-      const rawDatabaseResponse = await fetch(
-        `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            participantId: newUserAmount,
-            name: this.inputName,
-            email: this.inputEmail,
-            phone: this.inputPhoneNumber,
-          }),
-        }
-      );
-      if (rawDatabaseResponse.status !== 200) {
-        this.$store.dispatch(
-          "displayMessage",
-          await rawDatabaseResponse.text()
-        );
-        return;
-      }
-      const response = await rawDatabaseResponse.json();
-      await this.$store.dispatch("sendConfirmationEmail", response);
-      this.$store.commit("setLoading", false);
+      // const ticketsLeft = this.getTicketsLeft;
+      // if (ticketsLeft <= 0) {
+      //   this.$store.dispatch(
+      //     "displayMessage",
+      //     "The maximum attendance capacity has unfortunately been reached."
+      //   );
+      //   return;
+      // }
+      // const newUserAmount = ticketsLeft + 1;
+
+      // const rawDatabaseResponse = await fetch(
+      //   `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       participantId: newUserAmount,
+      //       name: this.userName,
+      //       email: this.userEmail,
+      //       phone: this.userPhone,
+      //     }),
+      //   }
+      // );
+      // if (rawDatabaseResponse.status !== 200) {
+      //   this.$store.dispatch(
+      //     "displayMessage",
+      //     await rawDatabaseResponse.text()
+      //   );
+      //   return;
+      // }
+      // const response = await rawDatabaseResponse.json();
+      // await this.$store.dispatch("sendConfirmationEmail", response);
+      // this.$store.commit("setLoading", false);
     },
+    summonAdyen() {
+      const configuration = {
+        paymentMethodsResponse: {
+          paymentMethods: [
+            {
+              name: "MobilePay",
+              supportsRecurring: true,
+              type: "mobilepay",
+            },
+          ],
+        },
+        clientKey: process.env.GRIDSOME_ADYEN_CLIENT,
+        locale: "en-US",
+        environment: "test",
+        onSubmit: (state, dropin) => {
+          console.log(state, dropin);
+        },
+        onAdditionalDetails: (state, dropin) => {
+          console.log(state, dropin);
+        },
+      };
+      const checkout = new AdyenCheckout(configuration);
+      checkout.create("dropin").mount(this.$refs.adyenContainer);
+    },
+    handleStepChange() {
+      if (this.hasPersistedData && this.$refs.adyenContainer) {
+        this.summonAdyen();
+      }
+    },
+  },
+  mounted: function () {
+    this.handleStepChange();
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.event_the-form {
+.form__container {
   display: flex;
   flex-flow: column nowrap;
 
-  h4 {
-    padding: 0.8rem 0rem;
+  h2 {
+    margin-bottom: 8px;
   }
 
-  .form_elements {
+  .form__field {
     display: flex;
-    flex-flow: row nowrap;
     align-items: center;
-    padding: 0.8rem 0rem;
+    height: 34px;
+    background-color: $background;
+    border: 1px solid $grey-light;
+    border-radius: 0;
+    padding: 6px 8px;
+    color: $grey-light;
+    margin-bottom: 4px;
 
-    @include screen-is(md) {
-      width: 75%;
+    &::placeholder {
+      color: $content;
+      font-family: "Roboto-Regular";
+      font-size: 14px;
+      line-height: 16px;
     }
 
-    label {
-      width: calc(100% / 3);
-      display: flex;
-      align-items: center;
-
-      span {
-        width: min-content;
-
-        @include screen-is(md) {
-          width: max-content;
-        }
-      }
-      small {
-        font-weight: bolder;
-        margin-left: 0.4rem;
-      }
-    }
-
-    input {
-      width: calc(200% / 3);
-      padding: 0.5rem;
-      border: 2px solid $content;
-    }
-    .form_payment-type-container {
-      width: 50%;
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-
-      .form_payment-type {
-        -webkit-appearance: none;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 2px solid $content;
-        margin: 0rem 0.8rem 0rem -0.5rem;
-        background-color: #fff;
-      }
-      .form_payment-type:checked {
-        background-color: $content;
-      }
+    &:invalid {
+      border-color: $grey-light;
+      box-shadow: none;
     }
   }
-  small {
-    padding: 0.8rem 0rem;
-    font-size: 12px;
-    color: $red;
-    line-height: 1.5;
-  }
-  .form_submit {
+  .form__submit {
     width: 30%;
-    margin: 1rem auto;
-    padding: 0.5rem;
-    border: 2px solid $content;
-    background-color: $highlight;
-    font-family: "SourceCode-Bold", "sans-serif";
-    display: block;
+    margin: 16px auto;
+    padding: 8px;
+    border: none;
+    background-color: $heading;
   }
 }
 
-.event_submit-message {
+.form__message {
+  background-color: $red;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+
+  .message__text {
+    color: $background;
+  }
+
   &.fade-enter-active,
   &.fade-leave-active {
     transition: all 0.5s;
@@ -258,16 +229,14 @@ export default {
     transform: translateY(-100%);
     opacity: 0;
   }
-  background-color: $red;
-  border: 2px solid $content;
-  padding: 0rem;
-
-  h2 {
-    padding: 0.5rem;
-  }
 }
 
-.sold_out-text {
-  line-height: 1.3rem;
+.swipe-enter-active,
+.swipe-leave-active {
+  transition: transform 0.1s;
+}
+.swipe-enter,
+.swipe-leave-to {
+  transform: translateX(-100%);
 }
 </style>

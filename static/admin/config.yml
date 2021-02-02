@@ -59,7 +59,7 @@ collections:
           format: "LLLL",
         }
       - { label: "Event Address", name: "address", widget: "string" }
-      - { label: "Ticket Price", name: "price", widget: "string" }
+      - { label: "Ticket Price", name: "price", widget: "number" }
       - {
           label: "Presale only",
           name: "presale_only",

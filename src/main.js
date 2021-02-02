@@ -13,6 +13,9 @@ export default function (Vue, { appOptions }) {
       message: "",
       participantAmount: 0,
       loading: false,
+      userName: null,
+      userEmail: null,
+      userPhone: null,
     },
     mutations: {
       setMessageText(state, message) {
@@ -27,6 +30,11 @@ export default function (Vue, { appOptions }) {
       setLoading(state, setTo) {
         state.loading = setTo;
       },
+      setUserData(state, userData) {
+        state.userName = userData.userName;
+        state.userEmail = userData.userEmail;
+        state.userPhone = userData.userPhone;
+      },
     },
     getters: {
       getTicketsLeft(state) {
@@ -39,6 +47,9 @@ export default function (Vue, { appOptions }) {
       },
       isLoading(state) {
         return state.loading;
+      },
+      hasPersistedData(state) {
+        return !!state.userName && !!state.userEmail && !!state.userPhone;
       },
     },
     actions: {
@@ -79,6 +90,9 @@ export default function (Vue, { appOptions }) {
         commit("setLoading", false);
 
         setTimeout(() => commit("resetMessageText"), 5000);
+      },
+      persistUserData({ commit }, userData) {
+        commit("setUserData", userData);
       },
     },
   });

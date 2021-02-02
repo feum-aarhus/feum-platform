@@ -10,7 +10,7 @@
           <p>{{ $page.event.address }}</p>
           <h4 class="semi-bold">Price</h4>
           <div class="event__sale">
-            <p>{{ $page.event.price }}</p>
+            <p>{{ $page.event.price + " Kr." }}</p>
             <span class="sale__online" v-if="$page.event.presale_only"
               >(Online presale only)</span
             >
@@ -32,7 +32,30 @@
           content="...when this feature is developed"
         />
       </div>
-      <div class="button event__purchase">Buy ticket</div>
+      <transition name="swap" mode="out-in" @after-enter="handleFormShift">
+        <div
+          key="button"
+          v-if="!formActive"
+          class="button event__purchase"
+          @click="toggleForm"
+        >
+          Buy ticket
+        </div>
+        <div key="form" class="event__form" v-else>
+          <div class="form__close" @click="toggleForm"></div>
+          <h2>Summary</h2>
+          <p>Your order: 1 ticket to {{ $page.event.title }}</p>
+          <p>Total amount: {{ $page.event.price }} Kr.</p>
+          <div v-if="hasPersistedData" class="form__user">
+            <h4 class="semi-bold">Your information:</h4>
+            <p>{{ this.$store.state.userName }}</p>
+            <p>{{ this.$store.state.userEmail }}</p>
+            <p>{{ this.$store.state.userPhone }}</p>
+          </div>
+          <hr />
+          <TheTicketForm :eventPrice="$page.event.price" ref="theTicketForm" />
+        </div>
+      </transition>
     </div>
   </Layout>
 </template>
@@ -60,6 +83,8 @@ query ($id: ID!) {
 
 <script>
 import ContentDropdown from "@/components/ContentDropdown.vue";
+import TheTicketForm from "@/components/TheTicketForm.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Event",
@@ -70,6 +95,27 @@ export default {
   },
   components: {
     ContentDropdown,
+    TheTicketForm,
+  },
+  data: function () {
+    return {
+      formActive: false,
+    };
+  },
+  computed: {
+    ...mapGetters(["hasPersistedData"]),
+  },
+  methods: {
+    toggleForm() {
+      this.formActive = !this.formActive;
+    },
+    handleFormShift() {
+      if (this.formActive) {
+        this.$nextTick(() => {
+          this.$refs.theTicketForm.$el.scrollIntoView({ behavior: "smooth" });
+        });
+      }
+    },
   },
 };
 </script>
@@ -88,8 +134,9 @@ $contentWidth: 685px;
     text-transform: uppercase;
   }
 
+  // Static event info
   .event__static {
-    margin-bottom: $spacer * 2 + $buttonHeight;
+    margin-bottom: $spacer * 2;
     margin-top: 44px;
 
     .event__logo {
@@ -135,6 +182,7 @@ $contentWidth: 685px;
     }
   }
 
+  // Ticket form
   .event__purchase {
     position: fixed;
     bottom: 0;
@@ -150,5 +198,59 @@ $contentWidth: 685px;
       left: unset;
     }
   }
+  .event__form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    h2 {
+      margin-bottom: 12px;
+    }
+
+    hr {
+      height: 1px;
+      width: 100%;
+      background-color: $grey-light;
+      margin-top: 0;
+      margin-bottom: $spacer;
+    }
+
+    .form__close {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      align-self: flex-end;
+      cursor: pointer;
+      padding: 8px;
+      background-color: $heading;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 1px;
+        background-color: $background;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .form__user {
+      margin-top: 12px;
+    }
+  }
+}
+
+.swap-enter-active,
+.swap-leave-active {
+  transition: transform 0.2s;
+}
+.swap-enter,
+.swap-leave-to {
+  transform: translateY(100%);
 }
 </style>

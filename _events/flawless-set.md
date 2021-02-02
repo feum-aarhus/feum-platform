@@ -7,7 +7,7 @@ logo: /uploads/luigi-tozzi-final-edit.jpg
 title: Flawless Set
 end: Saturday, February 6, 2021 4:00 AM
 address: Aarhus
-price: 120Kr.
+price: 120
 lineup:
   - name: Paul Kalkbrenner
     country: DE
