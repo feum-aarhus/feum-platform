@@ -13,6 +13,8 @@
   },
   "author": "Elma & Vítek",
   "dependencies": {
+    "@adyen/adyen-web": "3.20.0",
+    "@adyen/api-library": "6.0.3",
     "@gridsome/source-filesystem": "0.6.2",
     "@gridsome/transformer-remark": "0.6.4",
     "dotenv": "8.2.0",
