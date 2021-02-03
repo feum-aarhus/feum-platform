@@ -11,5 +11,8 @@ lineup:
   - name: Genesis
     country: US
     label: Phil Collin's label
+photos_list:
+  - event_photo: /uploads/event_small_1.jpg
+  - event_photo: /uploads/event_small_2.jpg
 ---
 It was very nice, recommended!
