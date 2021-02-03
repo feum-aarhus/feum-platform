@@ -85,3 +85,11 @@ collections:
             display_fields: ["title", "person"]
             search_fields: ["title", "person"]
             value_field: "title"
+
+      - label: "Event photos"
+        name: "photos_list"
+        widget: "list"
+        fields:
+          - label: "Linked photo"
+            name: "event_photo"
+            widget: "image"
