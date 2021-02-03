@@ -27,7 +27,7 @@ module.exports = {
     events: [
       {
         path: (node) => {
-          return `/event/${encodeURIComponent(node.title)}`;
+          return `/event/${node.id}`;
         },
         component: "./src/templates/Event.vue",
       },

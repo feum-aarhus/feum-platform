@@ -58,6 +58,7 @@ query events {
   events: allEvents {
     edges {
       node {
+        id
         logo
         title
         start

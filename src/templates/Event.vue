@@ -32,30 +32,35 @@
           content="...when this feature is developed"
         />
       </div>
-      <transition name="swap" mode="out-in" @after-enter="handleFormShift">
-        <div
-          key="button"
-          v-if="!formActive"
-          class="button event__purchase"
-          @click="toggleForm"
-        >
-          Buy ticket
-        </div>
-        <div key="form" class="event__form" v-else>
-          <div class="form__close" @click="toggleForm"></div>
-          <h2>Summary</h2>
-          <p>Your order: 1 ticket to {{ $page.event.title }}</p>
-          <p>Total amount: {{ $page.event.price }} Kr.</p>
-          <div v-if="hasPersistedData" class="form__user">
-            <h4 class="semi-bold">Your information:</h4>
-            <p>{{ this.$store.state.userName }}</p>
-            <p>{{ this.$store.state.userEmail }}</p>
-            <p>{{ this.$store.state.userPhone }}</p>
+      <div v-if="isFutureEvent">
+        <transition name="swap" mode="out-in" @after-enter="handleFormShift">
+          <div
+            key="button"
+            v-if="!formActive"
+            class="button event__purchase"
+            @click="toggleForm"
+          >
+            Buy ticket
           </div>
-          <hr />
-          <TheTicketForm :eventPrice="$page.event.price" ref="theTicketForm" />
-        </div>
-      </transition>
+          <div key="form" class="event__form" v-else>
+            <div class="form__close" @click="toggleForm"></div>
+            <h2>Summary</h2>
+            <p>Your order: 1 ticket to {{ $page.event.title }}</p>
+            <p>Total amount: {{ $page.event.price }} Kr.</p>
+            <div v-if="hasPersistedData" class="form__user">
+              <h4 class="semi-bold">Your information:</h4>
+              <p>{{ this.$store.state.userName }}</p>
+              <p>{{ this.$store.state.userEmail }}</p>
+              <p>{{ this.$store.state.userPhone }}</p>
+            </div>
+            <hr />
+            <TheTicketForm
+              :eventPrice="$page.event.price"
+              ref="theTicketForm"
+            />
+          </div>
+        </transition>
+      </div>
     </div>
   </Layout>
 </template>
@@ -104,6 +109,9 @@ export default {
   },
   computed: {
     ...mapGetters(["hasPersistedData"]),
+    isFutureEvent() {
+      return new Date(this.$page.event.start).getTime() > Date.now();
+    },
   },
   methods: {
     toggleForm() {

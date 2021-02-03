@@ -1,5 +1,5 @@
 <template>
-  <g-link :to="`/event/${encodeURIComponent(eventInfo.title)}`">
+  <g-link :to="`/event/${eventInfo.id}`">
     <figure class="event__card">
       <g-image class="event__logo" :src="eventInfo.logo" alt="Event poster" />
       <div class="event__info">
