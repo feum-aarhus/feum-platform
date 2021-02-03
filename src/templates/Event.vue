@@ -62,6 +62,19 @@
         </transition>
       </div>
     </div>
+    <div class="event__gallery">
+      <h2>Memories</h2>
+      <div class="gallery__container">
+        <g-image
+          v-for="photo in $page.event.photos_list"
+          v-bind:key="photo.event_photo"
+          class="gallery__photo"
+          :src="photo.event_photo"
+          alt="Event Gallery Photo"
+        />
+      </div>
+      <h2>Load More</h2>
+    </div>
   </Layout>
 </template>
 
@@ -82,6 +95,9 @@ query ($id: ID!) {
     }
     music
     content
+    photos_list {
+      event_photo
+    }
   }
 }
 </page-query>
@@ -249,6 +265,44 @@ $contentWidth: 685px;
 
     .form__user {
       margin-top: 12px;
+    }
+  }
+}
+
+//Gallery
+.event__gallery {
+  text-align: center;
+
+  .gallery__container {
+    margin: $spacer 0px;
+    display: flex;
+    flex-flow: column;
+
+    @include screen-is(md) {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .gallery__photo:nth-child(1n + 2) {
+      margin-top: 16px;
+    }
+
+    @include screen-is(md) {
+      .gallery__photo:nth-child(1n + 1) {
+        margin-top: 0px;
+        margin-right: 24px;
+        margin-bottom: 24px;
+      }
+
+      .gallery__photo:last-child {
+        margin-right: 0px;
+      }
+
+      .gallery__photo {
+        max-width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
     }
   }
 }
