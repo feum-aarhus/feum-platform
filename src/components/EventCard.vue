@@ -4,7 +4,7 @@
       <g-image class="event__logo" :src="eventInfo.logo" alt="Event poster" />
       <div class="event__info">
         <p class="dimmed">{{ eventInfo.start }}</p>
-        <h4>{{ eventInfo.title }}</h4>
+        <h4 class="event__title">{{ eventInfo.title }}</h4>
       </div>
     </figure>
   </g-link>
@@ -50,6 +50,9 @@ export default {
 
       p {
         margin-bottom: 8px;
+      }
+      .event__title {
+        text-transform: uppercase;
       }
     }
   }

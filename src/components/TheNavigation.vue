@@ -67,13 +67,12 @@
     <div class="navigation--desktop">
       <ol class="desktop__links">
         <li>
-          <g-link to="/" class="link">Home</g-link>
+          <g-link to="/events" class="link">Events</g-link>
         </li>
         <li>
           <g-link to="/about" class="link">About</g-link>
         </li>
         <g-image
-          v-if="$route.fullPath !== '/'"
           class="desktop__logo"
           src="~/assets/logo.svg"
           alt="FEUM logo"
@@ -85,23 +84,6 @@
           <g-link to="/contact" class="link">Contact</g-link>
         </li>
       </ol>
-      <g-link class="button desktop__events" to="/events"> Our events </g-link>
-      <div class="desktop__some">
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <g-image src="~/assets/instagram.svg" alt="Instagram logo" />
-        </a>
-      </div>
     </div>
   </nav>
 </template>
@@ -268,6 +250,8 @@ export default {
 
 .navigation--desktop {
   display: none;
+  max-width: 714px;
+  margin: 0 auto;
 
   .desktop__links {
     display: flex;
@@ -275,40 +259,9 @@ export default {
     align-items: center;
     font-size: 12px;
   }
-  .desktop__some {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   @include screen-is(md) {
-    display: grid;
-    grid-template-columns: 1fr 685px 1fr 148px 70px;
-    gap: 68px;
-    grid-template-rows: 36px;
-
-    .desktop__links {
-      grid-column: 2/3;
-    }
-    .desktop__events {
-      grid-column: 4/5;
-    }
-    .desktop__some {
-      grid-column: 5/6;
-    }
-  }
-  @include screen-is(lg) {
-    grid-template-columns: 70px 148px 1fr 685px 1fr 148px 70px;
-
-    .desktop__links {
-      grid-column: 4/5;
-    }
-    .desktop__events {
-      grid-column: 6/7;
-    }
-    .desktop__some {
-      grid-column: 7/8;
-    }
+    display: block;
   }
 }
 
