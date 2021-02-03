@@ -4,7 +4,7 @@ presale_only: true
 music: Awesome
 layout: page
 logo: /uploads/luigi-tozzi-final-edit.jpg
-title: Flawless Set
+title: "FEUM DAZE:  MARKOVELA X IDA DAUGAARD X S.A.M. X ANASTASIA KRISTENSEN"
 end: Saturday, February 6, 2021 4:00 AM
 address: Aarhus
 price: 120
