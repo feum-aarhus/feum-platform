@@ -290,30 +290,28 @@ $contentWidth: 685px;
     display: flex;
     flex-flow: column;
 
-    @include screen-is(md) {
-      display: flex;
-      flex-flow: row wrap;
-    }
-
     .gallery__photo:nth-child(1n + 2) {
       margin-top: 16px;
     }
 
     @include screen-is(md) {
-      .gallery__photo:nth-child(1n + 1) {
-        margin-top: 0px;
-        margin-right: 24px;
-        margin-bottom: 24px;
-      }
-
-      .gallery__photo:last-child {
-        margin-right: 0px;
-      }
+      display: flex;
+      flex-flow: row wrap;
 
       .gallery__photo {
         max-width: calc(50% - 24px);
         height: 500px;
         object-fit: cover;
+        margin-right: 24px;
+        margin-bottom: 24px;
+
+        &:nth-child(1n + 2) {
+          margin-top: 0px;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
       }
     }
   }
