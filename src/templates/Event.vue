@@ -33,7 +33,7 @@
         />
       </div>
       <div v-if="isFutureEvent">
-        <transition name="swap" mode="out-in" @after-enter="handleFormShift">
+        <transition name="swap" mode="out-in">
           <div
             key="button"
             v-if="!formActive"
@@ -43,21 +43,25 @@
             Buy ticket
           </div>
           <div key="form" class="event__form" v-else>
-            <div class="form__close" @click="toggleForm"></div>
-            <h2>Summary</h2>
-            <p>Your order: 1 ticket to {{ $page.event.title }}</p>
-            <p>Total amount: {{ $page.event.price }} Kr.</p>
-            <div v-if="hasPersistedData" class="form__user">
-              <h4 class="semi-bold">Your information:</h4>
-              <p>{{ this.$store.state.userName }}</p>
-              <p>{{ this.$store.state.userEmail }}</p>
-              <p>{{ this.$store.state.userPhone }}</p>
+            <div class="form__wrapper">
+              <div class="form__close" @click="toggleForm"></div>
+              <div class="form__summary">
+                <h2>Your order</h2>
+                <p>1 ticket to {{ $page.event.title }}</p>
+                <p>{{ $page.event.price }} Kr.</p>
+              </div>
+              <hr />
+              <div v-if="hasPersistedData" class="form__user">
+                <h4 class="semi-bold">Your information:</h4>
+                <p>{{ this.$store.state.userName }}</p>
+                <p>{{ this.$store.state.userEmail }}</p>
+                <p>{{ this.$store.state.userPhone }}</p>
+              </div>
+              <TheTicketForm
+                :eventPrice="$page.event.price"
+                ref="theTicketForm"
+              />
             </div>
-            <hr />
-            <TheTicketForm
-              :eventPrice="$page.event.price"
-              ref="theTicketForm"
-            />
           </div>
         </transition>
       </div>
@@ -141,13 +145,6 @@ export default {
   methods: {
     toggleForm() {
       this.formActive = !this.formActive;
-    },
-    handleFormShift() {
-      if (this.formActive) {
-        this.$nextTick(() => {
-          this.$refs.theTicketForm.$el.scrollIntoView({ behavior: "smooth" });
-        });
-      }
     },
     showMoreImages() {
       this.showAmount = this.showAmount + 4;
@@ -235,53 +232,90 @@ $contentWidth: 685px;
     }
   }
   .event__form {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
     display: flex;
-    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: $background;
 
-    h2 {
-      margin-bottom: 12px;
+    @include screen-is(md) {
+      align-items: center;
     }
 
-    hr {
-      height: 1px;
-      width: 100%;
-      background-color: $grey-light;
-      margin-top: 0;
-      margin-bottom: $spacer;
-    }
+    .form__wrapper {
+      display: flex;
+      flex-flow: column nowrap;
+      max-width: $contentWidth;
+      border: 1px solid $heading;
+      height: calc(100% - 2px);
+      overflow-y: scroll;
 
-    .form__close {
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      align-self: flex-end;
-      cursor: pointer;
-      padding: 8px;
-      background-color: $heading;
+      @include screen-is(md) {
+        height: auto;
+        overflow-y: hidden;
+      }
 
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
+      .form__summary {
+        padding: 0 32px;
+
+        h2 {
+          margin-bottom: 12px;
+        }
+
+        p:last-child {
+          margin-top: 6px;
+        }
+      }
+
+      hr {
+        height: 1px;
+        width: calc(100% - 2px);
+        background-color: $grey-light;
+        margin-top: $spacer;
+        margin-bottom: 0;
+      }
+
+      .form__close {
+        width: 20px;
         height: 20px;
-        width: 1px;
-        background-color: $background;
-      }
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(-45deg);
-      }
-    }
+        text-align: center;
+        align-self: flex-end;
+        cursor: pointer;
+        padding: 16px 16px 0 16px;
+        flex-shrink: 0;
 
-    .form__user {
-      margin-top: 12px;
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          height: 20px;
+          width: 1px;
+          background-color: $heading;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+
+      .form__user {
+        margin: $spacer 0;
+        padding: 0 32px;
+      }
     }
   }
 }
 
-//Gallery
+// Gallery
 .event__gallery {
   text-align: center;
 

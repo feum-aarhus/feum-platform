@@ -99,6 +99,9 @@ export default {
   methods: {
     toggleNav() {
       this.collapsed = !this.collapsed;
+      this.collapsed
+        ? (document.body.style.overflowY = "")
+        : (document.body.style.overflowY = "hidden");
     },
   },
 };

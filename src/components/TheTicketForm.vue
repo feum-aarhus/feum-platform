@@ -7,23 +7,26 @@
     </transition>
     <transition name="swipe" mode="out-in" @after-enter="handleStepChange">
       <div key="input" v-if="!hasPersistedData" class="form__container">
-        <h2>Ticket info</h2>
+        <h2>Payment info</h2>
+        <label for="name">Full name</label>
         <input
           v-model="userName"
           type="text"
-          placeholder="Full name"
+          id="name"
           class="form__field form__field--name"
         />
+        <label for="email">Email</label>
         <input
           v-model="userEmail"
           type="email"
-          placeholder="Email"
+          id="email"
           class="form__field form__field--email"
         />
+        <label for="phone">Phone number (+45)</label>
         <input
           v-model="userPhone"
           type="tel"
-          placeholder="+45"
+          id="phone"
           class="form__field form__field--phone"
         />
         <input
@@ -174,9 +177,14 @@ export default {
 .form__container {
   display: flex;
   flex-flow: column nowrap;
+  padding: 32px 32px 0 32px;
 
   h2 {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  label {
+    color: $grey-light;
   }
 
   .form__field {
@@ -188,7 +196,6 @@ export default {
     border-radius: 0;
     padding: 6px 8px;
     color: $grey-light;
-    margin-bottom: 4px;
 
     &::placeholder {
       color: $content;
@@ -201,11 +208,15 @@ export default {
       border-color: $grey-light;
       box-shadow: none;
     }
+
+    &:not(:nth-of-type(3)) {
+      margin-bottom: 16px;
+    }
   }
   .form__submit {
-    width: 30%;
-    margin: 16px auto;
-    padding: 8px;
+    width: 100%;
+    margin: 32px auto;
+    height: $spacer * 2;
     border: none;
     background-color: $heading;
   }
@@ -213,8 +224,7 @@ export default {
 
 .form__message {
   background-color: $red;
-  padding: 6px 8px;
-  margin-bottom: 8px;
+  padding: 16px 32px;
 
   .message__text {
     color: $background;
@@ -238,5 +248,11 @@ export default {
 .swipe-enter,
 .swipe-leave-to {
   transform: translateX(-100%);
+}
+
+// Adyen styling
+::v-deep .adyen-checkout__payment-method {
+  border-radius: 0;
+  padding: 8px 16px;
 }
 </style>

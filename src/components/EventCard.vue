@@ -27,6 +27,7 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   background-color: $grey;
+  height: 100%;
 
   .event__logo {
     max-width: 100%;
