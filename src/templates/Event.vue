@@ -62,6 +62,24 @@
         </transition>
       </div>
     </div>
+    <div class="event__gallery" v-if="!isFutureEvent && !!imageLoop.length">
+      <h2>Memories</h2>
+      <div class="gallery__container">
+        <g-image
+          v-for="photo in imageLoop"
+          v-bind:key="photo.event_photo"
+          class="gallery__photo"
+          :src="photo.event_photo"
+          alt="Event Gallery Photo"
+        />
+      </div>
+      <h2
+        v-if="showAmount < this.$page.event.photos_list.length"
+        @click="showMoreImages"
+      >
+        Load More
+      </h2>
+    </div>
   </Layout>
 </template>
 
@@ -82,6 +100,9 @@ query ($id: ID!) {
     }
     music
     content
+    photos_list {
+      event_photo
+    }
   }
 }
 </page-query>
@@ -105,12 +126,16 @@ export default {
   data: function () {
     return {
       formActive: false,
+      showAmount: 4,
     };
   },
   computed: {
     ...mapGetters(["hasPersistedData"]),
     isFutureEvent() {
       return new Date(this.$page.event.start).getTime() > Date.now();
+    },
+    imageLoop() {
+      return this.$page.event.photos_list.slice(0, this.showAmount);
     },
   },
   methods: {
@@ -123,6 +148,9 @@ export default {
           this.$refs.theTicketForm.$el.scrollIntoView({ behavior: "smooth" });
         });
       }
+    },
+    showMoreImages() {
+      this.showAmount = this.showAmount + 4;
     },
   },
 };
@@ -249,6 +277,42 @@ $contentWidth: 685px;
 
     .form__user {
       margin-top: 12px;
+    }
+  }
+}
+
+//Gallery
+.event__gallery {
+  text-align: center;
+
+  .gallery__container {
+    margin: $spacer 0px;
+    display: flex;
+    flex-flow: column;
+
+    .gallery__photo:nth-child(1n + 2) {
+      margin-top: 16px;
+    }
+
+    @include screen-is(md) {
+      display: flex;
+      flex-flow: row wrap;
+
+      .gallery__photo {
+        max-width: calc(50% - 24px);
+        height: 500px;
+        object-fit: cover;
+        margin-right: 24px;
+        margin-bottom: 24px;
+
+        &:nth-child(1n + 2) {
+          margin-top: 0px;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
     }
   }
 }
