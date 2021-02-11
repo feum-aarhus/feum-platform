@@ -5,7 +5,7 @@
         <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
-    <transition name="swipe" mode="out-in" @after-enter="handleStepChange">
+    <transition name="appear" mode="out-in" @after-enter="handleStepChange">
       <div key="input" v-if="!hasPersistedData" class="form__container">
         <h2>Payment info</h2>
         <label for="name">Full name</label>
@@ -36,7 +36,12 @@
           @click="verifyUserInput"
         />
       </div>
-      <div key="adyen" v-else ref="adyenContainer"></div>
+      <div
+        key="adyen"
+        class="adyen__container"
+        v-else
+        ref="adyenContainer"
+      ></div>
     </transition>
   </section>
 </template>
@@ -179,6 +184,10 @@ export default {
   flex-flow: column nowrap;
   padding: 32px 32px 0 32px;
 
+  &.appear-leave-active {
+    height: 0px;
+  }
+
   h2 {
     margin-bottom: 16px;
   }
@@ -241,18 +250,55 @@ export default {
   }
 }
 
-.swipe-enter-active,
-.swipe-leave-active {
-  transition: transform 0.1s;
+.appear-enter-active,
+.appear-leave-active {
+  transition: opacity 0.2s;
 }
-.swipe-enter,
-.swipe-leave-to {
-  transform: translateX(-100%);
+.appear-enter,
+.appear-leave-to {
+  opacity: 0;
 }
 
 // Adyen styling
-::v-deep .adyen-checkout__payment-method {
-  border-radius: 0;
-  padding: 8px 16px;
+::v-deep .adyen__container {
+  &.appear-enter-active {
+    margin-top: $spacer;
+  }
+
+  .adyen-checkout__payment-method {
+    border-radius: 0;
+    padding: 0 16px;
+    background-color: $background;
+    border: none;
+
+    .adyen-checkout__payment-method__header {
+      display: none;
+    }
+
+    .adyen-checkout__payment-method__details__content {
+      margin: 0;
+
+      button {
+        border-radius: 0;
+        font-family: "Benzin-Semibold";
+        background-color: $heading;
+        text-transform: uppercase;
+        color: $background;
+        height: 56px;
+        margin: $spacer 0;
+        line-height: 20px;
+
+        &:hover,
+        &:focus {
+          background-color: $heading;
+          box-shadow: none;
+        }
+
+        .adyen-checkout__button__text {
+          overflow: visible;
+        }
+      }
+    }
+  }
 }
 </style>

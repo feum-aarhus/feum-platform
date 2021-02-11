@@ -72,11 +72,13 @@
         <li>
           <g-link to="/about" class="link">About</g-link>
         </li>
-        <g-image
-          class="desktop__logo"
-          src="~/assets/logo.svg"
-          alt="FEUM logo"
-        />
+        <g-link to="/">
+          <g-image
+            class="desktop__logo"
+            src="~/assets/logo.svg"
+            alt="FEUM logo"
+          />
+        </g-link>
         <li>
           <g-link to="/support" class="link">Support</g-link>
         </li>
@@ -108,6 +110,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// Phone nav
 .navigation--phone {
   display: block;
 
@@ -251,9 +254,10 @@ export default {
   }
 }
 
+// Desktop nav
 .navigation--desktop {
   display: none;
-  max-width: 714px;
+  max-width: $contentWidth;
   margin: 0 auto;
 
   .desktop__links {

@@ -11,7 +11,7 @@
 import TheNavigation from "@/components/TheNavigation.vue";
 
 export default {
-  name: "Default",
+  name: "DefaultLayout",
   components: {
     TheNavigation,
   },

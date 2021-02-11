@@ -52,7 +52,7 @@
               </div>
               <hr />
               <div v-if="hasPersistedData" class="form__user">
-                <h4 class="semi-bold">Your information:</h4>
+                <h2>Your information</h2>
                 <p>{{ this.$store.state.userName }}</p>
                 <p>{{ this.$store.state.userEmail }}</p>
                 <p>{{ this.$store.state.userPhone }}</p>
@@ -77,12 +77,13 @@
           alt="Event Gallery Photo"
         />
       </div>
-      <h2
+      <div
+        class="gallery__more"
         v-if="showAmount < this.$page.event.photos_list.length"
         @click="showMoreImages"
       >
-        Load More
-      </h2>
+        <h2>Load More</h2>
+      </div>
     </div>
   </Layout>
 </template>
@@ -155,7 +156,6 @@ export default {
 
 <style lang="scss" scoped>
 $buttonHeight: $spacer * 2;
-$contentWidth: 685px;
 
 .event__container {
   max-width: $contentWidth;
@@ -308,8 +308,12 @@ $contentWidth: 685px;
       }
 
       .form__user {
-        margin: $spacer 0;
+        margin-top: $spacer;
         padding: 0 32px;
+
+        h2 {
+          margin-bottom: 12px;
+        }
       }
     }
   }
@@ -320,34 +324,38 @@ $contentWidth: 685px;
   text-align: center;
 
   .gallery__container {
-    margin: $spacer 0px;
+    margin: 16px 0px;
     display: flex;
     flex-flow: column;
 
-    .gallery__photo:nth-child(1n + 2) {
+    .gallery__photo:not(:first-child) {
       margin-top: 16px;
     }
 
     @include screen-is(md) {
       display: flex;
       flex-flow: row wrap;
+      justify-content: flex-start;
 
       .gallery__photo {
-        max-width: calc(50% - 24px);
+        flex-grow: 1;
         height: 500px;
         object-fit: cover;
-        margin-right: 24px;
-        margin-bottom: 24px;
+        margin: 12px;
 
-        &:nth-child(1n + 2) {
-          margin-top: 0px;
+        &:not(:first-child) {
+          margin: 12px;
         }
 
-        &:last-child {
-          margin-right: 0px;
+        @include screen-is(xl) {
+          max-width: calc(50% - 24px);
         }
       }
     }
+  }
+
+  .gallery__more {
+    cursor: pointer;
   }
 }
 

@@ -60,7 +60,10 @@ export default {
     handleDropdownShift() {
       this.contentHeight = this.$refs.dropdownContent.offsetHeight;
       if (this.expanded) {
-        this.$refs.dropdownContent.scrollIntoView({ behavior: "smooth" });
+        this.$refs.dropdownContent.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
       }
     },
   },
