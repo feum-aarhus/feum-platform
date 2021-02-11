@@ -16,5 +16,6 @@ photos_list:
   - event_photo: /uploads/event_small_2.jpg
   - event_photo: /uploads/event_small_3.jpg
   - event_photo: /uploads/event_small_4.jpg
+  - event_photo: /uploads/event_small_5.jpg
 ---
 It was very nice, recommended!
