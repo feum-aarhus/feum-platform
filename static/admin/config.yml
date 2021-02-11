@@ -3,8 +3,8 @@ backend:
   use_large_media_transforms_in_media_library: false
   branch: master
   commit_messages:
-    uploadMedia: Upload “{{path}} [skip ci]”
-    deleteMedia: Delete “{{path}} [skip ci]”
+    uploadMedia: Upload “{{path}}” [skip ci]
+    deleteMedia: Delete “{{path}}” [skip ci]
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -42,8 +42,12 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      - { label: "Event Logo", name: "logo", widget: "image" }
+      - label: "Event Logo"
+        name: "logo"
+        widget: "image"
+        media_library:
+          config:
+            max_file_size: 512000
       - { label: "Event Title", name: "title", widget: "string" }
       - {
           label: "Event Start",
@@ -96,3 +100,6 @@ collections:
           - label: "Linked photo"
             name: "event_photo"
             widget: "image"
+            media_library:
+              config:
+                max_file_size: 512000
