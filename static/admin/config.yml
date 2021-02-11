@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   use_large_media_transforms_in_media_library: false
   branch: master
+  commit_messages:
+    uploadMedia: Upload “{{path}} [skip ci]”
+    deleteMedia: Delete “{{path}} [skip ci]”
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
