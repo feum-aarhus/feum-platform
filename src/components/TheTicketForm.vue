@@ -58,9 +58,9 @@
 <script>
 import { mapGetters } from "vuex";
 let AdyenCheckout = null;
-if (typeof window !== undefined) {
-  AdyenCheckout = require("@adyen/adyen-web");
-}
+import("@adyen/adyen-web")
+  .then((AdyenImport) => (AdyenCheckout = AdyenImport))
+  .catch((error) => console.log(error));
 import "@adyen/adyen-web/dist/adyen.css";
 
 export default {
