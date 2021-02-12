@@ -155,8 +155,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$buttonHeight: $spacer * 2;
-
 .event__container {
   max-width: $contentWidth;
   margin: 0 auto;
@@ -308,7 +306,7 @@ $buttonHeight: $spacer * 2;
       }
 
       .form__user {
-        margin-top: $spacer;
+        margin: $spacer 0;
         padding: 0 32px;
 
         h2 {

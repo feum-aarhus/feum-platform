@@ -2,12 +2,10 @@ const mongoose = require("mongoose");
 
 const participantsSchema = new mongoose.Schema(
   {
-    //Automated id
-    participantId: Number, //Between 1 and 100
+    participantId: Number,
     name: String,
     email: String,
     phone: String,
-    // payment: Boolean
   },
   { collection: "Participants" }
 );

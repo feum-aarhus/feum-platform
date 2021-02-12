@@ -10,6 +10,7 @@ $highlight: #af71ff; //#7008ba //#784eb2
 //Variables
 $spacer: 28px;
 $contentWidth: 685px;
+$buttonHeight: $spacer * 2;
 
 //Breakpoints
 $widths: (
@@ -125,7 +126,7 @@ h3 {
 }
 
 .loader {
-  width: 100px !important;
-  margin: 0rem auto;
+  width: $spacer * 2;
+  margin: 0 auto $spacer auto;
   display: block;
 }

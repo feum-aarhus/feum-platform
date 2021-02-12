@@ -9,10 +9,12 @@ module.exports = async function dbConnect() {
       useUnifiedTopology: true,
       useFindAndModify: false,
     });
-    console.log("Successfully connected to the database");
-    return true;
+    return {
+      error: null,
+    };
   } catch (error) {
-    console.error("Database connection failed: ", error);
-    return false;
+    return {
+      error: "Database connection failed: " + error,
+    };
   }
 };

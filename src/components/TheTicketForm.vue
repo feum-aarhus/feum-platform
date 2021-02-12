@@ -5,54 +5,61 @@
         <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
-    <transition name="appear" mode="out-in" @after-enter="handleStepChange">
-      <div key="input" v-if="!hasPersistedData" class="form__container">
-        <h2>Payment info</h2>
-        <label for="name">Full name</label>
-        <input
-          v-model="userName"
-          type="text"
-          id="name"
-          class="form__field form__field--name"
-        />
-        <label for="email">Email</label>
-        <input
-          v-model="userEmail"
-          type="email"
-          id="email"
-          class="form__field form__field--email"
-        />
-        <label for="phone">Phone number (+45)</label>
-        <input
-          v-model="userPhone"
-          type="tel"
-          id="phone"
-          class="form__field form__field--phone"
-        />
-        <input
-          class="form__submit button"
-          type="button"
-          value="Next"
-          @click="verifyUserInput"
-        />
-      </div>
-      <div
-        key="adyen"
-        class="adyen__container"
-        v-else
-        ref="adyenContainer"
-      ></div>
-    </transition>
+    <g-image
+      v-if="isLoading"
+      class="loader"
+      src="~/assets/golden.svg"
+      alt="Loading spinner"
+    />
+    <div v-else>
+      <transition name="appear" mode="out-in" @after-enter="handleStepChange">
+        <div key="input" v-if="!hasPersistedData" class="form__container">
+          <h2>Payment info</h2>
+          <label for="name">Full name</label>
+          <input
+            v-model="userName"
+            type="text"
+            id="name"
+            class="form__field form__field--name"
+          />
+          <label for="email">Email</label>
+          <input
+            v-model="userEmail"
+            type="email"
+            id="email"
+            class="form__field form__field--email"
+          />
+          <label for="phone">Phone number (+45)</label>
+          <input
+            v-model="userPhone"
+            type="tel"
+            id="phone"
+            maxlength="8"
+            class="form__field form__field--phone"
+          />
+          <input
+            class="form__submit button"
+            type="button"
+            value="Next"
+            @click="verifyUserInput"
+          />
+        </div>
+        <div
+          key="adyen"
+          class="adyen__container"
+          v-else
+          ref="adyenContainer"
+        ></div>
+      </transition>
+    </div>
   </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 let AdyenCheckout = null;
-try {
+if (typeof window !== undefined) {
   AdyenCheckout = require("@adyen/adyen-web");
-} catch (error) {
-  console.log(error);
 }
 import "@adyen/adyen-web/dist/adyen.css";
 
@@ -72,22 +79,22 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["getTicketsLeft", "getMessage", "hasPersistedData"]),
+    ...mapGetters([
+      "getTicketsLeft",
+      "getMessage",
+      "hasPersistedData",
+      "isLoading",
+    ]),
   },
   methods: {
     async verifyUserInput() {
       this.$store.commit("resetMessageText");
-
       if (
         !this.userName.trim() ||
-        !this.userEmail.trim() ||
         !this.userEmail.match(
           /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
         ) ||
-        !this.userPhone.trim() ||
-        !this.userPhone.match(
-          /(\+45)?[0-9]{8}|(\+45 )?[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}/g
-        )
+        !this.userPhone.match(/[0-9]{8}/g)
       ) {
         this.$store.dispatch(
           "displayMessage",
@@ -95,52 +102,11 @@ export default {
         );
         return;
       }
-
       await this.$store.dispatch("persistUserData", {
-        userName: this.userName,
-        userEmail: this.userEmail,
+        userName: this.userName.trim(),
+        userEmail: this.userEmail.trim(),
         userPhone: this.userPhone,
       });
-
-      // this.$store.commit("setLoading", true);
-
-      // await this.$store.dispatch("checkParticipantAmount");
-
-      // const ticketsLeft = this.getTicketsLeft;
-      // if (ticketsLeft <= 0) {
-      //   this.$store.dispatch(
-      //     "displayMessage",
-      //     "The maximum attendance capacity has unfortunately been reached."
-      //   );
-      //   return;
-      // }
-      // const newUserAmount = ticketsLeft + 1;
-
-      // const rawDatabaseResponse = await fetch(
-      //   `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       participantId: newUserAmount,
-      //       name: this.userName,
-      //       email: this.userEmail,
-      //       phone: this.userPhone,
-      //     }),
-      //   }
-      // );
-      // if (rawDatabaseResponse.status !== 200) {
-      //   this.$store.dispatch(
-      //     "displayMessage",
-      //     await rawDatabaseResponse.text()
-      //   );
-      //   return;
-      // }
-      // const response = await rawDatabaseResponse.json();
-      // await this.$store.dispatch("sendConfirmationEmail", response);
-      // this.$store.commit("setLoading", false);
     },
     summonAdyen() {
       const configuration = {
@@ -157,7 +123,17 @@ export default {
         locale: "en-US",
         environment: "test",
         onSubmit: (state, dropin) => {
-          console.log(state, dropin);
+          this.makePayment(state.data)
+            .then((response) => {
+              if (response.action) {
+                dropin.handleAction(response.action);
+              } else {
+                console.log(response); // Handle cases without an action
+              }
+            })
+            .catch((error) => {
+              this.$store.dispatch("displayMessage", error.message);
+            });
         },
         onAdditionalDetails: (state, dropin) => {
           console.log(state, dropin);
@@ -170,6 +146,41 @@ export default {
       if (this.hasPersistedData && this.$refs.adyenContainer) {
         this.summonAdyen();
       }
+    },
+    async makePayment(adyenData) {
+      this.$store.commit("setLoading", true);
+      await this.$store.dispatch("checkParticipantAmount");
+      if (this.getTicketsLeft !== 0) {
+        // Change back to smaller than or equal
+        throw new Error(
+          "The maximum attendance capacity has unfortunately been reached."
+        );
+      }
+
+      const rawDatabaseResponse = await fetch(
+        `${process.env.GRIDSOME_API_URL}.netlify/functions/make-payment`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amount: { currency: "DKK", value: this.eventPrice },
+            adyenData,
+            telephoneNumber: "+45" + this.userPhone,
+            reference: this.userName.trim(),
+          }),
+        }
+      );
+      const response = await rawDatabaseResponse.json();
+      this.$store.commit("setLoading", false);
+      if (response?.action?.paymentData && typeof window !== undefined) {
+        window.localStorage.setItem("paymentData", response.action.paymentData);
+        return response;
+      }
+      throw new Error(
+        "Something happened while redirecting you to MobilePay, please try again later."
+      );
     },
   },
   mounted: function () {
@@ -252,7 +263,7 @@ export default {
 
 .appear-enter-active,
 .appear-leave-active {
-  transition: opacity 0.2s;
+  transition: opacity 0.1s;
 }
 .appear-enter,
 .appear-leave-to {
@@ -261,7 +272,7 @@ export default {
 
 // Adyen styling
 ::v-deep .adyen__container {
-  &.appear-enter-active {
+  &.appear-leave-active {
     margin-top: $spacer;
   }
 
@@ -284,8 +295,8 @@ export default {
         background-color: $heading;
         text-transform: uppercase;
         color: $background;
-        height: 56px;
-        margin: $spacer 0;
+        height: $buttonHeight;
+        margin-bottom: $spacer;
         line-height: 20px;
 
         &:hover,

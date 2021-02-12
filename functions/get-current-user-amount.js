@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     };
   }
   const databaseConnected = await dbConnect();
-  if (databaseConnected) {
+  if (!databaseConnected.error) {
     const results = await models.Participant.find({});
     mongoose.disconnect();
     return {
@@ -21,6 +21,6 @@ exports.handler = async (event) => {
   }
   return {
     statusCode: 500,
-    body: "Database connection failed, see function log for details",
+    body: databaseConnected.error,
   };
 };
