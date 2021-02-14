@@ -11,24 +11,10 @@
 </template>
 
 <script>
-// import TheNavigation from "@/components/TheNavigation.vue";
-// import MiniGame from "@/components/MiniGame.vue";
-// import EventInformation from "@/components/EventInformation";
-
 export default {
   name: "PartyHome",
   metaInfo: {
     title: "Home",
-  },
-  // components: {
-  //   TheNavigation,
-  //   MiniGame,
-  //   EventInformation,
-  // },
-  created: async function () {
-    // this.$store.commit("setLoading", true);
-    // await this.$store.dispatch("checkParticipantAmount");
-    // this.$store.commit("setLoading", false);
   },
 };
 </script>

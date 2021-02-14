@@ -37,9 +37,9 @@ export default function (Vue, { appOptions }) {
       },
     },
     getters: {
-      getTicketsLeft(state) {
+      hasTicketsLeft(state) {
         return (
-          Number(process.env.GRIDSOME_EVENT_CAPACITY) - state.participantAmount
+          Number(process.env.GRIDSOME_EVENT_CAPACITY) > state.participantAmount
         );
       },
       getMessage(state) {

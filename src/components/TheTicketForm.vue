@@ -58,9 +58,11 @@
 <script>
 import { mapGetters } from "vuex";
 let AdyenCheckout = null;
-import("@adyen/adyen-web")
-  .then((AdyenImport) => (AdyenCheckout = AdyenImport))
-  .catch((error) => console.log(error));
+try {
+  AdyenCheckout = require("@adyen/adyen-web");
+} catch (error) {
+  console.log(error);
+}
 import "@adyen/adyen-web/dist/adyen.css";
 
 export default {
@@ -80,7 +82,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      "getTicketsLeft",
+      "hasTicketsLeft",
       "getMessage",
       "hasPersistedData",
       "isLoading",
@@ -133,6 +135,9 @@ export default {
             })
             .catch((error) => {
               this.$store.dispatch("displayMessage", error.message);
+              setTimeout(() => {
+                this.$emit("closeForm");
+              }, 5000);
             });
         },
         onAdditionalDetails: (state, dropin) => {
@@ -150,8 +155,7 @@ export default {
     async makePayment(adyenData) {
       this.$store.commit("setLoading", true);
       await this.$store.dispatch("checkParticipantAmount");
-      if (this.getTicketsLeft !== 0) {
-        // Change back to smaller than or equal
+      if (!this.hasTicketsLeft) {
         throw new Error(
           "The maximum attendance capacity has unfortunately been reached."
         );
@@ -174,7 +178,7 @@ export default {
       );
       const response = await rawDatabaseResponse.json();
       this.$store.commit("setLoading", false);
-      if (response?.action?.paymentData && typeof window !== undefined) {
+      if (response?.action?.paymentData && typeof window !== "undefined") {
         window.localStorage.setItem("paymentData", response.action.paymentData);
         return response;
       }

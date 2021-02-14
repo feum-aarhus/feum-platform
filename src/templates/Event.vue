@@ -38,9 +38,10 @@
             key="button"
             v-if="!formActive"
             class="button event__purchase"
+            :class="{ disabled: !hasTicketsLeft }"
             @click="toggleForm"
           >
-            Buy ticket
+            {{ this.hasTicketsLeft ? "Buy ticket" : "Event sold out" }}
           </div>
           <div key="form" class="event__form" v-else>
             <div class="form__wrapper">
@@ -60,6 +61,7 @@
               <TheTicketForm
                 :eventPrice="$page.event.price"
                 ref="theTicketForm"
+                @closeForm="formActive = false"
               />
             </div>
           </div>
@@ -135,7 +137,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["hasPersistedData"]),
+    ...mapGetters(["hasPersistedData", "hasTicketsLeft"]),
     isFutureEvent() {
       return new Date(this.$page.event.start).getTime() > Date.now();
     },
@@ -145,7 +147,7 @@ export default {
   },
   methods: {
     toggleForm() {
-      this.formActive = !this.formActive;
+      if (this.hasTicketsLeft) this.formActive = !this.formActive;
     },
     showMoreImages() {
       this.showAmount = this.showAmount + 4;
@@ -227,6 +229,11 @@ export default {
 
     @media (min-width: $contentWidth + 32px) {
       left: unset;
+    }
+
+    &.disabled {
+      cursor: default;
+      color: grey;
     }
   }
   .event__form {
