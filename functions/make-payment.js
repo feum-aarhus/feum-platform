@@ -22,7 +22,7 @@ exports.handler = async (event) => {
       telephoneNumber: request.telephoneNumber,
       reference: request.reference,
       merchantAccount: process.env.ADYEN_MERCHANT_NAME,
-      returnUrl: "http://localhost:8888/payment",
+      returnUrl: `${process.env.GRIDSOME_API_URL}payment`,
     });
     return {
       statusCode: 200,
