@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="event__container">
+    <div class="event__container" :class="{ 'event--future': isFutureEvent }">
       <div class="event__static">
         <g-image class="event__logo" :src="$page.event.logo" alt="Event logo" />
         <div class="event__info">
@@ -229,6 +229,7 @@ export default {
 
     @media (min-width: $contentWidth + 32px) {
       left: unset;
+      position: static;
     }
 
     &.disabled {
@@ -371,5 +372,13 @@ export default {
 .swap-enter,
 .swap-leave-to {
   transform: translateY(100%);
+}
+
+::v-deep .event--future ~ .footer {
+  margin-bottom: 84px;
+
+  @include screen-is(md) {
+    margin-bottom: 42px;
+  }
 }
 </style>

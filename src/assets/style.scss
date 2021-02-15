@@ -36,7 +36,7 @@ $heights: (
 //Global style
 body {
   background-color: $background;
-  padding: 0px 16px $spacer 16px;
+  padding: 0px 16px;
   overflow-x: hidden;
   font-family: "Benzin-Regular";
   font-size: 14px;
@@ -44,7 +44,7 @@ body {
   color: $heading;
 
   @include screen-is(md) {
-    padding: 60px 80px 42px 80px;
+    padding: 60px 80px 0 80px;
   }
 }
 

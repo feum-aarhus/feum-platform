@@ -14,12 +14,9 @@
           >
             Events
           </g-link>
-          <g-image
-            v-else
-            class="head__logo"
-            src="~/assets/logo.svg"
-            alt="FEUM logo"
-          />
+          <g-link to="/" v-else class="head__logo">
+            <g-image src="~/assets/logo.svg" alt="FEUM logo" />
+          </g-link>
         </div>
         <div key="drawer" class="navigation__drawer" v-else>
           <g-image
@@ -72,7 +69,7 @@
         <li>
           <g-link to="/about" class="link">About</g-link>
         </li>
-        <g-link to="/">
+        <g-link to="/" class="link--home">
           <g-image
             class="desktop__logo"
             src="~/assets/logo.svg"
@@ -265,6 +262,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
+
+    .link--home {
+      height: 20px;
+    }
   }
 
   @include screen-is(md) {

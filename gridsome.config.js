@@ -22,7 +22,6 @@ module.exports = {
   siteUrl: "https://feum-ticketing.dk",
   siteDescription: "We love electronic music!",
   titleTemplate: "%s | FEUM",
-  favicon: "./src/favicon.jpg",
   templates: {
     events: [
       {

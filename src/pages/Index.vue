@@ -21,18 +21,18 @@ export default {
 
 <style lang="scss" scoped>
 .partyhome {
-  min-height: calc(100vh - #{$spacer} - 72px);
+  min-height: calc(100vh - #{$spacer} - 72px - 76px - 42px);
   display: flex;
   align-items: center;
   justify-content: center;
 
   .home__image {
     width: 100%;
-    max-width: 724px;
+    max-width: 644px;
   }
 
   @include screen-is(md) {
-    min-height: calc(100vh - 36px - 60px - 42px);
+    min-height: calc(100vh - 20px - 60px - 42px - 20px - 42px);
   }
 }
 </style>
