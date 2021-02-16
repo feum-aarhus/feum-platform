@@ -225,7 +225,6 @@ export default {
     justify-content: center;
     padding: 0;
     max-width: $contentWidth;
-    cursor: pointer;
 
     @media (min-width: $contentWidth + 32px) {
       left: unset;
@@ -371,7 +370,7 @@ export default {
 }
 .swap-enter,
 .swap-leave-to {
-  transform: translateY(100%);
+  transform: translateY(300%);
 }
 
 ::v-deep .event--future ~ .footer {

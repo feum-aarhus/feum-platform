@@ -122,7 +122,7 @@ export default {
     top: 17px;
     height: 21px;
     width: 26px;
-    padding: 9.5px 7px;
+    padding: 9.5px 7px 9.5px 0;
 
     .toggle__icon {
       position: relative;

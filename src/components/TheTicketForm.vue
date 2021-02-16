@@ -29,12 +29,13 @@
             id="email"
             class="form__field form__field--email"
           />
-          <label for="phone">Phone number (+45)</label>
+          <label for="phone">Phone number</label>
           <input
             v-model="userPhone"
             type="tel"
             id="phone"
             maxlength="8"
+            placeholder="+45"
             class="form__field form__field--phone"
           />
           <input
@@ -207,36 +208,10 @@ export default {
     margin-bottom: 16px;
   }
 
-  label {
-    color: $grey-light;
+  .form__field:not(:nth-of-type(3)) {
+    margin-bottom: 16px;
   }
 
-  .form__field {
-    display: flex;
-    align-items: center;
-    height: 34px;
-    background-color: $background;
-    border: 1px solid $grey-light;
-    border-radius: 0;
-    padding: 6px 8px;
-    color: $grey-light;
-
-    &::placeholder {
-      color: $content;
-      font-family: "Roboto-Regular";
-      font-size: 14px;
-      line-height: 16px;
-    }
-
-    &:invalid {
-      border-color: $grey-light;
-      box-shadow: none;
-    }
-
-    &:not(:nth-of-type(3)) {
-      margin-bottom: 16px;
-    }
-  }
   .form__submit {
     width: 100%;
     margin: 32px auto;
