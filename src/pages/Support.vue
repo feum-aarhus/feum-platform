@@ -50,16 +50,12 @@ export default {
   max-width: $contentWidth;
 
   @include screen-is(md) {
-    margin-top: $spacer * 2;
+    margin-top: $spacer * 4;
   }
 
   h2 {
     text-align: center;
     margin-bottom: $spacer;
-
-    @include screen-is(md) {
-      text-align: left;
-    }
   }
 
   .support__button img {

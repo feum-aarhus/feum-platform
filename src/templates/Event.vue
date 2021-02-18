@@ -68,25 +68,10 @@
         </transition>
       </div>
     </div>
-    <div class="event__gallery" v-if="!isFutureEvent && !!imageLoop.length">
-      <h2>Memories</h2>
-      <div class="gallery__container">
-        <g-image
-          v-for="photo in imageLoop"
-          v-bind:key="photo.event_photo"
-          class="gallery__photo"
-          :src="photo.event_photo"
-          alt="Event Gallery Photo"
-        />
-      </div>
-      <div
-        class="gallery__more"
-        v-if="showAmount < this.$page.event.photos_list.length"
-        @click="showMoreImages"
-      >
-        <h2>Load More</h2>
-      </div>
-    </div>
+    <ImageGallery
+      :images="$page.event.photos_list"
+      v-if="!isFutureEvent && !!$page.event.photos_list.length"
+    />
   </Layout>
 </template>
 
@@ -117,6 +102,7 @@ query ($id: ID!) {
 <script>
 import ContentDropdown from "@/components/ContentDropdown.vue";
 import TheTicketForm from "@/components/TheTicketForm.vue";
+import ImageGallery from "@/components/ImageGallery.vue";
 import { mapGetters } from "vuex";
 
 export default {
@@ -129,11 +115,11 @@ export default {
   components: {
     ContentDropdown,
     TheTicketForm,
+    ImageGallery,
   },
   data: function () {
     return {
       formActive: false,
-      showAmount: 4,
     };
   },
   computed: {
@@ -141,16 +127,10 @@ export default {
     isFutureEvent() {
       return new Date(this.$page.event.start).getTime() > Date.now();
     },
-    imageLoop() {
-      return this.$page.event.photos_list.slice(0, this.showAmount);
-    },
   },
   methods: {
     toggleForm() {
       if (this.hasTicketsLeft) this.formActive = !this.formActive;
-    },
-    showMoreImages() {
-      this.showAmount = this.showAmount + 4;
     },
   },
 };
@@ -321,46 +301,6 @@ export default {
         }
       }
     }
-  }
-}
-
-// Gallery
-.event__gallery {
-  text-align: center;
-
-  .gallery__container {
-    margin: 16px 0px;
-    display: flex;
-    flex-flow: column;
-
-    .gallery__photo:not(:first-child) {
-      margin-top: 16px;
-    }
-
-    @include screen-is(md) {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-
-      .gallery__photo {
-        flex-grow: 1;
-        height: 500px;
-        object-fit: cover;
-        margin: 12px;
-
-        &:not(:first-child) {
-          margin: 12px;
-        }
-
-        @include screen-is(xl) {
-          max-width: calc(50% - 24px);
-        }
-      }
-    }
-  }
-
-  .gallery__more {
-    cursor: pointer;
   }
 }
 

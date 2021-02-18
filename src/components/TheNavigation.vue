@@ -42,14 +42,14 @@
             </li>
             <li class="drawer__some">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/feumdk/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <g-image src="~/assets/facebook.svg" alt="Facebook logo" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/feum_dk/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

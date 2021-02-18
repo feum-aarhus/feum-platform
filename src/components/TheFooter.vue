@@ -5,10 +5,16 @@
       | <a href="mailto:hello@feum.net">hello@feum.net</a> |
     </p>
     <div class="footer__social">
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+      <a
+        href="https://www.facebook.com/feumdk/"
+        target="_blank"
+        rel="noopener noreferrer"
         ><g-image src="~/assets/facebook-small.svg" alt="Facebook icon"
       /></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+      <a
+        href="https://www.instagram.com/feum_dk/"
+        target="_blank"
+        rel="noopener noreferrer"
         ><g-image src="~/assets/instagram-small.svg" alt="Instagram icon"
       /></a>
       <a
