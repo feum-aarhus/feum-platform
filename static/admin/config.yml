@@ -14,6 +14,8 @@ collections:
     label: "Featured Music"
     title: "{{slug}}"
     folder: "_music"
+    list_fields: ["title", "person"]
+    list_fields_seperator: " by "
     create: true
     slug: "{{slug}}"
     fields:
@@ -42,6 +44,8 @@ collections:
     folder: "_events"
     create: true
     slug: "{{slug}}"
+    list_fields: ["title", "start"]
+    list_fields_seperator: " - "
     fields:
       - label: "Event Banner"
         name: "banner"
@@ -97,6 +101,7 @@ collections:
             widget: "relatedMusic"
             collection: "music"
             display_fields: ["title", "person"]
+            display_fields_seperator: " by "
             search_fields: ["title", "person"]
             value_field: "title"
 
