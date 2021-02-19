@@ -14,7 +14,7 @@ collections:
     label: "Featured Music"
     title: "{{slug}}"
     folder: "_music"
-    summary: "{{title}} by {{author}}"
+    summary: "{{title}} by {{person}}"
     create: true
     slug: "{{slug}}"
     fields:
