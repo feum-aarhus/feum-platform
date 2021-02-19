@@ -59,7 +59,7 @@ query events {
     edges {
       node {
         id
-        logo
+        card_image
         title
         start
         end

@@ -2,8 +2,8 @@
 start: Friday, March 5, 2021 10:00 PM
 presale_only: true
 music: Awesome
-layout: page
-logo: /uploads/klub-title.png
+banner: /uploads/klub-title.png
+card_image: /uploads/klub-title.png
 title: "FEUM DAZE:  MARKOVELA X IDA DAUGAARD X S.A.M. X ANASTASIA KRISTENSEN"
 end: Saturday, March 6, 2021 4:00 AM
 address: Aarhus

@@ -1,7 +1,11 @@
 <template>
   <g-link :to="`/event/${eventInfo.id}`">
     <figure class="event__card">
-      <g-image class="event__logo" :src="eventInfo.logo" alt="Event poster" />
+      <g-image
+        class="event__logo"
+        :src="eventInfo.card_image"
+        alt="Event logo small"
+      />
       <div class="event__info">
         <p class="dimmed">{{ eventInfo.start }}</p>
         <h4 class="event__title">{{ eventInfo.title }}</h4>

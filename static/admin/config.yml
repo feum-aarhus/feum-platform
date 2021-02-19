@@ -32,6 +32,7 @@ collections:
           date_format: "DD.MM.YYYY",
           time_format: "HH:mm",
         }
+      - { label: "URL link", name: "link", widget: "string" }
       - { label: "Played/Curated by", name: "person", widget: "string" }
 
   - name: "events"
@@ -42,8 +43,14 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - label: "Event Logo"
-        name: "logo"
+      - label: "Event Banner"
+        name: "banner"
+        widget: "image"
+        media_library:
+          config:
+            max_file_size: 512000
+      - label: "Event Card Image"
+        name: "card_image"
         widget: "image"
         media_library:
           config:

@@ -2,7 +2,11 @@
   <Layout>
     <div class="event__container" :class="{ 'event--future': isFutureEvent }">
       <div class="event__static">
-        <g-image class="event__logo" :src="$page.event.logo" alt="Event logo" />
+        <g-image
+          class="event__banner"
+          :src="$page.event.banner"
+          alt="Event banner"
+        />
         <div class="event__info">
           <h4 class="semi-bold">Start</h4>
           <p>{{ $page.event.start }}</p>
@@ -78,7 +82,7 @@
 <page-query>
 query ($id: ID!) {
   event: events(id: $id) {
-    logo
+    banner
     title
     start
     end
@@ -152,7 +156,7 @@ export default {
     margin-bottom: $spacer * 2;
     margin-top: 44px;
 
-    .event__logo {
+    .event__banner {
       max-width: 100%;
       object-fit: contain;
       margin-bottom: 72px;
@@ -181,7 +185,7 @@ export default {
     @include screen-is(md) {
       margin-top: $spacer * 2;
 
-      .event__logo {
+      .event__banner {
         margin-bottom: $spacer * 2;
       }
 
