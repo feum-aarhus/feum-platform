@@ -7,14 +7,7 @@
       </div>
       <transition name="slide" mode="in-out">
         <div key="head" class="navigation__head" v-if="collapsed">
-          <g-link
-            class="navigation__events button"
-            v-if="$route.fullPath === '/'"
-            to="/events"
-          >
-            Events
-          </g-link>
-          <g-link to="/" v-else class="head__logo">
+          <g-link to="/" class="head__logo">
             <g-image src="~/assets/logo.svg" alt="FEUM logo" />
           </g-link>
         </div>
@@ -26,19 +19,7 @@
           />
           <ol @click="toggleNav" class="drawer__links">
             <li>
-              <g-link to="/" class="link">Home</g-link>
-            </li>
-            <li>
-              <g-link to="/events" class="link">Events</g-link>
-            </li>
-            <li>
-              <g-link to="/about" class="link">About</g-link>
-            </li>
-            <li>
-              <g-link to="/support" class="link">Support</g-link>
-            </li>
-            <li>
-              <g-link to="/contact" class="link">Contact</g-link>
+              <g-link to="/" class="link">Events</g-link>
             </li>
             <li class="drawer__some">
               <a
@@ -66,9 +47,6 @@
         <li>
           <g-link to="/events" class="link">Events</g-link>
         </li>
-        <li>
-          <g-link to="/about" class="link">About</g-link>
-        </li>
         <g-link to="/" class="link--home">
           <g-image
             class="desktop__logo"
@@ -76,12 +54,6 @@
             alt="FEUM logo"
           />
         </g-link>
-        <li>
-          <g-link to="/support" class="link">Support</g-link>
-        </li>
-        <li>
-          <g-link to="/contact" class="link">Contact</g-link>
-        </li>
       </ol>
     </div>
   </nav>

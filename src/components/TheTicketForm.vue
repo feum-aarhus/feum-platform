@@ -45,12 +45,9 @@
             @click="verifyUserInput"
           />
         </div>
-        <div
-          key="adyen"
-          class="adyen__container"
-          v-else
-          ref="adyenContainer"
-        ></div>
+        <g-link class="snipcart-checkout" ref="snipcartTrigger" v-else>
+          Go to Snipcart
+        </g-link>
       </transition>
     </div>
   </section>
@@ -58,13 +55,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-let AdyenCheckout = null;
-try {
-  AdyenCheckout = require("@adyen/adyen-web");
-} catch (error) {
-  console.log(error);
-}
-import "@adyen/adyen-web/dist/adyen.css";
 
 export default {
   name: "TheTicketForm",
@@ -111,47 +101,9 @@ export default {
         userPhone: this.userPhone,
       });
     },
-    summonAdyen() {
-      const configuration = {
-        paymentMethodsResponse: {
-          paymentMethods: [
-            {
-              name: "MobilePay",
-              supportsRecurring: true,
-              type: "mobilepay",
-            },
-          ],
-        },
-        clientKey: process.env.GRIDSOME_ADYEN_CLIENT,
-        locale: "en-US",
-        environment: "test",
-        onSubmit: (state, dropin) => {
-          this.makePayment(state.data)
-            .then((response) => {
-              if (response.action) {
-                dropin.handleAction(response.action);
-              } else {
-                console.log(response); // Handle cases without an action
-              }
-            })
-            .catch((error) => {
-              this.$store.dispatch("displayMessage", error.message);
-              setTimeout(() => {
-                this.$emit("closeForm");
-              }, 5000);
-            });
-        },
-        onAdditionalDetails: (state, dropin) => {
-          console.log(state, dropin);
-        },
-      };
-      const checkout = new AdyenCheckout(configuration);
-      checkout.create("dropin").mount(this.$refs.adyenContainer);
-    },
     handleStepChange() {
-      if (this.hasPersistedData && this.$refs.adyenContainer) {
-        this.summonAdyen();
-      }
+      // if (this.hasPersistedData && this.$refs.snipcartTrigger) {
+      // }
     },
     async makePayment(adyenData) {
       this.$store.commit("setLoading", true);
@@ -161,31 +113,7 @@ export default {
           "The maximum attendance capacity has unfortunately been reached."
         );
       }
-
-      const rawDatabaseResponse = await fetch(
-        `${process.env.GRIDSOME_API_URL}.netlify/functions/make-payment`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            amount: { currency: "DKK", value: this.eventPrice },
-            adyenData,
-            telephoneNumber: "+45" + this.userPhone,
-            reference: this.userName.trim(),
-          }),
-        }
-      );
-      const response = await rawDatabaseResponse.json();
       this.$store.commit("setLoading", false);
-      if (response?.action?.paymentData && typeof window !== "undefined") {
-        window.localStorage.setItem("paymentData", response.action.paymentData);
-        return response;
-      }
-      throw new Error(
-        "Something happened while redirecting you to MobilePay, please try again later."
-      );
     },
   },
   mounted: function () {
@@ -249,46 +177,10 @@ export default {
   opacity: 0;
 }
 
-// Adyen styling
-::v-deep .adyen__container {
+// Snipcart styling
+::v-deep .snipcart__container {
   &.appear-leave-active {
     margin-top: $spacer;
-  }
-
-  .adyen-checkout__payment-method {
-    border-radius: 0;
-    padding: 0 16px;
-    background-color: $background;
-    border: none;
-
-    .adyen-checkout__payment-method__header {
-      display: none;
-    }
-
-    .adyen-checkout__payment-method__details__content {
-      margin: 0;
-
-      button {
-        border-radius: 0;
-        font-family: "Benzin-Semibold";
-        background-color: $heading;
-        text-transform: uppercase;
-        color: $background;
-        height: $buttonHeight;
-        margin-bottom: $spacer;
-        line-height: 20px;
-
-        &:hover,
-        &:focus {
-          background-color: $heading;
-          box-shadow: none;
-        }
-
-        .adyen-checkout__button__text {
-          overflow: visible;
-        }
-      }
-    }
   }
 }
 </style>
