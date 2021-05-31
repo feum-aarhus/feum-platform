@@ -2,26 +2,10 @@
 <html ${htmlAttrs}>
   <head>
     ${head}
-    <link rel="preconnect" href="https://app.snipcart.com" />
-    <link rel="preconnect" href="https://cdn.snipcart.com" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.snipcart.com/themes/v3.1.1/default/snipcart.css"
-    />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body ${bodyAttrs}>
     ${app} ${scripts}
-    <div
-      id="snipcart"
-      data-config-modal-style="side"
-      data-api-key="YWRhYWJlNmMtZWU1OC00MmVlLWFhOTItY2UwNjA3MjI4MDUyNjM3NTU4MDgyODY4MjUzMjkz"
-      hidden
-    ></div>
-    <script
-      async
-      src="https://cdn.snipcart.com/themes/v3.1.1/default/snipcart.js"
-    ></script>
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {

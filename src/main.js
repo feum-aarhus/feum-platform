@@ -16,6 +16,7 @@ export default function (Vue, { appOptions }) {
       userName: null,
       userEmail: null,
       userPhone: null,
+      paymentId: null,
     },
     mutations: {
       setMessageText(state, message) {
@@ -35,6 +36,9 @@ export default function (Vue, { appOptions }) {
         state.userEmail = userData.userEmail;
         state.userPhone = userData.userPhone;
       },
+      setPaymentId(state, newId) {
+        state.paymentId = newId;
+      },
     },
     getters: {
       hasTicketsLeft(state) {
@@ -50,6 +54,9 @@ export default function (Vue, { appOptions }) {
       },
       hasPersistedData(state) {
         return !!state.userName && !!state.userEmail && !!state.userPhone;
+      },
+      hasInitializedPayment(state) {
+        return !!state.paymentId;
       },
     },
     actions: {
@@ -84,6 +91,29 @@ export default function (Vue, { appOptions }) {
         );
         await dispatch("checkParticipantAmount");
         dispatch("displayMessage", await rawData.text());
+      },
+      async createPayment({ commit }, paymentAmount) {
+        const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/create-payment`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentAmount,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          dispatch(
+            "displayMessage",
+            "There has been an error, please try again later."
+          );
+          return;
+        }
+        const response = await rawData.json();
+        commit("setPaymentId", response.clientSecret);
       },
       displayMessage({ commit }, messageText) {
         commit("setMessageText", messageText);

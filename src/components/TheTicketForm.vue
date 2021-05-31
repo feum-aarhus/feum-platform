@@ -45,9 +45,12 @@
             @click="verifyUserInput"
           />
         </div>
-        <g-link class="snipcart-checkout" ref="snipcartTrigger" v-else>
-          Go to Snipcart
-        </g-link>
+        <div
+          key="stripe"
+          class="stripe__container"
+          v-else
+          ref="stripeContainer"
+        ></div>
       </transition>
     </div>
   </section>
@@ -55,6 +58,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { loadStripe } from "@stripe/stripe-js/pure";
 
 export default {
   name: "TheTicketForm",
@@ -101,20 +105,58 @@ export default {
         userPhone: this.userPhone,
       });
     },
-    handleStepChange() {
-      // if (this.hasPersistedData && this.$refs.snipcartTrigger) {
-      // }
-    },
-    async makePayment(adyenData) {
-      this.$store.commit("setLoading", true);
-      await this.$store.dispatch("checkParticipantAmount");
-      if (!this.hasTicketsLeft) {
-        throw new Error(
-          "The maximum attendance capacity has unfortunately been reached."
-        );
+    async handleStepChange() {
+      if (this.hasPersistedData && this.$refs.stripeContainer) {
+        this.$store.commit("setLoading", true);
+        if (!this.$store.state.paymentId) {
+          // The price must be in øre...times 100
+          await this.$store.dispatch("createPayment", this.eventPrice * 100);
+        }
+        const stripe = await loadStripe(process.env.GRIDSOME_STRIPE_PUBLIC_KEY);
+        this.$store.commit("setLoading", false);
+        const elements = stripe.elements({
+          fonts: [
+            {
+              cssSrc:
+                "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap",
+            },
+          ],
+        });
+        const card = elements.create("card", {
+          style: {
+            base: {
+              color: "#e1e1e1",
+              iconColor: "#e1e1e1",
+              fontFamily: "Roboto, sans-serif",
+              fontSmoothing: "antialiased",
+              fontSize: "16px",
+              "::placeholder": {
+                color: "#e1e1e1",
+              },
+            },
+            invalid: {
+              fontFamily: "Roboto, sans-serif",
+              color: "#ff5555",
+              iconColor: "#ff5555",
+            },
+          },
+        });
+        await this.$nextTick();
+        // Stripe injects an iframe into the DOM
+        card.mount(".stripe__container");
+        // figure out the payment button with the handling as the next step
       }
-      this.$store.commit("setLoading", false);
     },
+    // async makePayment(adyenData) {
+    //   this.$store.commit("setLoading", true);
+    //   await this.$store.dispatch("checkParticipantAmount");
+    //   if (!this.hasTicketsLeft) {
+    //     throw new Error(
+    //       "The maximum attendance capacity has unfortunately been reached."
+    //     );
+    //   }
+    //   this.$store.commit("setLoading", false);
+    // },
   },
   mounted: function () {
     this.handleStepChange();
@@ -177,10 +219,11 @@ export default {
   opacity: 0;
 }
 
-// Snipcart styling
-::v-deep .snipcart__container {
+// Stripe styling
+::v-deep .stripe__container {
   &.appear-leave-active {
     margin-top: $spacer;
   }
+  padding: 0 32px;
 }
 </style>

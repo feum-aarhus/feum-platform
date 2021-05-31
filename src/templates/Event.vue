@@ -41,14 +41,14 @@
           <div
             key="button"
             v-if="!formActive"
-            class="button event__purchase snipcart-add-item"
+            class="button event__purchase"
             :class="{ disabled: !hasTicketsLeft }"
             :data-item-id="$page.event.title"
             :data-item-price="$page.event.price"
             :data-item-url="$route.path"
             :data-item-name="$page.event.title"
+            @click="toggleForm"
           >
-            <!-- @click="toggleForm" -->
             {{ this.hasTicketsLeft ? "Buy ticket" : "Event sold out" }}
           </div>
           <div key="form" class="event__form" v-else>
