@@ -39,6 +39,13 @@ export default function (Vue, { appOptions }) {
       setPaymentId(state, newId) {
         state.paymentId = newId;
       },
+      resetPaymentData(state) {
+        state.userName =
+          state.userEmail =
+          state.userPhone =
+          state.paymentId =
+            null;
+      },
     },
     getters: {
       hasTicketsLeft(state) {

@@ -5,14 +5,23 @@
         <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
+    <div
+      v-if="hasPersistedData"
+      key="stripe"
+      class="stripe__container"
+      ref="stripeContainer"
+    ></div>
     <g-image
       v-if="isLoading"
       class="loader"
       src="~/assets/golden.svg"
       alt="Loading spinner"
     />
+    <div v-else-if="!hasTicketsLeft" class="form--sold">
+      <h2>Sorry, this event is sold out.</h2>
+    </div>
     <div v-else>
-      <transition name="appear" mode="out-in" @after-enter="handleStepChange">
+      <transition name="appear" mode="out-in" @after-enter="summonStripe">
         <div key="input" v-if="!hasPersistedData" class="form__container">
           <h2>Payment info</h2>
           <label for="name">Full name</label>
@@ -45,12 +54,16 @@
             @click="verifyUserInput"
           />
         </div>
-        <div
-          key="stripe"
-          class="stripe__container"
-          v-else
-          ref="stripeContainer"
-        ></div>
+        <div class="stripe__wrapper" v-else>
+          <div
+            v-if="hasInitializedPayment"
+            ref="stripeSubmit"
+            :class="{ disabled: isCardFieldEmpty }"
+            class="stripe__submit button"
+          >
+            {{ "Pay " + eventPrice + " kr." }}
+          </div>
+        </div>
       </transition>
     </div>
   </section>
@@ -67,6 +80,7 @@ export default {
       userName: "",
       userEmail: "",
       userPhone: "",
+      isCardFieldEmpty: true,
     };
   },
   props: {
@@ -81,6 +95,7 @@ export default {
       "getMessage",
       "hasPersistedData",
       "isLoading",
+      "hasInitializedPayment",
     ]),
   },
   methods: {
@@ -105,12 +120,13 @@ export default {
         userPhone: this.userPhone,
       });
     },
-    async handleStepChange() {
+    async summonStripe() {
       if (this.hasPersistedData && this.$refs.stripeContainer) {
         this.$store.commit("setLoading", true);
         if (!this.$store.state.paymentId) {
-          // The price must be in øre...times 100
+          // The price must be in øre...hence times 100
           await this.$store.dispatch("createPayment", this.eventPrice * 100);
+          console.log("Payment id created");
         }
         const stripe = await loadStripe(process.env.GRIDSOME_STRIPE_PUBLIC_KEY);
         this.$store.commit("setLoading", false);
@@ -144,22 +160,63 @@ export default {
         await this.$nextTick();
         // Stripe injects an iframe into the DOM
         card.mount(".stripe__container");
-        // figure out the payment button with the handling as the next step
+        this.isCardFieldEmpty = true;
+        card.on("change", (event) => {
+          this.isCardFieldEmpty = event.empty;
+        });
+        this.$refs.stripeSubmit.addEventListener("click", () =>
+          this.makePayment(stripe, card)
+        );
       }
     },
-    // async makePayment(adyenData) {
-    //   this.$store.commit("setLoading", true);
-    //   await this.$store.dispatch("checkParticipantAmount");
-    //   if (!this.hasTicketsLeft) {
-    //     throw new Error(
-    //       "The maximum attendance capacity has unfortunately been reached."
-    //     );
-    //   }
-    //   this.$store.commit("setLoading", false);
-    // },
+    async makePayment(
+      stripeLibrary,
+      cardElement,
+      paymentId = this.$store.state.paymentId
+    ) {
+      if (this.isCardFieldEmpty) return;
+      this.$store.commit("setLoading", true);
+      // await this.$store.dispatch("checkParticipantAmount");
+      if (!this.hasTicketsLeft) {
+        this.$store.dispatch(
+          "displayMessage",
+          "The maximum attendance capacity has unfortunately been reached."
+        );
+        this.$store.commit("resetPaymentData");
+        return;
+      }
+      const paymentResponse = await stripeLibrary.confirmCardPayment(
+        paymentId,
+        {
+          payment_method: {
+            card: cardElement,
+          },
+        }
+      );
+      this.$store.commit("setLoading", false);
+      if (paymentResponse.error) {
+        this.$store.dispatch("displayMessage", paymentResponse.error.message);
+        console.log("Payment failed!");
+        this.summonStripe();
+      } else {
+        this.handleSuccess();
+      }
+    },
+    handleSuccess() {
+      console.log("Payment successful!");
+    },
   },
   mounted: function () {
-    this.handleStepChange();
+    this.summonStripe();
+  },
+  beforeDestroy: function () {
+    if (this.$refs.stripeSubmit) {
+      console.log("Event listener removed");
+      this.$refs.stripeSubmit.removeEventListener(
+        "click",
+        () => this.makePayment
+      );
+    }
   },
 };
 </script>
@@ -188,6 +245,22 @@ export default {
     height: $spacer * 2;
     border: none;
     background-color: $heading;
+  }
+}
+
+.form--sold {
+  margin: 32px;
+}
+
+.stripe__wrapper {
+  .stripe__submit {
+    margin: 16px 32px 16px 32px;
+    padding: 8px;
+
+    &.disabled {
+      cursor: default;
+      color: grey;
+    }
   }
 }
 
@@ -221,9 +294,10 @@ export default {
 
 // Stripe styling
 ::v-deep .stripe__container {
-  &.appear-leave-active {
-    margin-top: $spacer;
-  }
+  // &.appear-leave-active {
+  //   margin-top: $spacer;
+  // }
+  margin-top: $spacer / 2;
   padding: 0 32px;
 }
 </style>

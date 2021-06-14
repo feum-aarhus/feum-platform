@@ -139,6 +139,7 @@ export default {
   methods: {
     toggleForm() {
       if (this.hasTicketsLeft) this.formActive = !this.formActive;
+      else this.formActive = false;
     },
   },
 };
