@@ -14,7 +14,7 @@ module.exports = async function dbConnect() {
     };
   } catch (error) {
     return {
-      error: "Database connection failed: " + error,
+      error,
     };
   }
 };

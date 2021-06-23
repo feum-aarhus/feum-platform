@@ -44,15 +44,17 @@
     <!-- Desktop -->
     <div class="navigation__inner">
       <ol class="nav__links">
-        <li>
-          <g-link to="/" class="link--back" v-if="$route.path !== '/'">
-            <g-image src="~/assets/chevron-left.svg" alt="Go back" />
+        <li class="link--back__container">
+          <g-link to="https://feum.net" class="link--back">
+            <g-image
+              src="~/assets/chevron-left.svg"
+              alt="Back to the FEUM site"
+            />
+            <p class="back__text">Back to the FEUM site</p>
           </g-link>
         </li>
         <li>
-          <g-link to="/" class="link--home">
-            <g-image src="~/assets/logo.svg" alt="FEUM logo" />
-          </g-link>
+          <g-image src="~/assets/logo.svg" alt="FEUM logo" />
         </li>
       </ol>
     </div>
@@ -222,8 +224,25 @@ export default {
     font-size: 12px;
     grid-template-columns: $navHeight 1fr $navHeight;
 
-    .link--home {
-      height: 20px;
+    .link--back__container {
+      justify-self: baseline;
+
+      .link--back {
+        display: flex;
+        align-items: center;
+
+        .back__text {
+          display: none;
+        }
+      }
+    }
+
+    @include screen-is(md) {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .link--back__container .link--back .back__text {
+        display: block;
+      }
     }
   }
 }

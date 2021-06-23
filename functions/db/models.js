@@ -6,6 +6,8 @@ const participantsSchema = new mongoose.Schema(
     name: String,
     email: String,
     phone: String,
+    ticketDownloadedTimes: Number,
+    ticketScanned: Boolean,
   },
   { collection: "Participants" }
 );

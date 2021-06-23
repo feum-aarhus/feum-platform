@@ -53,6 +53,11 @@ export default function (Vue, { appOptions }) {
           Number(process.env.GRIDSOME_EVENT_CAPACITY) > state.participantAmount
         );
       },
+      getTicketsLeft(state) {
+        return (
+          Number(process.env.GRIDSOME_EVENT_CAPACITY) - state.participantAmount
+        );
+      },
       getMessage(state) {
         return state.message;
       },
@@ -121,6 +126,23 @@ export default function (Vue, { appOptions }) {
         }
         const response = await rawData.json();
         commit("setPaymentId", response.clientSecret);
+      },
+      async checkForDuplicateParticipant(context, userEmail) {
+        const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/validate-signup`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: userEmail,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          throw await rawData.text();
+        }
       },
       displayMessage({ commit }, messageText) {
         commit("setMessageText", messageText);

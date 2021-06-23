@@ -41,18 +41,12 @@ collections:
     label_singular: "Event"
     title: "{{slug}}"
     folder: "_events"
-    create: true
+    create: false
     slug: "{{slug}}"
     summary: "{{title}} - {{start}}"
     fields:
       - label: "Event Banner"
         name: "banner"
-        widget: "image"
-        media_library:
-          config:
-            max_file_size: 512000
-      - label: "Event Card Image"
-        name: "card_image"
         widget: "image"
         media_library:
           config:
@@ -101,14 +95,3 @@ collections:
             display_fields: ["{{title}} by {{person}}"]
             search_fields: ["title", "person"]
             value_field: "title"
-
-      - label: "Event photos"
-        name: "photos_list"
-        widget: "list"
-        fields:
-          - label: "Linked photo"
-            name: "event_photo"
-            widget: "image"
-            media_library:
-              config:
-                max_file_size: 512000

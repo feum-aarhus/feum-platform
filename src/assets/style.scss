@@ -157,8 +157,24 @@ label {
   text-decoration: underline;
 }
 
+.marginless {
+  margin: 0;
+}
+
+.full-height {
+  height: 100%;
+}
+
 .loader {
   width: $spacer * 2;
   margin: 0 auto $spacer auto;
   display: block;
+}
+
+hr {
+  height: 1px;
+  width: calc(100% - 2px);
+  background-color: $grey-light;
+  margin-top: $spacer;
+  margin-bottom: 0;
 }

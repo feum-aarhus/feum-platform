@@ -5,23 +5,28 @@
         <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
-    <div
-      v-if="hasPersistedData"
-      key="stripe"
-      class="stripe__container"
-      ref="stripeContainer"
-    ></div>
+    <transition-group name="appear">
+      <hr v-if="hasPersistedData" key="line" class="marginless" />
+      <div
+        class="stripe__container"
+        v-if="hasPersistedData && hasTicketsLeft"
+        key="card-field"
+      >
+        <h2 class="stripe__heading">Card info</h2>
+        <div class="stripe__card" ref="stripeContainer"></div>
+      </div>
+    </transition-group>
     <g-image
       v-if="isLoading"
-      class="loader"
+      class="loader form__loader"
       src="~/assets/golden.svg"
       alt="Loading spinner"
     />
     <div v-else-if="!hasTicketsLeft" class="form--sold">
-      <h2>Sorry, this event is sold out.</h2>
+      <h2>Sorry, this event just got sold out.</h2>
     </div>
     <div v-else>
-      <transition name="appear" mode="out-in" @after-enter="summonStripe">
+      <transition name="appear" mode="out-in">
         <div key="input" v-if="!hasPersistedData" class="form__container">
           <h2>Payment info</h2>
           <label for="name">Full name</label>
@@ -43,8 +48,6 @@
             v-model="userPhone"
             type="tel"
             id="phone"
-            maxlength="8"
-            placeholder="+45"
             class="form__field form__field--phone"
           />
           <input
@@ -54,7 +57,7 @@
             @click="verifyUserInput"
           />
         </div>
-        <div class="stripe__wrapper" v-else>
+        <div key="stripe" class="stripe__wrapper" v-else>
           <div
             v-if="hasInitializedPayment"
             ref="stripeSubmit"
@@ -106,19 +109,31 @@ export default {
         !this.userEmail.match(
           /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
         ) ||
-        !this.userPhone.match(/[0-9]{8}/g)
+        !this.userPhone.match(/[0-9 ]{8,}/g)
       ) {
         this.$store.dispatch(
           "displayMessage",
-          "Name, email, and a Danish phone number are required."
+          "Name, email, and a valid phone number are required."
         );
         return;
       }
+      this.$store.commit("setLoading", true);
+      try {
+        await this.$store.dispatch(
+          "checkForDuplicateParticipant",
+          this.userEmail.trim()
+        );
+      } catch (error) {
+        this.$store.dispatch("displayMessage", error);
+        return;
+      }
+      this.$store.commit("setLoading", false);
       await this.$store.dispatch("persistUserData", {
         userName: this.userName.trim(),
         userEmail: this.userEmail.trim(),
         userPhone: this.userPhone,
       });
+      this.summonStripe();
     },
     async summonStripe() {
       if (this.hasPersistedData && this.$refs.stripeContainer) {
@@ -159,7 +174,7 @@ export default {
         });
         await this.$nextTick();
         // Stripe injects an iframe into the DOM
-        card.mount(".stripe__container");
+        card.mount(".stripe__card");
         this.isCardFieldEmpty = true;
         card.on("change", (event) => {
           this.isCardFieldEmpty = event.empty;
@@ -176,7 +191,7 @@ export default {
     ) {
       if (this.isCardFieldEmpty) return;
       this.$store.commit("setLoading", true);
-      // await this.$store.dispatch("checkParticipantAmount");
+      await this.$store.dispatch("checkParticipantAmount");
       if (!this.hasTicketsLeft) {
         this.$store.dispatch(
           "displayMessage",
@@ -249,7 +264,12 @@ export default {
 }
 
 .form--sold {
-  margin: 32px;
+  padding: 32px;
+  background-color: $red;
+}
+
+.form__loader {
+  margin-top: $spacer;
 }
 
 .stripe__wrapper {
@@ -285,7 +305,7 @@ export default {
 
 .appear-enter-active,
 .appear-leave-active {
-  transition: opacity 0.1s;
+  transition: opacity 0.5s;
 }
 .appear-enter,
 .appear-leave-to {
@@ -293,11 +313,15 @@ export default {
 }
 
 // Stripe styling
-::v-deep .stripe__container {
+.stripe__container {
   // &.appear-leave-active {
   //   margin-top: $spacer;
   // }
-  margin-top: $spacer / 2;
+  margin: $spacer 0;
   padding: 0 32px;
+
+  .stripe__heading {
+    margin-bottom: 12px;
+  }
 }
 </style>
