@@ -141,7 +141,6 @@ export default {
         if (!this.$store.state.paymentId) {
           // The price must be in øre...hence times 100
           await this.$store.dispatch("createPayment", this.eventPrice * 100);
-          console.log("Payment id created");
         }
         const stripe = await loadStripe(process.env.GRIDSOME_STRIPE_PUBLIC_KEY);
         this.$store.commit("setLoading", false);
@@ -217,8 +216,16 @@ export default {
         this.handleSuccess();
       }
     },
-    handleSuccess() {
+    async handleSuccess() {
       console.log("Payment successful!");
+      this.$store.commit("setLoading", true);
+      await this.$store.dispatch("saveParticipant", {
+        email: this.$store.state.userEmail,
+        name: this.$store.state.userName,
+        phone: this.$store.state.userPhone,
+      });
+      this.$store.commit("setLoading", false);
+      this.$router.push("/confirmation");
     },
   },
   mounted: function () {
@@ -226,7 +233,6 @@ export default {
   },
   beforeDestroy: function () {
     if (this.$refs.stripeSubmit) {
-      console.log("Event listener removed");
       this.$refs.stripeSubmit.removeEventListener(
         "click",
         () => this.makePayment

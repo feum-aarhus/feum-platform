@@ -15,8 +15,12 @@ exports.handler = async (event) => {
   if (!databaseConnected.error) {
     try {
       const data = JSON.parse(event.body);
+      const amountOfParticipants = await models.Participant.find({});
       const newParticipant = new models.Participant({
         ...data,
+        participantId: amountOfParticipants.length + 1,
+        ticketDownloadedTimes: 0,
+        ticketScanned: false,
       });
       await newParticipant.save();
       mongoose.disconnect();
@@ -33,7 +37,7 @@ exports.handler = async (event) => {
   } else {
     return {
       statusCode: 500,
-      body: "Database connection failed, see function log for details",
+      body: JSON.stringify(databaseConnected.error),
     };
   }
 };

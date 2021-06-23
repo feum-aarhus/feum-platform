@@ -86,8 +86,27 @@ export default function (Vue, { appOptions }) {
         const response = await rawData.json();
         commit("setCurrentParticipantAmount", Number(response));
       },
-      async sendConfirmationEmail({ dispatch }, participantInfo) {
+      async saveParticipant({ dispatch }, participantInfo) {
         const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: participantInfo.email,
+              name: participantInfo.name,
+              phone: participantInfo.phone,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          console.log("Send an email to FEUM here");
+        }
+        const userData = await rawData.json();
+
+        const rawEmail = await fetch(
           `${process.env.GRIDSOME_API_URL}.netlify/functions/send-confirmation-email`,
           {
             method: "POST",
@@ -95,14 +114,11 @@ export default function (Vue, { appOptions }) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              participantId: participantInfo.participantId,
-              contactEmail: participantInfo.email,
-              contactName: participantInfo.name,
+              ...userData,
             }),
           }
         );
-        await dispatch("checkParticipantAmount");
-        dispatch("displayMessage", await rawData.text());
+        dispatch("displayMessage", await rawEmail.text(), true);
       },
       async createPayment({ commit }, paymentAmount) {
         const rawData = await fetch(
@@ -144,10 +160,10 @@ export default function (Vue, { appOptions }) {
           throw await rawData.text();
         }
       },
-      displayMessage({ commit }, messageText) {
+      displayMessage({ commit }, messageText, keepUp) {
         commit("setMessageText", messageText);
         commit("setLoading", false);
-
+        if (keepUp) return;
         setTimeout(() => commit("resetMessageText"), 5000);
       },
       persistUserData({ commit }, userData) {
