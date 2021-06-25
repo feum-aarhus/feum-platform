@@ -5,14 +5,28 @@
         <p class="message__text">{{ getMessage }}</p>
       </div>
     </transition>
+    <transition-group name="appear">
+      <hr v-if="hasPersistedData" key="line" class="marginless" />
+      <div
+        class="stripe__container"
+        v-if="hasPersistedData && hasTicketsLeft"
+        key="card-field"
+      >
+        <h2 class="stripe__heading">Card info</h2>
+        <div class="stripe__card" ref="stripeContainer"></div>
+      </div>
+    </transition-group>
     <g-image
       v-if="isLoading"
-      class="loader"
+      class="loader form__loader"
       src="~/assets/golden.svg"
       alt="Loading spinner"
     />
+    <div v-else-if="!hasTicketsLeft" class="form--sold">
+      <h2>Sorry, this event just got sold out.</h2>
+    </div>
     <div v-else>
-      <transition name="appear" mode="out-in" @after-enter="handleStepChange">
+      <transition name="appear" mode="out-in">
         <div key="input" v-if="!hasPersistedData" class="form__container">
           <h2>Payment info</h2>
           <label for="name">Full name</label>
@@ -34,8 +48,6 @@
             v-model="userPhone"
             type="tel"
             id="phone"
-            maxlength="8"
-            placeholder="+45"
             class="form__field form__field--phone"
           />
           <input
@@ -45,12 +57,16 @@
             @click="verifyUserInput"
           />
         </div>
-        <div
-          key="adyen"
-          class="adyen__container"
-          v-else
-          ref="adyenContainer"
-        ></div>
+        <div key="stripe" class="stripe__wrapper" v-else>
+          <div
+            v-if="hasInitializedPayment"
+            ref="stripeSubmit"
+            :class="{ disabled: isCardFieldEmpty }"
+            class="stripe__submit button"
+          >
+            {{ "Pay " + eventPrice + " kr." }}
+          </div>
+        </div>
       </transition>
     </div>
   </section>
@@ -58,13 +74,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-let AdyenCheckout = null;
-try {
-  AdyenCheckout = require("@adyen/adyen-web");
-} catch (error) {
-  console.log(error);
-}
-import "@adyen/adyen-web/dist/adyen.css";
+import { loadStripe } from "@stripe/stripe-js/pure";
 
 export default {
   name: "TheTicketForm",
@@ -73,6 +83,7 @@ export default {
       userName: "",
       userEmail: "",
       userPhone: "",
+      isCardFieldEmpty: true,
     };
   },
   props: {
@@ -87,6 +98,7 @@ export default {
       "getMessage",
       "hasPersistedData",
       "isLoading",
+      "hasInitializedPayment",
     ]),
   },
   methods: {
@@ -97,99 +109,148 @@ export default {
         !this.userEmail.match(
           /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g
         ) ||
-        !this.userPhone.match(/[0-9]{8}/g)
+        !this.userPhone.match(/[0-9 ]{8,}/g)
       ) {
-        this.$store.dispatch(
-          "displayMessage",
-          "Name, email, and a Danish phone number are required."
-        );
+        this.$store.dispatch("displayMessage", {
+          messageText: "Name, and a valid email and phone number are required.",
+          keepUpFor: 5000,
+        });
         return;
       }
+      this.$store.commit("setLoading", true);
+      try {
+        await this.$store.dispatch(
+          "checkForDuplicateParticipant",
+          this.userEmail.trim()
+        );
+      } catch (error) {
+        this.$store.dispatch("displayMessage", {
+          messageText: error,
+          keepUpFor: 5000,
+        });
+        return;
+      }
+      this.$store.commit("setLoading", false);
       await this.$store.dispatch("persistUserData", {
         userName: this.userName.trim(),
         userEmail: this.userEmail.trim(),
         userPhone: this.userPhone,
       });
+      this.summonStripe();
     },
-    summonAdyen() {
-      const configuration = {
-        paymentMethodsResponse: {
-          paymentMethods: [
+    async summonStripe() {
+      if (this.hasPersistedData && this.$refs.stripeContainer) {
+        this.$store.commit("setLoading", true);
+        if (!this.$store.state.paymentId) {
+          // The price must be in øre...hence times 100
+          await this.$store.dispatch("createPayment", this.eventPrice * 100);
+        }
+        const stripe = await loadStripe(process.env.GRIDSOME_STRIPE_PUBLIC_KEY);
+        this.$store.commit("setLoading", false);
+        const elements = stripe.elements({
+          fonts: [
             {
-              name: "MobilePay",
-              supportsRecurring: true,
-              type: "mobilepay",
+              cssSrc:
+                "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap",
             },
           ],
-        },
-        clientKey: process.env.GRIDSOME_ADYEN_CLIENT,
-        locale: "en-US",
-        environment: "test",
-        onSubmit: (state, dropin) => {
-          this.makePayment(state.data)
-            .then((response) => {
-              if (response.action) {
-                dropin.handleAction(response.action);
-              } else {
-                console.log(response); // Handle cases without an action
-              }
-            })
-            .catch((error) => {
-              this.$store.dispatch("displayMessage", error.message);
-              setTimeout(() => {
-                this.$emit("closeForm");
-              }, 5000);
-            });
-        },
-        onAdditionalDetails: (state, dropin) => {
-          console.log(state, dropin);
-        },
-      };
-      const checkout = new AdyenCheckout(configuration);
-      checkout.create("dropin").mount(this.$refs.adyenContainer);
-    },
-    handleStepChange() {
-      if (this.hasPersistedData && this.$refs.adyenContainer) {
-        this.summonAdyen();
+        });
+        const card = elements.create("card", {
+          style: {
+            base: {
+              color: "#e1e1e1",
+              iconColor: "#e1e1e1",
+              fontFamily: "Roboto, sans-serif",
+              fontSmoothing: "antialiased",
+              fontSize: "16px",
+              "::placeholder": {
+                color: "#e1e1e1",
+              },
+            },
+            invalid: {
+              fontFamily: "Roboto, sans-serif",
+              color: "#ff5555",
+              iconColor: "#ff5555",
+            },
+          },
+        });
+        await this.$nextTick();
+        // Stripe injects an iframe into the DOM
+        card.mount(".stripe__card");
+        this.isCardFieldEmpty = true;
+        card.on("change", (event) => {
+          this.isCardFieldEmpty = event.empty;
+        });
+        this.$refs.stripeSubmit.addEventListener("click", () =>
+          this.makePayment(stripe, card)
+        );
       }
     },
-    async makePayment(adyenData) {
+    async makePayment(
+      stripeLibrary,
+      cardElement,
+      paymentId = this.$store.state.paymentId
+    ) {
+      if (this.isCardFieldEmpty) return;
       this.$store.commit("setLoading", true);
       await this.$store.dispatch("checkParticipantAmount");
       if (!this.hasTicketsLeft) {
-        throw new Error(
-          "The maximum attendance capacity has unfortunately been reached."
-        );
+        this.$store.dispatch("displayMessage", {
+          messageText:
+            "The maximum attendance capacity has unfortunately just been reached.",
+          keepUpFor: 5000,
+        });
+        this.$store.commit("resetPaymentData");
+        return;
       }
-
-      const rawDatabaseResponse = await fetch(
-        `${process.env.GRIDSOME_API_URL}.netlify/functions/make-payment`,
+      const paymentResponse = await stripeLibrary.confirmCardPayment(
+        paymentId,
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
+          payment_method: {
+            card: cardElement,
           },
-          body: JSON.stringify({
-            amount: { currency: "DKK", value: this.eventPrice },
-            adyenData,
-            telephoneNumber: "+45" + this.userPhone,
-            reference: this.userName.trim(),
-          }),
         }
       );
-      const response = await rawDatabaseResponse.json();
       this.$store.commit("setLoading", false);
-      if (response?.action?.paymentData && typeof window !== "undefined") {
-        window.localStorage.setItem("paymentData", response.action.paymentData);
-        return response;
+      if (paymentResponse.error) {
+        this.$store.dispatch("displayMessage", {
+          messageText: paymentResponse.error.message,
+          keepUpFor: 5000,
+        });
+        this.summonStripe();
+      } else {
+        this.handleSuccess();
       }
-      throw new Error(
-        "Something happened while redirecting you to MobilePay, please try again later."
-      );
+    },
+    async handleSuccess() {
+      this.$store.commit("setLoading", true);
+      this.$store
+        .dispatch("saveParticipant", {
+          email: this.$store.state.userEmail,
+          name: this.$store.state.userName,
+          phone: this.$store.state.userPhone,
+        })
+        .then((message) => {
+          this.$store.commit("setLoading", false);
+          this.$router.push("/confirmation", () =>
+            this.$store.dispatch("displayMessage", {
+              messageText: message,
+              keepUpFor: null,
+            })
+          );
+        });
     },
   },
   mounted: function () {
-    this.handleStepChange();
+    this.summonStripe();
+  },
+  beforeDestroy: function () {
+    if (this.$refs.stripeSubmit) {
+      this.$refs.stripeSubmit.removeEventListener(
+        "click",
+        () => this.makePayment
+      );
+    }
   },
 };
 </script>
@@ -221,6 +282,27 @@ export default {
   }
 }
 
+.form--sold {
+  padding: 32px;
+  background-color: $red;
+}
+
+.form__loader {
+  margin-top: $spacer;
+}
+
+.stripe__wrapper {
+  .stripe__submit {
+    margin: 16px 32px 16px 32px;
+    padding: 8px;
+
+    &.disabled {
+      cursor: default;
+      color: grey;
+    }
+  }
+}
+
 .form__message {
   background-color: $red;
   padding: 16px 32px;
@@ -242,53 +324,23 @@ export default {
 
 .appear-enter-active,
 .appear-leave-active {
-  transition: opacity 0.1s;
+  transition: opacity 0.5s;
 }
 .appear-enter,
 .appear-leave-to {
   opacity: 0;
 }
 
-// Adyen styling
-::v-deep .adyen__container {
-  &.appear-leave-active {
-    margin-top: $spacer;
-  }
+// Stripe styling
+.stripe__container {
+  // &.appear-leave-active {
+  //   margin-top: $spacer;
+  // }
+  margin: $spacer 0;
+  padding: 0 32px;
 
-  .adyen-checkout__payment-method {
-    border-radius: 0;
-    padding: 0 16px;
-    background-color: $background;
-    border: none;
-
-    .adyen-checkout__payment-method__header {
-      display: none;
-    }
-
-    .adyen-checkout__payment-method__details__content {
-      margin: 0;
-
-      button {
-        border-radius: 0;
-        font-family: "Benzin-Semibold";
-        background-color: $heading;
-        text-transform: uppercase;
-        color: $background;
-        height: $buttonHeight;
-        margin-bottom: $spacer;
-        line-height: 20px;
-
-        &:hover,
-        &:focus {
-          background-color: $heading;
-          box-shadow: none;
-        }
-
-        .adyen-checkout__button__text {
-          overflow: visible;
-        }
-      }
-    }
+  .stripe__heading {
+    margin-bottom: 12px;
   }
 }
 </style>

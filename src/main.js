@@ -16,6 +16,7 @@ export default function (Vue, { appOptions }) {
       userName: null,
       userEmail: null,
       userPhone: null,
+      paymentId: null,
     },
     mutations: {
       setMessageText(state, message) {
@@ -35,11 +36,26 @@ export default function (Vue, { appOptions }) {
         state.userEmail = userData.userEmail;
         state.userPhone = userData.userPhone;
       },
+      setPaymentId(state, newId) {
+        state.paymentId = newId;
+      },
+      resetPaymentData(state) {
+        state.userName =
+          state.userEmail =
+          state.userPhone =
+          state.paymentId =
+            null;
+      },
     },
     getters: {
       hasTicketsLeft(state) {
         return (
           Number(process.env.GRIDSOME_EVENT_CAPACITY) > state.participantAmount
+        );
+      },
+      getTicketsLeft(state) {
+        return (
+          Number(process.env.GRIDSOME_EVENT_CAPACITY) - state.participantAmount
         );
       },
       getMessage(state) {
@@ -51,6 +67,9 @@ export default function (Vue, { appOptions }) {
       hasPersistedData(state) {
         return !!state.userName && !!state.userEmail && !!state.userPhone;
       },
+      hasInitializedPayment(state) {
+        return !!state.paymentId;
+      },
     },
     actions: {
       async checkParticipantAmount({ commit, dispatch }) {
@@ -58,17 +77,37 @@ export default function (Vue, { appOptions }) {
           `${process.env.GRIDSOME_API_URL}.netlify/functions/get-current-user-amount`
         );
         if (rawData.status !== 200) {
-          dispatch(
-            "displayMessage",
-            "There has been an error, please try again later."
-          );
+          dispatch("displayMessage", {
+            messageText:
+              "There has been an error with our database, please try again later.",
+            keepUpFor: 5000,
+          });
           return;
         }
         const response = await rawData.json();
         commit("setCurrentParticipantAmount", Number(response));
       },
-      async sendConfirmationEmail({ dispatch }, participantInfo) {
+      async saveParticipant(context, participantInfo) {
         const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: participantInfo.email,
+              name: participantInfo.name,
+              phone: participantInfo.phone,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          return await rawData.text();
+        }
+        const userData = await rawData.json();
+
+        const rawEmail = await fetch(
           `${process.env.GRIDSOME_API_URL}.netlify/functions/send-confirmation-email`,
           {
             method: "POST",
@@ -76,20 +115,58 @@ export default function (Vue, { appOptions }) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              participantId: participantInfo.participantId,
-              contactEmail: participantInfo.email,
-              contactName: participantInfo.name,
+              ...userData,
             }),
           }
         );
-        await dispatch("checkParticipantAmount");
-        dispatch("displayMessage", await rawData.text());
+        return await rawEmail.text();
       },
-      displayMessage({ commit }, messageText) {
+      async createPayment({ commit }, paymentAmount) {
+        const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/create-payment`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentAmount,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          dispatch("displayMessage", {
+            messageText:
+              "There has been an error with the payment provider, please try again later.",
+            keepUpFor: 5000,
+          });
+          return;
+        }
+        const response = await rawData.json();
+        commit("setPaymentId", response.clientSecret);
+      },
+      async checkForDuplicateParticipant(context, userEmail) {
+        const rawData = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/validate-signup`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: userEmail,
+            }),
+          }
+        );
+        if (rawData.status !== 200) {
+          throw await rawData.text();
+        }
+      },
+      displayMessage({ commit }, { messageText, keepUpFor }) {
         commit("setMessageText", messageText);
         commit("setLoading", false);
-
-        setTimeout(() => commit("resetMessageText"), 5000);
+        if (!keepUpFor) return;
+        setTimeout(() => commit("resetMessageText"), keepUpFor);
       },
       persistUserData({ commit }, userData) {
         commit("setUserData", userData);

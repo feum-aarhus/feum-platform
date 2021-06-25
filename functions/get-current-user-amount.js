@@ -18,9 +18,10 @@ exports.handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify(results.length),
     };
+  } else {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(databaseConnected.error),
+    };
   }
-  return {
-    statusCode: 500,
-    body: databaseConnected.error,
-  };
 };

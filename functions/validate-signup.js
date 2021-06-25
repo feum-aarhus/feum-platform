@@ -15,25 +15,21 @@ exports.handler = async (event) => {
   if (!databaseConnected.error) {
     try {
       const data = JSON.parse(event.body);
-      const currentMaxId = await models.Participant.findOne({})
-        .sort("-participantId")
-        .exec();
-      const newlyGivenId =
-        currentMaxId && currentMaxId.participantId
-          ? currentMaxId.participantId + 1
-          : 1;
-      const newParticipant = new models.Participant({
-        ...data,
-        participantId: newlyGivenId,
-        ticketDownloadedTimes: 0,
-        ticketScanned: false,
-      });
-      await newParticipant.save();
+      const participantVerification = await models.Participant.find({
+        email: data.email,
+      }).exec();
       mongoose.disconnect();
-      return {
-        statusCode: 200,
-        body: JSON.stringify(data),
-      };
+      if (participantVerification.length) {
+        return {
+          statusCode: 401,
+          body: "This email is already registered.",
+        };
+      } else {
+        return {
+          statusCode: 200,
+          body: JSON.stringify(data),
+        };
+      }
     } catch (error) {
       return {
         statusCode: 500,
