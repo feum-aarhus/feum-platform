@@ -32,7 +32,10 @@ exports.handler = async (event) => {
       mongoose.disconnect();
       return {
         statusCode: 200,
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          email: data.email,
+          participantId: newlyGivenId,
+        }),
       };
     } catch (error) {
       return {

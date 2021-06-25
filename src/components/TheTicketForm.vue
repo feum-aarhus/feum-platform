@@ -231,7 +231,6 @@ export default {
           phone: this.$store.state.userPhone,
         })
         .then((message) => {
-          this.$store.commit("setLoading", false);
           this.$router.push("/confirmation", () =>
             this.$store.dispatch("displayMessage", {
               messageText: message,

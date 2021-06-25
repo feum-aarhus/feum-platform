@@ -14,9 +14,7 @@ exports.handler = async (event) => {
       headers: { Allow: "POST" },
     };
   }
-
   const data = JSON.parse(event.body);
-
   const mailgunData = {
     from: FROM_EMAIL_ADDRESS,
     to: data.email,
