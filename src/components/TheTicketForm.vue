@@ -111,10 +111,10 @@ export default {
         ) ||
         !this.userPhone.match(/[0-9 ]{8,}/g)
       ) {
-        this.$store.dispatch(
-          "displayMessage",
-          "Name, email, and a valid phone number are required."
-        );
+        this.$store.dispatch("displayMessage", {
+          messageText: "Name, and a valid email and phone number are required.",
+          keepUpFor: 5000,
+        });
         return;
       }
       this.$store.commit("setLoading", true);
@@ -124,7 +124,10 @@ export default {
           this.userEmail.trim()
         );
       } catch (error) {
-        this.$store.dispatch("displayMessage", error);
+        this.$store.dispatch("displayMessage", {
+          messageText: error,
+          keepUpFor: 5000,
+        });
         return;
       }
       this.$store.commit("setLoading", false);
@@ -192,10 +195,11 @@ export default {
       this.$store.commit("setLoading", true);
       await this.$store.dispatch("checkParticipantAmount");
       if (!this.hasTicketsLeft) {
-        this.$store.dispatch(
-          "displayMessage",
-          "The maximum attendance capacity has unfortunately been reached."
-        );
+        this.$store.dispatch("displayMessage", {
+          messageText:
+            "The maximum attendance capacity has unfortunately just been reached.",
+          keepUpFor: 5000,
+        });
         this.$store.commit("resetPaymentData");
         return;
       }
@@ -209,23 +213,25 @@ export default {
       );
       this.$store.commit("setLoading", false);
       if (paymentResponse.error) {
-        this.$store.dispatch("displayMessage", paymentResponse.error.message);
-        console.log("Payment failed!");
+        this.$store.dispatch("displayMessage", {
+          messageText: paymentResponse.error.message,
+          keepUpFor: 5000,
+        });
         this.summonStripe();
       } else {
         this.handleSuccess();
       }
     },
     async handleSuccess() {
-      console.log("Payment successful!");
       this.$store.commit("setLoading", true);
-      await this.$store.dispatch("saveParticipant", {
-        email: this.$store.state.userEmail,
-        name: this.$store.state.userName,
-        phone: this.$store.state.userPhone,
-      });
-      this.$store.commit("setLoading", false);
-      this.$router.push("/confirmation");
+      this.$store
+        .dispatch("saveParticipant", {
+          email: this.$store.state.userEmail,
+          name: this.$store.state.userName,
+          phone: this.$store.state.userPhone,
+        })
+        .then(() => this.$store.commit("setLoading", false))
+        .finally(() => this.$router.push("/confirmation"));
     },
   },
   mounted: function () {

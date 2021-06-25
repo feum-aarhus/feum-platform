@@ -51,6 +51,6 @@ exports.handler = async (event) => {
     }))
     .catch((error) => ({
       statusCode: 422,
-      body: "Something messed up with our emailing service, please contact FEUM with your credentials about receiving the ticket.",
+      body: "The payment succeeded, but something messed up with our emailing service, please contact FEUM with your credentials about receiving the ticket.",
     }));
 };

@@ -15,10 +15,16 @@ exports.handler = async (event) => {
   if (!databaseConnected.error) {
     try {
       const data = JSON.parse(event.body);
-      const amountOfParticipants = await models.Participant.find({});
+      const currentMaxId = await models.Participant.findOne({})
+        .sort("-participantId")
+        .exec();
+      const newlyGivenId =
+        currentMaxId && currentMaxId.participantId
+          ? currentMaxId.participantId + 1
+          : 1;
       const newParticipant = new models.Participant({
         ...data,
-        participantId: amountOfParticipants.length + 1,
+        participantId: newlyGivenId,
         ticketDownloadedTimes: 0,
         ticketScanned: false,
       });

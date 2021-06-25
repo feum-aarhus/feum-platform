@@ -77,10 +77,11 @@ export default function (Vue, { appOptions }) {
           `${process.env.GRIDSOME_API_URL}.netlify/functions/get-current-user-amount`
         );
         if (rawData.status !== 200) {
-          dispatch(
-            "displayMessage",
-            "There has been an error, please try again later."
-          );
+          dispatch("displayMessage", {
+            messageText:
+              "There has been an error with our database, please try again later.",
+            keepUpFor: 5000,
+          });
           return;
         }
         const response = await rawData.json();
@@ -118,7 +119,10 @@ export default function (Vue, { appOptions }) {
             }),
           }
         );
-        dispatch("displayMessage", await rawEmail.text(), true);
+        dispatch("displayMessage", {
+          messageText: await rawEmail.text(),
+          keepUpFor: null,
+        });
       },
       async createPayment({ commit }, paymentAmount) {
         const rawData = await fetch(
@@ -134,10 +138,11 @@ export default function (Vue, { appOptions }) {
           }
         );
         if (rawData.status !== 200) {
-          dispatch(
-            "displayMessage",
-            "There has been an error, please try again later."
-          );
+          dispatch("displayMessage", {
+            messageText:
+              "There has been an error with the payment provider, please try again later.",
+            keepUpFor: 5000,
+          });
           return;
         }
         const response = await rawData.json();
@@ -160,11 +165,11 @@ export default function (Vue, { appOptions }) {
           throw await rawData.text();
         }
       },
-      displayMessage({ commit }, messageText, keepUp) {
+      displayMessage({ commit }, { messageText, keepUpFor }) {
         commit("setMessageText", messageText);
         commit("setLoading", false);
-        if (keepUp) return;
-        setTimeout(() => commit("resetMessageText"), 5000);
+        if (!keepUpFor) return;
+        setTimeout(() => commit("resetMessageText"), keepUpFor);
       },
       persistUserData({ commit }, userData) {
         commit("setUserData", userData);
