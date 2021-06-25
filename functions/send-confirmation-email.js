@@ -33,7 +33,7 @@ exports.handler = async (event) => {
 <body style="font-family: 'Source Code Pro', monospace;">
 <div>
     <h1 style="font-size: 1.25rem;">Hey you! Thank you again for joining us :)</h1>
-
+    <p>Your ticket number is <b>${data.participantId}</b></p>
     <p>You will receive your e-ticket <b>within 24 hours</b>. If not, please email us with the following subject ‘[CS] E-ticket not received’ followed by your full name and phone number.</p>
     <p style="font-weight: bold;">Yours Truly, FEUM!</p>
 </div>  

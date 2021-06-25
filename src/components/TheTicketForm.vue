@@ -230,8 +230,15 @@ export default {
           name: this.$store.state.userName,
           phone: this.$store.state.userPhone,
         })
-        .then(() => this.$store.commit("setLoading", false))
-        .finally(() => this.$router.push("/confirmation"));
+        .then((message) => {
+          this.$store.commit("setLoading", false);
+          this.$router.push("/confirmation", () =>
+            this.$store.dispatch("displayMessage", {
+              messageText: message,
+              keepUpFor: null,
+            })
+          );
+        });
     },
   },
   mounted: function () {

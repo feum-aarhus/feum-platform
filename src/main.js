@@ -87,7 +87,7 @@ export default function (Vue, { appOptions }) {
         const response = await rawData.json();
         commit("setCurrentParticipantAmount", Number(response));
       },
-      async saveParticipant({ dispatch }, participantInfo) {
+      async saveParticipant(context, participantInfo) {
         const rawData = await fetch(
           `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
           {
@@ -103,7 +103,7 @@ export default function (Vue, { appOptions }) {
           }
         );
         if (rawData.status !== 200) {
-          console.log("Send an email to FEUM here");
+          return await rawData.text();
         }
         const userData = await rawData.json();
 
@@ -119,10 +119,7 @@ export default function (Vue, { appOptions }) {
             }),
           }
         );
-        dispatch("displayMessage", {
-          messageText: await rawEmail.text(),
-          keepUpFor: null,
-        });
+        return await rawEmail.text();
       },
       async createPayment({ commit }, paymentAmount) {
         const rawData = await fetch(

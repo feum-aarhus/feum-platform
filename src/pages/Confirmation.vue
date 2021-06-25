@@ -12,12 +12,7 @@
         alt="Success tick icon"
       />
       <h2>Thank you!</h2>
-      <p>
-        Your purchase was a success, we can’t wait to dance together!
-        <br />
-        <br />
-        A confirmation email has been sent to your mailbox.
-      </p>
+      <p>A confirmation email has been sent to your mailbox.</p>
     </div>
   </Layout>
 </template>
