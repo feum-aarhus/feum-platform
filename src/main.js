@@ -162,6 +162,23 @@ export default function (Vue, { appOptions }) {
           throw await rawData.text();
         }
       },
+      async verifyTicket(context, ticketId) {
+        const rawVerification = await fetch(
+          `${process.env.GRIDSOME_API_URL}.netlify/functions/verify-ticket`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ticketId,
+            }),
+          }
+        );
+        if (rawVerification.status !== 200) {
+          throw await rawVerification.text();
+        }
+      },
       displayMessage({ commit }, { messageText, keepUpFor }) {
         commit("setMessageText", messageText);
         commit("setLoading", false);

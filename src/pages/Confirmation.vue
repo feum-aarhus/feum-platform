@@ -12,7 +12,7 @@
         alt="Success tick icon"
       />
       <h2>Thank you!</h2>
-      <p>A confirmation email has been sent to your mailbox.</p>
+      <p>A confirmation email should be arriving shortly in your mailbox.</p>
     </div>
   </Layout>
 </template>

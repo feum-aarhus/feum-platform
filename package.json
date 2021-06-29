@@ -21,6 +21,7 @@
     "gridsome": "0.7.23",
     "mailgun-js": "0.22.0",
     "mongoose": "5.12.8",
+    "qrcode": "1.4.4",
     "stripe": "8.148.0",
     "vuex": "3.6.2"
   },

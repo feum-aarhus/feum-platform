@@ -15,31 +15,20 @@ exports.handler = async (event) => {
   if (!databaseConnected.error) {
     try {
       const data = JSON.parse(event.body);
-      const currentMaxId = await models.Participant.findOne({})
-        .sort("-participantId")
-        .exec();
-      const newlyGivenId =
-        currentMaxId && currentMaxId.participantId
-          ? currentMaxId.participantId + 1
-          : 1;
-      const newParticipant = new models.Participant({
-        ...data,
-        participantId: newlyGivenId,
-        ticketScanned: false,
-      });
-      await newParticipant.save();
+      const isTicketValid = await models.Participant.findOneAndUpdate(
+        { _id: data.ticketId, ticketScanned: false },
+        { ticketScanned: true }
+      );
       mongoose.disconnect();
-      return {
-        statusCode: 200,
-        body: JSON.stringify({
-          email: data.email,
-          participantId: newlyGivenId,
-          _id: newParticipant._id,
-        }),
-      };
+      if (!isTicketValid) throw "This ticket is invalid.";
+      else
+        return {
+          statusCode: 200,
+          body: "This ticket is valid.",
+        };
     } catch (error) {
       return {
-        statusCode: 500,
+        statusCode: 401,
         body: JSON.stringify(error),
       };
     }

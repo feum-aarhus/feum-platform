@@ -23,14 +23,14 @@ module.exports = {
   siteDescription: "We love electronic music!",
   titleTemplate: "%s | FEUM",
   templates: {
-    events: [
-      {
-        path: (node) => {
-          return `/event/${node.id}`;
-        },
-        component: "./src/templates/Event.vue",
-      },
-    ],
+    // events: [
+    //   {
+    //     path: (node) => {
+    //       return `/event/${node.id}`;
+    //     },
+    //     component: "./src/templates/Event.vue",
+    //   },
+    // ],
   },
   plugins: [
     {
