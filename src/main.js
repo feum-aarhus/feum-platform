@@ -17,6 +17,7 @@ export default function (Vue, { appOptions }) {
       userEmail: null,
       userPhone: null,
       paymentId: null,
+      userSavedSuccessfully: false,
     },
     mutations: {
       setMessageText(state, message) {
@@ -45,6 +46,9 @@ export default function (Vue, { appOptions }) {
           state.userPhone =
           state.paymentId =
             null;
+      },
+      setUserSuccess(state, didSucceed) {
+        state.userSavedSuccessfully = didSucceed;
       },
     },
     getters: {
@@ -87,7 +91,7 @@ export default function (Vue, { appOptions }) {
         const response = await rawData.json();
         commit("setCurrentParticipantAmount", Number(response));
       },
-      async saveParticipant(context, participantInfo) {
+      async saveParticipant({ commit }, participantInfo) {
         const rawData = await fetch(
           `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
           {
@@ -119,6 +123,9 @@ export default function (Vue, { appOptions }) {
             }),
           }
         );
+        if (rawEmail.status === 200) {
+          commit("setUserSuccess", true);
+        }
         return await rawEmail.text();
       },
       async createPayment({ commit }, paymentAmount) {

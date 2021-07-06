@@ -335,11 +335,17 @@ export default {
   // &.appear-leave-active {
   //   margin-top: $spacer;
   // }
-  margin: $spacer 0;
-  padding: 0 32px;
+  margin: $spacer 0 $spacer * 2 0;
 
   .stripe__heading {
     margin-bottom: 12px;
+    padding: 0 32px;
+  }
+
+  .stripe__card {
+    height: $stripeCardHeight;
+    padding: 16px 32px;
+    background-color: $grey;
   }
 }
 </style>

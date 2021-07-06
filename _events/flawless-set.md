@@ -11,15 +11,16 @@ lineup:
   - name: C.K
     country: DK
     label: Regelbau
+    link: https://soundcloud.com/ck_sounds?fbclid=IwAR2IJAtHcUamaFuR4J0n8oFVm-DlHJi6vbTx_QNBJRKwOfulj3c9vgwJ9_Q
   - name: DB+
     country: DK
-    label: No label
   - name: DJ Top$pin
     country: PL
     label: FEUM
   - name: Luni
     country: DK
     label: FEUM
+    link: https://www.facebook.com/LUNIsound/?__cft__[0]=AZWO1bSOFZpWCsebSbuZJWGakvs6QFEojgt5QCEoCzEsdDIR73NphCgMJ6cviuOCOnU9IhYytHqyemRMWF8jAXyH02OnPmdBzpmyuCIZACion1i2eZLNESjtfDs65Z3xqHEgQGONdN1pLISR4XxOUmX3eZy58OPcM9NcX1iZC5EYUw&__tn__=q
 music_list:
   - music: Awesome
 ---
@@ -32,14 +33,6 @@ We are eased to see that the Danish society is slowly but surely reopening. Yet,
 
 
 To make the burden of waiting slightly easier to carry, FEUM is delighted to present its first hangout since the lockdown. The event is considered as a sitting bar vibe hangout. Bar, electronic music, and people. Simple, cozy, and cheerful
-
-
-
-[https://soundcloud.com/ck_sounds](https://soundcloud.com/ck_sounds?fbclid=IwAR2IJAtHcUamaFuR4J0n8oFVm-DlHJi6vbTx_QNBJRKwOfulj3c9vgwJ9_Q)
-
-
-
-[https://www.facebook.com/LUNIsound](https://www.facebook.com/LUNIsound/?__cft__[0]=AZWO1bSOFZpWCsebSbuZJWGakvs6QFEojgt5QCEoCzEsdDIR73NphCgMJ6cviuOCOnU9IhYytHqyemRMWF8jAXyH02OnPmdBzpmyuCIZACion1i2eZLNESjtfDs65Z3xqHEgQGONdN1pLISR4XxOUmX3eZy58OPcM9NcX1iZC5EYUw&__tn__=q)
 
 
 

@@ -62,10 +62,10 @@ exports.handler = async (event) => {
       .send(mailgunData)
       .then(() => ({
         statusCode: 200,
-        body: "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey.",
+        body: "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey. You will soon receive an email with a QR code that will serve as your ticket.",
       }))
       .catch((error) => {
-        throw "The payment succeeded, but something messed up with our emailing service, please contact FEUM with your credentials about receiving the ticket.";
+        throw "The payment succeeded, but something messed up with our emailing service, please contact FEUM with your credentials about receiving your ticket.";
       });
   } catch (error) {
     return {

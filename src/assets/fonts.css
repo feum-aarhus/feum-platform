@@ -35,8 +35,15 @@
 }
 
 @font-face {
-  font-family: 'Roboto-Regular';
+  font-family: 'Helvetica-Regular';
   font-display: swap;
   font-weight: 400;
-  src: url('./Roboto-Regular/Roboto-Regular.ttf') format('truetype');
+  src: url('./Helvetica-Regular/Helvetica-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica-Bold';
+  font-display: swap;
+  font-weight: 700;
+  src: url('./Helvetica-Bold/Helvetica-Bold.otf') format('opentype');
 }

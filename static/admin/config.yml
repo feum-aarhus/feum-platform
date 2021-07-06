@@ -82,7 +82,18 @@ collections:
         fields:
           - { label: "Artist Name", name: "name", widget: "string" }
           - { label: "Country Abbreviation", name: "country", widget: "string" }
-          - { label: "Artist's Label(s)", name: "label", widget: "string" }
+          - {
+              label: "Artist's Label(s)",
+              name: "label",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Artist's SoundCloud/Spotify page",
+              name: "link",
+              widget: "string",
+              required: false,
+            }
       - { label: "Event Text", name: "body", widget: "markdown" }
       - label: "Featured Music"
         name: "music_list"

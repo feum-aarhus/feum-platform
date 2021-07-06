@@ -1,18 +1,38 @@
 <template>
   <Layout>
-    <transition name="fade">
-      <div v-if="getMessage" class="form__message">
-        <p class="message__text">{{ getMessage }}</p>
-      </div>
-    </transition>
-    <div class="success__container">
+    <div class="outcome__container">
       <g-image
-        class="success__tick"
+        class="outcome__icon"
         src="~/assets/tick.svg"
         alt="Success tick icon"
+        v-if="$store.state.userSavedSuccessfully"
       />
-      <h2>Thank you!</h2>
-      <p>A confirmation email should be arriving shortly in your mailbox.</p>
+      <g-image
+        class="outcome__icon"
+        src="~/assets/cross.svg"
+        alt="Failure cross icon"
+        v-else
+      />
+      <h2>
+        {{
+          this.$store.state.userSavedSuccessfully
+            ? "Thank you!"
+            : "Sorry about the inconvenience!"
+        }}
+      </h2>
+      <div
+        v-if="getMessage"
+        class="form__message"
+        :class="{
+          'form__message--failure': !this.$store.state.userSavedSuccessfully,
+        }"
+      >
+        <p class="message__text">{{ getMessage }}</p>
+      </div>
+      <p class="message__note">
+        *Note: Do not scan the QR code yourself, as that would mark the ticket
+        as used, and it therefore won't work at the event!
+      </p>
     </div>
   </Layout>
 </template>
@@ -27,30 +47,33 @@ export default {
   computed: {
     ...mapGetters(["getMessage"]),
   },
-  mounted: async function () {},
 };
 </script>
 
 <style lang="scss" scoped>
-.success__container {
+.outcome__container {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   margin-top: $spacer;
   text-align: center;
+  margin-bottom: $spacer * 3;
 
   h2 {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
-  .success__tick {
-    width: max-content;
+  .outcome__icon {
+    width: 50%;
     max-width: $contentWidth;
     margin-bottom: $spacer;
-  }
 
-  @include screen-is(md) {
-    margin: $spacer * 2;
+    @include screen-is(md) {
+      width: max-content;
+    }
+  }
+  .message__note {
+    margin-top: $spacer;
   }
 }
 
@@ -64,14 +87,8 @@ export default {
     color: $background;
   }
 
-  &.fade-enter-active,
-  &.fade-leave-active {
-    transition: all 0.5s;
-  }
-  &.fade-enter,
-  &.fade-leave-to {
-    transform: translateY(-100%);
-    opacity: 0;
+  &--failure {
+    background-color: $red;
   }
 }
 </style>

@@ -25,7 +25,7 @@ export default {
   name: "Ticket",
   metaInfo() {
     return {
-      title: "Ticket " + this.$route.params.id,
+      title: "Ticket verification",
     };
   },
   data: function () {

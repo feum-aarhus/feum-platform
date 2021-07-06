@@ -8,22 +8,44 @@
           alt="Event banner"
         />
         <div class="event__info">
-          <h4 class="semi-bold">Start</h4>
-          <p>{{ $static.futureEvent.start }}</p>
-          <h4 class="semi-bold">Location</h4>
-          <p>{{ $static.futureEvent.address }}</p>
-          <h4 class="semi-bold">Price</h4>
-          <div class="event__sale">
-            <p>{{ $static.futureEvent.price + " Kr." }}</p>
-            <span class="sale__online" v-if="$static.futureEvent.presale_only"
-              >(Online presale only)</span
-            >
+          <div class="info__point">
+            <h4 class="semi-bold">Date &amp; Time</h4>
+            <p>{{ $static.futureEvent.start }}</p>
           </div>
-          <h4 class="semi-bold">Event performed by</h4>
-          <div class="event__lineup">
-            <p v-for="artist in $static.futureEvent.lineup" :key="artist.name">
-              {{ `${artist.name} (${artist.country}) (${artist.label})` }}
-            </p>
+          <div class="info__point">
+            <h4 class="semi-bold">Price</h4>
+            <div class="event__sale">
+              <p>{{ $static.futureEvent.price + " Kr." }}</p>
+              <span class="sale__online" v-if="$static.futureEvent.presale_only"
+                >(Online presale only)</span
+              >
+            </div>
+          </div>
+          <div class="info__point">
+            <h4 class="semi-bold">Location</h4>
+            <p>{{ $static.futureEvent.address }}</p>
+          </div>
+          <div class="info__point">
+            <h4 class="semi-bold">Event performed by</h4>
+            <div class="event__lineup">
+              <p
+                v-for="artist in $static.futureEvent.lineup"
+                :key="artist.name"
+                class="lineup__artist"
+              >
+                {{
+                  `${artist.name} (${artist.country}) (${
+                    artist.label ? artist.label : "no label"
+                  })`
+                }}
+                <g-link
+                  v-if="artist.link"
+                  :to="artist.link"
+                  class="lineup__link"
+                  >Listen to {{ artist.name }} here</g-link
+                >
+              </p>
+            </div>
           </div>
         </div>
         <h4 class="semi-bold">About the event</h4>
@@ -110,6 +132,7 @@ query {
       name
       country
       label
+      link
     }
     music
     content
@@ -190,16 +213,31 @@ export default {
     .event__info {
       margin-bottom: 18px;
 
-      p:not(:last-child) {
-        margin-bottom: 18px;
-      }
-      .event__sale {
-        display: flex;
+      .info__point {
+        p:not(.lineup__artist) {
+          margin-bottom: 18px;
+        }
+        .event__sale {
+          display: flex;
 
-        .sale__online {
-          margin-left: 4px;
+          .sale__online {
+            margin-left: 4px;
+          }
+        }
+        .event__lineup {
+          .lineup__artist:not(:last-child) {
+            margin-bottom: 12px;
+          }
+
+          .lineup__link {
+            display: block;
+          }
         }
       }
+    }
+
+    ::v-deep .event__content p:not(:last-child) {
+      margin-bottom: 12px;
     }
 
     @include screen-is(md) {
@@ -210,9 +248,15 @@ export default {
       }
       .event__info {
         margin-bottom: 26px;
+        display: flex;
+        flex-flow: row wrap;
 
-        p:not(:last-child) {
-          margin-bottom: 26px;
+        .info__point {
+          flex-basis: 50%;
+
+          p:not(.lineup__artist) {
+            margin-bottom: 26px;
+          }
         }
       }
     }
