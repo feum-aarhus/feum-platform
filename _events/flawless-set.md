@@ -3,7 +3,7 @@ start: Saturday, July 24, 2021 10:00 PM
 presale_only: true
 music: Awesome
 banner: /uploads/klub-title.png
-title: "FEUM DAZE:  MARKOVELA X IDA DAUGAARD X S.A.M. X ANASTASIA KRISTENSEN"
+title: "FEUM Hangouts: C.K (DK) x DB+ (DK) x Residents"
 end: Sunday, July 25, 2021 4:00 AM
 address: Block park, Institut for (X)
 price: 120
