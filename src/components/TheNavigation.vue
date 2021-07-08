@@ -5,7 +5,7 @@
         <g-image class="nav__logo" src="~/assets/logo.svg" alt="FEUM logo" />
       </li>
       <li>
-        <g-link to="https://feum.net" class="link--back">
+        <g-link to="https://feum.net/allevents" class="link--back">
           <p class="back__text">Back to all events</p>
         </g-link>
       </li>

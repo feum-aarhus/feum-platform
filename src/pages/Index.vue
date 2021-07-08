@@ -8,11 +8,11 @@
           alt="Event banner"
         />
         <div class="event__info">
-          <div class="info__point">
+          <div class="info__point info__point--start">
             <h4 class="semi-bold">Date &amp; Time</h4>
             <p>{{ $static.futureEvent.start }}</p>
           </div>
-          <div class="info__point">
+          <div class="info__point info__point--price">
             <h4 class="semi-bold">Price</h4>
             <div class="event__sale">
               <p>{{ $static.futureEvent.price + " Kr." }}</p>
@@ -21,11 +21,11 @@
               >
             </div>
           </div>
-          <div class="info__point">
+          <div class="info__point info__point--address">
             <h4 class="semi-bold">Location</h4>
             <p>{{ $static.futureEvent.address }}</p>
           </div>
-          <div class="info__point">
+          <div class="info__point info__point--artists">
             <h4 class="semi-bold">Event performed by</h4>
             <div class="event__lineup">
               <p
@@ -248,14 +248,24 @@ export default {
       }
       .event__info {
         margin-bottom: 26px;
-        display: flex;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
 
         .info__point {
-          flex-basis: 50%;
-
           p:not(.lineup__artist) {
-            margin-bottom: 26px;
+            margin-bottom: 0;
+          }
+
+          &--start,
+          &--price,
+          &--address {
+            grid-column: 1/2;
+          }
+
+          &--artists {
+            grid-column: 2/3;
+            grid-row: 1/4;
           }
         }
       }
