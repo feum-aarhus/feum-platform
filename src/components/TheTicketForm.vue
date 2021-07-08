@@ -49,6 +49,7 @@
             type="tel"
             id="phone"
             class="form__field form__field--phone"
+            maxlength="15"
           />
           <input
             class="form__submit button"
