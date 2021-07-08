@@ -24,7 +24,7 @@ exports.handler = async (event) => {
   try {
     const imageUrl = await qrcode.toDataURL(
       GRIDSOME_API_URL + "ticket/" + data._id,
-      { width: 512 }
+      { width: 256 }
     );
     const attachment = new mailgun.Attachment({
       data: Buffer.from(imageUrl.split(",")[1], "base64"),
@@ -62,15 +62,15 @@ exports.handler = async (event) => {
       .send(mailgunData)
       .then(() => ({
         statusCode: 200,
-        body: "Thank you for taking part in our next adventure. Together, again, let’s draw the first path of a unique and never-ending journey. You will soon receive an email with a QR code that will serve as your ticket.",
+        body: "You will soon receive an email with a QR code that will serve as your ticket. If there are any problems in your purchasing process please contact us at hello@feum.net",
       }))
       .catch((error) => {
-        throw "The payment succeeded, but something messed up with our emailing service, please contact FEUM with your credentials about receiving your ticket.";
+        throw "The payment succeeded, but something messed up with our emailing service, please contact us at hello@feum.net about receiving your ticket.";
       });
   } catch (error) {
     return {
       statusCode: 422,
-      body: JSON.stringify(error),
+      body: "The payment succeeded, but something messed up with our emailing service, please contact us at hello@feum.net about receiving your ticket.",
     };
   }
 };

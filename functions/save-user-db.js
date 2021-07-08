@@ -39,14 +39,14 @@ exports.handler = async (event) => {
       };
     } catch (error) {
       return {
-        statusCode: 500,
-        body: JSON.stringify(error),
+        statusCode: 422,
+        body: "The payment succeeded, but something messed up while saving you in our database, please contact us at hello@feum.net about receiving your ticket.",
       };
     }
   } else {
     return {
-      statusCode: 500,
-      body: JSON.stringify(databaseConnected.error),
+      statusCode: 422,
+      body: "The payment succeeded, but something messed up while saving you in our database, please contact us at hello@feum.net about receiving your ticket.",
     };
   }
 };

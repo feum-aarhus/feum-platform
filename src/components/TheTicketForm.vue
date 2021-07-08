@@ -1,5 +1,8 @@
 <template>
   <section>
+    <div class="form__progress" :style="{ width: currentStep * 50 + '%' }">
+      {{ "Step " + currentStep + "/2" }}
+    </div>
     <transition name="fade">
       <div v-if="getMessage" class="form__message">
         <p class="message__text">{{ getMessage }}</p>
@@ -12,7 +15,7 @@
         v-if="hasPersistedData && hasTicketsLeft"
         key="card-field"
       >
-        <h2 class="stripe__heading">Card info</h2>
+        <h2 class="stripe__heading">Step 2: Card info</h2>
         <div class="stripe__card" ref="stripeContainer"></div>
       </div>
     </transition-group>
@@ -28,7 +31,7 @@
     <div v-else>
       <transition name="appear" mode="out-in">
         <div key="input" v-if="!hasPersistedData" class="form__container">
-          <h2>Payment info</h2>
+          <h2>Step 1: Payment info</h2>
           <label for="name">Full name</label>
           <input
             v-model="userName"
@@ -58,14 +61,33 @@
             @click="verifyUserInput"
           />
         </div>
-        <div key="stripe" class="stripe__wrapper" v-else>
+        <div key="stripe" class="submit__wrapper" v-else>
+          <div class="form__terms">
+            <input type="checkbox" id="terms" v-model="agreedWithTerms" />
+            <label for="terms" class="marginless"
+              ><a
+                v-if="!agreedWithTerms"
+                href="https://feum-ticketing.dk/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Here are our terms and conditions</a
+              >{{
+                !this.agreedWithTerms
+                  ? ", are you on board?"
+                  : "Cool, let's go!"
+              }}</label
+            >
+          </div>
           <div
             v-if="hasInitializedPayment"
             ref="stripeSubmit"
             :class="{ disabled: isCardFieldEmpty }"
-            class="stripe__submit button"
+            class="submit__button button"
           >
             {{ "Pay " + eventPrice + " kr." }}
+          </div>
+          <div class="form__back" @click="editInformation">
+            Edit your information
           </div>
         </div>
       </transition>
@@ -85,6 +107,7 @@ export default {
       userEmail: "",
       userPhone: "",
       isCardFieldEmpty: true,
+      agreedWithTerms: false,
     };
   },
   props: {
@@ -101,6 +124,9 @@ export default {
       "isLoading",
       "hasInitializedPayment",
     ]),
+    currentStep() {
+      return this.hasPersistedData ? 2 : 1;
+    },
   },
   methods: {
     async verifyUserInput() {
@@ -193,6 +219,13 @@ export default {
       paymentId = this.$store.state.paymentId
     ) {
       if (this.isCardFieldEmpty) return;
+      if (!this.agreedWithTerms) {
+        this.$store.dispatch("displayMessage", {
+          messageText: "Sorry, the terms are there for a reason.",
+          keepUpFor: 5000,
+        });
+        return;
+      }
       this.$store.commit("setLoading", true);
       await this.$store.dispatch("checkParticipantAmount");
       if (!this.hasTicketsLeft) {
@@ -209,6 +242,11 @@ export default {
         {
           payment_method: {
             card: cardElement,
+            billing_details: {
+              email: this.$store.state.userEmail,
+              name: this.$store.state.userName,
+              phone: this.$store.state.userPhone,
+            },
           },
         }
       );
@@ -239,6 +277,9 @@ export default {
             })
           );
         });
+    },
+    editInformation() {
+      this.$store.commit("confirmUserData", false);
     },
   },
   mounted: function () {
@@ -291,14 +332,40 @@ export default {
   margin-top: $spacer;
 }
 
-.stripe__wrapper {
-  .stripe__submit {
+.submit__wrapper {
+  .submit__button {
     margin: 16px 32px 16px 32px;
     padding: 8px;
 
     &.disabled {
       cursor: default;
       color: grey;
+    }
+  }
+  .form__terms {
+    margin: 0 32px;
+    display: flex;
+
+    input {
+      margin-right: 8px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: $spacer / 2;
+      height: $spacer / 2;
+      background-color: $grey-light;
+
+      &:checked {
+        background-color: greenyellow;
+      }
+    }
+  }
+  .form__back {
+    margin: 32px;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &::before {
+      content: "\2190\0020";
     }
   }
 }
@@ -322,6 +389,15 @@ export default {
   }
 }
 
+.form__progress {
+  text-align: center;
+  font-family: "Helvetica-Bold";
+  padding: 4px 0;
+  color: $background;
+  background-color: $grey-light;
+  transition: width 0.5s ease;
+}
+
 .appear-enter-active,
 .appear-leave-active {
   transition: opacity 0.5s;
@@ -333,10 +409,7 @@ export default {
 
 // Stripe styling
 .stripe__container {
-  // &.appear-leave-active {
-  //   margin-top: $spacer;
-  // }
-  margin: $spacer 0 $spacer * 2 0;
+  margin: $spacer 0 $spacer * 1.5 0;
 
   .stripe__heading {
     margin-bottom: 12px;

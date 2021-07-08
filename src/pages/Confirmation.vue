@@ -5,7 +5,7 @@
         class="outcome__icon"
         src="~/assets/tick.svg"
         alt="Success tick icon"
-        v-if="$store.state.userSavedSuccessfully"
+        v-if="$store.state.userFlowSuccessful"
       />
       <g-image
         class="outcome__icon"
@@ -15,7 +15,7 @@
       />
       <h2>
         {{
-          this.$store.state.userSavedSuccessfully
+          this.$store.state.userFlowSuccessful
             ? "Thank you!"
             : "Sorry about the inconvenience!"
         }}
@@ -24,7 +24,7 @@
         v-if="getMessage"
         class="form__message"
         :class="{
-          'form__message--failure': !this.$store.state.userSavedSuccessfully,
+          'form__message--failure': !this.$store.state.userFlowSuccessful,
         }"
       >
         <p class="message__text">{{ getMessage }}</p>
@@ -69,7 +69,7 @@ export default {
     margin-bottom: $spacer;
 
     @include screen-is(md) {
-      width: max-content;
+      width: $spacer * 10;
     }
   }
   .message__note {
@@ -78,17 +78,21 @@ export default {
 }
 
 .form__message {
-  background-color: $grey-light;
-  padding: 16px 32px;
   max-width: $contentWidth;
   margin: 0 auto;
 
   .message__text {
-    color: $background;
+    font-family: "Helvetica-Regular";
   }
 
   &--failure {
+    padding: 16px 32px;
     background-color: $red;
+    color: $background;
+
+    .message__text {
+      font-family: "Helvetica-Bold";
+    }
   }
 }
 </style>

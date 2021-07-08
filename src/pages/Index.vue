@@ -342,7 +342,7 @@ export default {
         text-align: center;
         align-self: flex-end;
         cursor: pointer;
-        padding: 16px 16px 0 16px;
+        padding: 16px 32px 0 16px;
         flex-shrink: 0;
 
         &::before,

@@ -16,8 +16,9 @@ export default function (Vue, { appOptions }) {
       userName: null,
       userEmail: null,
       userPhone: null,
+      isUserDataConfirmed: false,
       paymentId: null,
-      userSavedSuccessfully: false,
+      userFlowSuccessful: false,
     },
     mutations: {
       setMessageText(state, message) {
@@ -37,6 +38,9 @@ export default function (Vue, { appOptions }) {
         state.userEmail = userData.userEmail;
         state.userPhone = userData.userPhone;
       },
+      confirmUserData(state, setTo) {
+        state.isUserDataConfirmed = setTo;
+      },
       setPaymentId(state, newId) {
         state.paymentId = newId;
       },
@@ -47,8 +51,8 @@ export default function (Vue, { appOptions }) {
           state.paymentId =
             null;
       },
-      setUserSuccess(state, didSucceed) {
-        state.userSavedSuccessfully = didSucceed;
+      setFlowSuccess(state, didSucceed) {
+        state.userFlowSuccessful = didSucceed;
       },
     },
     getters: {
@@ -69,7 +73,12 @@ export default function (Vue, { appOptions }) {
         return state.loading;
       },
       hasPersistedData(state) {
-        return !!state.userName && !!state.userEmail && !!state.userPhone;
+        return (
+          !!state.userName &&
+          !!state.userEmail &&
+          !!state.userPhone &&
+          state.isUserDataConfirmed
+        );
       },
       hasInitializedPayment(state) {
         return !!state.paymentId;
@@ -124,7 +133,7 @@ export default function (Vue, { appOptions }) {
           }
         );
         if (rawEmail.status === 200) {
-          commit("setUserSuccess", true);
+          commit("setFlowSuccess", true);
         }
         return await rawEmail.text();
       },
@@ -194,6 +203,7 @@ export default function (Vue, { appOptions }) {
       },
       persistUserData({ commit }, userData) {
         commit("setUserData", userData);
+        commit("confirmUserData", true);
       },
     },
   });

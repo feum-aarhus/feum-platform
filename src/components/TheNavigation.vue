@@ -47,7 +47,7 @@ export default {
 
       &::before {
         content: "\2190\0020";
-        margin-right: 8px;
+        margin-right: 4px;
       }
       .back__text {
         text-transform: uppercase;
