@@ -31,7 +31,9 @@ Line-up\
 // PERKO\
 // RASMUS FISKER
 
-* support from FEUM resident DJs // PAN BONKA and DET.AL
+support from FEUM resident DJs // PAN BONKA and DET.AL
+
+
 
 \*\* Schacke - “Martin Schacke pioneered in the Copenhagen industrial and noise scene via countless releases under various pseudonyms on his label Moral Defeat.
 
