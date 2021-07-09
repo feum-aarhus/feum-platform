@@ -52,9 +52,19 @@ exports.handler = async (event) => {
         </head>
         <body style="font-family: 'Source Code Pro', monospace;">
         <div>
-            <h1 style="font-size: 1.25rem;">Hey you! Thank you again for joining us :)</h1>
-            <p>Your ticket number is <b>${data.participantId}</b></p>
-            <p>Attached to this email is your ticket. <b>Do not scan the QR code yourself, as that would mark the ticket as used, and it therefore won't work at the event!</b></p>
+            <h1 style="font-size: 1rem;">Hey you!</h1>
+            <p>Thank you for purchasing a ticket to Feum Live that will take place on 24th of July. Use the attached QR code for entering the venue. <b>Please note that you shouldn’t scan the QR code yourself as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
+            <p style="text-decoration: underline;">Timetable</p>
+            <p>18:00 - Door opens</p>
+            <p>18:00 - 19:00 Pan Bonka (DJ set)</p>
+            <p>19:00 - 21:00 Rasmus Fisker</p>
+            <p>21:15 - 22:45 Perko</p>
+            <p>23:00 - 24:00 Schacke</p>
+            <p>24:00 - 02:00 Det.Al (DJ set)</p>
+            <p style="text-decoration: underline;">Refund policy</p>
+            <p>If you need a refund, please contact us at <a href="mailto:hello@feum.net">hello@feum.net</a> with the subject “Refund”. It takes 5 to 10 days to get your money back. We can refund tickets up to 2 days prior to the event, so make sure you contact us before the 22nd of July.</p>
+            <p>Lastly, it is required to have a corona pass and good vibes in order to enter the venue.</p>
+            <p>See you soon!</p>
             <p style="font-weight: bold;">Yours Truly, FEUM!</p>
         </div>  
         </body>
