@@ -1,13 +1,13 @@
 <template>
   <Layout>
-    <div class="terms__container" v-html="$static.theTerms.body"></div>
+    <div class="terms__container" v-html="$static.theTerms.content"></div>
   </Layout>
 </template>
 
 <static-query>
 query {
   theTerms: pages(id: "7f9cf3d076639f80af622e7a137b5a2a") {
-    body
+    content
   }
 }
 </static-query>
@@ -22,7 +22,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.terms__container > * {
-  margin-bottom: 16px;
+::v-deep .terms__container {
+  max-width: $contentWidth;
+  margin: $spacer * 2 auto;
+
+  & > * {
+    margin-bottom: 16px;
+  }
 }
 </style>

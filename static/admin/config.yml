@@ -114,4 +114,4 @@ collections:
     folder: "_pages"
     create: false
     fields:
-      - { label: "The terms", name: "body", widget: "markdown" }
+      - { label: "The terms", name: "content", widget: "markdown" }
