@@ -31,9 +31,7 @@ Line-up\
 // PERKO\
 // RASMUS FISKER
 
-+ support from FEUM resident DJs // PAN BONKA and DET.AL
-
-
+* support from FEUM resident DJs // PAN BONKA and DET.AL
 
 \*\* Schacke - “Martin Schacke pioneered in the Copenhagen industrial and noise scene via countless releases under various pseudonyms on his label Moral Defeat.
 
@@ -47,8 +45,6 @@ Read more:  <https://strm.dk/strm-mix-011-perko/>
 
 \*\* Rasmus Fisker - “Captivated with shape shifting sounds wherein textures matter as much as melodies, and voices are littered with crypticism. His music cherry-picks and transforms elements from genres as diverse as electronica, drone and deep techno sounds. The result is a web of sound that threads poetic lyricism and unfamiliar instruments over a backdrop of electronic elements and synth-heavy dance beats.”
 
-Listen here:  <https://soundcloud.com/rasmusfisker>
-
 Date: 24.07.2021\
 Time: 18.00 - 02.00\
 Location: Ridehuset - Aarhus\
@@ -56,10 +52,6 @@ Fee: 100 DKK 
 
 This event is part of Avenue One by Aarhus Volume - check out the rest of the line-up here: <https://fb.me/e/5bVwFqBoo>
 
-
-
 Important: A valid corona pass is required for this event
-
-
 
 <!--EndFragment-->
