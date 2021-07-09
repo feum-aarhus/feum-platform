@@ -1,51 +1,65 @@
 ---
-start: Saturday, July 24, 2021 10:00 PM
+banner: /uploads/feum-live-recovered.jpg
+title: "FEUM Live: SCHACKE, PERKO, RASMUS FISKER"
+start: Saturday, July 24, 2021 6:00 PM
+end: Sunday, July 25, 2021 2:00 AM
+address: Ridehuset - Aarhus
+price: 100
 presale_only: true
 music: Awesome
-banner: /uploads/klub-title.png
-title: "FEUM Hangouts: C.K (DK) x DB+ (DK) x Residents"
-end: Sunday, July 25, 2021 4:00 AM
-address: Block park, Institut for (X)
-price: 120
 lineup:
-  - name: C.K
+  - name: SCHACKE
     country: DK
-    label: Regelbau
-    link: https://soundcloud.com/ck_sounds?fbclid=IwAR2IJAtHcUamaFuR4J0n8oFVm-DlHJi6vbTx_QNBJRKwOfulj3c9vgwJ9_Q
-  - name: DB+
+    label: Moral Defeat
+    link: https://soundcloud.com/schacke
+  - name: Perko
+    country: UK
+    link: https://soundcloud.com/perkopair
+  - name: Rasmus Fisker
     country: DK
-  - name: DJ Top$pin
-    country: PL
-    label: FEUM
-  - name: Luni
-    country: DK
-    label: FEUM
-    link: https://www.facebook.com/LUNIsound/?__cft__[0]=AZWO1bSOFZpWCsebSbuZJWGakvs6QFEojgt5QCEoCzEsdDIR73NphCgMJ6cviuOCOnU9IhYytHqyemRMWF8jAXyH02OnPmdBzpmyuCIZACion1i2eZLNESjtfDs65Z3xqHEgQGONdN1pLISR4XxOUmX3eZy58OPcM9NcX1iZC5EYUw&__tn__=q
-music_list:
-  - music: Awesome
+    label: ""
+    link: https://soundcloud.com/rasmusfisker
+music_list: []
 ---
-FEUM HANGOUT // REOPENING SOCIETY
+<!--StartFragment-->
+
+FEUM is delighted to announce the first edition of FEUM Live - a night dedicated to live electronic music from cutting edge artists rooted in Denmark. Expect a range of sounds including ambient synthesised textures, a healthy dose of bass, and a suitable amount of bleep bloops and beats.
+
+Line-up\
+\
+// SCHACKE\
+// PERKO\
+// RASMUS FISKER
+
++ support from FEUM resident DJs // PAN BONKA and DET.AL
 
 
 
-We are eased to see that the Danish society is slowly but surely reopening. Yet, the lifting of restrictions does not allow us to hold a traditional night event as we all have been used to. It is encouraging, however, to think about a near future where we will finally celebrate life together again and dance to music minutely chosen by talented artists from other horizons! Exciting, right?
+\*\* Schacke - “Martin Schacke pioneered in the Copenhagen industrial and noise scene via countless releases under various pseudonyms on his label Moral Defeat.
+
+After a series of powerful releases on labels like Ectotherm, Kulør, Instruments of Discipline, Intrepid Skin, his distinctive style has made him a central figure in the relentless and often transgressive community of club experimentation. His music is expanding boundaries, while still maintaining absolute club pressure, with sets that are agile, noisy and trancy.”
+
+Read more: <https://crackmagazine.net/article/mixprofile/schacke/>
+
+\*\* Perko - “Originally born in Scotland, has long been a household name within the electronic music scene of Copenhagen, having released records on Posh Isolation and Safe, as well as international labels like Numbers. Perko’s style is unique and spans from modern club cuts, fusing a wide range of genres, to ambient soundscapes, often integrating field recordings from Copenhagen and other surroundings.”
+
+Read more:  <https://strm.dk/strm-mix-011-perko/>
+
+\*\* Rasmus Fisker - “Captivated with shape shifting sounds wherein textures matter as much as melodies, and voices are littered with crypticism. His music cherry-picks and transforms elements from genres as diverse as electronica, drone and deep techno sounds. The result is a web of sound that threads poetic lyricism and unfamiliar instruments over a backdrop of electronic elements and synth-heavy dance beats.”
+
+Listen here:  <https://soundcloud.com/rasmusfisker>
+
+Date: 24.07.2021\
+Time: 18.00 - 02.00\
+Location: Ridehuset - Aarhus\
+Fee: 100 DKK 
+
+This event is part of Avenue One by Aarhus Volume - check out the rest of the line-up here: <https://fb.me/e/5bVwFqBoo>
 
 
 
-To make the burden of waiting slightly easier to carry, FEUM is delighted to present its first hangout since the lockdown. The event is considered as a sitting bar vibe hangout. Bar, electronic music, and people. Simple, cozy, and cheerful
+Important: A valid corona pass is required for this event
 
 
 
-A perfect recipe to gently reconnect with each other after a long-period of isolation.
-
-
-
-An outdoor event with good music and friends. Entry is free but donations are welcome. FEUM kindly asks you to not bring your own alcohol and support the local culture by buying drinks at the bar.
-
-
-
-The event will only be accessible for people having a corona passport (negative test in the last 72 hours, a vaccination, or recently recovered from Covid-19).
-
-
-
-Be mindful regarding the current health situation: do not share cups, cigarettes, respect a decent social distance and disinfect your hands. Feeling sick? Stay home and recover properly
+<!--EndFragment-->
