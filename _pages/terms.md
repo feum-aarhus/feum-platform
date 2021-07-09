@@ -21,7 +21,7 @@ content: >-
   ### Ticket Refund policies
 
 
-  We can refund your ticket if you email us at [hello@feum.net](mailto:hello@feum.net) with the subject “Refund”. Please note that it takes 5-10 days to get the money back. We can refund the ticket 2 days prior to the event, so make sure you contact us by 22nd of July. 
+  We can refund your ticket if you email us at [hello@feum.net](mailto:hello@feum.net) with the subject “Refund”. Please note that it takes 5-10 days to get the money back. We can refund the ticket 2 days prior to the event, so make sure you contact us by the 22nd of July. 
 
 
    
