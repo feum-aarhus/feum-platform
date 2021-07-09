@@ -1,5 +1,5 @@
 ---
-banner: /uploads/feum-live-recovered.jpg
+banner: https://images.squarespace-cdn.com/content/v1/5ac507015ffd2019955794da/1625818672991-OPU9IWCSXL9WVS82X519/feum+live.jpg?format=2500w
 title: "FEUM Live: SCHACKE, PERKO, RASMUS FISKER"
 start: Saturday, July 24, 2021 6:00 PM
 end: Sunday, July 25, 2021 2:00 AM
