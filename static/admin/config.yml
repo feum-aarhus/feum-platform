@@ -106,3 +106,12 @@ collections:
             display_fields: ["{{title}} by {{person}}"]
             search_fields: ["title", "person"]
             value_field: "title"
+
+  - name: "terms"
+    label: "Terms and Conditions"
+    title: "Terms and Conditions"
+    summary: "Our Terms and Conditions"
+    folder: "_pages"
+    create: false
+    fields:
+      - { label: "The terms", name: "body", widget: "markdown" }

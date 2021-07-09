@@ -47,6 +47,13 @@ module.exports = {
         typeName: "music",
       },
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "_pages/*.md",
+        typeName: "pages",
+      },
+    },
   ],
   transformers: {
     remark: {
