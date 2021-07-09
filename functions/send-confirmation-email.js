@@ -24,7 +24,13 @@ exports.handler = async (event) => {
   try {
     const imageUrl = await qrcode.toDataURL(
       GRIDSOME_API_URL + "ticket/" + data._id,
-      { width: 256 }
+      {
+        width: 256,
+        color: {
+          dark: "#e1e1e1",
+          light: "#111",
+        },
+      }
     );
     const attachment = new mailgun.Attachment({
       data: Buffer.from(imageUrl.split(",")[1], "base64"),

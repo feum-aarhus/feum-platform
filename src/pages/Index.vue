@@ -205,6 +205,7 @@ export default {
     margin-top: 44px;
 
     .event__banner {
+      width: 100%;
       max-width: 100%;
       object-fit: contain;
       margin-bottom: 72px;
