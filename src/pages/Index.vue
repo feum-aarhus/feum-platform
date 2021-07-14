@@ -19,6 +19,9 @@
               <span class="sale__online" v-if="$static.futureEvent.presale_only"
                 >(Online presale only)</span
               >
+              <span class="sale__door" v-else
+                >(Tickets also available at the door)</span
+              >
             </div>
           </div>
           <div class="info__point info__point--address">
@@ -79,11 +82,7 @@
               class="button full-height"
               :class="{ disabled: !hasTicketsLeft }"
             >
-              {{
-                this.hasTicketsLeft
-                  ? "Buy ticket (" + this.getTicketsLeft + " left)"
-                  : "Event sold out"
-              }}
+              {{ this.hasTicketsLeft ? "Buy ticket" : "Event sold out" }}
             </div>
           </div>
           <div key="form" class="event__form" v-else>
@@ -221,7 +220,8 @@ export default {
         .event__sale {
           display: flex;
 
-          .sale__online {
+          .sale__online,
+          .sale__door {
             margin-left: 4px;
           }
         }
