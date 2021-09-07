@@ -1,12 +1,12 @@
 ---
+start: Friday, January 14, 2022 6:00 PM
+presale_only: false
+music: Awesome
 banner: https://images.squarespace-cdn.com/content/v1/5ac507015ffd2019955794da/1625818672991-OPU9IWCSXL9WVS82X519/feum+live.jpg?format=2500w
 title: "FEUM Live: SCHACKE, PERKO, RASMUS FISKER"
-start: Saturday, July 24, 2021 6:00 PM
-end: Sunday, July 25, 2021 2:00 AM
+end: Saturday, January 15, 2022 2:00 AM
 address: Ridehuset - Aarhus
 price: 100
-presale_only: true
-music: Awesome
 lineup:
   - name: SCHACKE
     country: DK
