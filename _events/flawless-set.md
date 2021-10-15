@@ -54,8 +54,6 @@ TURING (FEUM, PL) - Aarhus Based DJ with Polish roots. Known also under alias od
 
 ▸<https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=89ac8c95e5a34c1cb52de6c29b79c377>
 
-You can buy tickets at [feum-ticketing.dk](https://feum-ticketing.dk/). Otherwise we recommend coming early as we sell a very limited number of tickets at the door.
-
 🔞 NO UNDERAGE 🔞
 
 🚫📸NO PHOTO POLICY📸🚫
