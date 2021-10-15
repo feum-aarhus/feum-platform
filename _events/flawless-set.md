@@ -11,7 +11,7 @@ lineup:
   - name: "Norman Nodge  "
     country: DE
     label: Ostgut Ton
-    link: " https://soundcloud.com/norman-nodge"
+    link: https://soundcloud.com/norman-nodge
   - name: BENTZON
     country: DK
     label: EstaBunk
@@ -19,7 +19,7 @@ lineup:
   - name: Turing
     country: PL
     label: FEUM
-    link: <https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=89ac8c95e5a34c1cb52de6c29b79c377>
+    link: https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=acb8403a3c3347029d6ab2efba4845d2
 music_list: []
 ---
 <!--StartFragment-->
