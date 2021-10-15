@@ -24,9 +24,11 @@ music_list: []
 ---
 <!--StartFragment-->
 
-ＦΞＵＭ ／／ ＴΞＣＨＮＯ
+<!--StartFragment-->
 
-ＴＲΛＮＳＦＯＲＭ ＴＨΞ ＨＩΞＲΛＲＣＨＹ
+F E U M  / / T Æ C H N O
+
+T R A N S F O R M   T H E   H I E R A R C H Y
 
 
 
@@ -50,7 +52,7 @@ BENTZON (EstaBunk, DK) - His love for challenging and non-conforming music he ex
 
 ▸<https://www.mixcloud.com/Estabunk/michael-bentzon-moesgaard-covid-rave-010820/>
 
-TURING (FEUM, PL) - Aarhus Based DJ with Polish roots. Known also under alias od det.al. Well-known FEUM resident since 2017. Turing's tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn't afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
+TURING (FEUM, PL) - Aarhus Based DJ with Polish roots. Known also under alias of det.al. Well-known FEUM resident since 2017. Turing's tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn't afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
 
 ▸<https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=89ac8c95e5a34c1cb52de6c29b79c377>
 
