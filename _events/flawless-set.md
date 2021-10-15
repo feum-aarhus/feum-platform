@@ -1,6 +1,6 @@
 ---
 banner: /uploads/0000-0250-1-0-00-03-18-.jpg
-title: "FEUM TÆCHNO: NORMAN NODGE (DE) X BENTZON (DE) X TURING (PL)"
+title: "FEUM TÆCHNO: NORMAN NODGE (DE) X BENTZON (DK) X TURING (PL)"
 start: Friday, October 29, 2021 9:00 PM
 end: Saturday, October 16, 2021 3:00 AM
 address: Institute for X - A-huset
@@ -13,7 +13,7 @@ lineup:
     label: Ostgut Ton
     link: " https://soundcloud.com/norman-nodge"
   - name: BENTZON
-    country: DE
+    country: DK
     label: EstaBunk
     link: https://www.mixcloud.com/Estabunk/michael-bentzon-moesgaard-covid-rave-010820/
   - name: Turing
