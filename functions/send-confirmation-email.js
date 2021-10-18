@@ -41,7 +41,7 @@ exports.handler = async (event) => {
       from: FROM_EMAIL_ADDRESS,
       to: data.email,
       cc: FROM_EMAIL_ADDRESS,
-      subject: "FEUM Event Confirmation Email",
+      subject: "Feum ticket purchase confirmation",
       html: `
         <!DOCTYPE html>
         <html lang="en">
@@ -53,22 +53,13 @@ exports.handler = async (event) => {
         <body style="font-family: 'Source Code Pro', monospace;">
         <div>
             <h1 style="font-size: 1rem;">Hey you!</h1>
-            <p>Thank you for purchasing a ticket to Feum Live that will take place on 24th of July. Use the attached QR code for entering the venue. <b>Please note that you shouldn’t scan the QR code yourself as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
-            <p style="text-decoration: underline;">Timetable</p>
-            <p>18:00 - Door opens</p>
-            <p>18:00 - 19:00 Pan Bonka (DJ set)</p>
-            <p>19:00 - 21:00 Rasmus Fisker</p>
-            <p>21:15 - 22:45 Perko</p>
-            <p>23:00 - 24:00 Schacke</p>
-            <p>24:00 - 02:00 Det.Al (DJ set)</p>
-            <p style="text-decoration: underline;">Refund policy</p>
-            <p>If you need a refund, please contact us at <a href="mailto:hello@feum.net">hello@feum.net</a> with the subject “Refund”. It takes 5 to 10 days to get your money back. We can refund tickets up to 2 days prior to the event, so make sure you contact us before the 22nd of July.</p>
-            <p>Lastly, it is required to have a corona pass and good vibes in order to enter the venue.</p>
-            <p>See you soon!</p>
+            <p>Thank you for purchasing a ticket to Feum Tæchno that will take place on the 29th of October. Use the attached QR code for entering the venue. <b>Please note that you shouldn’t scan the QR code yourself as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
+            <p>If you need a refund, please contact us at <a href="mailto:hello@feum.net">hello@feum.net</a>. It takes 5 to 10 days to get your money back.</p>
+            <p>See you on the dancefloor!</p>
             <p style="font-weight: bold;">Yours Truly, FEUM!</p>
-        </div>  
+        </div>
         </body>
-        </html> 
+        </html>
       `,
       attachment,
     };
