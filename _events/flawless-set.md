@@ -1,25 +1,25 @@
 ---
-banner: /uploads/0000-0250-1-0-00-03-18-.jpg
-title: "FEUM TÆCHNO: NORMAN NODGE (DE) X BENTZON (DK) X TURING (PL)"
-start: Friday, October 29, 2021 9:00 PM
-end: Saturday, October 16, 2021 3:00 AM
-address: Institute for X - A-huset
-price: 90
+start: Tuesday, February 1, 2022 9:00 PM
 presale_only: false
 music: Awesome
+banner: /uploads/0000-0250-1-0-00-03-18-.jpg
+title: Test event
+end: Wednesday, February 2, 2022 3:00 AM
+address: Institute for X - A-huset
+price: 90
 lineup:
-  - name: "Norman Nodge  "
+  - name: Oliver Huntemann
     country: DE
-    label: Ostgut Ton
-    link: https://soundcloud.com/norman-nodge
-  - name: BENTZON
+    label: Senso Sounds
+    link: ""
+  - name: Boris Brejcha
     country: DK
-    label: EstaBunk
-    link: https://www.mixcloud.com/Estabunk/michael-bentzon-moesgaard-covid-rave-010820/
-  - name: Turing
-    country: PL
-    label: FEUM
-    link: https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=acb8403a3c3347029d6ab2efba4845d2
+    label: FCKNG Serious
+    link: ""
+  - name: Adam Beyer
+    country: SE
+    label: Drumcode
+    link: ""
 music_list: []
 ---
 <!--StartFragment-->

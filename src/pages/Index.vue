@@ -315,7 +315,7 @@ export default {
     .form__wrapper {
       display: flex;
       flex-flow: column nowrap;
-      max-width: $contentWidth;
+      width: $contentWidth;
       border: 1px solid $heading;
       height: calc(100% - 2px);
       overflow-y: scroll;
