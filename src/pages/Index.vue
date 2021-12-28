@@ -95,7 +95,7 @@
               </div>
               <hr />
               <div v-if="hasPersistedData" class="form__user">
-                <h2>Your information</h2>
+                <h2>Your info</h2>
                 <p>{{ this.$store.state.userName }}</p>
                 <p>{{ this.$store.state.userEmail }}</p>
                 <p>{{ this.$store.state.userPhone }}</p>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="form__progress" :style="{ width: currentStep * 50 + '%' }">
+    <div class="form__progress">
       {{ "Step " + currentStep + "/2" }}
     </div>
     <transition name="fade">
@@ -31,7 +31,7 @@
     <div v-else>
       <transition name="appear" mode="out-in">
         <div key="input" v-if="!hasPersistedData" class="form__container">
-          <h2>Step 1: Payment info</h2>
+          <h2>Step 1: Your info</h2>
           <label for="name">Full name</label>
           <input
             v-model="userName"
@@ -86,9 +86,7 @@
           >
             {{ "Pay " + eventPrice + " kr." }}
           </div>
-          <div class="form__back" @click="editInformation">
-            Edit your information
-          </div>
+          <div class="form__back" @click="editInformation">Edit your info</div>
         </div>
       </transition>
     </div>
@@ -390,12 +388,12 @@ export default {
 }
 
 .form__progress {
+  text-transform: uppercase;
   text-align: center;
   font-family: "Helvetica-Bold";
   padding: 4px 0;
   color: $background;
   background-color: $grey-light;
-  transition: width 0.5s ease;
 }
 
 .appear-enter-active,
