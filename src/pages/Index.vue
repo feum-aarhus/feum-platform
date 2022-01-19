@@ -315,7 +315,7 @@ export default {
     .form__wrapper {
       display: flex;
       flex-flow: column nowrap;
-      width: $contentWidth;
+      width: 100%;
       border: 1px solid $heading;
       height: calc(100% - 2px);
       overflow-y: scroll;
@@ -323,6 +323,7 @@ export default {
       @include screen-is(md) {
         height: auto;
         overflow-y: hidden;
+        width: $contentWidth;
       }
 
       .form__summary {
