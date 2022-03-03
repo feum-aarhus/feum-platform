@@ -1,12 +1,12 @@
 ---
-start: Tuesday, February 1, 2022 9:00 PM
-presale_only: false
-music: Awesome
 banner: /uploads/0000-0250-1-0-00-03-18-.jpg
 title: Test event
+start: Tuesday, February 1, 2022 9:00 PM
 end: Wednesday, February 2, 2022 3:00 AM
 address: Institute for X - A-huset
-price: 90
+price: 1
+presale_only: false
+music: Awesome
 lineup:
   - name: Oliver Huntemann
     country: DE
