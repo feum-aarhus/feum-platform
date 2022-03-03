@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>FEUM 2021 All rights reserved</p>
+    <p>FEUM 2022 All rights reserved</p>
     <p class="footer__email">
       | <a href="mailto:hello@feum.net">hello@feum.net</a> |
     </p>
