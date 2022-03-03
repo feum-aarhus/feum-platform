@@ -6,10 +6,13 @@ const {
   FROM_EMAIL_ADDRESS,
   GRIDSOME_API_URL,
 } = process.env;
-const mailgun = require("mailgun-js")({
-  apiKey: MAILGUN_API_KEY,
-  domain: MAILGUN_DOMAIN,
-  host: "api.eu.mailgun.net",
+const formData = require("form-data");
+const Mailgun = require("mailgun.js");
+const mailgun = new Mailgun(formData);
+const mg = mailgun.client({
+  username: "api",
+  key: MAILGUN_API_KEY,
+  url: "https://api.eu.mailgun.net",
 });
 
 exports.handler = async (event) => {
@@ -32,14 +35,9 @@ exports.handler = async (event) => {
         },
       }
     );
-    const attachment = new mailgun.Attachment({
-      data: Buffer.from(imageUrl.split(",")[1], "base64"),
-      filename: "ticket_" + data.participantId,
-      contentType: "image/png",
-    });
-    const mailgunData = {
+    const messageData = {
       from: FROM_EMAIL_ADDRESS,
-      to: data.email,
+      to: [data.email],
       cc: FROM_EMAIL_ADDRESS,
       subject: "Feum ticket purchase confirmation",
       html: `
@@ -53,7 +51,7 @@ exports.handler = async (event) => {
         <body style="font-family: 'Source Code Pro', monospace;">
         <div>
             <h1 style="font-size: 1rem;">Hey you!</h1>
-            <p>Thank you for purchasing a ticket to Feum Tæchno that will take place on the 29th of October. Use the attached QR code for entering the venue. <b>Please note that you shouldn’t scan the QR code yourself as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
+            <p>Thank you for purchasing a ticket to Feum Phuture that will take place on the 18th of March. Use the attached QR code for entering the venue. <b>Please note that you shouldn't scan the QR code yourself as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
             <p>If you need a refund, please contact us at <a href="mailto:hello@feum.net">hello@feum.net</a>. It takes 5 to 10 days to get your money back.</p>
             <p>See you on the dancefloor!</p>
             <p style="font-weight: bold;">Yours Truly, FEUM!</p>
@@ -61,12 +59,14 @@ exports.handler = async (event) => {
         </body>
         </html>
       `,
-      attachment,
+      attachment: {
+        data: Buffer.from(imageUrl.split(",")[1], "base64"),
+        filename: "ticket_" + data.participantId + ".png",
+      },
     };
 
-    return mailgun
-      .messages()
-      .send(mailgunData)
+    return mg.messages
+      .create(MAILGUN_DOMAIN, messageData)
       .then(() => ({
         statusCode: 200,
         body: "You will soon receive an email with a QR code that will serve as your ticket. If there are any problems in your purchasing process please contact us at hello@feum.net",

@@ -16,13 +16,14 @@
   "dependencies": {
     "@gridsome/source-filesystem": "0.6.2",
     "@gridsome/transformer-remark": "0.6.4",
-    "@stripe/stripe-js": "1.15.0",
+    "@stripe/stripe-js": "1.24.0",
     "dotenv": "9.0.2",
+    "form-data": "4.0.0",
     "gridsome": "0.7.23",
-    "mailgun-js": "0.22.0",
+    "mailgun.js": "5.0.1",
     "mongoose": "5.12.8",
-    "qrcode": "1.4.4",
-    "stripe": "8.148.0",
+    "qrcode": "1.5.0",
+    "stripe": "8.207.0",
     "vuex": "3.6.2"
   },
   "devDependencies": {
