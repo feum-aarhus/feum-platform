@@ -4,7 +4,7 @@ title: Test event
 start: Friday, March 18, 2022 9:00 PM
 end: Friday, March 18, 2022 3:00 AM
 address: Institute for X - A-huset
-price: 1
+price: 3
 presale_only: false
 music: Awesome
 lineup:
