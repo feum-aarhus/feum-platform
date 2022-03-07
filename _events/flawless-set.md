@@ -1,63 +1,91 @@
 ---
-banner: /uploads/0000-0250-1-0-00-03-18-.jpg
-title: Test event
+banner: /uploads/feum-phuture-green-lower-q.jpg
+title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
 start: Friday, March 18, 2022 9:00 PM
 end: Friday, March 18, 2022 3:00 AM
 address: Institute for X - A-huset
-price: 3
+price: 100
 presale_only: false
 music: Awesome
 lineup:
-  - name: Oliver Huntemann
-    country: DE
-    label: Senso Sounds
-    link: ""
-  - name: Boris Brejcha
+  - name: I N T E R F L O W
     country: DK
-    label: FCKNG Serious
-    link: ""
-  - name: Adam Beyer
-    country: SE
-    label: Drumcode
-    link: ""
+    label: ""
+    link: https://soundcloud.app.goo.gl/39rBrtcfB6psJAqo7
+  - name: K A S P E R     M A R O T T
+    country: DK
+    label: ""
+    link: https://soundcloud.com/factmag/fact-mix-792-kasper-marott-jan-21?in=kaspermarott/sets/podcastz
 music_list: []
 ---
 <!--StartFragment-->
 
 <!--StartFragment-->
 
-F E U M  / / T Æ C H N O
-
-T R A N S F O R M   T H E   H I E R A R C H Y
+<!--StartFragment-->
 
 
 
+【 Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ】[](https://coolsymbol.com/copy/Lower_Seven_Eighths_Block_Symbol_%E2%96%87)
 
 
-FEUM stands for freedom of expression and for quality electronic music. 
 
-This late October we would like to take you on another journey presenting:
+We’re excited to bring you some of Copenhagen’s finest - an up and coming duo de force and a Copenhagen heavy weight. It’s sure to be one heck of a party.
 
-Norman Nodge (Ostgut Ton, DE) - There is no need to introduce Norman to anyone who follows the techno scene. Legendary DJ and producer of the German electronic music scene who put meaning and feeling in his robotic ecstatic nests of sounds. He will grace us with two - as intoxicatingly generous as you could possibly imagine - hours of his vision for techno.
 
-Quoting “*Reclaim Your City”* - As a true master of the tempo and buildup, Norman sure knows when to ease off the accelerator and when to rev up the engines. Generous when the mind begs for a more spacious headspace to wander in, tightening the bolts with clockmaker precision when the room screams punishment. An absolute belter of a vinyl-only masterclass, from a faultless legend behind the decks.
 
-▸fb - <https://www.facebook.com/NormanNodge>
+【 I N T E R F L O W 】
 
-▸sc - <https://soundcloud.com/norman-nodge>
 
-▸ra - <https://ra.co/dj/normannodge>\
-\
-BENTZON (EstaBunk, DK) - His love for challenging and non-conforming music he expressed not only by his long industrial DJ sets but also by his dedication to the legendary underground crew EstaBunk. While many secret location events Benzon proved that his shapes are only possible to define when experiencing theme. 
 
-▸<https://www.mixcloud.com/Estabunk/michael-bentzon-moesgaard-covid-rave-010820/>
+Martin Gilleshøj & Anders Dahl have been making a name for themselves through their mixtape and radio series - Interflow. Regularly going b2b on their show and out around the Copenhagen electronic music scene. Expect an eclectic set of dance music defined by moods and flows, with elements of retro futuristic acid house and more.
 
-TURING (FEUM, PL) - Aarhus Based DJ with Polish roots. Known also under the alias of det.al. Well-known FEUM resident since 2017. Turing's tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn't afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
 
-▸<https://soundcloud.com/turing8220/detal_low_cube_session_032020?si=89ac8c95e5a34c1cb52de6c29b79c377>
 
-🔞 NO UNDERAGE 🔞
+Listen here: 
 
-🚫📸NO PHOTO POLICY📸🚫
+https://soundcloud.app.goo.gl/39rBrtcfB6psJAqo7
 
-📵 📵 📵
+
+
+【 K A S P E R     M A R O T T 】
+
+
+
+The DJ and producer, Kasper Marott, has built up a reputation through various high-quality releases, such as his acclaimed debut album ‘Full Circle’ released on his label Axces Recordings and ‘Forever Mix EP’ released on ‘Kulør’, to name just a couple.
+
+He’s also no stranger behind the decks. Playing parties from Berlin to Melbourne, where he developed an ear for solid grooves and free-flowing house sets, now moving across genres with exquisite taste and style, filled with the energy of the Copenhagen rave scene, as well as percussive oddball house cuts and more. No doubt to be a real treat to the ears, body and mind.
+
+
+
+Listen here: 
+
+https://soundcloud.com/factmag/fact-mix-792-kasper-marott-jan-21?in=kaspermarott/sets/podcastz
+
+
+
+Don’t miss out on this one.
+
+Yours Truly,
+
+FEUM
+
+
+
+𝗣 𝗥 𝗔 𝗖 𝗧 𝗜 𝗖 𝗔 𝗟 𝗜 𝗧 𝗜 𝗘 𝗦
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+
+⇻ Electro // House // Techno
+
+⇻ Place: Institut for X // A-Huset
+
+⇻ Fee: 100dkk // Tickets available at feumticketing.dk and at the door (limited number)
+
+⇻ Time: 21
+
+⇻ Age Limit: 21
+
+
+
+<!--EndFragment-->
