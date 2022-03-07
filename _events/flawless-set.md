@@ -8,13 +8,13 @@ price: 100
 presale_only: false
 music: Awesome
 lineup:
-  - name: I N T E R F L O W
+  - name: INTERFLOW
     country: DK
-    label: ""
+    label: VSA/Kune
     link: https://soundcloud.app.goo.gl/39rBrtcfB6psJAqo7
-  - name: K A S P E R     M A R O T T
+  - name: KASPER  MAROTT
     country: DK
-    label: ""
+    label: Axces
     link: https://soundcloud.com/factmag/fact-mix-792-kasper-marott-jan-21?in=kaspermarott/sets/podcastz
 music_list: []
 ---
