@@ -46,11 +46,7 @@ FEUM
 
 ⇻ Electro // House // Techno
 
-⇻ Place: Institut for X // A-Huset
-
 ⇻ Fee: 100dkk 
-
-⇻ Time: 21
 
 ⇻ Age Limit: 21
 
