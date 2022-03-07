@@ -22,19 +22,19 @@ music_list: []
 
 
 
-【 Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ】[](https://coolsymbol.com/copy/Lower_Seven_Eighths_Block_Symbol_%E2%96%87)
+【 **Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ**】[](https://coolsymbol.com/copy/Lower_Seven_Eighths_Block_Symbol_%E2%96%87)
 
 We’re excited to bring you some of Copenhagen’s finest - an up and coming duo de force and a Copenhagen heavy weight. It’s sure to be one heck of a party.
 
 
 
-【 I N T E R F L O W 】
+【 **I N T E R F L O W** 】
 
 Martin Gilleshøj & Anders Dahl have been making a name for themselves through their mixtape and radio series - Interflow. Regularly going b2b on their show and out around the Copenhagen electronic music scene. Expect an eclectic set of dance music defined by moods and flows, with elements of retro futuristic acid house and more.
 
 
 
-【 K A S P E R     M A R O T T 】
+【 **K A S P E R     M A R O T T** 】
 
 The DJ and producer, Kasper Marott, has built up a reputation through various high-quality releases, such as his acclaimed debut album ‘Full Circle’ released on his label Axces Recordings and ‘Forever Mix EP’ released on ‘Kulør’, to name just a couple.
 
@@ -50,9 +50,9 @@ FEUM
 
 
 
-𝗣 𝗥 𝗔 𝗖 𝗧 𝗜 𝗖 𝗔 𝗟 𝗜 𝗧 𝗜 𝗘 𝗦
+**P R A C T I C A L I T I E  S**
 
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 ⇻ Electro // House // Techno
 
