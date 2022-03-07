@@ -50,4 +50,6 @@ FEUM
 
 ⇻ Age Limit: 21
 
+Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
+
 <!--EndFragment-->
