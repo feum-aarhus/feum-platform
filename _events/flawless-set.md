@@ -54,7 +54,7 @@ FEUM
 
 **P R A C T I C A L I T I E  S**
 
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 ⇻ Electro // House // Techno
 
