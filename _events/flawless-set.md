@@ -22,7 +22,7 @@ music_list: []
 
 
 
-【 **Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ**】[](https://coolsymbol.com/copy/Lower_Seven_Eighths_Block_Symbol_%E2%96%87)
+## 【 **F E U M  ／／  P H U T U R E**】[](https://coolsymbol.com/copy/Lower_Seven_Eighths_Block_Symbol_%E2%96%87)
 
 We’re excited to bring you some of Copenhagen’s finest - an up and coming duo de force and a Copenhagen heavy weight. It’s sure to be one heck of a party.
 
@@ -52,7 +52,7 @@ FEUM
 
 **P R A C T I C A L I T I E  S**
 
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 ⇻ Electro // House // Techno
 
