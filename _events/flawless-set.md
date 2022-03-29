@@ -34,12 +34,12 @@ This time at FEUM Phuture series we are pleased to host a guest from Berlin – 
 \
 Byron Yeates is a DJ and heads the record label Radiant Love. Based in Berlin, he has in the last years served his signature sound at Panorama Bar, Tresor and Shelter Amsterdam. Yeates’ recent mixes have been featured by the likes of DJ Mag, in which he was profiled for the ‘Fresh Kicks’ series; Honey Soundsystem; and Cómeme. He also holds a bimonthly residency at Berlin’s Refuge Radio.
 
-【 TURING 】
+【 TURING 】(FEUM)
 
 \
 Aarhus Based DJ with Polish roots. Known also under alias od [det.al](http://det.al/). FEUM resident since 2017. Turing’s new tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn’t afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
 
-【 MODEST 】
+【 MODEST 】(FEUM)
 
 \
 Modest together with FEUM has been growing and representing dedication to quality sound and underground culture in Aarhus. Bringing the uncharted, deep and spacey, carefully selected record collection always willing to warm up the dance floor, any time of the day or night.
