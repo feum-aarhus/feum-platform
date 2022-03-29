@@ -50,13 +50,23 @@ Modest together with FEUM has been growing and representing dedication to qualit
 Yours Truly,\
 FEUM
 
-P R A C T I C A L I T I E S\
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\
-⇻ Progressive // House // Techno\
-⇻ Place: Institut for X // A-Huset\
-⇻ Time: 21\
-⇻ Age Limit: 21\
+▀▀▀▀▀▀ P R A C T I C A L I T I E S ▀▀▀▀▀▀\
+\
+⇻ Progressive // House // Techno
+
+\
+⇻ Place: Institut for X // A-Huset
+
+\
+⇻ Time: 21
+
+\
+⇻ Age Limit: 21
+
+\
 ⇻ Fee: 100dkk // (150 tickets available online and 80 at the door)
+
+
 
 Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
 
