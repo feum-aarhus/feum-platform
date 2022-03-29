@@ -1,54 +1,56 @@
 ---
 banner: /uploads/feum-phuture-green-lower-q.jpg
 title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
-start: Friday, March 18, 2022 9:00 PM
-end: Friday, March 18, 2022 3:00 AM
+start: Friday, April 8, 2022 9:00 PM
+end: Sunday, April 10, 2022 3:00 AM
 address: Institute for X - A-huset
 price: 100
 presale_only: false
 music: Awesome
 lineup:
-  - name: INTERFLOW
-    country: DK
-    label: VSA/Kune
-    link: https://soundcloud.app.goo.gl/39rBrtcfB6psJAqo7
-  - name: KASPER  MAROTT
-    country: DK
-    label: Axces
-    link: https://soundcloud.com/factmag/fact-mix-792-kasper-marott-jan-21?in=kaspermarott/sets/podcastz
+  - name: BYRON YEATES
+    country: DE
+    label: Radiant Love
+    link: https://bit.ly/3iLfeI3
+  - name: "TURING "
+    country: PL
+    label: FEUM
+    link: ""
+  - name: MODEST
+    country: PL
+    label: FEUM
 music_list: []
 ---
 <!--StartFragment-->
 
-``
+【 Ｆ Ｅ Ｕ Ｍ ／／ Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ: Ｂ Ｙ Ｒ Ｏ Ｎ _Ｙ Ｅ Ａ Ｔ Ｅ Ｓ 】
 
-## 【 **F E U M  ／／  P H U T U R E**】
 
-We’re excited to bring you some of Copenhagen’s finest - an up and coming duo de force and a Copenhagen heavy weight. It’s sure to be one heck of a party.
 
-【 **I N T E R F L O W** 】
+This time at FEUM Phuture series we are pleased to host a guest from Berlin – Byron Yeates – who with support from our 2 finest residents will take us for long hours of dancing. Let us take you to another step into progressive music discovery.
 
-Martin Gilleshøj & Anders Dahl have been making a name for themselves through their mixtape and radio series - Interflow. Regularly going b2b on their show and out around the Copenhagen electronic music scene. Expect an eclectic set of dance music defined by moods and flows, with elements of retro futuristic acid house and more.
+【 BYRON YEATES 】(Radiant Love)\
+Byron Yeates is a DJ and heads the record label Radiant Love. Based in Berlin, he has in the last years served his signature sound at Panorama Bar, Tresor and Shelter Amsterdam. Yeates’ recent mixes have been featured by the likes of DJ Mag, in which he was profiled for the ‘Fresh Kicks’ series; Honey Soundsystem; and Cómeme. He also holds a bimonthly residency at Berlin’s Refuge Radio.
 
-【 **K A S P E R     M A R O T T** 】
+【 TURING 】\
+Aarhus Based DJ with Polish roots. Known also under alias od [det.al](http://det.al/). FEUM resident since 2017. Turing’s new tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn’t afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
 
-The DJ and producer, Kasper Marott, has built up a reputation through various high-quality releases, such as his acclaimed debut album ‘Full Circle’ released on his label Axces Recordings and ‘Forever Mix EP’ released on ‘Kulør’, to name just a couple.
+【 MODEST 】\
+Modest together with FEUM has been growing and representing dedication to quality sound and underground culture in Aarhus. Bringing the uncharted, deep and spacey, carefully selected record collection always willing to warm up the dance floor, any time of the day or night.
 
-He’s also no stranger behind the decks. Playing parties from Berlin to Melbourne, where he developed an ear for solid grooves and free-flowing house sets, now moving across genres with exquisite taste and style, filled with the energy of the Copenhagen rave scene, as well as percussive oddball house cuts and more. No doubt to be a real treat to the ears, body and mind.
+/ Reclaim Your City /
 
-Don’t miss out on this one.
-
-Yours Truly,
-
+\
+Yours Truly,\
 FEUM
 
-【 **P R A C T I C A L I T I E  S** 】
-
-⇻ Electro // House // Techno
-
-⇻ Fee: 100dkk 
-
-⇻ Age Limit: 21
+P R A C T I C A L I T I E S\
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\
+⇻ Progressive // House // Techno\
+⇻ Place: Institut for X // A-Huset\
+⇻ Time: 21\
+⇻ Age Limit: 21\
+⇻ Fee: 100dkk // (150 tickets available online and 80 at the door)
 
 Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
 
