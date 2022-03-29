@@ -52,7 +52,8 @@ Modest together with FEUM has been growing and representing dedication to qualit
 Yours Truly,\
 FEUM
 
-▀▀▀▀▀▀ P R A C T I C A L I T I E S ▀▀▀▀▀▀\
+▀▀▀▀▀▀ P R A C T I C A L I T I E S ▀▀▀▀▀▀
+
 \
 Progressive // House // Techno
 
