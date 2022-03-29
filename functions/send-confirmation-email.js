@@ -51,8 +51,8 @@ exports.handler = async (event) => {
         <body style="font-family: 'Source Code Pro', monospace;">
         <div>
             <p>Hey you!</p>
-            <p>Thank you for purchasing a ticket to <u><a href="https://feum.net/new-events/2022/3/18/-">Feum Phuture</a></u> that will take place on the <b><u>18th of March</u>.</b> Use the attached QR code for entering the venue. Please note that <b>you shouldn't scan the QR code yourself</b> as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
-            <p>If you need a refund, please contact us at <u><a href="mailto:hello@feum.net">hello@feum.net</a></u>. It takes 5 to 10 days to get your money back.</p>
+            <p>Thank you for purchasing a ticket to <u><a href="https://feum.net/new-events/2022/4/8/-">Feum Phuture</a></u> that will take place on the <b><u>8th of April</u>.</b> Use the attached QR code for entering the venue. Please note that <b>you shouldn't scan the QR code yourself</b> as scanning it will make it invalid.</b> It will be scanned at the entrance by the door person.</p>
+            <p>If you need a refund, please contact us at <u><a href="mailto:hello@feum.net">hello@feum.net</a></u>. We accept refunds until 18:00 on the day of the event. It takes 5 to 10 days to get your money back.</p>
             <p style="font-weight: bold;"><u>House Rules Reminder</u>:</p>
             <p>To take part in our event you <b>must be above 21 years old.</b></p>
             <p style="font-weight: bold; margin-bottom: 0;">Harassment-free Environment</p>
@@ -62,7 +62,7 @@ exports.handler = async (event) => {
             <p style="font-weight: bold; margin-bottom: 0;">Please Smoke Outside</p>
             <p style="margin-top: 0;">Keep in mind non-smokers in the venue.</p>
             <p><b>Leave no trace</b> and respect the venue to make it smooth, Trash bins are located all around the dancefloor.</p>
-            <p>We don’t encourage photos & filming on the dance floor! This way everybody can express themselves freely. <b>Enjoy the moment!</b></p>
+            <p>We don't encourage photos & filming on the dance floor! This way everybody can express themselves freely. <b>Enjoy the moment!</b></p>
             <p>See you on the dancefloor!</p>
             <p style="font-weight: bold;">Yours Truly, FEUM!</p>
         </div>
