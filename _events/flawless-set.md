@@ -54,19 +54,18 @@ FEUM
 
 ▀▀▀▀▀▀ P R A C T I C A L I T I E S ▀▀▀▀▀▀\
 \
-⇻ Progressive // House // Techno
+Progressive // House // Techno
 
 \
-⇻ Place: Institut for X // A-Huset
+Place: Institut for X // A-Huset
 
 \
-⇻ Time: 21
+Time: 21
 
 \
-⇻ Age Limit: 21
+Age Limit: 21
 
-\
-⇻ Fee: 100dkk // (150 tickets available online and 80 at the door)
+Fee: 100dkk // (150 tickets available online and 80 at the door)
 
 
 
