@@ -69,7 +69,7 @@ export default {
     margin-bottom: $spacer;
 
     @include screen-is(md) {
-      width: $spacer * 10;
+      width: $spacer * 9.5;
     }
   }
   .message__note {

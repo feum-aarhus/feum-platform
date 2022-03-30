@@ -96,21 +96,21 @@ collections:
               required: false,
             }
       - { label: "Event Text", name: "body", widget: "markdown" }
-      - label: "Featured Music"
-        name: "music_list"
-        widget: "list"
-        fields:
-          - label: "Linked Music Piece"
-            name: "music"
-            widget: "relatedMusic"
-            collection: "music"
-            display_fields: ["{{title}} by {{person}}"]
-            search_fields: ["title", "person"]
-            value_field: "title"
+      # - label: "Featured Music"
+      #   name: "music_list"
+      #   widget: "list"
+      #   fields:
+      #     - label: "Linked Music Piece"
+      #       name: "music"
+      #       widget: "relatedMusic"
+      #       collection: "music"
+      #       display_fields: ["{{title}} by {{person}}"]
+      #       search_fields: ["title", "person"]
+      #       value_field: "title"
 
   - name: "terms"
     label: "Terms and Conditions"
-    title: "Terms and Conditions"
+    identifier_field: name
     summary: "Our Terms and Conditions"
     folder: "_pages"
     create: false
@@ -119,8 +119,8 @@ collections:
 
   - name: "email"
     label: "Confirmation Email"
-    title: "Confirmation Email"
-    summary: "Our confirmation email text"
+    identifier_field: name
+    summary: "Upcoming event confirmation email"
     folder: "_email"
     create: false
     fields:
