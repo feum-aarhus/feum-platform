@@ -19,6 +19,8 @@ export default function (Vue, { appOptions }) {
       isUserDataConfirmed: false,
       paymentId: null,
       userFlowSuccessful: false,
+      eventCapacity: 0,
+      confirmationEmailText: null,
     },
     mutations: {
       setMessageText(state, message) {
@@ -37,6 +39,12 @@ export default function (Vue, { appOptions }) {
         state.userName = userData.userName;
         state.userEmail = userData.userEmail;
         state.userPhone = userData.userPhone;
+      },
+      setEventCapacity(state, eventCapacity) {
+        state.eventCapacity = eventCapacity;
+      },
+      setConfirmationEmailText(state, emailText) {
+        state.confirmationEmailText = emailText;
       },
       confirmUserData(state, setTo) {
         state.isUserDataConfirmed = setTo;
@@ -57,14 +65,10 @@ export default function (Vue, { appOptions }) {
     },
     getters: {
       hasTicketsLeft(state) {
-        return (
-          Number(process.env.GRIDSOME_EVENT_CAPACITY) > state.participantAmount
-        );
+        return state.eventCapacity > state.participantAmount;
       },
       getTicketsLeft(state) {
-        return (
-          Number(process.env.GRIDSOME_EVENT_CAPACITY) - state.participantAmount
-        );
+        return state.eventCapacity - state.participantAmount;
       },
       getMessage(state) {
         return state.message;
@@ -100,7 +104,7 @@ export default function (Vue, { appOptions }) {
         const response = await rawData.json();
         commit("setCurrentParticipantAmount", Number(response));
       },
-      async saveParticipant({ commit }, participantInfo) {
+      async saveParticipant({ commit, state }, participantInfo) {
         const rawData = await fetch(
           `${process.env.GRIDSOME_API_URL}.netlify/functions/save-user-db`,
           {
@@ -129,6 +133,7 @@ export default function (Vue, { appOptions }) {
             },
             body: JSON.stringify({
               ...userData,
+              emailBody: state.confirmationEmailText,
             }),
           }
         );

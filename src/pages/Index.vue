@@ -126,6 +126,7 @@ query {
     end
     address
     price
+    capacity
     presale_only
     lineup {
       name
@@ -134,6 +135,9 @@ query {
       link
     }
     music
+    content
+  },
+  confirmationEmailText: email(id: "fe0d8e2d5056812b4c761e7ad7dcd626") {
     content
   }
 }
@@ -181,6 +185,16 @@ export default {
   },
   mounted: async function () {
     this.$store.commit("setLoading", true);
+    this.$store.commit(
+      "setEventCapacity",
+      typeof this.$static.futureEvent.capacity === "number"
+        ? this.$static.futureEvent.capacity
+        : 0
+    );
+    this.$store.commit(
+      "setConfirmationEmailText",
+      this.$static.confirmationEmailText.content
+    );
     await this.$store.dispatch("checkParticipantAmount");
     this.$store.commit("setLoading", false);
   },

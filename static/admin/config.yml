@@ -10,31 +10,31 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "music"
-    label: "Featured Music"
-    title: "{{slug}}"
-    folder: "_music"
-    summary: "{{title}} by {{person}}"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "A Unique Title", name: "title", widget: "string" }
-      - { label: "Length (mm:ss)", name: "length", widget: "string" }
-      - {
-          label: "Type of Content",
-          name: "type",
-          widget: "select",
-          options: ["Set", "Playlist"],
-        }
-      - {
-          label: "Created/Streamed at",
-          name: "date",
-          widget: "datetime",
-          date_format: "DD.MM.YYYY",
-          time_format: "HH:mm",
-        }
-      - { label: "URL link", name: "link", widget: "string" }
-      - { label: "Played/Curated by", name: "person", widget: "string" }
+  # - name: "music"
+  #   label: "Featured Music"
+  #   title: "{{slug}}"
+  #   folder: "_music"
+  #   summary: "{{title}} by {{person}}"
+  #   create: true
+  #   slug: "{{slug}}"
+  #   fields:
+  #     - { label: "A Unique Title", name: "title", widget: "string" }
+  #     - { label: "Length (mm:ss)", name: "length", widget: "string" }
+  #     - {
+  #         label: "Type of Content",
+  #         name: "type",
+  #         widget: "select",
+  #         options: ["Set", "Playlist"],
+  #       }
+  #     - {
+  #         label: "Created/Streamed at",
+  #         name: "date",
+  #         widget: "datetime",
+  #         date_format: "DD.MM.YYYY",
+  #         time_format: "HH:mm",
+  #       }
+  #     - { label: "URL link", name: "link", widget: "string" }
+  #     - { label: "Played/Curated by", name: "person", widget: "string" }
 
   - name: "events"
     label: "Events"
@@ -70,6 +70,7 @@ collections:
         }
       - { label: "Event Address", name: "address", widget: "string" }
       - { label: "Ticket Price", name: "price", widget: "number" }
+      - { label: "Event Capacity", name: "capacity", widget: "number" }
       - {
           label: "Presale only",
           name: "presale_only",
@@ -115,3 +116,12 @@ collections:
     create: false
     fields:
       - { label: "The terms", name: "content", widget: "markdown" }
+
+  - name: "email"
+    label: "Confirmation Email"
+    title: "Confirmation Email"
+    summary: "Our confirmation email text"
+    folder: "_email"
+    create: false
+    fields:
+      - { label: "Email Text", name: "body", widget: "markdown" }

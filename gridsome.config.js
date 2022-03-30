@@ -54,6 +54,13 @@ module.exports = {
         typeName: "pages",
       },
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "_email/*.md",
+        typeName: "email",
+      },
+    },
   ],
   transformers: {
     remark: {
