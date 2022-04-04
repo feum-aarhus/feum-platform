@@ -23,11 +23,7 @@ music_list: []
 ---
 <!--StartFragment-->
 
-
-
 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ : Ｂ Ｙ Ｒ Ｏ Ｎ _Ｙ Ｅ Ａ Ｔ Ｅ Ｓ 】
-
-
 
 This time at FEUM Phuture series we are pleased to host a guest from Berlin – Byron Yeates – who with support from our 2 finest residents will take us for long hours of dancing. Let us take you to another step into progressive music discovery.
 
@@ -66,9 +62,7 @@ Time: 21
 \
 Age Limit: 21
 
-Fee: 100dkk // (150 tickets available online and 80 at the door)
-
-
+Fee: 100dkk // 
 
 Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
 
