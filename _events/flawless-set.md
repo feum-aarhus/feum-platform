@@ -62,7 +62,7 @@ Time: 21
 \
 Age Limit: 21
 
-Fee: 100dkk // 
+Fee: 100dkk
 
 Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
 
