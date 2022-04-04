@@ -30,7 +30,7 @@ This time at FEUM Phuture series we are pleased to host a guest from Berlin – 
 【 BYRON YEATES 】(Radiant Love)
 
 \
-Byron Yeates is a DJ and heads the record label Radiant Love. Based in Berlin, he has in the last years served his signature sound at Panorama Bar, Tresor and Shelter Amsterdam. Yeates’ recent mixes have been featured by the likes of DJ Mag, in which he was profiled for the ‘Fresh Kicks’ series; Honey Soundsystem; and Cómeme. He also holds a bimonthly residency at Berlin’s Refuge Radio.
+Byron Yeates is a DJ and heads the record label Radiant Love. Based in Berlin, he has in the last years served his signature sound at Panorama Bar, Tresor and Shelter Amsterdam. Yeates’ recent mixes have been featured by the likes of DJ Mag, in which he was profiled for the ‘Fresh Kicks’ series; Honey Soundsystem; and Cómeme. He also holds a bi-monthly residency at Berlin’s Refuge Radio.
 
 【 TURING 】(FEUM)
 
