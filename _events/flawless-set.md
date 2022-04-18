@@ -11,15 +11,15 @@ capacity: 80
 lineup:
   - name: Cucina Povera
     country: UK
-    label: ""
+    label: Offen Music/Primordial Void
     link: https://www.youtube.com/watch?v=yNvLfESUKpg
   - name: "Civilistjavel! "
     country: SE
-    label: ""
+    label: FELT
     link: https://soundcloud.com/f_e_l_t/j-rnn-tter-preview
   - name: Perko
     country: DK
-    label: ""
+    label: Numbers/Posh Isolation
     link: https://soundcloud.com/rinse_france/felt-with-perko-27-mars-2022
 music_list: []
 ---
