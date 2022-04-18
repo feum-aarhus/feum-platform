@@ -45,7 +45,9 @@ Emerging from the depths of some Scandinavian forest.. and celebrating the relea
 
 Previously only known in the ’90s Scandinavian underground through private tape/CDR-trading networks, the Civilistjävel! project has seen a line of intimate releases via London’s Low Company, varying from exquisite sunken dubbed out minimal techno to industrial ambient electronic noise meditations. 
 
-Civilistjävel!’s live minimal synth sound architectures conjure up deep forest secrets taking audiences into ethereal and boreal atmospheres but then again Civilistjävel! live is always a surprise. <br>
+Civilistjävel!’s live minimal synth sound architectures conjure up deep forest secrets taking audiences into ethereal and boreal atmospheres but then again Civilistjävel! live is always a surprise. 
+
+<br>
 
 **Perko** <br>
 
@@ -59,7 +61,7 @@ So he comes to Aarhus to celebrate and play out the night with music that is sur
 
 <br>
 
-Don’t hesitate.
+Don’t hesitate. 
 
 Yours Truly,
 
