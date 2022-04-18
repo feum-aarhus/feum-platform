@@ -65,10 +65,11 @@ Don’t hesitate.
 
 Yours Truly,
 
-FEUM
+FEUM 
 
-**\
-Practicalities** <br>
+<br>
+
+**Practicalities** <br>
 
 Electronic / Experimental / Ambient
 
