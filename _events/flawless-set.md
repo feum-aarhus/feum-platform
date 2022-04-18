@@ -83,7 +83,7 @@ Last Entry: 21
 
 Age limit: 18
 
-Fee: 100dkk // Tickets available at feumticketing.dk or pick up yours down at Super before the event starts!
+Fee: 100dkk 
 
 
 
