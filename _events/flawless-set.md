@@ -5,7 +5,7 @@ start: Saturday, April 30, 2022 8:00 PM
 end: Saturday, April 30, 2022 12:00 AM
 address: Super, Mejlgade 53
 price: 5
-presale_only: false
+presale_only: true
 music: Awesome
 capacity: 80
 lineup:
@@ -47,10 +47,6 @@ Previously only known in the ’90s Scandinavian underground through private tap
 
 Civilistjävel!’s live minimal synth sound architectures conjure up deep forest secrets taking audiences into ethereal and boreal atmospheres but then again Civilistjävel! live is always a surprise. <br>
 
-
-
-
-
 **Perko** <br>
 
 The Copenhagen-based DJ and Producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers.
@@ -83,12 +79,6 @@ Concert: 20
 
 Last Entry: 21
 
-Age limit: 18
-
 Fee: 100dkk 
-
-
-
-
 
 <!--EndFragment-->
