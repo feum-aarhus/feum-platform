@@ -3,7 +3,7 @@ banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
 title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
 start: Saturday, April 30, 2022 8:00 PM
 end: Saturday, April 30, 2022 12:00 AM
-address: Super, Mejlgade 53
+address: Super, Mejlgade 53, 8000
 price: 5
 presale_only: true
 music: Awesome
