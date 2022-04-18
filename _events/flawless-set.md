@@ -5,6 +5,7 @@ start: Friday, April 8, 2022 9:00 PM
 end: Sunday, April 10, 2022 3:00 AM
 address: Institute for X - A-huset
 price: 100
+capacity: 150
 presale_only: false
 music: Awesome
 lineup:
