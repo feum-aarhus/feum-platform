@@ -49,9 +49,7 @@ Civilistjävel!’s live minimal synth sound architectures conjure up deep fores
 
 
 
-**Perko**
-
-<br>
+**Perko** <br>
 
 The Copenhagen-based DJ and Producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers.
 
