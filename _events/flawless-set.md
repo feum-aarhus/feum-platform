@@ -4,7 +4,7 @@ title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
 start: Saturday, April 30, 2022 8:00 PM
 end: Saturday, April 30, 2022 3:00 AM
 address: Super, Mejlgade 53
-price: 100
+price: 5
 presale_only: false
 music: Awesome
 capacity: 80
