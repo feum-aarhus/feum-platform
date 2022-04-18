@@ -1,70 +1,93 @@
 ---
-banner: /uploads/phuture-090422-banner-lower-q.jpg
+banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
 title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
-start: Friday, April 8, 2022 9:00 PM
-end: Sunday, April 10, 2022 3:00 AM
-address: Institute for X - A-huset
+start: Saturday, April 30, 2022 8:00 PM
+end: Saturday, April 30, 2022 3:00 AM
+address: Super, Mejlgade 53
 price: 100
-capacity: 150
 presale_only: false
 music: Awesome
+capacity: 80
 lineup:
-  - name: BYRON YEATES
-    country: DE
-    label: Radiant Love
-    link: https://bit.ly/3iLfeI3
-  - name: "TURING "
-    country: PL
-    label: FEUM
-    link: ""
-  - name: MODEST
-    country: PL
-    label: FEUM
+  - name: Cucina Povera
+    country: UK
+    label: ""
+    link: https://www.youtube.com/watch?v=yNvLfESUKpg
+  - name: "Civilistjavel! "
+    country: SE
+    label: ""
+    link: https://soundcloud.com/f_e_l_t/j-rnn-tter-preview
+  - name: Perko
+    country: DK
+    label: ""
+    link: https://soundcloud.com/rinse_france/felt-with-perko-27-mars-2022
 music_list: []
 ---
 <!--StartFragment-->
 
-【 Ｆ Ｅ Ｕ Ｍ ／／ Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ : Ｂ Ｙ Ｒ Ｏ Ｎ _Ｙ Ｅ Ａ Ｔ Ｅ Ｓ 】
+FEUM Live is back again and this time we are over the moon to present live performances from the mystical Cucina Povera and mythical Civilistjävel! at our local super venue, Super, for a night of deep and hypnotic electronic harmonies and abstractions. Not only that but we have the talented Perko returning to Aarhus to play out the night with a post-concert warm-down and Saturday night warm-up DJ set.
 
-This time at FEUM Phuture series we are pleased to host a guest from Berlin – Byron Yeates – who with support from our 2 finest residents will take us for long hours of dancing. Let us take you to another step into progressive music discovery.
+<br>
 
-【 BYRON YEATES 】(Radiant Love)
+**Cucina Povera** <br>
 
-\
-Byron Yeates is a DJ and heads the record label Radiant Love. Based in Berlin, he has in the last years served his signature sound at Panorama Bar, Tresor and Shelter Amsterdam. Yeates’ recent mixes have been featured by the likes of DJ Mag, in which he was profiled for the ‘Fresh Kicks’ series; Honey Soundsystem; and Cómeme. He also holds a bi-monthly residency at Berlin’s Refuge Radio.
+Glasgow-based Finnish Karelia-born sound artist, Maria Rossi, has been on a roll the past few years with a string of sublime releases on Night School, such as the gorgeous ‘Hilja’, as well as releases on Primordial Void and Offen Music. 
 
-【 TURING 】(FEUM)
+Her music takes audiences through realms of deep enchantment with a signature ethereal and hypnotic sound created through explorations of multi-layered voice, field recordings and synthesis. You’ll be sure to ascend to a higher plane with this one.
 
-\
-Aarhus Based DJ with Polish roots. Known also under alias od [det.al](http://det.al/). FEUM resident since 2017. Turing’s new tracks reflect his evolution as a DJ over the last few years. The sound is still heavily influenced by house music, but it showcases a style of techno that isn’t afraid to go a little more industrial. Heavy beats are peppered with snippets of eclectic samples ranging from grime vocals to drone sounds.
+<br>
 
-【 MODEST 】(FEUM)
+**Civilistjavel!** <br>
 
-\
-Modest together with FEUM has been growing and representing dedication to quality sound and underground culture in Aarhus. Bringing the uncharted, deep and spacey, carefully selected record collection always willing to warm up the dance floor, any time of the day or night.
+Emerging from the depths of some Scandinavian forest.. and celebrating the release of their new record ‘Järnnätter’ on Perko’s new label FELT! The Swedish enigma that is Civilistjävel! comes to Aarhus. 
 
-/ Reclaim Your City /
+Previously only known in the ’90s Scandinavian underground through private tape/CDR-trading networks, the Civilistjävel! project has seen a line of intimate releases via London’s Low Company, varying from exquisite sunken dubbed out minimal techno to industrial ambient electronic noise meditations. 
 
-\
-Yours Truly,\
+Civilistjävel!’s live minimal synth sound architectures conjure up deep forest secrets taking audiences into ethereal and boreal atmospheres but then again Civilistjävel! live is always a surprise. <br>
+
+
+
+
+
+**Perko**
+
+<br>
+
+The Copenhagen-based DJ and Producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers.
+
+With such slick skills in production, he is unsurprisingly as good behind the decks, playing across genres with the sounds that inspire his productions, and always fitting the space.
+
+He has also recently launched a promising new label called FELT, aiming to release records that are “timeless, minimal, and rooted in sound system culture,”.
+
+So he comes to Aarhus to celebrate and play out the night with music that is sure to be fit for purpose. We can’t wait to celebrate with him.
+
+<br>
+
+Don’t hesitate.
+
+Yours Truly,
+
 FEUM
 
-▀▀▀▀▀▀ P R A C T I C A L I T I E S ▀▀▀▀▀▀
+**\
+Practicalities** <br>
 
-\
-Progressive // House // Techno
+Electronic / Experimental / Ambient
 
-\
-Place: Institut for X // A-Huset
+Place: Super Mejlgade 53
 
-\
-Time: 21
+Doors: 19
 
-\
-Age Limit: 21
+Concert: 20
 
-Fee: 100dkk
+Last Entry: 21
 
-Artwork by [Andreea Fernea](https://www.instagram.com/andrre________/)
+Age limit: 18
+
+Fee: 100dkk // Tickets available at feumticketing.dk or pick up yours down at Super before the event starts!
+
+
+
+
 
 <!--EndFragment-->
