@@ -4,7 +4,7 @@ title: 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｌ Ｉ Ｖ Ｅ： ＣＵＣＩＮＡ_ＰＯ�
 start: Saturday, April 30, 2022 8:00 PM
 end: Saturday, April 30, 2022 12:00 AM
 address: Super, Mejlgade 53, 8000
-price: 5
+price: 100
 presale_only: true
 music: Awesome
 capacity: 80
