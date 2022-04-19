@@ -61,7 +61,7 @@ So he comes to Aarhus to celebrate and play out the night with music that is sur
 
 <br>
 
-/Don’t hesitate/<br>\
+Don’t hesitate<br>\
 Yours Truly,<br>\
 FEUM <br>
 
