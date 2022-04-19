@@ -1,13 +1,11 @@
 ---
-banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
-title: 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｌ Ｉ Ｖ Ｅ： ＣＵＣＩＮＡ_ＰＯＶＥＲＡ x  ＣＩＶＩＬＩＳＴＪＡＶＥＬ！ｘ ＰＥＲＫＯ 】
 start: Saturday, April 30, 2022 8:00 PM
-end: Saturday, April 30, 2022 12:00 AM
-address: Super, Mejlgade 53, 8000
-price: 100
 presale_only: true
 music: Awesome
-capacity: 80
+banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
+title: 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｌ Ｉ Ｖ Ｅ： ＣＵＣＩＮＡ_ＰＯＶＥＲＡ x  ＣＩＶＩＬＩＳＴＪＡＶＥＬ！ｘ ＰＥＲＫＯ 】
+address: Super, Mejlgade 53, 8000
+price: 100
 lineup:
   - name: Cucina Povera
     country: UK
@@ -22,6 +20,8 @@ lineup:
     label: Numbers/Posh Isolation
     link: https://soundcloud.com/rinse_france/felt-with-perko-27-mars-2022
 music_list: []
+end: Saturday, April 30, 2022 12:00 AM
+capacity: 80
 ---
 <!--StartFragment-->
 
@@ -61,17 +61,17 @@ So he comes to Aarhus to celebrate and play out the night with music that is sur
 
 <br>
 
-Don’t hesitate<br>\
-Yours Truly,<br>\
+Don’t hesitate<br>
+Yours Truly,<br>
 FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-Electronic / Experimental / Ambient <br>\
-Place: Super Mejlgade 53 <br>\
-Doors: 19<br>\
-Concert: 20<br>\
-Last Entry: 21<br>\
-Fee: 100dkk <br>
+Electronic / Experimental / Ambient <br>
+Place: Super Mejlgade 53 <br>
+Doors: 19<br>
+Concert: 20<br>
+Last Entry: 21<br>
+Fee: 100dkk
 
 <!--EndFragment-->
