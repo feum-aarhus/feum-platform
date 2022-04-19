@@ -1,6 +1,6 @@
 ---
 banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
-title: Ｆ Ｅ Ｕ Ｍ  ／／  Ｐ Ｈ Ｕ Ｔ Ｕ Ｒ Ｅ
+title: 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｌ Ｉ Ｖ Ｅ： ＣＵＣＩＮＡ_ＰＯＶＥＲＡ x  ＣＩＶＩＬＩＳＴＪＡＶＥＬ！ｘ ＰＥＲＫＯ 】
 start: Saturday, April 30, 2022 8:00 PM
 end: Saturday, April 30, 2022 12:00 AM
 address: Super, Mejlgade 53, 8000
@@ -31,7 +31,7 @@ FEUM Live is back again and this time we are over the moon to present live perfo
 
 <br>
 
-**Cucina Povera** <br>
+**【 CUCINA POVERA 】- LIVE** <br>
 
 Glasgow-based Finnish Karelia-born sound artist, Maria Rossi, has been on a roll the past few years with a string of sublime releases on Night School, such as the gorgeous ‘Hilja’, as well as releases on Primordial Void and Offen Music. 
 
@@ -39,7 +39,7 @@ Her music takes audiences through realms of deep enchantment with a signature et
 
 <br>
 
-**Civilistjavel!** <br>
+**【 CIVILISTJAVEL! 】- LIVE** <br>
 
 Emerging from the depths of some Scandinavian forest.. and celebrating the release of their new record ‘Järnnätter’ on Perko’s new label FELT! The Swedish enigma that is Civilistjävel! comes to Aarhus. 
 
@@ -49,7 +49,7 @@ Civilistjävel!’s live minimal synth sound architectures conjure up deep fores
 
 <br>
 
-**Perko** <br>
+**【 PERKO 】- DJ SET** <br>
 
 The Copenhagen-based DJ and Producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers.
 
@@ -61,26 +61,17 @@ So he comes to Aarhus to celebrate and play out the night with music that is sur
 
 <br>
 
-Don’t hesitate. 
+/Don’t hesitate/\
+Yours Truly,\
+FEUM <br>
 
-Yours Truly,
+ <br>**【** **P R A C T I C A L I T I E S 】**
 
-FEUM 
-
-<br>
-
-**Practicalities** <br>
-
-Electronic / Experimental / Ambient
-
-Place: Super Mejlgade 53
-
-Doors: 19
-
-Concert: 20
-
-Last Entry: 21
-
-Fee: 100dkk 
+**⇻**Electronic / Experimental / Ambient\
+**⇻**Place: Super Mejlgade 53\
+**⇻**Doors: 19\
+**⇻**Concert: 20\
+**⇻**Last Entry: 21\
+**⇻**Fee: 100dkk 
 
 <!--EndFragment-->
