@@ -67,11 +67,11 @@ FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**
 
-**⇻**Electronic / Experimental / Ambient\
-**⇻**Place: Super Mejlgade 53\
-**⇻**Doors: 19\
-**⇻**Concert: 20\
-**⇻**Last Entry: 21\
-**⇻**Fee: 100dkk 
+**⇻**Electronic / Experimental / Ambient <br>\
+**⇻**Place: Super Mejlgade 53 <br>\
+**⇻**Doors: 19<br>\
+**⇻**Concert: 20<br>\
+**⇻**Last Entry: 21<br>\
+**⇻**Fee: 100dkk <br>
 
 <!--EndFragment-->
