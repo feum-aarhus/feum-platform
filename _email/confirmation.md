@@ -12,23 +12,21 @@ Yours Truly,
 
 FEUM!
 
-
-
 **About SUPER**
 
 Super is a non-profit, solely volunteer-driven space. 
 Everyone here is working for free to make this work.
 
-Our general guidelines:
-▪ Show consideration to your fellow guests and surroundings.
-▪ We do not tolerate sexism, rascism, homo- and transphobia, ableism and social discrimination.
+Our general guidelines:<br>
+▪ Show consideration to your fellow guests and surroundings.<br>
+▪ We do not tolerate sexism, rascism, homo- and transphobia, ableism and social discrimination.<br>
 ▪ Drink and behave responsibly - not just for your own sake.
 
 Help us enforce our guidelines and inform us if you need our help. 
 
-For CLUBNIGHTS we'd like to add:
-▪ No phones on the dancefloor.
-▪ Give each other space to dance.
+For CLUBNIGHTS we'd like to add:<br>
+▪ No phones on the dancefloor.<br>
+▪ Give each other space to dance.<br>
 ▪ Minimize talking on the dancefloor.
 
 <!--EndFragment-->
