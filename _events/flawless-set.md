@@ -61,17 +61,17 @@ So he comes to Aarhus to celebrate and play out the night with music that is sur
 
 <br>
 
-/Don’t hesitate/\
-Yours Truly,\
+/Don’t hesitate/<br>\
+Yours Truly,<br>\
 FEUM <br>
 
- <br>**【** **P R A C T I C A L I T I E S 】**
+ <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-**⇻**Electronic / Experimental / Ambient <br>\
-**⇻**Place: Super Mejlgade 53 <br>\
-**⇻**Doors: 19<br>\
-**⇻**Concert: 20<br>\
-**⇻**Last Entry: 21<br>\
-**⇻**Fee: 100dkk <br>
+Electronic / Experimental / Ambient <br>\
+Place: Super Mejlgade 53 <br>\
+Doors: 19<br>\
+Concert: 20<br>\
+Last Entry: 21<br>\
+Fee: 100dkk <br>
 
 <!--EndFragment-->
