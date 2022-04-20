@@ -1,11 +1,14 @@
 ---
-start: Saturday, April 30, 2022 8:00 PM
-presale_only: true
-music: Awesome
 banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
-title: 【 Ｆ Ｅ Ｕ Ｍ ／／ Ｌ Ｉ Ｖ Ｅ： ＣＵＣＩＮＡ_ＰＯＶＥＲＡ x  ＣＩＶＩＬＩＳＴＪＡＶＥＬ！ｘ ＰＥＲＫＯ 】
+title: "【 𝗙 𝗘 𝗨 𝗠 // 𝗟 𝗜 𝗩 𝗘: 𝗖𝗨𝗖𝗜𝗡𝗔_𝗣𝗢𝗩𝗘𝗥𝗔 𝘅
+  𝗖𝗜𝗩𝗜𝗟𝗜𝗦𝗧𝗝𝗔𝗩𝗘𝗟! 𝘅 𝗣𝗘𝗥𝗞𝗢】"
+start: Saturday, April 30, 2022 8:00 PM
+end: Saturday, April 30, 2022 12:00 AM
 address: Super, Mejlgade 53, 8000
 price: 100
+presale_only: true
+music: Awesome
+capacity: 80
 lineup:
   - name: Cucina Povera
     country: UK
@@ -20,8 +23,6 @@ lineup:
     label: Numbers/Posh Isolation
     link: https://soundcloud.com/rinse_france/felt-with-perko-27-mars-2022
 music_list: []
-end: Saturday, April 30, 2022 12:00 AM
-capacity: 80
 ---
 <!--StartFragment-->
 
