@@ -27,7 +27,7 @@ music_list: []
 
 This time, we wanted to delve a little further into the depth of the soundscape and Invite a very special guest. Join us for night full of deep house and deep techno.
 
-<br>**【 E R I C_C L O U T I E R 】**<br> 
+<br>**【 ERIC_CLOUTIER 】**<br> 
 
 Cloutier’s twenty-plus year commitment has been built upon his integrity as a DJ and authority as a selector. A self-described "record digging psychopath," one only has to refer to his mix of highly sought after cuts from Driftwood Records to see the lengths Cloutier will go to in order to procure the perfect selection.
 
