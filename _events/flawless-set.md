@@ -1,64 +1,51 @@
 ---
-banner: /uploads/220430-feum-at-super-banner-lower-q.jpg
-title: "【 𝗙𝗘𝗨𝗠 // 𝗟𝗜𝗩𝗘: 𝗖𝗨𝗖𝗜𝗡𝗔_𝗣𝗢𝗩𝗘𝗥𝗔 𝘅
-  𝗖𝗜𝗩𝗜𝗟𝗜𝗦𝗧𝗝𝗔𝗩𝗘𝗟! 𝘅 𝗣𝗘𝗥𝗞𝗢 】"
-start: Saturday, April 30, 2022 8:00 PM
-end: Saturday, April 30, 2022 12:00 AM
-address: Super, Mejlgade 53, 8000
-price: 100
+banner: /uploads/untitled-1-.jpeg
+title: "【 𝗙𝗘𝗨𝗠 // 𝗗𝗘𝗘𝗣: 𝗘𝗥𝗜𝗖 𝗖𝗟𝗢𝗨𝗧𝗜𝗘𝗥 𝘅 𝗠𝗢𝗗𝗘𝗦𝗧 𝘅
+  𝗣𝗔𝗪𝗦𝗜  】"
+start: Friday, May 13, 2022 9:00 PM
+end: Saturday, May 14, 2022 3:00 AM
+address: Skovgaardsgade 5C, 8000 Aarhus C
+price: 1
 presale_only: true
 music: Awesome
 capacity: 80
 lineup:
-  - name: Cucina Povera
-    country: UK
-    label: Offen Music/Primordial Void
-    link: https://www.youtube.com/watch?v=yNvLfESUKpg
-  - name: "Civilistjavel! "
-    country: SE
-    label: FELT
-    link: https://soundcloud.com/f_e_l_t/j-rnn-tter-preview
-  - name: Perko
-    country: DK
-    label: Numbers/Posh Isolation
-    link: https://soundcloud.com/rinse_france/felt-with-perko-27-mars-2022
+  - name: " ERIC CLOUTIER"
+    country: US
+    label: Palinoia|The Bunker
+    link: https://bit.ly/37ZZ8IO
+  - name: MODEST
+    country: PL
+    label: FEUM
+  - name: PAWSI
+    country: PL
 music_list: []
 ---
 <!--StartFragment-->
 
 <br>
 
-FEUM Live is back again and this time we are over the moon to present live performances from the mystical Cucina Povera and mythical Civilistjävel! at our local super venue, Super, for a night of deep and hypnotic electronic harmonies and abstractions. Not only that but we have the talented Perko returning to Aarhus to play out the night with a post-concert warm-down and Saturday night warm-up DJ set.
+This time, we wanted to delve a little further into the depth of the soundscape and Invite a very special guest. Join us for night full of deep house and deep techno.
+
+<br>**【 E R I C_C L O U T I E R 】**<br> 
+
+Cloutier’s twenty-plus year commitment has been built upon his integrity as a DJ and authority as a selector. A self-described "record digging psychopath," one only has to refer to his mix of highly sought after cuts from Driftwood Records to see the lengths Cloutier will go to in order to procure the perfect selection.
+
+This is truly Cloutier’s nature - one of zeal and infatuation towards the warm, dubby, hypnotic house and techno that has come to characterize his sound as well as his masterful ability to bridge the gap between dance music’s past and its future. An exception to the norm, Cloutier is not one to capitalize on his Detroit origins. 
+
+Moving to New York in his 20’s, he became a regular face at The Bunker where he began to further define his innate style of body orientated music. Now situated in Berlin, where he often shows up behind the decks of niche alcoves as well as the world’s best clubs, Cloutier’s reputation as an unequivocal, dexterous force is increasingly becoming one of note.
 
 <br>
 
-**【 CUCINA POVERA 】- LIVE** <br>
+**【 MODEST】**<br>
 
-Glasgow-based Finnish Karelia-born sound artist, Maria Rossi, has been on a roll the past few years with a string of sublime releases on Night School, such as the gorgeous ‘Hilja’, as well as releases on Primordial Void and Offen Music. 
-
-Her music takes audiences through realms of deep enchantment with a signature ethereal and hypnotic sound created through explorations of multi-layered voice, field recordings and synthesis. You’ll be sure to ascend to a higher plane with this one.
+Joining the line-up is a well known, still very humble, house and techno connoisseur Mødest. Host of FEUM events who always willing to warm-up the dance floor, any time of the night. This time bringing his uncharted, deep, and carefully selected record collection.
 
 <br>
 
-**【 CIVILISTJAVEL! 】- LIVE** <br>
+**【 PAWSI 】** <br>
 
-Emerging from the depths of some Scandinavian forest.. and celebrating the release of their new record ‘Järnnätter’ on Perko’s new label FELT! The Swedish enigma that is Civilistjävel! comes to Aarhus. 
-
-Previously only known in the ’90s Scandinavian underground through private tape/CDR-trading networks, the Civilistjävel! project has seen a line of intimate releases via London’s Low Company, varying from exquisite sunken dubbed out minimal techno to industrial ambient electronic noise meditations. 
-
-Civilistjävel!’s live minimal synth sound architectures conjure up deep forest secrets taking audiences into ethereal and boreal atmospheres but then again Civilistjävel! live is always a surprise. 
-
-<br>
-
-**【 PERKO 】- DJ SET** <br>
-
-The Copenhagen-based DJ and Producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers.
-
-With such slick skills in production, he is unsurprisingly as good behind the decks, playing across genres with the sounds that inspire his productions, and always fitting the space.
-
-He has also recently launched a promising new label called FELT, aiming to release records that are “timeless, minimal, and rooted in sound system culture,”.
-
-So he comes to Aarhus to celebrate and play out the night with music that is sure to be fit for purpose. We can’t wait to celebrate with him.
+Copenhagen-based, Aarhus bred, DJ and promoter rooted in Poland. Lifelong friend and contributor of FEUM. As a DJ, intuitively floating between deep and dark techno, soundscapes, and experimental electronic music. Pawsi’s sets are inspired by Swedish techno tradition, drone music, Scandinavian forests and wide-open spaces.
 
 <br>
 
@@ -68,11 +55,16 @@ FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-Electronic / Experimental / Ambient <br>
-Place: Super Mejlgade 53 <br>
-Doors: 19<br>
-Concert: 20<br>
-Last Entry: 21<br>
-Fee: 100dkk
+⇻ Deep House // Deep Techno\
+⇻ Place: Institut for X // A-Huset\
+⇻ Time: 21+\
+⇻ Age Limit: 21\
+⇻ Online presale:100dkk // Tickets available at feum-ticketing.dk \
+⇻ Door Entry: 120dkk\
+(limited amount of tickets available online and at the door)
+
+\
+Artwork by Andreea Fernea
+
 
 <!--EndFragment-->
