@@ -1,14 +1,12 @@
 ---
+start: Friday, May 13, 2022 9:00 PM
+presale_only: false
+music: Awesome
 banner: /uploads/untitled-1-.jpeg
 title: "【 𝗙𝗘𝗨𝗠 // 𝗗𝗘𝗘𝗣: 𝗘𝗥𝗜𝗖 𝗖𝗟𝗢𝗨𝗧𝗜𝗘𝗥 𝘅 𝗠𝗢𝗗𝗘𝗦𝗧 𝘅
   𝗣𝗔𝗪𝗦𝗜  】"
-start: Friday, May 13, 2022 9:00 PM
-end: Saturday, May 14, 2022 3:00 AM
 address: Skovgaardsgade 5C, 8000 Aarhus C
 price: 100
-presale_only: false
-music: Awesome
-capacity: 80
 lineup:
   - name: " ERIC CLOUTIER"
     country: US
@@ -20,6 +18,8 @@ lineup:
   - name: PAWSI
     country: PL
 music_list: []
+end: Saturday, May 14, 2022 3:00 AM
+capacity: 80
 ---
 <!--StartFragment-->
 
@@ -55,15 +55,14 @@ FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-Deep House // Deep Techno<br> \
-Place: Institut for X // A-Huset<br>\
-Time: 21<br>\
-Age Limit: 21+<br>\
-Online presale:100dkk // Tickets available at feum-ticketing.dk<br> \
-Door Entry: 120dkk<br>\
+Deep House // Deep Techno<br>
+Place: Institut for X // A-Huset<br>
+Time: 21<br>
+Age Limit: 21+<br>
+Online presale:100dkk // Tickets available at feum-ticketing.dk<br>
+Door Entry: 120dkk<br>
 (limited amount of tickets available online and at the door)
 
-\
 Artwork by Andreea Fernea
 
 <!--EndFragment-->
