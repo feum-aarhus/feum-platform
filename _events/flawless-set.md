@@ -55,16 +55,15 @@ FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-⇻ Deep House // Deep Techno\
-⇻ Place: Institut for X // A-Huset\
-⇻ Time: 21+\
-⇻ Age Limit: 21\
-⇻ Online presale:100dkk // Tickets available at feum-ticketing.dk \
-⇻ Door Entry: 120dkk\
+⇻ Deep House // Deep Techno<br> \
+⇻ Place: Institut for X // A-Huset<br>\
+⇻ Time: 21+<br>\
+⇻ Age Limit: 21<br>\
+⇻ Online presale:100dkk // Tickets available at feum-ticketing.dk<br> \
+⇻ Door Entry: 120dkk<br>\
 (limited amount of tickets available online and at the door)
 
 \
 Artwork by Andreea Fernea
-
 
 <!--EndFragment-->
