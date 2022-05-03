@@ -5,7 +5,7 @@ title: "【 𝗙𝗘𝗨𝗠 // 𝗗𝗘𝗘𝗣: 𝗘𝗥𝗜𝗖 𝗖𝗟𝗢�
 start: Friday, May 13, 2022 9:00 PM
 end: Saturday, May 14, 2022 3:00 AM
 address: Skovgaardsgade 5C, 8000 Aarhus C
-price: 5
+price: 100
 presale_only: false
 music: Awesome
 capacity: 80
