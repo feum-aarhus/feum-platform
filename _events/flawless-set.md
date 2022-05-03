@@ -57,8 +57,8 @@ FEUM <br>
 
 Deep House // Deep Techno<br> \
 Place: Institut for X // A-Huset<br>\
-Time: 21+<br>\
-Age Limit: 21<br>\
+Time: 21<br>\
+Age Limit: 21+<br>\
 Online presale:100dkk // Tickets available at feum-ticketing.dk<br> \
 Door Entry: 120dkk<br>\
 (limited amount of tickets available online and at the door)
