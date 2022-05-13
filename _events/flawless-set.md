@@ -8,7 +8,7 @@ address: Skovgaardsgade 5C, 8000 Aarhus C
 price: 100
 presale_only: false
 music: Awesome
-capacity: 80
+capacity: 150
 lineup:
   - name: " ERIC CLOUTIER"
     country: US
