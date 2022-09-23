@@ -4,7 +4,7 @@ title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
 start: Friday, October 7, 2022 9:00 PM
 end: Saturday, October 8, 2022 3:00 AM
 address: Skovgaardsgade 5C, 8000 Aarhus C
-price: 100
+price: 1
 presale_only: false
 music: Awesome
 capacity: 150
