@@ -29,7 +29,7 @@ Some tasty treats for the eyes, the ears, the body and the mind.
 
 <br>**【 GIGSTA 】**<br> 
 
-The Belgium-born, French-raised, Berlin-based multi-versed artist, DJ and academic gigsta returns to little old Aarhus for a proper sweaty bass-y rave at our beloved venue A-huset. Her reputation for playful, sometimes obscure sets has been spreading across Europe of late and the evidence is out there, with multitude of killer mixes on the net but also with her cosmic radio show Fictions on Cashmere Radio. Her DJ-sets range widely: from the very slow to the very fast, the old to the brand new, the silly to the ultra-serious and often incorporating her own collages but one thing we know for sure is that she has a collection of bass music that you just can’t resist to move too. 
+The Belgium-born, French-raised, Berlin-based multi-versed artist, DJ and academic gigsta returns to little old Aarhus for a proper sweaty bass-y rave at our beloved venue A-huset. Her reputation for playful, sometimes obscure sets has been spreading across Europe of late and the evidence is out there, with multitude of killer mixes on the net but also with her cosmic radio show Fictions on Cashmere Radio. Her DJ-sets range widely: from the very slow to the very fast, the old to the brand new, the silly to the ultra-serious and often incorporating her own collages but one thing we know for sure is that she has a collection of bass music that you just can’t resist to move to. 
 
 <br>
 
@@ -63,8 +63,6 @@ FEUM <br>
 ⇻ Age Limit: 21
 
 ⇻ Online presale: 100dkk // [](https://feum-ticketing.dk/)(limited amount of tickets at the door)
-
-
 
 Artwork by Andreea Fernea
 
