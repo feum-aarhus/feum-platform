@@ -1,68 +1,71 @@
 ---
-banner: /uploads/untitled-1-.jpeg
-title: "【 𝗙𝗘𝗨𝗠 // 𝗗𝗘𝗘𝗣: 𝗘𝗥𝗜𝗖 𝗖𝗟𝗢𝗨𝗧𝗜𝗘𝗥 𝘅 𝗠𝗢𝗗𝗘𝗦𝗧 𝘅
-  𝗣𝗔𝗪𝗦𝗜  】"
-start: Friday, May 13, 2022 9:00 PM
-end: Saturday, May 14, 2022 3:00 AM
+banner: /uploads/event_small_2.jpg
+title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
+start: Friday, October 7, 2022 9:00 PM
+end: Saturday, October 8, 2022 3:00 AM
 address: Skovgaardsgade 5C, 8000 Aarhus C
 price: 100
 presale_only: false
 music: Awesome
 capacity: 150
 lineup:
-  - name: " ERIC CLOUTIER"
-    country: US
-    label: Palinoia|The Bunker
-    link: https://bit.ly/37ZZ8IO
-  - name: MODEST
-    country: PL
-    label: FEUM
-  - name: PAWSI
-    country: PL
+  - name: GIGSTA
+    country: DE
+  - name: PERKO
+    country: DK
+  - name: N.E.GIRL
+    country: DK
 music_list: []
 ---
 <!--StartFragment-->
 
-<br>This time, we wanted to delve a little further into the depth of the soundscape and Invite a very special guest. Join us for night full of deep house and deep techno.
+<br>This one is all about bass music. A night of body shaking, bone conducing, subsonik frequencies. It’s all about vibrations and deep oscillations, with appropriate sound pressures to release those tensions, get you floating and bouncing till the early morn.
 
-<br>**【 ERIC_CLOUTIER 】**<br> 
+We have a packed line-up with some of the finest bass music specialists around. Sure to be fully equipped with the most lethal bass tools in their bags - gigsta, Perko & N.E.GIRL will be in full force for this one.
 
-Cloutier’s twenty-plus year commitment has been built upon his integrity as a DJ and authority as a selector. A self-described "record digging psychopath," one only has to refer to his mix of highly sought after cuts from Driftwood Records to see the lengths Cloutier will go to in order to procure the perfect selection.
+Not only that but the scene will get some special aesthetic treatment with an otherworldly art installation by the one and only Phuc Van Dang.
 
-This is truly Cloutier’s nature - one of zeal and infatuation towards the warm, dubby, hypnotic house and techno that has come to characterize his sound as well as his masterful ability to bridge the gap between dance music’s past and its future. An exception to the norm, Cloutier is not one to capitalize on his Detroit origins. 
+Some tasty treats for the eyes, the ears, the body and the mind.
 
-Moving to New York in his 20’s, he became a regular face at The Bunker where he began to further define his innate style of body orientated music. Now situated in Berlin, where he often shows up behind the decks of niche alcoves as well as the world’s best clubs, Cloutier’s reputation as an unequivocal, dexterous force is increasingly becoming one of note.
+<br>**【 GIGSTA 】**<br> 
 
-<br>
-
-**【 MODEST】**<br>
-
-Joining the line-up is a well known, still very humble, house and techno connoisseur Mødest. Host of FEUM events who always willing to warm-up the dance floor, any time of the night. This time bringing his uncharted, deep, and carefully selected record collection.
+The Belgium-born, French-raised, Berlin-based multi-versed artist, DJ and academic gigsta returns to little old Aarhus for a proper sweaty bass-y rave at our beloved venue A-huset. Her reputation for playful, sometimes obscure sets has been spreading across Europe of late and the evidence is out there, with multitude of killer mixes on the net but also with her cosmic radio show Fictions on Cashmere Radio. Her DJ-sets range widely: from the very slow to the very fast, the old to the brand new, the silly to the ultra-serious and often incorporating her own collages but one thing we know for sure is that she has a collection of bass music that you just can’t resist to move too. 
 
 <br>
 
-**【 PAWSI 】** <br>
+**【 PERKO** **】**<br>
 
-Copenhagen-based, Aarhus bred, DJ and promoter rooted in Poland. Lifelong friend and contributor of FEUM. As a DJ, intuitively floating between deep and dark techno, soundscapes, and experimental electronic music. Pawsi’s sets are inspired by Swedish techno tradition, drone music, Scandinavian forests and wide-open spaces.
+Our good friend Perko is back again, but this time he’s back in Aarhus for a round behind the decks in full club mode. \
+The Copenhagen-based DJ and producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers. Like his productions, his DJ sets are next-level, playing elegantly across genres with the sounds that inspire his productions, full of bass and always fitting the space. We’ve been waiting some time to get Perko in the klub, and that time has finally come. We can’t wait for this one.
 
 <br>
 
-Don’t hesitate<br>
+**【 N.E.GIRL 】** <br>
+
+Making big waves in the DK scene, the Copenhagen-based, London-bred DJ and video artist, N.E.GIRL will be back in Aarhus once again  bringing her high-energy high-pressure selections to the klub this time for what’s sure to be a belter of a night, we simply can’t get enough. Known for championing the UK bass sound with a focus on deep and dark club music, her sets demonstrate a pure love for club music, sound system culture and the global underground - something that we share deeply.
+
+This night is sure to be one to remember.
+
+<br>
+
+Don’t hesitate.<br>
 Yours Truly,<br>
 FEUM <br>
 
  <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-Deep House // Deep Techno<br>
-Place: Institut for X // A-Huset<br>
-Time: 21<br>
-Age Limit: 21+<br>
-Online presale: 100dkk // Tickets available at feum-ticketing.dk <br>
-Door Entry: 120dkk<br>
-(limited amount of tickets available online and at the door)
+⇻ Bass // Rave // Techno ++
+
+⇻ Place: Institut for X // A-Huset
+
+⇻ Time: 21 - late
+
+⇻ Age Limit: 21
+
+⇻ Online presale: 100dkk // [](https://feum-ticketing.dk/)(limited amount of tickets at the door)
+
+
 
 Artwork by Andreea Fernea
-
-T﻿EST TEST TEST
 
 <!--EndFragment-->
