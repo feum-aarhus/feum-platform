@@ -10,7 +10,7 @@ lineup:
   - name: GIGSTA
     country: DE
     link: https://soundcloud.com/gigstab
-    label: no label
+    label: ""
   - name: PERKO
     country: DK
     link: https://soundcloud.com/perkopair/sets/mixes-1
