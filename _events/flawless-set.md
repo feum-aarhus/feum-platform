@@ -1,17 +1,16 @@
 ---
-banner: /uploads/subsonik-banner-2-495kb.jpg
-title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
 start: Friday, October 7, 2022 9:00 PM
-end: Saturday, October 8, 2022 3:00 AM
-address: Skovgaardsgade 5C, 8000 Aarhus C
-price: 1
 presale_only: false
 music: Awesome
-capacity: 150
+banner: /uploads/subsonik-banner-2-495kb.jpg
+title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
+address: Skovgaardsgade 5C, 8000 Aarhus C
+price: 1
 lineup:
   - name: GIGSTA
     country: DE
     link: https://soundcloud.com/gigstab
+    label: no label
   - name: PERKO
     country: DK
     link: https://soundcloud.com/perkopair/sets/mixes-1
@@ -19,6 +18,8 @@ lineup:
     country: DK
     link: https://soundcloud.com/negirl_fka
 music_list: []
+end: Saturday, October 8, 2022 3:00 AM
+capacity: 150
 ---
 <!--StartFragment-->
 
