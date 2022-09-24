@@ -5,7 +5,7 @@ music: Awesome
 banner: /uploads/subsonik-banner-2-495kb.jpg
 title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
 address: Skovgaardsgade 5C, 8000 Aarhus C
-price: 1
+price: 3
 lineup:
   - name: GIGSTA
     country: DE

@@ -69,7 +69,12 @@ collections:
           format: "LLLL",
         }
       - { label: "Event Address", name: "address", widget: "string" }
-      - { label: "Ticket Price", name: "price", widget: "number" }
+      - {
+          label: "Ticket Price (min 3kr)",
+          name: "price",
+          widget: "number",
+          min: 3,
+        }
       - { label: "Event Capacity", name: "capacity", widget: "number" }
       - {
           label: "Presale only",
@@ -88,12 +93,14 @@ collections:
               name: "label",
               widget: "string",
               required: false,
+              default: "",
             }
           - {
               label: "Artist's SoundCloud/Spotify page",
               name: "link",
               widget: "string",
               required: false,
+              default: "",
             }
       - { label: "Event Text", name: "body", widget: "markdown" }
       # - label: "Featured Music"
