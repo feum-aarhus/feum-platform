@@ -11,10 +11,13 @@ capacity: 150
 lineup:
   - name: GIGSTA
     country: DE
+    link: https://soundcloud.com/gigstab
   - name: PERKO
     country: DK
+    link: https://soundcloud.com/perkopair/sets/mixes-1
   - name: N.E.GIRL
     country: DK
+    link: https://soundcloud.com/negirl_fka
 music_list: []
 ---
 <!--StartFragment-->
