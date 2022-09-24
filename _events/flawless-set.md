@@ -1,5 +1,5 @@
 ---
-banner: /uploads/event_small_2.jpg
+banner: /uploads/event_small_3.jpg
 title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
 start: Friday, October 7, 2022 9:00 PM
 end: Saturday, October 8, 2022 3:00 AM
