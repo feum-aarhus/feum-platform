@@ -13,6 +13,6 @@ FEUM! <br>
 
 To take part in FEUM's event you must be above 21 years old. We aim to provide a safe space and experience to all and destigmatize electronic music and techno. FEUM is all about quality music, visual distinction, and a close-knit community.
 
-See you on the October 7th!
+See you on October 7th!
 
 <!--EndFragment-->
