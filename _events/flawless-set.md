@@ -1,74 +1,94 @@
 ---
-banner: /uploads/subsonik-banner-2-495kb.jpg
-title: "FEUM SUBSONIK: GIGSTA x PERKO x N.E.GIRL"
-start: Friday, October 7, 2022 9:00 PM
-end: Saturday, October 8, 2022 3:00 AM
-address: Skovgaardsgade 5C, 8000 Aarhus C
+banner: /uploads/feum-in-concertlq.jpg
+title: FEUM in CONCERT
+start: Saturday, November 5, 2022 8:00 PM
+end: Saturday, November 5, 2022 12:00 AM
+address: Turkis, Vester Allé 15, 8000
 price: 100
 presale_only: false
 music: Awesome
 capacity: 150
 lineup:
-  - name: GIGSTA
-    country: DE
-    link: https://soundcloud.com/gigstab
+  - name: Rumpistol
+    country: DK
+    link: ""
     label: ""
-  - name: PERKO
+  - name: Tp4
     country: DK
-    link: https://soundcloud.com/perkopair/sets/mixes-1
-    label: Numbers
-  - name: N.E.GIRL
+    link: ""
+    label: ""
+  - name: Rasmus Fisker
     country: DK
-    link: https://soundcloud.com/negirl_fka
+    link: ""
 music_list: []
 ---
-<!--StartFragment-->
+  【 FEUM in CONCERT 】
 
-<br>This one is all about bass music. A night of body shaking, bone conducing, subsonik frequencies. It’s all about vibrations and deep oscillations, with appropriate sound pressures to release those tensions, get you floating and bouncing till the early morn.
 
-We have a packed line-up with some of the finest bass music specialists around. Sure to be fully equipped with the most lethal bass tools in their bags - gigsta, Perko & N.E.GIRL will be in full force for this one.
 
-Not only that but the scene will get some special aesthetic treatment with an otherworldly art installation by the one and only Phuc Van Dang.
+◈ The first edition of a line of events in Turkis' dreamy lounge, focusing on electronic live music.
 
-Some tasty treats for the eyes, the ears, the body and the mind.
+◈ Some sounds has been worked on for decades others are improvised in the moment.
 
-<br>**【 GIGSTA 】**<br> 
+◈ Some tunes are for dancing, others invite you to listen deeply.
 
-The Belgium-born, French-raised, Berlin-based multi-versed artist, DJ and academic gigsta returns to little old Aarhus for a proper sweaty bass-y rave at our beloved venue A-huset. Her reputation for playful, sometimes obscure sets has been spreading across Europe of late and the evidence is out there, with multitude of killer mixes on the net but also with her cosmic radio show Fictions on Cashmere Radio. Her DJ-sets range widely: from the very slow to the very fast, the old to the brand new, the silly to the ultra-serious and often incorporating her own collages but one thing we know for sure is that she has a collection of bass music that you just can’t resist to move to. 
 
-<br>
 
-**【 PERKO** **】**<br>
+The first line up is as follows: 
 
-Our good friend Perko is back again, but this time he’s back in Aarhus for a round behind the decks in full club mode. \
-The Copenhagen-based DJ and producer has been a on rising path with consistently solid music released on Copenhagen’s Posh Isolation and beloved Aarhus’ label Kerne of Safe Distribution, as well as international labels like Numbers. Like his productions, his DJ sets are next-level, playing elegantly across genres with the sounds that inspire his productions, full of bass and always fitting the space. We’ve been waiting some time to get Perko in the klub, and that time has finally come. We can’t wait for this one.
 
-<br>
 
-**【 N.E.GIRL 】** <br>
+【 Rumpistol 】\[DK] (solo live-set) (Raske Plader/Iboga)
 
-Making big waves in the DK scene, the Copenhagen-based, London-bred DJ and video artist, N.E.GIRL will be back in Aarhus once again  bringing her high-energy high-pressure selections to the klub this time for what’s sure to be a belter of a night, we simply can’t get enough. Known for championing the UK bass sound with a focus on deep and dark club music, her sets demonstrate a pure love for club music, sound system culture and the global underground - something that we share deeply.
+“Rum” is a Danish word for “space”, “room” or “reverb”.
 
-This night is sure to be one to remember.
+For Danish composer Rumpistol, two huge driving forces behind his music are the search for beauty and the search for new sounds.
 
-<br>
+These sonic and aesthetic curiosities, which can be firmly traced back to his self-titled 2003 debut, now considered a bit of an IDM classic, have taken him to many diverse fields of the electronic as well as the more acoustic landscape. His releases as well as his live sets ranges from soft neo-classical piano pieces to spaced out bass-driven electronic music, often hard to categorise but always full of melody. Rumpistol has performed his detailed sound across the US, Europe, Mexico & Brazil including venues like Boom Festival, Tipper & Friends, Boiler Room UK and MUTEK Montreal.
 
-Don’t hesitate.<br>
-Yours Truly,<br>
-FEUM <br>
 
- <br>**【** **P R A C T I C A L I T I E S 】**<br>
 
-⇻ Bass // Rave // Techno ++
+【 Tp4 】\[DK] (leek records)
 
-⇻ Place: Institut for X // A-Huset
+Tp4’s debut release Beneath the Surface on Leek Records! A warm shower of sincere emotions are displayed through the various styles Tp4 presents on this record. The record has nuances of electro, future jazz, breakbeat, house and the spaces in between. Carefully selected samples, synths and acoustic elements are interwoven to create the fabric that is Beneath the Surface. Let Tp4 take you on an earthbound trip through sonic spaces, with smooth rhythms riding on carpets of lush harmonies. Made under the influence of love, leek and beak.
 
-⇻ Time: 21 - late
+\
+【 Rasmus Fisker 】\[DK]
 
-⇻ Age Limit: 21
+Rasmus Fisker is an experimental electronic artist from Aarhus.
 
-⇻ Online presale: 100dkk // [](https://feum-ticketing.dk/)(limited amount of tickets at the door)
+Driven by musical intuition and scientific curiosity he composes electronic narratives for the ear.
 
-Artwork by Andreea Fernea
+Rasmus utilizes crooked beats and odd timbres from a broad pallet of sound sources from other dimensions, to create dreamlike soundscapes that surprise and soothe the listener.
 
-<!--EndFragment-->
+LUNI will guide the night from his USB sticks, before, in between and after the concerts.  
+
+Don’t hesitate.
+
+Yours Truly,
+
+FEUM
+
+
+
+L I N E U P\
+▀▀▀▀▀▀▀▀\
+⇻ Rumpistol (solo live-set) 
+
+⇻ Tp4 (leek records)\
+⇻ Rasmus Fisker 
+
+⇻ LUNI (FEUM) (dj set)
+
+
+
+P R A C T I C A L I T I E S\
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\
+⇻ Place: Turkis, Vester Allé 15 (behind Voxhall)\
+⇻ Time: 20 - 02 (door closes at 22.00, so please come before that)\
+⇻ Age Limit: 21\
+⇻ Online presale: 100dkk // <https://feum-ticketing.dk/> ​// (limited amount of tickets at the door)
+
+
+
+Artwork by Andreea Fernea (@andreeafernea)
