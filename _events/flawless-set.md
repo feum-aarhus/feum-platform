@@ -24,19 +24,13 @@ music_list: []
 ---
   【 FEUM in CONCERT 】
 
-
-
 ◈ The first edition of a line of events in Turkis' dreamy lounge, focusing on electronic live music.
 
 ◈ Some sounds has been worked on for decades others are improvised in the moment.
 
 ◈ Some tunes are for dancing, others invite you to listen deeply.
 
-
-
 The first line up is as follows: 
-
-
 
 【 Rumpistol 】\[DK] (solo live-set) (Raske Plader/Iboga)
 
@@ -45,8 +39,6 @@ The first line up is as follows: 
 For Danish composer Rumpistol, two huge driving forces behind his music are the search for beauty and the search for new sounds.
 
 These sonic and aesthetic curiosities, which can be firmly traced back to his self-titled 2003 debut, now considered a bit of an IDM classic, have taken him to many diverse fields of the electronic as well as the more acoustic landscape. His releases as well as his live sets ranges from soft neo-classical piano pieces to spaced out bass-driven electronic music, often hard to categorise but always full of melody. Rumpistol has performed his detailed sound across the US, Europe, Mexico & Brazil including venues like Boom Festival, Tipper & Friends, Boiler Room UK and MUTEK Montreal.
-
-
 
 【 Tp4 】\[DK] (leek records)
 
@@ -69,10 +61,7 @@ Yours Truly,
 
 FEUM
 
-
-
 L I N E U P\
-▀▀▀▀▀▀▀▀\
 ⇻ Rumpistol (solo live-set) 
 
 ⇻ Tp4 (leek records)\
@@ -80,15 +69,11 @@ L I N E U P\
 
 ⇻ LUNI (FEUM) (dj set)
 
-
-
 P R A C T I C A L I T I E S\
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\
+\
 ⇻ Place: Turkis, Vester Allé 15 (behind Voxhall)\
 ⇻ Time: 20 - 02 (door closes at 22.00, so please come before that)\
 ⇻ Age Limit: 21\
 ⇻ Online presale: 100dkk // <https://feum-ticketing.dk/> ​// (limited amount of tickets at the door)
-
-
 
 Artwork by Andreea Fernea (@andreeafernea)
