@@ -44,7 +44,8 @@ These sonic and aesthetic curiosities, which can be firmly traced back to his se
 
 Tp4’s debut release Beneath the Surface on Leek Records! A warm shower of sincere emotions are displayed through the various styles Tp4 presents on this record. The record has nuances of electro, future jazz, breakbeat, house and the spaces in between. Carefully selected samples, synths and acoustic elements are interwoven to create the fabric that is Beneath the Surface. Let Tp4 take you on an earthbound trip through sonic spaces, with smooth rhythms riding on carpets of lush harmonies. Made under the influence of love, leek and beak.
 
-\
+
+
 【 Rasmus Fisker 】\[DK]
 
 Rasmus Fisker is an experimental electronic artist from Aarhus.
