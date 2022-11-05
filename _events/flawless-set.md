@@ -1,7 +1,7 @@
 ---
 banner: /uploads/feum-in-concertlq.jpg
 title: FEUM in CONCERT
-start: Saturday, November 5, 2022 8:00 PM
+start: Saturday, November 5, 2022 10:00 PM
 address: Turkis, Vester Allé 15, 8000
 presale_only: false
 music: Awesome
