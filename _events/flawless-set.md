@@ -2,12 +2,10 @@
 banner: /uploads/feum-in-concertlq.jpg
 title: FEUM in CONCERT
 start: Saturday, November 5, 2022 8:00 PM
-end: Saturday, November 5, 2022 12:00 AM
 address: Turkis, Vester Allé 15, 8000
-price: 100
 presale_only: false
 music: Awesome
-capacity: 150
+price: 100
 lineup:
   - name: Rumpistol
     country: DK
@@ -21,6 +19,8 @@ lineup:
     country: DK
     link: ""
 music_list: []
+end: Saturday, November 5, 2022 12:00 AM
+capacity: 100
 ---
   【 FEUM in CONCERT 】
 
