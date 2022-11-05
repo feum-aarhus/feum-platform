@@ -20,7 +20,7 @@ lineup:
     link: ""
 music_list: []
 end: Saturday, November 5, 2022 12:00 AM
-capacity: 100
+capacity: 90
 ---
   【 FEUM in CONCERT 】
 
