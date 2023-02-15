@@ -33,11 +33,11 @@ FEUM will make sure to heat up the dance floor just right after. Local dj’s wi
 
 A bit more about the artists : 
 
-[【](https://coolsymbol.com/copy/Left_Black_Lenticular_Bracket_Symbol_%E3%80%90)About ZULI [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
+【About ZULI 】
 
 Ahmed El Ghazoly, aka ZULI, is an Egyptian multi-instrumentalist, producer, and sound artist. He is the co-founder of Kairo is Koming (KIK), a collective of six artists who were instrumental in the rise of the city's underground electronic music scene, and AHOMA, a Cairo-based collective of over 18 musicians and visual artists. ZULI co-founded Cairo's alternative music venue and club, VENT, with Asem Tag ($$$TAG$$$), from 2013 to 2015, before transforming their project into a namesake club night and festival. ZULI's debut EP, Bionic Ahmed, was released on Lee Gamble's UIQ label, and he followed it up with another playfully unconventional release, Numbers. Every second Tuesday of the month you can listen to his show on NTS Radio. [](https://www.nts.live/shows/ZULI/?fbclid=IwAR0ba9UEDGIUowGxqDL1mccdxhpr5xnha3TP14i5JzGhA9QMxwoyv5B6XYQ)
 
-【 About Croatian Amor [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
+【 About Croatian Amor 】
 
 Loke Rahbek's imprint is all over modern European electronic music. He cofounded Posh Isolation ten years ago in Copenhagen, a label and collective that emerged from the noise music scene and is now at the epicenter of Scandinavian ambient, experimental, and techno. Rahbek made stirring synth pop as part of Lust For Youth; as part of Damien Dubrovnik, it was screeching, ear-bleeding noise. This is in addition to other projects on which he has worked with artists such as Varg and Puce Mary. However, it is under the Croatian Amor alias that Rahbek has created his most immersive musical world, collapsing ambient, noise, experimental, and spoken-word into something both beautiful and unsettling. That vision culminated in the Isa LP, which was released earlier this year and features "real beauty and nightmarish imagery." 
 
@@ -64,7 +64,5 @@ The Embassy Residency programme aims to investigate contemporary artists through
 
 Yours Truly,\
 FEUM
-
-
 
 Artwork by Andreea Fernea (@andreeafernea)
