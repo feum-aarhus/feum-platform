@@ -12,19 +12,17 @@ lineup:
   - name: Croatian Amor
     country: DK
     link: https://youtu.be/sAZ6msVFC2A
-    label: ""
+    label: Posh Isolation
   - name: ZULI
     country: EG
     link: https://www.nts.live/shows/ZULI/
-    label: ""
+    label: Haunter Records
   - label: ""
     link: ""
     name: FEUM AFTEROARTY
     country: DK
 music_list: []
 ---
->
-
 ◈ Feum Live has returned as a collaborative effort. FEUM - Institut For (x) - Embassy Residency ◈
 
 What unites us is a love of electronic music. This time, we'd like to present you with two live acts from Croatia: Amor and Zuli. 
