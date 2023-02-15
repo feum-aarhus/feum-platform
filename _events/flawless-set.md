@@ -1,5 +1,5 @@
 ---
-banner: /uploads/feum-in-concertlq.jpg
+banner: /uploads/final-lq.jpg
 title: "FEUM X Embassy pres Croatian Amor & ZULI live "
 start: Friday, March 3, 2023 8:00 PM
 end: Saturday, March 4, 2023 3:00 AM
