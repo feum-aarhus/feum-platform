@@ -1,80 +1,70 @@
 ---
 banner: /uploads/feum-in-concertlq.jpg
-title: FEUM in CONCERT
-start: Saturday, November 5, 2022 10:00 PM
-address: Turkis, Vester Allé 15, 8000
-presale_only: false
-music: Awesome
+title: "FEUM X Embassy pres Croatian Amor & ZULI live "
+start: Friday, March 3, 2023 8:00 PM
+end: Saturday, March 4, 2023 3:00 AM
+address: Institut for X A Huset
 price: 100
-lineup:
-  - name: Rumpistol
-    country: DK
-    link: ""
-    label: ""
-  - name: Tp4
-    country: DK
-    link: ""
-    label: ""
-  - name: Rasmus Fisker
-    country: DK
-    link: ""
-music_list: []
-end: Saturday, November 5, 2022 12:00 AM
+presale_only: true
+music: Awesome
 capacity: 90
+lineup:
+  - name: Croatian Amor
+    country: DK
+    link: https://youtu.be/sAZ6msVFC2A
+    label: ""
+  - name: Zuli
+    country: EG
+    link: https://www.nts.live/shows/ZULI/
+    label: ""
+  - label: ""
+    link: ""
+    name: FEUM AFTEROARTY
+    country: DK
+music_list: []
 ---
-  【 FEUM in CONCERT 】
+Feum Live has returned as a collaborative effort. FEUM - Institut For (x) - Embassy Residency
 
-◈ The first edition of a line of events in Turkis' dreamy lounge, focusing on electronic live music.
+What unites us is a love of electronic music. This time, we'd like to present you with two live acts from Croatia: Amor and Zuli. 
 
-◈ Some sounds has been worked on for decades others are improvised in the moment.
+Croatian Amor and Zuli are two artists whose distinct and highly individual sounds have made significant contributions to international experimental electronic music. Both artists will stay at the Aarhus resident studio during the residency to explore the possibility of co-producing new material. The residency will conclude on Friday, March 3rd, with a performance at A-huset in Institut for x. 
 
-◈ Some tunes are for dancing, others invite you to listen deeply.
+FEUM will make sure to heat up the dance floor just right after. Local dj’s will spin for you techno, bass, break and experimental sounds. 
 
-The first line up is as follows: 
+A bit more about the artists : 
 
-【 Rumpistol 】\[DK] (solo live-set) (Raske Plader/Iboga)
+[【](https://coolsymbol.com/copy/Left_Black_Lenticular_Bracket_Symbol_%E3%80%90)About Zuli [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
 
-“Rum” is a Danish word for “space”, “room” or “reverb”.
+Ahmed El Ghazoly, aka ZULI, is an Egyptian multi-instrumentalist, producer, and sound artist. He is the co-founder of Kairo is Koming (KIK), a collective of six artists who were instrumental in the rise of the city's underground electronic music scene, and AHOMA, a Cairo-based collective of over 18 musicians and visual artists. ZULI co-founded Cairo's alternative music venue and club, VENT, with Asem Tag ($$$TAG$$$), from 2013 to 2015, before transforming their project into a namesake club night and festival. ZULI's debut EP, Bionic Ahmed, was released on Lee Gamble's UIQ label, and he followed it up with another playfully unconventional release, Numbers. Every second Tuesday of the month you can listen to his show on NTS Radio. [](https://www.nts.live/shows/ZULI/?fbclid=IwAR0ba9UEDGIUowGxqDL1mccdxhpr5xnha3TP14i5JzGhA9QMxwoyv5B6XYQ)
 
-For Danish composer Rumpistol, two huge driving forces behind his music are the search for beauty and the search for new sounds.
+【 About Croatian Amor [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
 
-These sonic and aesthetic curiosities, which can be firmly traced back to his self-titled 2003 debut, now considered a bit of an IDM classic, have taken him to many diverse fields of the electronic as well as the more acoustic landscape. His releases as well as his live sets ranges from soft neo-classical piano pieces to spaced out bass-driven electronic music, often hard to categorise but always full of melody. Rumpistol has performed his detailed sound across the US, Europe, Mexico & Brazil including venues like Boom Festival, Tipper & Friends, Boiler Room UK and MUTEK Montreal.
+Loke Rahbek's imprint is all over modern European electronic music. He cofounded Posh Isolation ten years ago in Copenhagen, a label and collective that emerged from the noise music scene and is now at the epicenter of Scandinavian ambient, experimental, and techno. Rahbek made stirring synth pop as part of Lust For Youth; as part of Damien Dubrovnik, it was screeching, ear-bleeding noise. This is in addition to other projects on which he has worked with artists such as Varg and Puce Mary. However, it is under the Croatian Amor alias that Rahbek has created his most immersive musical world, collapsing ambient, noise, experimental, and spoken-word into something both beautiful and unsettling. That vision culminated in the Isa LP, which was released earlier this year and features "real beauty and nightmarish imagery." 
 
-【 Tp4 】\[DK] (leek records)
+But what about all the aspects that go into making music - getting it to the point of public consumption with little context for how it got there? What are the situations that go beyond the artists' names and hometowns? Who are these people who translate these otherworldly ideas into sounds and rhythms for us to enjoy? How much of what we hear can be attributed to the producer's own personality? What are they seeing and believing?
 
-Tp4’s debut release Beneath the Surface on Leek Records! A warm shower of sincere emotions are displayed through the various styles Tp4 presents on this record. The record has nuances of electro, future jazz, breakbeat, house and the spaces in between. Carefully selected samples, synths and acoustic elements are interwoven to create the fabric that is Beneath the Surface. Let Tp4 take you on an earthbound trip through sonic spaces, with smooth rhythms riding on carpets of lush harmonies. Made under the influence of love, leek and beak.
+【 About the Embassy Residency 】
 
-【 Rasmus Fisker 】\[DK]
+The Embassy Residency programme aims to investigate contemporary artists through in-house residencies by combining the respective sounds from two different electronic scenes. Embassy was founded as a branch of the cultural platform C-cube, which was founded during the Covid Pandemic of 2020, to support and empower Aarhus' music and cultural scene, as well as to create and foster artistic and musical networks. 
 
-Rasmus Fisker is an experimental electronic artist from Aarhus.
+ＰＲＡＣＴＩＣＡＬＩＴＩＥＳ
 
-Driven by musical intuition and scientific curiosity he composes electronic narratives for the ear.
+⇻ Tickets for live concert and afterparty are available only online. \
+⇻ Last entry to the event at 22:00.
 
-Rasmus utilizes crooked beats and odd timbres from a broad pallet of sound sources from other dimensions, to create dreamlike soundscapes that surprise and soothe the listener.
+ＴＩＭＥＴＡＢＬＥ\
+⇻ Door : 20:00 \
+⇻ Croatian Amor: 21:00\
+⇻ ZULI: 22:00\
+⇻ DJ’s : 23:00 
 
-LUNI will guide the night from his USB sticks, before, in between and after the concerts.  
+⇻ Price: 100Kr 
 
-Don’t hesitate.
+//Reclaim your City // No nonsense // Intercity Interconnections // 
 
-Yours Truly,
-
+Yours Truly,\
 FEUM
 
-L I N E U P
 
-\
-⇻ Rumpistol (solo live-set) 
-
-⇻ Tp4 (leek records)\
-⇻ Rasmus Fisker 
-
-⇻ LUNI (FEUM) (dj set)
-
-P R A C T I C A L I T I E S\
-\
-⇻ Place: Turkis, Vester Allé 15 (behind Voxhall)\
-⇻ Time: 20 - 02 (door closes at 22.00, so please come before that)\
-⇻ Age Limit: 21\
-⇻ Online presale: 100dkk // <https://feum-ticketing.dk/> ​// (limited amount of tickets at the door)
 
 Artwork by Andreea Fernea (@andreeafernea)
