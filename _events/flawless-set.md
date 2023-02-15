@@ -13,7 +13,7 @@ lineup:
     country: DK
     link: https://youtu.be/sAZ6msVFC2A
     label: ""
-  - name: Zuli
+  - name: ZULI
     country: EG
     link: https://www.nts.live/shows/ZULI/
     label: ""
@@ -33,7 +33,7 @@ FEUM will make sure to heat up the dance floor just right after. Local dj’s wi
 
 A bit more about the artists : 
 
-[【](https://coolsymbol.com/copy/Left_Black_Lenticular_Bracket_Symbol_%E3%80%90)About Zuli [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
+[【](https://coolsymbol.com/copy/Left_Black_Lenticular_Bracket_Symbol_%E3%80%90)About ZULI [】](https://coolsymbol.com/copy/Right_Black_Lenticular_Bracket_Symbol_%E3%80%91)
 
 Ahmed El Ghazoly, aka ZULI, is an Egyptian multi-instrumentalist, producer, and sound artist. He is the co-founder of Kairo is Koming (KIK), a collective of six artists who were instrumental in the rise of the city's underground electronic music scene, and AHOMA, a Cairo-based collective of over 18 musicians and visual artists. ZULI co-founded Cairo's alternative music venue and club, VENT, with Asem Tag ($$$TAG$$$), from 2013 to 2015, before transforming their project into a namesake club night and festival. ZULI's debut EP, Bionic Ahmed, was released on Lee Gamble's UIQ label, and he followed it up with another playfully unconventional release, Numbers. Every second Tuesday of the month you can listen to his show on NTS Radio. [](https://www.nts.live/shows/ZULI/?fbclid=IwAR0ba9UEDGIUowGxqDL1mccdxhpr5xnha3TP14i5JzGhA9QMxwoyv5B6XYQ)
 
