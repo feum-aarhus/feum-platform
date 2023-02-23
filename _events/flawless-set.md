@@ -7,7 +7,7 @@ address: Institut for X A Huset
 price: 100
 presale_only: true
 music: Awesome
-capacity: 170
+capacity: 200
 lineup:
   - name: Croatian Amor
     country: DK
