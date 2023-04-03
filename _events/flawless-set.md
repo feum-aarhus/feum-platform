@@ -15,6 +15,8 @@ lineup:
     country: "[DK]"
 music_list: []
 ---
+
+
 ◈ Spring is here and we’re back with another collab. We start a new season with new friendships and new connections 🌱
 
 ◈ This time we invite the crew behind KUNE Festival to help us make this special event and get us geared up for the approaching summer 🌞
@@ -45,8 +47,11 @@ If you see someone being disrespectful and not following our guidelines and hous
 
 See you on the dance floor!
 
-Yours Truly,\
+Yours Truly,
+
 FEUM
+
+
 
 P R A C T I C A L I T I E S
 
@@ -62,8 +67,8 @@ P R A C T I C A L I T I E S
 
 ⇻ Price: 80 dkk [](https://l.facebook.com/l.php?u=https%3A%2F%2Ffeum-ticketing.dk%2F%3Ffbclid%3DIwAR3hs3SQLZ8HYmXPZXXgBDrpikwc-x5j21xYfj0drXxyhu1D8g-uc43BgEU&h=AT2J8aQGvMWOdyZ71NIi_8A0UPExbGnpx9537bI4g6B6HtHxrDeRvR1S6_73SJeyyrlbLHyrMeEin7DwfcFr4scFVxiXGC19JUP1gIUpw4jyPWHiz8StmNodAJghQvefNDgG8oY_-0uxM9cxOorQj9E&__tn__=q&c%5B0%5D=AT1UcCg4YEDDTdD1rL-HtlA0bBCRZeyFXOwcGpB_4vIqVg6PX0BgUlTKTSMY0RRBldqqQTmVxqAOPtYKjN8Yqv-kizxDOGER2EDhh5YacCmJh1aVE-nPr0w_eGMPS84svZk2fBh63h1y6En5_xBfyOVa28Rk)// (limited amount of tickets at the door)
 
+
+
 Artwork by Andreea Fernea (@andreeafernea)
-
-
 
 //Reclaim your City // No nonsense // Intercity Interconnections //
