@@ -1,68 +1,69 @@
 ---
-banner: /uploads/final-lq.jpg
-title: "FEUM X Embassy pres Croatian Amor & ZULI live "
-start: Friday, March 3, 2023 8:00 PM
+banner: /uploads/interconnect-banner.jpg
+title: 【 FEUM x KUNE // INTERCONNECT 】
+start: Friday, April 21, 2023 9:00 PM
 end: Saturday, March 4, 2023 3:00 AM
-address: Institut for X A Huset
-price: 100
+address: Institut for (X) -  A Huset
+price: 3
 presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - name: Croatian Amor
-    country: DK
-    link: https://youtu.be/sAZ6msVFC2A
-    label: Posh Isolation
-  - name: ZULI
-    country: EG
-    link: https://www.nts.live/shows/ZULI/
-    label: Haunter Records
   - label: ""
     link: ""
-    name: FEUM AFTEROARTY
-    country: DK
+    name: TBA
+    country: "[DK]"
 music_list: []
 ---
-◈ Feum Live has returned as a collaborative effort. FEUM - Institut For (x) - Embassy Residency ◈
+◈ Spring is here and we’re back with another collab. We start a new season with new friendships and new connections 🌱
 
-What unites us is a love of electronic music. This time, we'd like to present you with two live acts from Croatia: Amor and Zuli. 
+◈ This time we invite the crew behind KUNE Festival to help us make this special event and get us geared up for the approaching summer 🌞
 
-Croatian Amor and Zuli are two artists whose distinct and highly individual sounds have made significant contributions to international experimental electronic music. Both artists will stay at the Aarhus resident studio during the residency to explore the possibility of co-producing new material. The residency will conclude on Friday, March 3rd, with a performance at A-huset in Institut for x. 
+◈ Behind the decks will be two of our resident DJs, alongside two from KUNE, spinning some fresh tunes to get you in bloom.
 
-FEUM will make sure to heat up the dance floor just right after. Local dj’s will spin for you techno, bass, break and experimental sounds. 
+◈ Join us at our beloved home venue, A-huset at Institut for (X), for a night filled with good vibes, great music, and even better company. Come down to connect with like-minded music lovers and celebrate the start of something special.
 
-A bit more about the artists : 
+【 About KUNE Festival 】
 
-【About ZULI 】
+Kune festival is a killer electronic music festival that celebrates the Scandinavian underground culture. It takes place on a 19th century island fort off the shoreline of Copenhagen. A unique celebration with five stages, two art galleries, and multiple art installations.
 
-Ahmed El Ghazoly, aka ZULI, is an Egyptian multi-instrumentalist, producer, and sound artist. He is the co-founder of Kairo is Koming (KIK), a collective of six artists who were instrumental in the rise of the city's underground electronic music scene, and AHOMA, a Cairo-based collective of over 18 musicians and visual artists. ZULI co-founded Cairo's alternative music venue and club, VENT, with Asem Tag ($$$TAG$$$), from 2013 to 2015, before transforming their project into a namesake club night and festival. ZULI's debut EP, Bionic Ahmed, was released on Lee Gamble's UIQ label, and he followed it up with another playfully unconventional release, Numbers. Every second Tuesday of the month you can listen to his show on NTS Radio. [](https://www.nts.live/shows/ZULI/?fbclid=IwAR0ba9UEDGIUowGxqDL1mccdxhpr5xnha3TP14i5JzGhA9QMxwoyv5B6XYQ)
+“An immersive experience that blends art, music, and the island’s natural beauty. The location’s secludedness adds to the sense of separation from everyday life. At the same time, the art invites us to engage in open discussions and imagine a world that can be different, making a positive impact over our mentality and worldview. In conjunction with the art, the music creates a holistic cultural experience representative of the modern, young Nordic artistic community.”
 
-【 About Croatian Amor 】
+Something we a very much looking forward to this summer!
 
-Loke Rahbek's imprint is all over modern European electronic music. He cofounded Posh Isolation ten years ago in Copenhagen, a label and collective that emerged from the noise music scene and is now at the epicenter of Scandinavian ambient, experimental, and techno. Rahbek made stirring synth pop as part of Lust For Youth; as part of Damien Dubrovnik, it was screeching, ear-bleeding noise. This is in addition to other projects on which he has worked with artists such as Varg and Puce Mary. However, it is under the Croatian Amor alias that Rahbek has created his most immersive musical world, collapsing ambient, noise, experimental, and spoken-word into something both beautiful and unsettling. That vision culminated in the Isa LP, which was released earlier this year and features "real beauty and nightmarish imagery." 
+Find our more about this hidden gem here: [kunekbh.com](https://www.kunekbh.com/)
 
-But what about all the aspects that go into making music - getting it to the point of public consumption with little context for how it got there? What are the situations that go beyond the artists' names and hometowns? Who are these people who translate these otherworldly ideas into sounds and rhythms for us to enjoy? How much of what we hear can be attributed to the producer's own personality? What are they seeing and believing?
+【 About FEUM Events 】
 
-【 About the Embassy Residency 】
+FEUM events are all about the intersection of electronic music, sensory experiences, and community connection. We believe in creating a space where the collective conscious shapes the overall atmosphere of the night, one that is full of energy and good times, one where everyone feels welcome, respected, and free to express themselves in their own way.
 
-The Embassy Residency programme aims to investigate contemporary artists through in-house residencies by combining the respective sounds from two different electronic scenes. Embassy was founded as a branch of the cultural platform C-cube, which was founded during the Covid Pandemic of 2020, to support and empower Aarhus' music and cultural scene, as well as to create and foster artistic and musical networks. 
+Our events are open to all no matter who you are, how you dress, or if it’s your first time at a techno party. We want to create an experience inclusive for everyone interested in the world of electronic music while supporting local DJs and creators.
 
-ＰＲＡＣＴＩＣＡＬＩＴＩＥＳ
+We do our best to prevent people coming in who are heavily intoxicated or disrespectful so that not ruin the night but sometimes it’s hard, and we miss things. We encourage you to help make our events a fun and safe space for everyone by being mindful and responsible for your community.
 
-⇻ Tickets for live concert and afterparty are available only online. \
-⇻ Last entry to the event at 22:00.
+If you see someone being disrespectful and not following our guidelines and house rules, then please help by calling them out where safe, or by informing a member of our crew or security. You can find us at the bar or at the door.
 
-ＴＩＭＥＴＡＢＬＥ\
-⇻ Door : 20:00 \
-⇻ Croatian Amor: 21:00\
-⇻ ZULI: 22:00\
-⇻ DJ’s : 23:00 
-
-⇻ Price: 100Kr 
-
-//Reclaim your City // No nonsense // Intercity Interconnections // 
+See you on the dance floor!
 
 Yours Truly,\
 FEUM
 
+P R A C T I C A L I T I E S
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+⇻ Genre: House // Techno
+
+⇻ Place: Institut for X // A-Huset
+
+⇻ Time: 21 - Late
+
+⇻ Age Limit: 21
+
+⇻ Price: 80 dkk [](https://l.facebook.com/l.php?u=https%3A%2F%2Ffeum-ticketing.dk%2F%3Ffbclid%3DIwAR3hs3SQLZ8HYmXPZXXgBDrpikwc-x5j21xYfj0drXxyhu1D8g-uc43BgEU&h=AT2J8aQGvMWOdyZ71NIi_8A0UPExbGnpx9537bI4g6B6HtHxrDeRvR1S6_73SJeyyrlbLHyrMeEin7DwfcFr4scFVxiXGC19JUP1gIUpw4jyPWHiz8StmNodAJghQvefNDgG8oY_-0uxM9cxOorQj9E&__tn__=q&c%5B0%5D=AT1UcCg4YEDDTdD1rL-HtlA0bBCRZeyFXOwcGpB_4vIqVg6PX0BgUlTKTSMY0RRBldqqQTmVxqAOPtYKjN8Yqv-kizxDOGER2EDhh5YacCmJh1aVE-nPr0w_eGMPS84svZk2fBh63h1y6En5_xBfyOVa28Rk)// (limited amount of tickets at the door)
+
 Artwork by Andreea Fernea (@andreeafernea)
+
+
+
+//Reclaim your City // No nonsense // Intercity Interconnections //
