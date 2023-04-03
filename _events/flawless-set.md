@@ -4,7 +4,7 @@ title: 【 FEUM x KUNE // INTERCONNECT 】
 start: Friday, April 21, 2023 9:00 PM
 end: Saturday, March 4, 2023 3:00 AM
 address: Institut for (X) -  A Huset
-price: 3
+price: 80
 presale_only: true
 music: Awesome
 capacity: 200
