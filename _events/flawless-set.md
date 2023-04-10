@@ -9,10 +9,26 @@ presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - label: ""
+  - label: KUNE
+    link: soundcloud.com/martin_gilleshoej
+    name: "Martin Gilleshøj "
+    country: DK
+  - label: KUNE
+    link: soundcloud.com/rico-petersen
+    name: ricq
+    country: DK
+  - label: FEUM
     link: ""
-    name: TBA
-    country: "[DK]"
+    name: Turing
+    country: DK/PL
+  - label: FEUM
+    link: ""
+    name: Nygma
+    country: DK/PL
+  - label: KUNE
+    link: instagram.com/matei_subsequent/
+    name: P M - Visuals
+    country: DK
 music_list: []
 ---
 
