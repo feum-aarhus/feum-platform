@@ -10,11 +10,11 @@ music: Awesome
 capacity: 200
 lineup:
   - label: KUNE
-    link: soundcloud.com/martin_gilleshoej
+    link: ""
     name: "Martin Gilleshøj "
     country: DK
   - label: KUNE
-    link: soundcloud.com/rico-petersen
+    link: ""
     name: ricq
     country: DK
   - label: FEUM
@@ -26,7 +26,7 @@ lineup:
     name: Nygma
     country: DK/PL
   - label: KUNE
-    link: instagram.com/matei_subsequent/
+    link: ""
     name: P M - Visuals
     country: DK
 music_list: []
