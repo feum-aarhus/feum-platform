@@ -1,7 +1,7 @@
 ---
 banner: /uploads/interconnect-banner.jpg
 title: 【 FEUM x KUNE // INTERCONNECT 】
-start: Friday, April 21, 2023 9:00 PM
+start: Friday, April 21, 2023 6:00 PM
 end: Saturday, March 4, 2023 3:00 AM
 address: Institut for (X) -  A Huset
 price: 80
@@ -31,15 +31,17 @@ lineup:
     country: DK
 music_list: []
 ---
-
-
 ◈ Spring is here and we’re back with another collab. We start a new season with new friendships and new connections 🌱
 
 ◈ This time we invite the crew behind KUNE Festival to help us make this special event and get us geared up for the approaching summer 🌞
 
-◈ Behind the decks will be two of our resident DJs, alongside two from KUNE, spinning some fresh tunes to get you in bloom.
+◈ Behind the decks will be two of our resident DJs, alongside two from KUNE, Martin Gilleshøj and ricq, spinning some fresh tunes to get you in bloom.
 
 ◈ Join us at our beloved home venue, A-huset at Institut for (X), for a night filled with good vibes, great music, and even better company. Come down to connect with like-minded music lovers and celebrate the start of something special.
+
+◈ We'll be open outside from 18 with groovy music from local crew, Limerence, and Vika & Maria from KUNE so come down early for some sun, good music and good people.
+
+
 
 【 About KUNE Festival 】
 
@@ -69,6 +71,13 @@ FEUM
 
 
 
+Outdoor Bar & Music \[From 18-21]
+
+⇻ Vika and Maria (KUNE)\
+⇻ Limerence (Local Crew)
+
+
+
 P R A C T I C A L I T I E S
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -77,13 +86,11 @@ P R A C T I C A L I T I E S
 
 ⇻ Place: Institut for X // A-Huset
 
-⇻ Time: 21 - Late
+⇻ Time: 18- Late
 
 ⇻ Age Limit: 21
 
 ⇻ Price: 80 dkk [](https://l.facebook.com/l.php?u=https%3A%2F%2Ffeum-ticketing.dk%2F%3Ffbclid%3DIwAR3hs3SQLZ8HYmXPZXXgBDrpikwc-x5j21xYfj0drXxyhu1D8g-uc43BgEU&h=AT2J8aQGvMWOdyZ71NIi_8A0UPExbGnpx9537bI4g6B6HtHxrDeRvR1S6_73SJeyyrlbLHyrMeEin7DwfcFr4scFVxiXGC19JUP1gIUpw4jyPWHiz8StmNodAJghQvefNDgG8oY_-0uxM9cxOorQj9E&__tn__=q&c%5B0%5D=AT1UcCg4YEDDTdD1rL-HtlA0bBCRZeyFXOwcGpB_4vIqVg6PX0BgUlTKTSMY0RRBldqqQTmVxqAOPtYKjN8Yqv-kizxDOGER2EDhh5YacCmJh1aVE-nPr0w_eGMPS84svZk2fBh63h1y6En5_xBfyOVa28Rk)// (limited amount of tickets at the door)
-
-
 
 Artwork by Andreea Fernea (@andreeafernea)
 
