@@ -41,8 +41,6 @@ music_list: []
 
 ◈ We'll be open outside from 18 with groovy music from local crew, Limerence, and Vika & Maria from KUNE so come down early for some sun, good music and good people.
 
-
-
 【 About KUNE Festival 】
 
 Kune festival is a killer electronic music festival that celebrates the Scandinavian underground culture. It takes place on a 19th century island fort off the shoreline of Copenhagen. A unique celebration with five stages, two art galleries, and multiple art installations.
@@ -69,15 +67,14 @@ Yours Truly,
 
 FEUM
 
-
-
 Outdoor Bar & Music \[From 18-21]
 
 ⇻ Vika and Maria (KUNE)\
+\
 ⇻ Limerence (Local Crew)
 
-
-
+\
+\
 P R A C T I C A L I T I E S
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
