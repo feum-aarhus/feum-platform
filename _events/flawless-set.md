@@ -67,7 +67,9 @@ Yours Truly,
 
 FEUM
 
-Outdoor Bar & Music \[From 18-21]
+
+
+***Outdoor Bar & Music open from 18-21 (No ticket needed)*** 
 
 ⇻ Vika and Maria (KUNE)\
 \
