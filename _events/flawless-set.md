@@ -4,7 +4,7 @@ title: 【 FEUM // TECHNO 】
 start: Friday, May 19, 2023 9:00 PM
 end: Saturday, May 20, 2023 3:00 AM
 address: Institut for (X) -  A Huset
-price: 3
+price: 100
 presale_only: true
 music: Awesome
 capacity: 200
