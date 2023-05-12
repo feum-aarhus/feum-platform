@@ -9,37 +9,35 @@ presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - label: ""
+  - label: (FRONT LEFT RECORDS)
     link: ""
     name: Elad Magdasi
     country: DE
-  - label: ""
+  - label: (FRONT LEFT RECORDS)
     link: ""
     name: Mathis Webber
     country: DE
   - label: ""
     link: ""
-    name: EXCO
+    name: ECXO
     country: DK
 music_list: []
 ---
 ◈ Get ready for a night of electronic beats brought to you by FEUM! We're excited to announce our upcoming event happening soon. In May we are coming back with your favourite techno event series.
 
-◈ Our team has been working hard to create an unforgettable experience, and we can't wait to share it with you. Join us as we welcome three talented DJs to the stage - Elad Magdasi and Mathias Weber being supported by local star EXCO. They'll be spinning some of the best electronic tunes to get you moving all night long.
+◈ Our team has been working hard to create an unforgettable experience, and we can't wait to share it with you. Join us as we welcome three talented DJs to the stage - Elad Magdasi and Mathias Weber being supported by local star ECXO. They'll be spinning some of the best electronic tunes to get you moving all night long
 
 ◈ This event is all about good vibes, great music, and making connections. So come prepared to meet like-minded music lovers and enjoy the beats. A-huset at Institut for (X) is the perfect venue for this event, with its unique and intimate atmosphere. This will be a night of great music, good vibes, and making connections with fellow music enthusiasts. So come ready to let loose and have some fun! 
 
 ◈ FEUM is known for throwing some of the best electronic music events in town, and this one is no exception. So mark your calendars and get ready to dance the night away. Let's make this a night to remember! 
 
-
-
 L I N E U P
 
  ▀▀▀▀▀▀▀▀ 
 
-⇻ Elad Magdasi b2b Mathias Weber (extended set) 
+⇻ Elad Magdasi b2b Mathias Weber - (Front Left Records) (extended set)
 
-⇻ EXCO Artist 
+⇻ ECXO Artist 
 
 Links: 
 
