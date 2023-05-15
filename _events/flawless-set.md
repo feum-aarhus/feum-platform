@@ -17,7 +17,7 @@ lineup:
     link: ""
     name: Mathis Webber
     country: DE
-  - label: ""
+  - label: ( Lightweight Electronics )
     link: ""
     name: ECXO
     country: DK
@@ -35,9 +35,9 @@ L I N E U P
 
  ▀▀▀▀▀▀▀▀ 
 
-⇻ Elad Magdasi b2b Mathias Weber - (Front Left Records) (extended set)
+⇻ Elad Magdasi b2b Mathias Weber - (Front Left Records) (extended set) (MELATRONIX)
 
-⇻ ECXO Artist 
+⇻ ECXO Artist ( Lightweight Electronics )
 
 Links: 
 
@@ -46,3 +46,9 @@ Links:
 [https://soundcloud.com/mathiasweber_ber](https://l.facebook.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fmathiasweber_ber%3Ffbclid%3DIwAR10lUxkOc8AO57Z1fffw0yCYS60KG3Sm7x2JHfwI2kY-e-BrDsQNiIlAL0&h=AT13_t--Xqn8vFjpP0ku6L1jiTpb7w5cMSZ7NwfdNH63z0LETpt09V20ySf5BiWNyvsizDY-WcLrwrnY87VNw2O6yKxl4ND1diGiVdgyBzoTdlAQoPELqA5TmPw5RifQxuxZ5Lel) 
 
 [https://soundcloud.com/ecxoecxo](https://l.facebook.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fecxoecxo%3Ffbclid%3DIwAR37rztG6I4YKfKLByZ3LTCJOaTRym1UMrzQ2ocClNi0tSDQT84v-bfa86Y&h=AT13_t--Xqn8vFjpP0ku6L1jiTpb7w5cMSZ7NwfdNH63z0LETpt09V20ySf5BiWNyvsizDY-WcLrwrnY87VNw2O6yKxl4ND1diGiVdgyBzoTdlAQoPELqA5TmPw5RifQxuxZ5Lel)
+
+[https://ra.co/dj/melatronix](https://ra.co/dj/melatronix?fbclid=IwAR2P6Wljw-WCNRIncErfUdjY-0DsardiUM-BcG-JKfIJgz_huF94N6Mx9y8)
+
+[https://www.instagram.com/we.are.melatronix/](https://www.instagram.com/we.are.melatronix/?fbclid=IwAR2vZjgY4GPX816AAdK7VmeZdj23TvM-dlOLgPL68wWjedib1VeKuKlZ-Tk)
+
+<!--EndFragment-->
