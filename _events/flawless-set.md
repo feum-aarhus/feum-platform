@@ -9,7 +9,7 @@ presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - label: " "
+  - label: ""
     link: ""
     name: Peverelist
     country: UK
@@ -69,29 +69,7 @@ Yours Truly,
 
 FEUM
 
-L I N E U P
 
-▀▀▀▀▀▀▀
-
-⇻ Peverelist (UK)
-
-⇻ Kia (AU)
-
-⇻ Kasun (AU)
-
-⇻ Perko
-
-⇻ Cirkeline
-
-⇻ Mødest B2B Turing
-
-⇻ DJ SRA
-
-⇻ Mitro
-
-⇻ Jake
-
-⇻ Local Guest live set
 
 P R A C T I C A L I T I E S
 
