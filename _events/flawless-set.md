@@ -9,7 +9,7 @@ presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - label: ""
+  - label: " "
     link: ""
     name: Peverelist
     country: UK
