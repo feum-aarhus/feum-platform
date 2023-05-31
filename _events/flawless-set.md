@@ -1,54 +1,116 @@
 ---
-banner: /uploads/345639458_1306627593606418_6628446292583167216_n.jpg
-title: 【 FEUM // TECHNO 】
-start: Friday, May 19, 2023 9:00 PM
-end: Saturday, May 20, 2023 3:00 AM
-address: Institut for (X) -  A Huset
-price: 100
+banner: /uploads/banner-min.jpg
+title: 【 FEUM  // Sommersonik 】
+start: Saturday, July 1, 2023 12:00 PM
+end: Sunday, July 2, 2023 5:00 AM
+address: 201 THOMAS KOPPELS GADE
+price: 3
 presale_only: true
 music: Awesome
 capacity: 200
 lineup:
-  - label: (FRONT LEFT RECORDS)
+  - label: ""
     link: ""
-    name: Elad Magdasi
-    country: DE
-  - label: (FRONT LEFT RECORDS)
+    name: Peverelist
+    country: UK
+  - label: ""
     link: ""
-    name: Mathis Webber
-    country: DE
-  - label: ( Lightweight Electronics )
+    name: Kia
+    country: AU
+  - label: ""
     link: ""
-    name: ECXO
+    name: Kasun
+    country: AU
+  - label: ""
+    link: ""
+    name: Perko
+    country: UK
+  - label: ""
+    link: ""
+    name: Cirkeline
     country: DK
+  - label: ""
+    link: ""
+    name: Mødest B2B Turing
+    country: PL
+  - label: ""
+    link: ""
+    name: DJ SRA
+    country: DK
+  - label: ""
+    link: ""
+    name: Mitro
+    country: DK
+  - label: ""
+    link: ""
+    name: Jake
+    country: DK
+  - label: ""
+    link: ""
+    name: Local Guest live set
+    country: ???
 music_list: []
 ---
-◈ Get ready for a night of electronic beats brought to you by FEUM! We're excited to announce our upcoming event happening soon. In May we are coming back with your favourite techno event series.
+◈ We are thrilled to announce this special all-day event — a daytime festival & a club night — a celebration of art, community and underground music. Join us under the bridge for a vibrant day filled with great music and more!
 
-◈ Our team has been working hard to create an unforgettable experience, and we can't wait to share it with you. Join us as we welcome three talented DJs to the stage - Elad Magdasi and Mathias Weber being supported by local star ECXO. They'll be spinning some of the best electronic tunes to get you moving all night long
+◈ From local heroes to legends, from noon till dawn, we have a packed lineup that will keep you floating and bouncing all day and all night.
 
-◈ This event is all about good vibes, great music, and making connections. So come prepared to meet like-minded music lovers and enjoy the beats. A-huset at Institut for (X) is the perfect venue for this event, with its unique and intimate atmosphere. This will be a night of great music, good vibes, and making connections with fellow music enthusiasts. So come ready to let loose and have some fun! 
+◈ We are honored to welcome a UK underground legend to Aarhus - Peverelist. The Livity Sound boss will no doubt be bringing an eclectic collection of cutting-edge club music that pushes the boundaries of the contemporary club music.
 
-◈ FEUM is known for throwing some of the best electronic music events in town, and this one is no exception. So mark your calendars and get ready to dance the night away. Let's make this a night to remember! 
+◈ In addition, we have the pleasure of hosting two killer DJs from down under, Temporal Cast head Kasun and Animalia boss Kia, who will be bringing the heat to little old Aarhus.
+
+◈ Backing up this stellar offence we have an array of local heroes who will be behind the decks throughout the day - the talented Cirkeline, the mighty Perko, our very own Mødest and Turing B2B, and the super crew from Mejlegade 53 - DJ SRA, Jake, Mitro and a special live set by a local guest.. 👀
+
+More details to be announced…
+
+Mark your calendars and get ready for a day of pure bliss and sonik gold. 👾
+
+Yours Truly,
+
+FEUM
 
 L I N E U P
 
- ▀▀▀▀▀▀▀▀ 
+▀▀▀▀▀▀▀
 
-⇻ Elad Magdasi b2b Mathias Weber - (Front Left Records) (extended set) (MELATRONIX)
+⇻ Peverelist (UK)
 
-⇻ ECXO Artist ( Lightweight Electronics )
+⇻ Kia (AU)
 
-Links: 
+⇻ Kasun (AU)
 
-[https://soundcloud.com/eladmagdasi](https://l.facebook.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Feladmagdasi%3Ffbclid%3DIwAR0ogBar4IMfw7k1DyZBygLNhGAIbCTEv-xTiVnx9xYDSccjUTF8jdQi_-k&h=AT13_t--Xqn8vFjpP0ku6L1jiTpb7w5cMSZ7NwfdNH63z0LETpt09V20ySf5BiWNyvsizDY-WcLrwrnY87VNw2O6yKxl4ND1diGiVdgyBzoTdlAQoPELqA5TmPw5RifQxuxZ5Lel) 
+⇻ Perko
 
-[https://soundcloud.com/mathiasweber_ber](https://l.facebook.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fmathiasweber_ber%3Ffbclid%3DIwAR10lUxkOc8AO57Z1fffw0yCYS60KG3Sm7x2JHfwI2kY-e-BrDsQNiIlAL0&h=AT13_t--Xqn8vFjpP0ku6L1jiTpb7w5cMSZ7NwfdNH63z0LETpt09V20ySf5BiWNyvsizDY-WcLrwrnY87VNw2O6yKxl4ND1diGiVdgyBzoTdlAQoPELqA5TmPw5RifQxuxZ5Lel) 
+⇻ Cirkeline
 
-[https://soundcloud.com/ecxoecxo](https://l.facebook.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fecxoecxo%3Ffbclid%3DIwAR37rztG6I4YKfKLByZ3LTCJOaTRym1UMrzQ2ocClNi0tSDQT84v-bfa86Y&h=AT13_t--Xqn8vFjpP0ku6L1jiTpb7w5cMSZ7NwfdNH63z0LETpt09V20ySf5BiWNyvsizDY-WcLrwrnY87VNw2O6yKxl4ND1diGiVdgyBzoTdlAQoPELqA5TmPw5RifQxuxZ5Lel)
+⇻ Mødest B2B Turing
 
-[https://ra.co/dj/melatronix](https://ra.co/dj/melatronix?fbclid=IwAR2P6Wljw-WCNRIncErfUdjY-0DsardiUM-BcG-JKfIJgz_huF94N6Mx9y8)
+⇻ DJ SRA
 
-[https://www.instagram.com/we.are.melatronix/](https://www.instagram.com/we.are.melatronix/?fbclid=IwAR2vZjgY4GPX816AAdK7VmeZdj23TvM-dlOLgPL68wWjedib1VeKuKlZ-Tk)
+⇻ Mitro
+
+⇻ Jake
+
+⇻ Local Guest live set
+
+P R A C T I C A L I T I E S
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+⇻ Genre: from dub-y ambient to house to heavy bass & breaks
+
+⇻ Place: Volume Village // Underbroen
+
+⇻ Time: 21 - Late
+
+⇻ Age Limit: 21
+
+⇻ Tickets: <https://feum-ticketing.dk/>
+
+Early Bird: 100 dkk
+
+General admission: 150 dkk
+
+Artwork by Andreea Fernea (@andreeafernea)
 
 <!--EndFragment-->
