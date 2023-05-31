@@ -51,7 +51,7 @@ lineup:
     country: ???
 music_list: []
 ---
-◈ We are thrilled to announce this special all-day event — a daytime festival & a club night — a celebration of art, community and underground music. Join us under the bridge for a vibrant day filled with great music and more!
+◈ We are thrilled to announce this special all-day event — a daytime festival & a club night — a celebration of art, community and underground music. Join us under the bridge for a vibrant day filled with 17 hours of great music and more!
 
 ◈ From local heroes to legends, from noon till dawn, we have a packed lineup that will keep you floating and bouncing all day and all night.
 
@@ -68,10 +68,6 @@ Mark your calendars and get ready for a day of pure bliss and sonik gold. 👾
 Yours Truly,
 
 FEUM
-
-
-
-
 
 P R A C T I C A L I T I E S
 
@@ -90,8 +86,6 @@ P R A C T I C A L I T I E S
 Early Bird: 100 dkk
 
 General admission: 150 dkk
-
-
 
 Artwork by Andreea Fernea (@andreeafernea)
 
