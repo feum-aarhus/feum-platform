@@ -71,6 +71,8 @@ FEUM
 
 
 
+
+
 P R A C T I C A L I T I E S
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
@@ -79,7 +81,7 @@ P R A C T I C A L I T I E S
 
 ⇻ Place: Volume Village // Underbroen
 
-⇻ Time: 21 - Late
+⇻ Time: 12 PM - 5 AM
 
 ⇻ Age Limit: 21
 
@@ -88,6 +90,8 @@ P R A C T I C A L I T I E S
 Early Bird: 100 dkk
 
 General admission: 150 dkk
+
+
 
 Artwork by Andreea Fernea (@andreeafernea)
 
