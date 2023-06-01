@@ -7,29 +7,29 @@ address: 201 THOMAS KOPPELS GADE
 price: 100
 presale_only: true
 music: Awesome
-capacity: 400
+capacity: 100
 lineup:
-  - label: ""
+  - label: Livity Sound/Punch Drunk
     link: ""
     name: Peverelist
     country: UK
-  - label: ""
+  - label: Animalia
     link: ""
     name: Kia
     country: AU
-  - label: ""
+  - label: Temporal Cast
     link: ""
     name: Kasun
     country: AU
-  - label: ""
+  - label: FELT/Numbers
     link: ""
     name: Perko
     country: UK
-  - label: ""
+  - label: Sweetie
     link: ""
     name: Cirkeline
     country: DK
-  - label: ""
+  - label: FEUM
     link: ""
     name: Mødest B2B Turing
     country: PL
@@ -37,7 +37,7 @@ lineup:
     link: ""
     name: DJ SRA
     country: DK
-  - label: ""
+  - label: Help Recordings
     link: ""
     name: Mitro
     country: DK
