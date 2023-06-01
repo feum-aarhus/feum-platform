@@ -7,7 +7,7 @@ address: 201 THOMAS KOPPELS GADE
 price: 100
 presale_only: true
 music: Awesome
-capacity: 200
+capacity: 400
 lineup:
   - label: ""
     link: ""
