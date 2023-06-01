@@ -4,7 +4,7 @@ title: 【 FEUM  // Sommersonik 】
 start: Saturday, July 1, 2023 12:00 PM
 end: Sunday, July 2, 2023 5:00 AM
 address: 201 THOMAS KOPPELS GADE
-price: 3
+price: 100
 presale_only: true
 music: Awesome
 capacity: 200
