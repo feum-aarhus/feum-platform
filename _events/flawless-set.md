@@ -7,7 +7,7 @@ address: 201 THOMAS KOPPELS GADE
 price: 150
 presale_only: false
 music: Awesome
-capacity: 400
+capacity: 500
 lineup:
   - label: Livity Sound/Punch Drunk
     link: ""
