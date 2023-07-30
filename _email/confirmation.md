@@ -4,7 +4,7 @@ Hey you!
 
 <br>
 
-Thank you for purchasing a ticket to **FEUM // Sommersonik** that will take place on the **1st of July at Volume Village**. Use the attached QR code for entering the venue. Please note that you shouldn't scan the QR code yourself as scanning it will make it invalid. It will be scanned at the entrance by the door person.
+Thank you for purchasing a ticket to **FEUM // Pres: OK EG x Zenwerk x Modest** that will take place on the **18th of August at A-Huset**. Use the attached QR code for entering the venue. Please note that you shouldn't scan the QR code yourself as scanning it will make it invalid. It will be scanned at the entrance by the door person.
 
 <br>If you need a refund, please contact us at [hello@feum.net](mailto:hello@feum.net). We accept refunds until 24h before the event. It takes 5 to 10 days to get your money back. <br>
 
