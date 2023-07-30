@@ -9,7 +9,7 @@ presale_only: false
 music: Awesome
 capacity: 100
 lineup:
-  - label: ""
+  - label: Animalia
     link: https://soundcloud.com/okegmusic
     name: OK EG (live)
     country: AU
