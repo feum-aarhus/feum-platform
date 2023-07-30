@@ -1,92 +1,104 @@
 ---
-banner: /uploads/banner-min.jpg
-title: 【 FEUM  // Sommersonik 】
-start: Saturday, July 1, 2023 9:00 PM
-end: Sunday, July 2, 2023 5:00 AM
-address: 201 THOMAS KOPPELS GADE
-price: 150
+banner: /uploads/diseño-facebook.jpg
+title: "【 FEUM // Pres: OK EG x ZENWERK x MODEST 】"
+start: Friday, August 18, 2023 9:00 PM
+end: Saturday, August 19, 2023 4:00 AM
+address: Skovgaardsgade 5c
+price: 80
 presale_only: false
 music: Awesome
-capacity: 400
+capacity: 100
 lineup:
-  - label: Livity Sound/Punch Drunk
-    link: ""
-    name: Peverelist
-    country: UK
-  - label: Animalia
-    link: ""
-    name: Kia
+  - label: ""
+    link: https://soundcloud.com/okegmusic
+    name: OK EG (live)
     country: AU
-  - label: Temporal Cast
-    link: ""
-    name: Kasun
-    country: AU
-  - label: FELT/Numbers
-    link: ""
-    name: Perko
-    country: UK
-  - label: Sweetie
-    link: ""
-    name: Cirkeline
-    country: DK
+  - label: Synergy Cult
+    link: https://soundcloud.com/zenwerk
+    name: Zenwerk
+    country: PL/BY
   - label: FEUM
-    link: ""
-    name: Mødest B2B Turing
-    country: PL
-  - label: ""
-    link: ""
-    name: DJ SRA
-    country: DK
-  - label: Help Recordings
-    link: ""
-    name: Mitro
-    country: DK
-  - label: ""
-    link: ""
-    name: Jake
-    country: DK
-  - label: ""
-    link: ""
-    name: Local Guest live set
-    country: ???
+    link: https://soundcloud.com/modest8k
+    name: Modest
+    country: DK/PL
 music_list: []
 ---
-◈ We are thrilled to announce this special all-day event — a daytime festival & a club night — a celebration of art, community and underground music. Join us under the bridge for a vibrant day filled with 17 hours of great music and more!
+<!--StartFragment-->
 
-◈ From local heroes to legends, from noon till dawn, we have a packed lineup that will keep you floating and bouncing all day and all night.
+◈ Fully charged up from a spectacular summer, we are back with another hot treat to round the season off in good fashion.
 
-◈ We are honored to welcome a UK underground legend to Aarhus - Peverelist. The Livity Sound boss will no doubt be bringing an eclectic collection of cutting-edge club music that pushes the boundaries of the contemporary club music.
+◈ This time we present the hypnotizing Australian duo OK EG (live!). Followed up by a special talent straight out of the Polish underground, Zenwerk. And on duty heating up the dancefloor will be the one and only Modest.
 
-◈ In addition, we have the pleasure of hosting two killer DJs from down under, Temporal Cast head Kasun and Animalia boss Kia, who will be bringing the heat to little old Aarhus.
+◈ Join us at our beloved home venue, A-huset at Institut for (X), for one trippy summer night.
 
-◈ Backing up this stellar offence we have an array of local heroes who will be behind the decks throughout the day - the talented Cirkeline, the mighty Perko, our very own Mødest and Turing B2B, and the super crew from Mejlegade 53 - DJ SRA, Jake, Mitro and a special live set by a local guest.. 👀
+【 About OK EG 】
 
-More details to be announced…
+<!--StartFragment-->
 
-Mark your calendars and get ready for a day of pure bliss and sonik gold. 👾
+Composed of producers Matthew Wilson and Lauren Squire, OK EG’s strident sound melds rhythm, bass and analogue synth. Known for their hardware-based live sets, the pair spiral around unpredictable patterns and interlocking grooves, encapsulating the unhinged energy of the Melbourne underground; think liquid dnb, slow-build trance and fractural percussion. Joining the wave of talent rising out of Australia for their debut EU tour, OK EG bring their deep and expansive sound to FEUM on August 18th.
+
+<!--EndFragment-->
+
+<!--StartFragment-->
+
+【 About Zenwerk 】
+
+Zenwerk is the Belarusian artist now based in Warsaw, Poland, is the creative force behind the multidisciplinary art collective and label, Synergy Cult. As a music producer, DJ, live performer, and sound designer, zenwzerk's innovative approach plunges into modern and experimental neo-house and breakbeat sound textures. His DJ mixes, much like his music, dive into experimentation, melding genres and sounds, inviting the listener to perceive music in a new light.
+
+<!--EndFragment-->
+
+<!--StartFragment-->
+
+【 About Modest 】
+
+Modest together with FEUM has been growing and representing dedication to quality sound and underground culture in Aarhus. Bringing the uncharted, deep and spacey, carefully selected record collection of the music made for a fusion irresistible to anyone with half an ear plugged to the underground.
+
+<!--EndFragment-->
+
+<!--StartFragment-->
+
+【 About FEUM Events 】
+
+FEUM events are all about the intersection of electronic music, sensory experiences, and community connection. We believe in creating a space where the collective conscious shapes the overall atmosphere of the night, one that is full of energy and good times, one where everyone feels welcome, respected, and free to express themselves in their own way.
+
+Help us make our events a fun and safe space for everyone by being mindful and responsible for your community.
+
+Please take the time to read our guidelines and house rules before attending our events.
+
+[feum.net/houserules](https://feum.net/houserules)
+
+[feum.net/eventinfo](https://feum.net/eventinfo)
+
+See you on the dance floor!
+
+<!--EndFragment-->
+
+
 
 Yours Truly,
 
 FEUM
 
+
+
 P R A C T I C A L I T I E S
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
-⇻ Genre: from dub-y ambient to house to heavy bass & breaks
+⇻ Genre: Trance, Techno, Liquid DnB, Trippy
 
-⇻ Place: Volume Village // Underbroen
+⇻ Place: Institut for X / A-Huset
 
-⇻ Time: 12 PM - 5 AM
+⇻ Time: 9 PM - 4 AM
 
 ⇻ Age Limit: 21
 
 ⇻ Tickets: <https://feum-ticketing.dk/>
 
-Early Bird: 100 dkk
+Online Presale: 80kr (100 tickets only)
 
-General admission: 150 dkk
+Door: 100kr
 
-Artwork by Andreea Fernea (@andreeafernea)
+Artwork by Bela Altarrui (@bela.altarrui)
 
 <!--EndFragment-->
