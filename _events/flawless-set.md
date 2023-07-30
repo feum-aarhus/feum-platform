@@ -4,7 +4,7 @@ title: "【 FEUM // Pres: OK EG x ZENWERK x MODEST 】"
 start: Friday, August 18, 2023 9:00 PM
 end: Saturday, August 19, 2023 4:00 AM
 address: Skovgaardsgade 5c
-price: 80
+price: 3
 presale_only: false
 music: Awesome
 capacity: 100
