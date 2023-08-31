@@ -7,7 +7,7 @@ address: Skovgaardsgade 5c
 price: 80
 presale_only: false
 music: Awesome
-capacity: 100
+capacity: 120
 lineup:
   - label: Animalia
     link: https://soundcloud.com/okegmusic
